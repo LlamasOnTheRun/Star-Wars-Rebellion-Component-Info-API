@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping(value="/test")
 public class TestContoller {
     @GetMapping
-    @ResponseBody                           //does not make json but prints to screen
+    @ResponseBody
     public String getTestData(){
         return "word";
     }

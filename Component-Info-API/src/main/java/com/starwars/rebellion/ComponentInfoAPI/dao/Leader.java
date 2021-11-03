@@ -29,12 +29,14 @@ public class Leader {
     public Leader() { }
 
     public void setMilitarySkill(Rank rank, int groundTacticDraw, int spaceTacticDraw) {
+        militarySkill = new MilitarySkill();
         militarySkill.setRank(rank);
         militarySkill.setGroundTacticDraw(groundTacticDraw);
         militarySkill.setSpaceTacticDraw(spaceTacticDraw);
     }
 
     public void setMissionSkill(int intel, int specOps, int diplomacySkill, boolean proficientInLogistics) {
+        missionSkill = new MissionSkill();
         missionSkill.setIntel(intel);
         missionSkill.setSpecOps(specOps);
         missionSkill.setDiplomacySkill(diplomacySkill);

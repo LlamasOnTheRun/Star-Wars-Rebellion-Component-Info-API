@@ -1,7 +1,6 @@
-package com.starwars.rebellion.ComponentInfoAPI.data.entity;
+package com.starwars.rebellion.ComponentInfoAPI.dao;
 
 import lombok.Data;
-import lombok.Getter;
 
 import javax.persistence.*;
 

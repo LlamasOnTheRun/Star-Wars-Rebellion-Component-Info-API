@@ -1,19 +1,19 @@
-package com.starwars.rebellion.ComponentInfoAPI.data;
+package com.starwars.rebellion.ComponentInfoAPI.utils;
 
-import com.starwars.rebellion.ComponentInfoAPI.data.entity.Book;
-import com.starwars.rebellion.ComponentInfoAPI.repository.BookRepository;
+import com.starwars.rebellion.ComponentInfoAPI.dao.Book;
+import com.starwars.rebellion.ComponentInfoAPI.repositorys.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DataLoader implements ApplicationRunner {
+public class H2StartUpDataLoader implements ApplicationRunner {
 
     private BookRepository bookRepository;
 
     @Autowired
-    public DataLoader(BookRepository bookRepository) {
+    public H2StartUpDataLoader(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }
 

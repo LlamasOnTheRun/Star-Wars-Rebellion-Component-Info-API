@@ -7,13 +7,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.BASE_CONTROLLER_PATH;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.GET_LEADER_ENDPOINT;
+
 @Controller
-@RequestMapping(value="/test")
-public class TestContoller {
+@RequestMapping(value=BASE_CONTROLLER_PATH)
+public class LeaderController {
     @Autowired
     BookRepository bookRepository;
 
-    @GetMapping
+    @GetMapping(path=GET_LEADER_ENDPOINT)
     @ResponseBody
     public String getTestData(){
         return bookRepository.findByName("caprisun").getName();

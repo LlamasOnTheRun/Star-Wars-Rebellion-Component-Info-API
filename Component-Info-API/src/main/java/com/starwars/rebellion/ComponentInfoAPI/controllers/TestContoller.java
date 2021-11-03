@@ -1,6 +1,6 @@
 package com.starwars.rebellion.ComponentInfoAPI.controllers;
 
-import com.starwars.rebellion.ComponentInfoAPI.repository.BookRepository;
+import com.starwars.rebellion.ComponentInfoAPI.repositorys.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

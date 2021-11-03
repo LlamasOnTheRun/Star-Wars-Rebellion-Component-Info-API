@@ -1,6 +1,6 @@
-package com.starwars.rebellion.ComponentInfoAPI.repository;
+package com.starwars.rebellion.ComponentInfoAPI.repositorys;
 
-import com.starwars.rebellion.ComponentInfoAPI.data.entity.Book;
+import com.starwars.rebellion.ComponentInfoAPI.dao.Book;
 import org.springframework.data.repository.CrudRepository;
 
 public interface BookRepository extends CrudRepository<Book, Long> {

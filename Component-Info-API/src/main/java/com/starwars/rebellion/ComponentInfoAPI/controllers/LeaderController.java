@@ -1,6 +1,7 @@
 package com.starwars.rebellion.ComponentInfoAPI.controllers;
 
-import com.starwars.rebellion.ComponentInfoAPI.repositorys.BookRepository;
+import com.starwars.rebellion.ComponentInfoAPI.dao.Leader;
+import com.starwars.rebellion.ComponentInfoAPI.repositorys.LeaderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,11 +15,12 @@ import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.GET_LEA
 @RequestMapping(value=BASE_CONTROLLER_PATH)
 public class LeaderController {
     @Autowired
-    BookRepository bookRepository;
+    LeaderRepository leaderRepository;
 
     @GetMapping(path=GET_LEADER_ENDPOINT)
     @ResponseBody
-    public String getTestData(){
-        return bookRepository.findByName("caprisun").getName();
+    public String getLeader() {
+        Leader leader = new Leader();
+        return leaderRepository.findByName("Darth Vader").getName();
     }
 }

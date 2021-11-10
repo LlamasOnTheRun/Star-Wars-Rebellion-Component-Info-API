@@ -1,11 +1,12 @@
 package com.starwars.rebellion.ComponentInfoAPI.utils.h2;
 
-import com.starwars.rebellion.ComponentInfoAPI.dao.*;
 import com.starwars.rebellion.ComponentInfoAPI.repositorys.LeaderRepository;
+
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeaders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -19,10 +20,10 @@ public class H2StartUpDataLoader implements ApplicationRunner {
     }
 
     public void run(ApplicationArguments args) {
-        saveEmpireLeaders();
+        saveRebelLeaders();
     }
 
-    private void saveEmpireLeaders() {
-        leaderRepository.save(RebelLeaders.fetch());
+    private void saveRebelLeaders() {
+        leaderRepository.saveAll(RebelLeaders.fetch());
     }
 }

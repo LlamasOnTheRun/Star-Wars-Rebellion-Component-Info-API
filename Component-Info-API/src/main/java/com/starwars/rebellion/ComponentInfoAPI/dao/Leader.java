@@ -8,7 +8,6 @@ import javax.persistence.*;
 @Getter
 @Setter
 public class Leader {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -20,9 +19,8 @@ public class Leader {
     @Enumerated(EnumType.STRING)
     private Faction faction;
     private boolean isStartingLeader;
-    private boolean outOfAction = false;
-    //TODO may get rid of
-    private int ringID;
+    private boolean outOfAction = false; //TODO may get rid of
+    private int ringID; //TODO may get rid of
 
     public Leader() { }
 

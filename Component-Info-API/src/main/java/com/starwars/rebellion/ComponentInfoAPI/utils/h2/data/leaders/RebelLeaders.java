@@ -20,25 +20,25 @@ public class RebelLeaders {
     }
 
     private static void addGeneralsToList(List<Leader> rebelLeaderList) {
-        rebelLeaderList.add(chewbacca());
-        rebelLeaderList.add(generalMadine());
-        rebelLeaderList.add(generalRieekan());
-        rebelLeaderList.add(lukeSkywalker());
-        rebelLeaderList.add(lukeSkywalkerJedi());
-        rebelLeaderList.add(obiWanKenobi());
-        rebelLeaderList.add(princessLeia());
+        rebelLeaderList.add(getChewbacca());
+        rebelLeaderList.add(getGeneralMadine());
+        rebelLeaderList.add(getGeneralRieekan());
+        rebelLeaderList.add(getLukeSkywalker());
+        rebelLeaderList.add(getLukeSkywalkerJedi());
+        rebelLeaderList.add(getObiWanKenobi());
+        rebelLeaderList.add(getPrincessLeia());
     }
 
     private static void addAdmiralsToList(List<Leader> rebelLeaderList) {
-        rebelLeaderList.add(admiralAckbar());
-        rebelLeaderList.add(hanSolo());
-        rebelLeaderList.add(janDodonna());
-        rebelLeaderList.add(landoCalrissian());
-        rebelLeaderList.add(monMothma());
-        rebelLeaderList.add(wedgeAntilles());
+        rebelLeaderList.add(getAdmiralAckbar());
+        rebelLeaderList.add(getHanSolo());
+        rebelLeaderList.add(getJanDodonna());
+        rebelLeaderList.add(getLandoCalrissian());
+        rebelLeaderList.add(getMonMothma());
+        rebelLeaderList.add(getWedgeAntilles());
     }
 
-    private static Leader admiralAckbar() {
+    public static Leader getAdmiralAckbar() {
         Leader leader = new Leader();
         leader.setName("Admiral Ackbar");
         leader.setMissionSkill(0,0,2,true);
@@ -46,11 +46,10 @@ public class RebelLeaders {
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
-
         return leader;
     }
 
-    private static Leader chewbacca() {
+    public static Leader getChewbacca() {
         Leader leader = new Leader();
         leader.setName("Chewbacca");
         leader.setMissionSkill(0,3,0,false);
@@ -58,11 +57,10 @@ public class RebelLeaders {
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
-
         return leader;
     }
 
-    private static Leader generalMadine() {
+    public static Leader getGeneralMadine() {
         Leader leader = new Leader();
         leader.setName("General Madine");
         leader.setMissionSkill(2, 2, 0, false);
@@ -70,11 +68,10 @@ public class RebelLeaders {
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
-
         return leader;
     }
 
-    private static Leader generalRieekan() {
+    public static Leader getGeneralRieekan() {
         Leader leader = new Leader();
         leader.setName("General Rieekan");
         leader.setMissionSkill(0, 1, 1, true);
@@ -82,11 +79,10 @@ public class RebelLeaders {
         leader.setStartingLeader(true);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
-
         return leader;
     }
 
-    private static Leader hanSolo() {
+    public static Leader getHanSolo() {
         Leader leader = new Leader();
         leader.setName("Han Solo");
         leader.setMissionSkill(1,2,1,false);
@@ -94,11 +90,10 @@ public class RebelLeaders {
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
-
         return leader;
     }
 
-    private static Leader janDodonna() {
+    public static Leader getJanDodonna() {
         Leader leader = new Leader();
         leader.setName("Jan Dodonna");
         leader.setMissionSkill(2,0,1,false);
@@ -106,11 +101,10 @@ public class RebelLeaders {
         leader.setStartingLeader(true);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
-
         return leader;
     }
 
-    private static Leader landoCalrissian() {
+    public static Leader getLandoCalrissian() {
         Leader leader = new Leader();
         leader.setName("Lando Calrissian");
         leader.setMissionSkill(1,1,1,true);
@@ -118,11 +112,10 @@ public class RebelLeaders {
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
-
         return leader;
     }
 
-    private static Leader lukeSkywalker() {
+    public static Leader getLukeSkywalker() {
         Leader leader = new Leader();
         leader.setName("Luke Skywalker");
         leader.setMissionSkill(2, 1, 0, false);
@@ -130,11 +123,10 @@ public class RebelLeaders {
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
-
         return leader;
     }
 
-    private static Leader lukeSkywalkerJedi() {
+    public static Leader getLukeSkywalkerJedi() {
         Leader leader = new Leader();
         leader.setName("Luke Skywalker (Jedi)");
         leader.setMissionSkill(3, 2, 0, false);
@@ -142,11 +134,10 @@ public class RebelLeaders {
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
-
         return leader;
     }
 
-    private static Leader monMothma() {
+    public static Leader getMonMothma() {
         Leader leader = new Leader();
         leader.setName("Mon Mothma");
         leader.setMissionSkill(0,0,3,true);
@@ -154,11 +145,10 @@ public class RebelLeaders {
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
-
         return leader;
     }
 
-    private static Leader obiWanKenobi() {
+    public static Leader getObiWanKenobi() {
         Leader leader = new Leader();
         leader.setName("Obi Wan Kenobi");
         leader.setMissionSkill(3,0,1,false);
@@ -166,11 +156,10 @@ public class RebelLeaders {
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
-
         return leader;
     }
 
-    private static Leader princessLeia() {
+    public static Leader getPrincessLeia() {
         Leader leader = new Leader();
         leader.setName("Princess Leia");
         leader.setMissionSkill(2, 1, 2, false);
@@ -178,11 +167,10 @@ public class RebelLeaders {
         leader.setStartingLeader(true);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
-
         return leader;
     }
 
-    private static Leader wedgeAntilles() {
+    public static Leader getWedgeAntilles() {
         Leader leader = new Leader();
         leader.setName("Wedge Antilles");
         leader.setMissionSkill(0, 2, 0, false);
@@ -190,7 +178,6 @@ public class RebelLeaders {
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
-
         return leader;
     }
 }

@@ -1,10 +1,12 @@
-package com.starwars.rebellion.ComponentInfoAPI.utils;
+package com.starwars.rebellion.ComponentInfoAPI.utils.h2;
 
-import com.starwars.rebellion.ComponentInfoAPI.dao.*;
 import com.starwars.rebellion.ComponentInfoAPI.repositorys.LeaderRepository;
+
+import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeaders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -18,19 +20,10 @@ public class H2StartUpDataLoader implements ApplicationRunner {
     }
 
     public void run(ApplicationArguments args) {
-        saveEmpireLeaders();
+        saveRebelLeaders();
     }
 
-    private void saveEmpireLeaders() {
-        Leader leader = new Leader();
-
-        leader.setMissionSkill(3, 3, 3, true);
-        leader.setMilitarySkill(Rank.General, 3, 3);
-        leader.setStartingLeader(true);
-        leader.setRingID(1);
-        leader.setFaction(Faction.IMPERIAL);
-        leader.setName("Darth Vader");
-
-        leaderRepository.save(leader);
+    private void saveRebelLeaders() {
+        leaderRepository.saveAll(RebelLeaders.fetch());
     }
 }

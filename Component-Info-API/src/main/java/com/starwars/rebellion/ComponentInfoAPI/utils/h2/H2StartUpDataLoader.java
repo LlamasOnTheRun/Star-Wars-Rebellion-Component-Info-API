@@ -22,8 +22,10 @@ public class H2StartUpDataLoader implements ApplicationRunner {
     public void run(ApplicationArguments args) {
         saveRebelLeaders();
     }
+    //public void run(ApplicationArguments args) {saveEmpireLeaders();}
 
     private void saveRebelLeaders() {
         leaderRepository.saveAll(RebelLeaders.fetch());
     }
+    //private void saveEmpireLeaders() {leaderRepository.saveAll(EmpireLeaders.fetch());}
 }

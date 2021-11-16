@@ -39,10 +39,9 @@ public class H2StartUpDataLoader implements ApplicationRunner {
                 from any system to the
                 mission's system.""");
         actionCard.setCardText(cardText);
-
         actionCard.setFaction(Faction.REBEL);
-        actionCard.setRecruitmentOptionOne(RebelLeaders.getLandoCalrissian());
-        actionCard.setRecruitmentOptionTwo(RebelLeaders.getObiWanKenobi());
+        actionCard.setRecruitmentOptionOne(RebelLeaders.LANDO_CALRISSIAN);
+        actionCard.setRecruitmentOptionTwo(RebelLeaders.OBI_WAN_KENOBI);
 
         actionCardRepository.save(actionCard);
     }

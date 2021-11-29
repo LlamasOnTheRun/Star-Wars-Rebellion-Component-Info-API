@@ -20,6 +20,9 @@ public class RebelActionCards {
     public static final ActionCard THE_MILLENNIUM_FALCON = getTheMillenniumFalcon();
     public static final ActionCard TARGET_THE_STAR_DESTROYERS = getTargetTheStarDestroyers();
     public static final ActionCard AMBUSH = getAmbush();
+    public static final ActionCard INDEPENDENT_OPERATION = getIndependentOperation();
+    public static final ActionCard WOOKIEE_GUARDIAN = getWookieeGuardian();
+    public static final ActionCard SON_OF_SKYWALKER = getSonOfSkywalker();
 
     public static List<ActionCard> fetch() {
         List<ActionCard> rebelActionCards = new ArrayList<>();
@@ -29,10 +32,13 @@ public class RebelActionCards {
         rebelActionCards.add(NOBLE_SACRIFICE);
         rebelActionCards.add(AN_OLD_FRIEND);
         rebelActionCards.add(POINT_BLANK_ASSAULT);
-        rebelActionCards.add(ITS_A_TRAP); //TODO Fix key constraint here. Two Akbars here
+        rebelActionCards.add(ITS_A_TRAP);
         rebelActionCards.add(THE_MILLENNIUM_FALCON);
         rebelActionCards.add(TARGET_THE_STAR_DESTROYERS);
         rebelActionCards.add(AMBUSH);
+        rebelActionCards.add(INDEPENDENT_OPERATION);
+        rebelActionCards.add(WOOKIEE_GUARDIAN);
+        rebelActionCards.add(SON_OF_SKYWALKER);
 
         return rebelActionCards;
     }
@@ -233,6 +239,75 @@ public class RebelActionCards {
         ArrayList<Leader> leaders = new ArrayList<>();
         leaders.add(RebelLeaders.GENERAL_MADINE);
         actionCard.setLeaderChoices(leaders);
+        return actionCard;
+    }
+
+    private static ActionCard getIndependentOperation() {
+        CardText cardText = new CardText();
+        cardText.setTitle("Independent Operation");
+        cardText.setCardType("Assignment");
+        cardText.setDescription("""
+                Place this leader in any
+                subjugated system. The
+                Imperial player must move
+                all his ground units from this
+                system to any 1 Imperial system
+                of his choice, ignoring adjacency
+                and transport capacity.
+                """);
+
+        ActionCard actionCard = new ActionCard();
+        actionCard.setCardText(cardText);
+        actionCard.setFaction(Faction.REBEL);
+        ArrayList<Leader> leaders = new ArrayList<>();
+        leaders.add(RebelLeaders.LANDO_CALRISSIAN);
+        actionCard.setLeaderChoices(leaders);
+
+        return actionCard;
+    }
+
+    private static ActionCard getWookieeGuardian() {
+        CardText cardText = new CardText();
+        cardText.setTitle("Wookie Guardian");
+        cardText.setCardType("Special");
+        cardText.setDescription("""
+                Use when your opponent
+                attempts a spec ops (?)
+                mission, before rolling dice.
+                The mission automatically fails.
+                """); // TODO need to find a away to include mission symbols in text
+
+        ActionCard actionCard = new ActionCard();
+        actionCard.setCardText(cardText);
+        actionCard.setFaction(Faction.REBEL);
+        ArrayList<Leader> leaders = new ArrayList<>();
+        leaders.add(RebelLeaders.CHEWBACCA);
+        actionCard.setLeaderChoices(leaders);
+
+        return actionCard;
+    }
+
+    private static ActionCard getSonOfSkywalker() {
+        CardText cardText = new CardText();
+        cardText.setTitle("Son of Skywalker");
+        cardText.setCardType("Special");
+        cardText.setDescription("""
+                After you succeed at a
+                mission in this leader's system,
+                search your mission deck for
+                the "Seek Yoda" or "Daring
+                Rescue" card and place it
+                in your hand. Then shuffle
+                your mission deck.
+                """);
+
+        ActionCard actionCard = new ActionCard();
+        actionCard.setCardText(cardText);
+        actionCard.setFaction(Faction.REBEL);
+        ArrayList<Leader> leaders = new ArrayList<>();
+        leaders.add(RebelLeaders.LUKE_SKYWALKER);
+        actionCard.setLeaderChoices(leaders);
+
         return actionCard;
     }
 }

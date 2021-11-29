@@ -22,7 +22,7 @@ public class Leader {
     private boolean isStartingLeader;
     private boolean outOfAction = false; //TODO may get rid of
     private int ringID; //TODO may get rid of
-    @ManyToMany(targetEntity=ActionCard.class, mappedBy="leaderChoices")
+    @ManyToMany(targetEntity=ActionCard.class, mappedBy="leaderChoices", fetch = FetchType.EAGER)
     private List<ActionCard> inActionCards;
 
     public Leader() { }

@@ -17,7 +17,7 @@ class ActionCardControllerTest {
 	}
 
 	@Test
-	void givenAllActionCardDataIsAvailable_ThenTwelveCardsShouldBeReturned() {
+	void givenAllActionCardDataIsAvailable_ThenEighteenCardsShouldBeReturned() {
 		Assertions.assertEquals(18, actionCardsController.getAllRebelActionCards().size());
 	}
 }

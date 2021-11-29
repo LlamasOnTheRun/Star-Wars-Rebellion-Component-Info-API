@@ -3,6 +3,7 @@ package com.starwars.rebellion.ComponentInfoAPI.dao;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
@@ -10,7 +11,7 @@ import javax.persistence.*;
 public class Leader {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private int id;
     private String name;
     @Embedded
     private MissionSkill missionSkill;
@@ -21,6 +22,8 @@ public class Leader {
     private boolean isStartingLeader;
     private boolean outOfAction = false; //TODO may get rid of
     private int ringID; //TODO may get rid of
+    @ManyToMany(targetEntity=ActionCard.class, mappedBy="leaderChoices")
+    private List<ActionCard> inActionCards;
 
     public Leader() { }
 

@@ -3,11 +3,11 @@ package com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards;
 import com.starwars.rebellion.ComponentInfoAPI.dao.ActionCard;
 import com.starwars.rebellion.ComponentInfoAPI.dao.CardText;
 import com.starwars.rebellion.ComponentInfoAPI.dao.Faction;
+import com.starwars.rebellion.ComponentInfoAPI.dao.Leader;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeaders;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class RebelActionCards {
@@ -29,10 +29,10 @@ public class RebelActionCards {
         rebelActionCards.add(NOBLE_SACRIFICE);
         rebelActionCards.add(AN_OLD_FRIEND);
         rebelActionCards.add(POINT_BLANK_ASSAULT);
-        //rebelActionCards.add(ITS_A_TRAP); TODO Fix key constraint here. Two Akbars here
-        //rebelActionCards.add(THE_MILLENNIUM_FALCON);
-        //rebelActionCards.add(TARGET_THE_STAR_DESTROYERS);
-        //rebelActionCards.add(AMBUSH);
+        rebelActionCards.add(ITS_A_TRAP); //TODO Fix key constraint here. Two Akbars here
+        rebelActionCards.add(THE_MILLENNIUM_FALCON);
+        rebelActionCards.add(TARGET_THE_STAR_DESTROYERS);
+        rebelActionCards.add(AMBUSH);
 
         return rebelActionCards;
     }
@@ -52,8 +52,10 @@ public class RebelActionCards {
         ActionCard actionCard = new ActionCard();
         actionCard.setCardText(cardText);
         actionCard.setFaction(Faction.REBEL);
-        actionCard.setRecruitmentOptionOne(RebelLeaders.LANDO_CALRISSIAN);
-        actionCard.setRecruitmentOptionTwo(RebelLeaders.OBI_WAN_KENOBI);
+        ArrayList<Leader> leaders = new ArrayList<>();
+        leaders.add(RebelLeaders.LANDO_CALRISSIAN);
+        leaders.add(RebelLeaders.OBI_WAN_KENOBI);
+        actionCard.setLeaderChoices(leaders);
         return actionCard;
     }
 
@@ -72,8 +74,10 @@ public class RebelActionCards {
         ActionCard actionCard = new ActionCard();
         actionCard.setCardText(cardText);
         actionCard.setFaction(Faction.REBEL);
-        actionCard.setRecruitmentOptionOne(RebelLeaders.WEDGE_ANTILLES);
-        actionCard.setRecruitmentOptionTwo(RebelLeaders.LUKE_SKYWALKER);
+        ArrayList<Leader> leaders = new ArrayList<>();
+        leaders.add(RebelLeaders.WEDGE_ANTILLES);
+        leaders.add(RebelLeaders.LUKE_SKYWALKER);
+        actionCard.setLeaderChoices(leaders);
         return actionCard;
     }
 
@@ -94,7 +98,9 @@ public class RebelActionCards {
         ActionCard actionCard = new ActionCard();
         actionCard.setCardText(cardText);
         actionCard.setFaction(Faction.REBEL);
-        actionCard.setRecruitmentOptionOne(RebelLeaders.HAN_SOLO);
+        ArrayList<Leader> leaders = new ArrayList<>();
+        leaders.add(RebelLeaders.HAN_SOLO);
+        actionCard.setLeaderChoices(leaders);
         return actionCard;
     }
 
@@ -112,7 +118,9 @@ public class RebelActionCards {
         ActionCard actionCard = new ActionCard();
         actionCard.setCardText(cardText);
         actionCard.setFaction(Faction.REBEL);
-        actionCard.setRecruitmentOptionOne(RebelLeaders.OBI_WAN_KENOBI);
+        ArrayList<Leader> leaders = new ArrayList<>();
+        leaders.add(RebelLeaders.OBI_WAN_KENOBI);
+        actionCard.setLeaderChoices(leaders);
         return actionCard;
     }
 
@@ -131,8 +139,10 @@ public class RebelActionCards {
         ActionCard actionCard = new ActionCard();
         actionCard.setCardText(cardText);
         actionCard.setFaction(Faction.REBEL);
-        actionCard.setRecruitmentOptionOne(RebelLeaders.ADMIRAL_ACKBAR);
-        actionCard.setRecruitmentOptionTwo(RebelLeaders.GENERAL_MADINE);
+        ArrayList<Leader> leaders = new ArrayList<>();
+        leaders.add(RebelLeaders.ADMIRAL_ACKBAR);
+        leaders.add(RebelLeaders.GENERAL_MADINE);
+        actionCard.setLeaderChoices(leaders);
         return actionCard;
     }
 
@@ -149,7 +159,9 @@ public class RebelActionCards {
         ActionCard actionCard = new ActionCard();
         actionCard.setCardText(cardText);
         actionCard.setFaction(Faction.REBEL);
-        actionCard.setRecruitmentOptionOne(RebelLeaders.ADMIRAL_ACKBAR);
+        ArrayList<Leader> leaders = new ArrayList<>();
+        leaders.add(RebelLeaders.ADMIRAL_ACKBAR);
+        actionCard.setLeaderChoices(leaders);
         return actionCard;
     }
 
@@ -174,8 +186,10 @@ public class RebelActionCards {
         ActionCard actionCard = new ActionCard();
         actionCard.setCardText(cardText);
         actionCard.setFaction(Faction.REBEL);
-        actionCard.setRecruitmentOptionOne(RebelLeaders.HAN_SOLO);
-        actionCard.setRecruitmentOptionTwo(RebelLeaders.CHEWBACCA);
+        ArrayList<Leader> leaders = new ArrayList<>();
+        leaders.add(RebelLeaders.HAN_SOLO);
+        leaders.add(RebelLeaders.CHEWBACCA);
+        actionCard.setLeaderChoices(leaders);
         return actionCard;
     }
 
@@ -196,7 +210,9 @@ public class RebelActionCards {
         ActionCard actionCard = new ActionCard();
         actionCard.setCardText(cardText);
         actionCard.setFaction(Faction.REBEL);
-        actionCard.setRecruitmentOptionOne(RebelLeaders.WEDGE_ANTILLES);
+        ArrayList<Leader> leaders = new ArrayList<>();
+        leaders.add(RebelLeaders.WEDGE_ANTILLES);
+        actionCard.setLeaderChoices(leaders);
         return actionCard;
     }
 
@@ -214,7 +230,9 @@ public class RebelActionCards {
         ActionCard actionCard = new ActionCard();
         actionCard.setCardText(cardText);
         actionCard.setFaction(Faction.REBEL);
-        actionCard.setRecruitmentOptionOne(RebelLeaders.GENERAL_MADINE);
+        ArrayList<Leader> leaders = new ArrayList<>();
+        leaders.add(RebelLeaders.GENERAL_MADINE);
+        actionCard.setLeaderChoices(leaders);
         return actionCard;
     }
 }

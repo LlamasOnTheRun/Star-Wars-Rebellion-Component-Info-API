@@ -3,15 +3,15 @@ package com.starwars.rebellion.ComponentInfoAPI.dao;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
 public class Leader {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private int id;
     private String name;
     @Embedded
     private MissionSkill missionSkill;
@@ -20,9 +20,10 @@ public class Leader {
     @Enumerated(EnumType.STRING)
     private Faction faction;
     private boolean isStartingLeader;
-    private boolean outOfAction = false;
-    //TODO may get rid of
-    private int ringID;
+    private boolean outOfAction = false; //TODO may get rid of
+    private int ringID; //TODO may get rid of
+    @ManyToMany(targetEntity=ActionCard.class, mappedBy="leaderChoices", fetch = FetchType.EAGER)
+    private List<ActionCard> inActionCards;
 
     public Leader() { }
 

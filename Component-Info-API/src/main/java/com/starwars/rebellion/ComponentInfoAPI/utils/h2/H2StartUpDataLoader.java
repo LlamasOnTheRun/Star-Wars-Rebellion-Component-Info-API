@@ -1,7 +1,9 @@
 package com.starwars.rebellion.ComponentInfoAPI.utils.h2;
 
+import com.starwars.rebellion.ComponentInfoAPI.repositorys.ActionCardRepository;
 import com.starwars.rebellion.ComponentInfoAPI.repositorys.LeaderRepository;
 
+import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards.RebelActionCards;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeaders;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.EmpireLeaders;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,20 +15,22 @@ import org.springframework.stereotype.Component;
 @Component
 public class H2StartUpDataLoader implements ApplicationRunner {
 
-    private LeaderRepository leaderRepository;
-
     @Autowired
-    public H2StartUpDataLoader(LeaderRepository leaderRepository) {
-        this.leaderRepository = leaderRepository;
-    }
+    private LeaderRepository leaderRepository;
+    @Autowired
+    private ActionCardRepository actionCardRepository;
 
     public void run(ApplicationArguments args) {
-        saveRebelLeaders();
-        saveEmpireLeaders();
+        saveLeaders();
+        saveActionCards();
     }
 
-    private void saveRebelLeaders() {
-        leaderRepository.saveAll(RebelLeaders.fetch());
+    private void saveActionCards() {
+        actionCardRepository.saveAll(RebelActionCards.fetch());
     }
-    private void saveEmpireLeaders() {leaderRepository.saveAll(EmpireLeaders.fetch());}
+
+    private void saveLeaders() {
+        leaderRepository.saveAll(RebelLeaders.fetch());
+        leaderRepository.saveAll(EmpireLeaders.fetch());
+    }
 }

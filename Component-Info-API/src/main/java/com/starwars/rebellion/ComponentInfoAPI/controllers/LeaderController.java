@@ -30,4 +30,10 @@ public class LeaderController {
     public List<Leader> getAllRebelLeaders() {
         return leaderRepository.findAllByFaction(Faction.REBEL);
     }
+
+    @GetMapping(path=GET_ALL_IMPERIAL_LEADERS_ENDPOINT)
+    @ResponseBody
+    public List<Leader> getAllEmpireLeaders() {
+        return leaderRepository.findAllByFaction(Faction.IMPERIAL);
+    }
 }

@@ -27,4 +27,15 @@ class LeaderControllerTest {
 		leaderController.getAllRebelLeaders().forEach(
 				leader -> Assertions.assertEquals(Faction.REBEL, leader.getFaction()));
 	}
+
+	//-------------------------------------------------------------------------------------------
+	@Test
+	void givenYularenDataIsAvailable_ThenYularenNameIsReturned(){
+		Assertions.assertEquals("Colonel Yularen", leaderController.getLeader());
+	}
+
+	@Test
+	void givenAllEmpireDataIsAvailable_ThenTwelveEmpireLeadersAreReturned(){
+		Assertions.assertEquals(12, leaderController.getAllEmpireLeaders().size());
+	}
 }

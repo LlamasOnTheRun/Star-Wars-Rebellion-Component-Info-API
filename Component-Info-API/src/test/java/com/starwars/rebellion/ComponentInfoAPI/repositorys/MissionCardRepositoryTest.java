@@ -13,6 +13,6 @@ class MissionCardRepositoryTest {
 
 	@Test
 	void givenForTheGreaterGoodDataIsAvailable_thenDataIsReturned() {
-		Assertions.assertEquals("For The Greater Good", missionCardRepository.findByCardTextTitle("For The Greater Good").getCardText().getTitle());
+		Assertions.assertEquals("For The\nGreater Good\n", missionCardRepository.findByCardTextTitle("For The\nGreater Good\n").getCardText().getTitle());
 	}
 }

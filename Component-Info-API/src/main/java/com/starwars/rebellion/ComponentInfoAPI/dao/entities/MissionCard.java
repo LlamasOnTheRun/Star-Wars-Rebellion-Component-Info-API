@@ -1,5 +1,6 @@
 package com.starwars.rebellion.ComponentInfoAPI.dao.entities;
 
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.MissionCardText;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.MissionSkillType;
 import lombok.Getter;
@@ -15,9 +16,14 @@ public class MissionCard {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @Embedded
-    private MissionCardText missionCardText;
+    private MissionCardText cardText;
     @OneToOne
     private Leader leaderBonus;
     @Enumerated(EnumType.STRING)
-    private MissionSkillType missionSkillType;
+    private MissionSkillType skillType;
+    private int minSkillNumRequired;
+    @Enumerated(EnumType.STRING)
+    private Faction faction;
+    private boolean isStartingCard;
+    private int totalInDeck;
 }

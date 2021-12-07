@@ -15,4 +15,9 @@ class ActionCardControllerTest {
 	void givenUndercoverActionCardDataIsAvailable_ThenUndercoverNameIsReturned() {
 		Assertions.assertEquals("Undercover", actionCardsController.getActionCard());
 	}
+
+	@Test
+	void givenAllActionCardDataIsAvailable_ThenEighteenCardsShouldBeReturned() {
+		Assertions.assertEquals(18, actionCardsController.getAllRebelActionCards().size());
+	}
 }

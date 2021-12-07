@@ -21,7 +21,7 @@ public class ActionCardController {
     @GetMapping(path=GET_ACTION_CARD_ENDPOINT)
     @ResponseBody
     public String getActionCard() {
-        return actionCardRepository.findByCardTextTitle("Undercover").getCardText().getTitle();
+        return actionCardRepository.findByActionCardTextTitle("Undercover").getActionCardText().getTitle();
     }
 
     @GetMapping(path=GET_ALL_REBEL_ACTION_CARDS_ENDPOINT)

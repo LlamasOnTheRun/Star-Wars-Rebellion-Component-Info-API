@@ -1,6 +1,6 @@
 package com.starwars.rebellion.ComponentInfoAPI.dao.entities;
 
-import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.CardText;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.ActionCardText;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,7 +16,7 @@ public class ActionCard {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @Embedded
-    private CardText cardText;
+    private ActionCardText actionCardText;
     @Enumerated(EnumType.STRING)
     private Faction faction;
     @ManyToMany

@@ -1,6 +1,7 @@
 package com.starwars.rebellion.ComponentInfoAPI.dao.entities;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.MissionCardText;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.MissionSkillType;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,4 +18,6 @@ public class MissionCard {
     private MissionCardText missionCardText;
     @OneToOne
     private Leader leaderBonus;
+    @Enumerated(EnumType.STRING)
+    private MissionSkillType missionSkillType;
 }

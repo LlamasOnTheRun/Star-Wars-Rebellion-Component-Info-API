@@ -8,7 +8,7 @@ import javax.persistence.Enumerated;
 
 @Data
 @Embeddable
-public class MilitarySkill {
+public class MilitarySkillPoints {
     @Enumerated(EnumType.STRING)
     private Rank rank;
     private int groundTacticDraw;

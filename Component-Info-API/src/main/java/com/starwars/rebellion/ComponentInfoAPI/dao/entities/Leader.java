@@ -1,8 +1,8 @@
 package com.starwars.rebellion.ComponentInfoAPI.dao.entities;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
-import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.MilitarySkill;
-import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.MissionSkill;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.MilitarySkillPoints;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.MissionSkillPoints;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Rank;
 import lombok.*;
 
@@ -18,9 +18,9 @@ public class Leader {
     private int id;
     private String name;
     @Embedded
-    private MissionSkill missionSkill;
+    private MissionSkillPoints missionSkillPoints;
     @Embedded
-    private MilitarySkill militarySkill;
+    private MilitarySkillPoints militarySkillPoints;
     @Enumerated(EnumType.STRING)
     private Faction faction;
     private boolean isStartingLeader;
@@ -31,18 +31,18 @@ public class Leader {
 
     public Leader() { }
 
-    public void setMilitarySkill(Rank rank, int groundTacticDraw, int spaceTacticDraw) {
-        militarySkill = new MilitarySkill();
-        militarySkill.setRank(rank);
-        militarySkill.setGroundTacticDraw(groundTacticDraw);
-        militarySkill.setSpaceTacticDraw(spaceTacticDraw);
+    public void setMilitarySkillPoints(Rank rank, int groundTacticDraw, int spaceTacticDraw) {
+        militarySkillPoints = new MilitarySkillPoints();
+        militarySkillPoints.setRank(rank);
+        militarySkillPoints.setGroundTacticDraw(groundTacticDraw);
+        militarySkillPoints.setSpaceTacticDraw(spaceTacticDraw);
     }
 
-    public void setMissionSkill(int intel, int specOps, int diplomacySkill, boolean proficientInLogistics) {
-        missionSkill = new MissionSkill();
-        missionSkill.setIntel(intel);
-        missionSkill.setSpecOps(specOps);
-        missionSkill.setDiplomacySkill(diplomacySkill);
-        missionSkill.setProficientInLogistics(proficientInLogistics);
+    public void setMissionSkillPoints(int intel, int specOps, int diplomacySkill, boolean proficientInLogistics) {
+        missionSkillPoints = new MissionSkillPoints();
+        missionSkillPoints.setIntel(intel);
+        missionSkillPoints.setSpecOps(specOps);
+        missionSkillPoints.setDiplomacySkill(diplomacySkill);
+        missionSkillPoints.setProficientInLogistics(proficientInLogistics);
     }
 }

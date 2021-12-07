@@ -6,7 +6,7 @@ import javax.persistence.Embeddable;
 
 @Data
 @Embeddable
-public class MissionSkill {
+public class MissionSkillPoints {
     private int intel;
     private int specOps;
     private int diplomacySkill;

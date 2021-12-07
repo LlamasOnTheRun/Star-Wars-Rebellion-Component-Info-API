@@ -1,6 +1,6 @@
 package com.starwars.rebellion.ComponentInfoAPI.controllers;
 
-import com.starwars.rebellion.ComponentInfoAPI.dao.ActionCard;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.ActionCard;
 import com.starwars.rebellion.ComponentInfoAPI.repositorys.ActionCardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

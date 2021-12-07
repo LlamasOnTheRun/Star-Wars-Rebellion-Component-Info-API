@@ -1,4 +1,4 @@
-package com.starwars.rebellion.ComponentInfoAPI.dao;
+package com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables;
 
 import lombok.Data;
 

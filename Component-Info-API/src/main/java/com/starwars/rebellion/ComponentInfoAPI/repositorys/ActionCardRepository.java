@@ -1,6 +1,6 @@
 package com.starwars.rebellion.ComponentInfoAPI.repositorys;
 
-import com.starwars.rebellion.ComponentInfoAPI.dao.ActionCard;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.ActionCard;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

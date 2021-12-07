@@ -1,6 +1,6 @@
 package com.starwars.rebellion.ComponentInfoAPI.controllers;
 
-import com.starwars.rebellion.ComponentInfoAPI.dao.Faction;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

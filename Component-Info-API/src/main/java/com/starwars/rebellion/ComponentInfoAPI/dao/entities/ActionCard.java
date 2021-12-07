@@ -1,5 +1,7 @@
-package com.starwars.rebellion.ComponentInfoAPI.dao;
+package com.starwars.rebellion.ComponentInfoAPI.dao.entities;
 
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.CardText;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
 import lombok.Getter;
 import lombok.Setter;
 

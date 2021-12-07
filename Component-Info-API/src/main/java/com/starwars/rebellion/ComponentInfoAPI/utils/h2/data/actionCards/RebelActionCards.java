@@ -1,9 +1,9 @@
 package com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards;
 
-import com.starwars.rebellion.ComponentInfoAPI.dao.ActionCard;
-import com.starwars.rebellion.ComponentInfoAPI.dao.CardText;
-import com.starwars.rebellion.ComponentInfoAPI.dao.Faction;
-import com.starwars.rebellion.ComponentInfoAPI.dao.Leader;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.ActionCard;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.CardText;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.Leader;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeaders;
 import org.springframework.stereotype.Service;
 

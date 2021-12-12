@@ -28,7 +28,6 @@ class LeaderControllerTest {
 				leader -> Assertions.assertEquals(Faction.REBEL, leader.getFaction()));
 	}
 
-	//-------------------------------------------------------------------------------------------
 	@Test
 	void givenYularenDataIsAvailable_ThenYularenNameIsReturned(){
 		Assertions.assertEquals("Colonel Yularen", leaderController.getLeader());

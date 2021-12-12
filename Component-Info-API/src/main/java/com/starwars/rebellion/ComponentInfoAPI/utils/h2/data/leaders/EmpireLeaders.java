@@ -8,11 +8,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-//blue: intel
-//yellow: diplo.
-//red: spec ops
-//white with arrow: logistics
-
 @Service
 public class EmpireLeaders {
     public static final Leader COLONEL_YULAREN = getColonelyularen();

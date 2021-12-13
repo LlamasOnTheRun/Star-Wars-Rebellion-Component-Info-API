@@ -1,7 +1,7 @@
 package com.starwars.rebellion.ComponentInfoAPI.controllers;
 
-import com.starwars.rebellion.ComponentInfoAPI.dao.Faction;
-import com.starwars.rebellion.ComponentInfoAPI.dao.Leader;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.Leader;
 import com.starwars.rebellion.ComponentInfoAPI.repositorys.LeaderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

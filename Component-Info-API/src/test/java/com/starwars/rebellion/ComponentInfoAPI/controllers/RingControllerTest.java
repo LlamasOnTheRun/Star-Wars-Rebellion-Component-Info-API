@@ -14,4 +14,5 @@ public class RingControllerTest {
     void givenRingTitleAvailable_thenTitleIsReturned(){
         Assertions.assertEquals("C3PO", ringController.getRing());
     }
+
 }

@@ -7,11 +7,11 @@ import com.starwars.rebellion.ComponentInfoAPI.repositorys.LeaderRepository;
 import com.starwars.rebellion.ComponentInfoAPI.repositorys.RingRepository;
 
 import com.starwars.rebellion.ComponentInfoAPI.repositorys.MissionCardRepository;
-import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.MissionCards.RebelMissionCards;
+import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.missionCards.RebelMissionCardData;
 
-import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards.RebelActionCards;
-import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeaders;
-import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.rings.Rings;
+import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards.RebelActionCardData;
+import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeaderData;
+import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.rings.RingData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -40,19 +40,19 @@ public class H2StartUpDataLoader implements ApplicationRunner {
     }
 
     private void saveActionCards() {
-        actionCardRepository.saveAll(RebelActionCards.fetch());
+        actionCardRepository.saveAll(RebelActionCardData.fetch());
     }
 
     private void saveLeaders() {
-        leaderRepository.saveAll(RebelLeaders.fetch());
+        leaderRepository.saveAll(RebelLeaderData.fetch());
     }
 
     private void saveRings() {
-        ringRepository.saveAll(Rings.fetch());
+        ringRepository.saveAll(RingData.fetch());
     }
   
     private void saveMissionCards() {
-        missionCardRepository.saveAll(RebelMissionCards.fetch());
+        missionCardRepository.saveAll(RebelMissionCardData.fetch());
 
     }
 }

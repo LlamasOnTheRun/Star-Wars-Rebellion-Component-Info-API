@@ -14,4 +14,10 @@ public class RingRepositoryTest {
    void givenRingRepositoryIsUp_C3PORingIsAvailable_thenTitleReturns(){
        Assertions.assertEquals("C3PO", ringRepository.findByTitle("C3PO").getTitle());
    }
+
+
+   @Test
+   void givenAllRingDataIsAvailable_thenSevenRingsShouldBeReturned() {
+      Assertions.assertEquals(7, ringRepository.findAll().size());
+   }
 }

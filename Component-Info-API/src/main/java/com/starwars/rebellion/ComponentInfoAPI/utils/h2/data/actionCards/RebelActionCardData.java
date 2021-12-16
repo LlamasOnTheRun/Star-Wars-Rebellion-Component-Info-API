@@ -4,13 +4,13 @@ import com.starwars.rebellion.ComponentInfoAPI.dao.entities.ActionCard;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.ActionCardText;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.Leader;
-import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeaders;
+import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeaderData;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 
 @Service
-public class RebelActionCards {
+public class RebelActionCardData {
     public static final ActionCard UNDERCOVER = getUndercover();
     public static final ActionCard ONE_IN_A_MILLION = getOneInAMillion();
     public static final ActionCard NOBLE_SACRIFICE = getNobleSacrifice();
@@ -73,8 +73,8 @@ public class RebelActionCards {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(true);
-        leaders.add(RebelLeaders.LANDO_CALRISSIAN);
-        leaders.add(RebelLeaders.OBI_WAN_KENOBI);
+        leaders.add(RebelLeaderData.LANDO_CALRISSIAN);
+        leaders.add(RebelLeaderData.OBI_WAN_KENOBI);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -97,8 +97,8 @@ public class RebelActionCards {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(true);
-        leaders.add(RebelLeaders.WEDGE_ANTILLES);
-        leaders.add(RebelLeaders.LUKE_SKYWALKER);
+        leaders.add(RebelLeaderData.WEDGE_ANTILLES);
+        leaders.add(RebelLeaderData.LUKE_SKYWALKER);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -123,7 +123,7 @@ public class RebelActionCards {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(true);
-        leaders.add(RebelLeaders.HAN_SOLO);
+        leaders.add(RebelLeaderData.HAN_SOLO);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -145,7 +145,7 @@ public class RebelActionCards {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(true);
-        leaders.add(RebelLeaders.OBI_WAN_KENOBI);
+        leaders.add(RebelLeaderData.OBI_WAN_KENOBI);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -168,8 +168,8 @@ public class RebelActionCards {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(true);
-        leaders.add(RebelLeaders.ADMIRAL_ACKBAR);
-        leaders.add(RebelLeaders.GENERAL_MADINE);
+        leaders.add(RebelLeaderData.ADMIRAL_ACKBAR);
+        leaders.add(RebelLeaderData.GENERAL_MADINE);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -190,7 +190,7 @@ public class RebelActionCards {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(true);
-        leaders.add(RebelLeaders.ADMIRAL_ACKBAR);
+        leaders.add(RebelLeaderData.ADMIRAL_ACKBAR);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -219,8 +219,8 @@ public class RebelActionCards {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(true);
-        leaders.add(RebelLeaders.HAN_SOLO);
-        leaders.add(RebelLeaders.CHEWBACCA);
+        leaders.add(RebelLeaderData.HAN_SOLO);
+        leaders.add(RebelLeaderData.CHEWBACCA);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -245,7 +245,7 @@ public class RebelActionCards {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(true);
-        leaders.add(RebelLeaders.WEDGE_ANTILLES);
+        leaders.add(RebelLeaderData.WEDGE_ANTILLES);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -267,7 +267,7 @@ public class RebelActionCards {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(true);
-        leaders.add(RebelLeaders.GENERAL_MADINE);
+        leaders.add(RebelLeaderData.GENERAL_MADINE);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -292,7 +292,7 @@ public class RebelActionCards {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(true);
-        leaders.add(RebelLeaders.LANDO_CALRISSIAN);
+        leaders.add(RebelLeaderData.LANDO_CALRISSIAN);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -314,7 +314,7 @@ public class RebelActionCards {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(true);
-        leaders.add(RebelLeaders.CHEWBACCA);
+        leaders.add(RebelLeaderData.CHEWBACCA);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -339,7 +339,7 @@ public class RebelActionCards {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(true);
-        leaders.add(RebelLeaders.LUKE_SKYWALKER);
+        leaders.add(RebelLeaderData.LUKE_SKYWALKER);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -360,7 +360,7 @@ public class RebelActionCards {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(false);
-        leaders.add(RebelLeaders.JAN_DODONNA);
+        leaders.add(RebelLeaderData.JAN_DODONNA);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -414,7 +414,7 @@ public class RebelActionCards {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(false);
-        leaders.add(RebelLeaders.GENERAL_RIEEKAN);
+        leaders.add(RebelLeaderData.GENERAL_RIEEKAN);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -466,7 +466,7 @@ public class RebelActionCards {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(false);
-        leaders.add(RebelLeaders.PRINCESS_LEIA);
+        leaders.add(RebelLeaderData.PRINCESS_LEIA);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -492,7 +492,7 @@ public class RebelActionCards {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(false);
-        leaders.add(RebelLeaders.MON_MOTHMA);
+        leaders.add(RebelLeaderData.MON_MOTHMA);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;

@@ -12,6 +12,7 @@ import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.missionCards.RebelM
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards.RebelActionCardData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeaderData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.rings.RingData;
+import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.EmpireLeaders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
@@ -23,12 +24,10 @@ public class H2StartUpDataLoader implements ApplicationRunner {
 
     @Autowired
     private LeaderRepository leaderRepository;
-
     @Autowired
     private ActionCardRepository actionCardRepository;
     @Autowired
     private RingRepository ringRepository;
-
     @Autowired
     private MissionCardRepository missionCardRepository;
 
@@ -45,12 +44,13 @@ public class H2StartUpDataLoader implements ApplicationRunner {
 
     private void saveLeaders() {
         leaderRepository.saveAll(RebelLeaderData.fetch());
+        leaderRepository.saveAll(EmpireLeaders.fetch());
     }
 
     private void saveRings() {
         ringRepository.saveAll(RingData.fetch());
     }
-  
+
     private void saveMissionCards() {
         missionCardRepository.saveAll(RebelMissionCardData.fetch());
 

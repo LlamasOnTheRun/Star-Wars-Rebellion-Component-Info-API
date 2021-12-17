@@ -19,15 +19,27 @@ public class LeaderController {
     @Autowired
     LeaderRepository leaderRepository;
 
-    @GetMapping(path=GET_LEADER_ENDPOINT)
+    @GetMapping(path= GET_LEADER_ENDPOINT_REBEL)
     @ResponseBody
-    public String getLeader() {
+    public String getLeaderRebel() {
         return leaderRepository.findByName("Chewbacca").getName();
+    }
+
+    @GetMapping(path= GET_LEADER_ENDPOINT_EMPIRE)
+    @ResponseBody
+    public String getLeaderEmpire() {
+        return leaderRepository.findByName("Colonel Yularen").getName();
     }
 
     @GetMapping(path=GET_ALL_REBEL_LEADERS_ENDPOINT)
     @ResponseBody
     public List<Leader> getAllRebelLeaders() {
         return leaderRepository.findAllByFaction(Faction.REBEL);
+    }
+
+    @GetMapping(path=GET_ALL_IMPERIAL_LEADERS_ENDPOINT)
+    @ResponseBody
+    public List<Leader> getAllEmpireLeaders() {
+        return leaderRepository.findAllByFaction(Faction.IMPERIAL);
     }
 }

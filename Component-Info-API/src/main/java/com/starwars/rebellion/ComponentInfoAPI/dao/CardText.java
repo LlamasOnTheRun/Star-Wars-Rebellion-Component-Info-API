@@ -1,7 +1,6 @@
 package com.starwars.rebellion.ComponentInfoAPI.dao;
 
 import lombok.Data;
-
 import javax.persistence.Embeddable;
 
 @Data

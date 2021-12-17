@@ -1,10 +1,8 @@
 package com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders;
-
 import com.starwars.rebellion.ComponentInfoAPI.dao.Faction;
 import com.starwars.rebellion.ComponentInfoAPI.dao.Leader;
 import com.starwars.rebellion.ComponentInfoAPI.dao.Rank;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 

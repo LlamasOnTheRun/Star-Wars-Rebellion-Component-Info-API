@@ -1,5 +1,4 @@
 package com.starwars.rebellion.ComponentInfoAPI.controllers;
-
 import com.starwars.rebellion.ComponentInfoAPI.dao.Faction;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -14,7 +13,7 @@ class LeaderControllerTest {
 
 	@Test
 	void givenChewbaccaDataIsAvailable_ThenChewbaccaNameIsReturned() {
-		Assertions.assertEquals("Chewbacca", leaderController.getLeader());
+		Assertions.assertEquals("Chewbacca", leaderController.getLeaderRebel());
 	}
 
 	@Test
@@ -30,7 +29,7 @@ class LeaderControllerTest {
 
 	@Test
 	void givenYularenDataIsAvailable_ThenYularenNameIsReturned(){
-		Assertions.assertEquals("Colonel Yularen", leaderController.getLeader());
+		Assertions.assertEquals("Colonel Yularen", leaderController.getLeaderEmpire());
 	}
 
 	@Test

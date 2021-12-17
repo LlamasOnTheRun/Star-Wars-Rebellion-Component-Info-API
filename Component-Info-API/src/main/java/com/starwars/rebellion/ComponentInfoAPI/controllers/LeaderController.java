@@ -1,5 +1,4 @@
 package com.starwars.rebellion.ComponentInfoAPI.controllers;
-
 import com.starwars.rebellion.ComponentInfoAPI.dao.Faction;
 import com.starwars.rebellion.ComponentInfoAPI.dao.Leader;
 import com.starwars.rebellion.ComponentInfoAPI.repositorys.LeaderRepository;
@@ -8,9 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import java.util.List;
-
 import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.*;
 
 @Controller
@@ -19,10 +16,16 @@ public class LeaderController {
     @Autowired
     LeaderRepository leaderRepository;
 
-    @GetMapping(path=GET_LEADER_ENDPOINT)
+    @GetMapping(path= GET_LEADER_ENDPOINT_REBEL)
     @ResponseBody
-    public String getLeader() {
+    public String getLeaderRebel() {
         return leaderRepository.findByName("Chewbacca").getName();
+    }
+
+    @GetMapping(path= GET_LEADER_ENDPOINT_EMPIRE)
+    @ResponseBody
+    public String getLeaderEmpire() {
+        return leaderRepository.findByName("Colonel Yularen").getName();
     }
 
     @GetMapping(path=GET_ALL_REBEL_LEADERS_ENDPOINT)

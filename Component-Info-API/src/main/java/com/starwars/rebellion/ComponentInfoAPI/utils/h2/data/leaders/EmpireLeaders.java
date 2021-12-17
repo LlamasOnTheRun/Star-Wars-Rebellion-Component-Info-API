@@ -1,7 +1,7 @@
 package com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders;
-import com.starwars.rebellion.ComponentInfoAPI.dao.Faction;
-import com.starwars.rebellion.ComponentInfoAPI.dao.Leader;
-import com.starwars.rebellion.ComponentInfoAPI.dao.Rank;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.Leader;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Rank;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
@@ -50,8 +50,8 @@ public class EmpireLeaders {
     private static Leader getColonelyularen() {
         Leader leader = new Leader();
         leader.setName("Colonel Yularen");
-        leader.setMissionSkill(3,0,0,false);
-        leader.setMilitarySkill(Rank.General,2,2);
+        leader.setMissionSkillPoints(3,0,0,false);
+        leader.setMilitarySkillPoints(Rank.General,2,2);
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.IMPERIAL);
@@ -62,8 +62,8 @@ public class EmpireLeaders {
     private static Leader getGeneralVeers() {
         Leader leader = new Leader();
         leader.setName("General Veers");
-        leader.setMissionSkill(0,2,0,false);
-        leader.setMilitarySkill(Rank.General,3,1);
+        leader.setMissionSkillPoints(0,2,0,false);
+        leader.setMilitarySkillPoints(Rank.General,3,1);
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.IMPERIAL);
@@ -74,8 +74,8 @@ public class EmpireLeaders {
     private static Leader getGeneralTagge() {
         Leader leader = new Leader();
         leader.setName("General Tagge");
-        leader.setMissionSkill(0,1,0,true);
-        leader.setMilitarySkill(Rank.General,2,1);
+        leader.setMissionSkillPoints(0,1,0,true);
+        leader.setMilitarySkillPoints(Rank.General,2,1);
         leader.setStartingLeader(true);
         leader.setRingID(0);
         leader.setFaction(Faction.IMPERIAL);
@@ -86,8 +86,8 @@ public class EmpireLeaders {
     private static Leader getDarthVader() {
         Leader leader = new Leader();
         leader.setName("Darth Vader");
-        leader.setMissionSkill(0,3,2,false);
-        leader.setMilitarySkill(Rank.General,3,2);
+        leader.setMissionSkillPoints(0,3,2,false);
+        leader.setMilitarySkillPoints(Rank.General,3,2);
         leader.setStartingLeader(true);
         leader.setRingID(0);
         leader.setFaction(Faction.IMPERIAL);
@@ -98,8 +98,8 @@ public class EmpireLeaders {
     private static Leader getBobaFett() {
         Leader leader = new Leader();
         leader.setName("Boba Fett");
-        leader.setMissionSkill(2,3,0,false);
-        leader.setMilitarySkill(Rank.General,0,0);
+        leader.setMissionSkillPoints(2,3,0,false);
+        leader.setMilitarySkillPoints(Rank.General,0,0);
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.IMPERIAL);
@@ -110,8 +110,8 @@ public class EmpireLeaders {
     private static Leader getMoffJerjerrod() {
         Leader leader = new Leader();
         leader.setName("Moff Jerjerrod");
-        leader.setMissionSkill(0,0,1,true);
-        leader.setMilitarySkill(Rank.General,1,1);
+        leader.setMissionSkillPoints(0,0,1,true);
+        leader.setMilitarySkillPoints(Rank.General,1,1);
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.IMPERIAL);
@@ -123,8 +123,8 @@ public class EmpireLeaders {
     private static Leader getAdmiralOzzel() {
         Leader leader = new Leader();
         leader.setName("Adiral Ozzel");
-        leader.setMissionSkill(1,0,0,true);
-        leader.setMilitarySkill(Rank.Admiral,1,2);
+        leader.setMissionSkillPoints(1,0,0,true);
+        leader.setMilitarySkillPoints(Rank.Admiral,1,2);
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.IMPERIAL);
@@ -135,8 +135,8 @@ public class EmpireLeaders {
     private static Leader getEmperorPalpatine() {
         Leader leader = new Leader();
         leader.setName("Emperor Palpatine");
-        leader.setMissionSkill(2,0,3,false);
-        leader.setMilitarySkill(Rank.Admiral,2,3);
+        leader.setMissionSkillPoints(2,0,3,false);
+        leader.setMilitarySkillPoints(Rank.Admiral,2,3);
         leader.setStartingLeader(true);
         leader.setRingID(0);
         leader.setFaction(Faction.IMPERIAL);
@@ -147,8 +147,8 @@ public class EmpireLeaders {
     private static Leader getGrandMoffTarkin() {
         Leader leader = new Leader();
         leader.setName("Grand Moff Tarkin");
-        leader.setMissionSkill(1,0,1,true);
-        leader.setMilitarySkill(Rank.Admiral,1,2);
+        leader.setMissionSkillPoints(1,0,1,true);
+        leader.setMilitarySkillPoints(Rank.Admiral,1,2);
         leader.setStartingLeader(true);
         leader.setRingID(0);
         leader.setFaction(Faction.IMPERIAL);
@@ -159,8 +159,8 @@ public class EmpireLeaders {
     private static Leader getAdmiralPiett() {
         Leader leader = new Leader();
         leader.setName("Admiral Piett");
-        leader.setMissionSkill(2,1,0,false);
-        leader.setMilitarySkill(Rank.Admiral,1,3);
+        leader.setMissionSkillPoints(2,1,0,false);
+        leader.setMilitarySkillPoints(Rank.Admiral,1,3);
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.IMPERIAL);
@@ -171,8 +171,8 @@ public class EmpireLeaders {
     private static Leader getSoontirFel() {
         Leader leader = new Leader();
         leader.setName("Soontir Fel");
-        leader.setMissionSkill(1,2,0,false);
-        leader.setMilitarySkill(Rank.Admiral,1,2);
+        leader.setMissionSkillPoints(1,2,0,false);
+        leader.setMilitarySkillPoints(Rank.Admiral,1,2);
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.IMPERIAL);
@@ -183,8 +183,8 @@ public class EmpireLeaders {
     private static Leader getJanusGreejatus() {
         Leader leader = new Leader();
         leader.setName("Janus GreeJatus");
-        leader.setMissionSkill(1,0,2,false);
-        leader.setMilitarySkill(Rank.Admiral,0,0);
+        leader.setMissionSkillPoints(1,0,2,false);
+        leader.setMilitarySkillPoints(Rank.Admiral,0,0);
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.IMPERIAL);

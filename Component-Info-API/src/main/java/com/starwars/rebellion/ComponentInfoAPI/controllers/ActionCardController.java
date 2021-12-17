@@ -1,6 +1,6 @@
 package com.starwars.rebellion.ComponentInfoAPI.controllers;
 
-import com.starwars.rebellion.ComponentInfoAPI.dao.ActionCard;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.ActionCard;
 import com.starwars.rebellion.ComponentInfoAPI.repositorys.ActionCardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +19,7 @@ public class ActionCardController {
     @GetMapping(path=GET_ACTION_CARD_ENDPOINT)
     @ResponseBody
     public String getActionCard() {
-        return actionCardRepository.findByCardTextTitle("Undercover").getCardText().getTitle();
+        return actionCardRepository.findByActionCardTextTitle("Undercover").getActionCardText().getTitle();
     }
 
     @GetMapping(path=GET_ALL_REBEL_ACTION_CARDS_ENDPOINT)

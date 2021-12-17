@@ -11,5 +11,6 @@ public class APIConstants {
     public static final String GET_ALL_IMPERIAL_LEADERS_ENDPOINT="imperial/getAllLeaders";
     public static final String GET_ACTION_CARD_ENDPOINT="/actioncards";
     public static final String GET_ALL_REBEL_ACTION_CARDS_ENDPOINT="/actioncards/rebel";
+    public static final String GET_RING_ENDPOINT="/ring";
 }
 

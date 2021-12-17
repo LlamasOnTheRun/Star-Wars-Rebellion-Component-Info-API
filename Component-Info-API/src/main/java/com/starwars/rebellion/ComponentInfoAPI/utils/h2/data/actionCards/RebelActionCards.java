@@ -1,9 +1,9 @@
 package com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards;
 
-import com.starwars.rebellion.ComponentInfoAPI.dao.ActionCard;
-import com.starwars.rebellion.ComponentInfoAPI.dao.CardText;
-import com.starwars.rebellion.ComponentInfoAPI.dao.Faction;
-import com.starwars.rebellion.ComponentInfoAPI.dao.Leader;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.ActionCard;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.ActionCardText;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.Leader;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeaders;
 import org.springframework.stereotype.Service;
 
@@ -58,19 +58,19 @@ public class RebelActionCards {
 
     private static ActionCard getUndercover() {
         ActionCard actionCard = new ActionCard();
-        CardText cardText = new CardText();
+        ActionCardText actionCardText = new ActionCardText();
         ArrayList<Leader> leaders = new ArrayList<>();
 
-        cardText.setTitle("Undercover");
-        cardText.setCardType("Special");
-        cardText.setDescription("""
+        actionCardText.setTitle("Undercover");
+        actionCardText.setCardType("Special");
+        actionCardText.setDescription("""
                 Use when your opponent
                 attempts a mission, before
                 rolling dice. Move this leader
                 from any system to the
                 mission's system.
                 """);
-        actionCard.setCardText(cardText);
+        actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(true);
         leaders.add(RebelLeaders.LANDO_CALRISSIAN);
@@ -82,19 +82,19 @@ public class RebelActionCards {
 
     private static ActionCard getOneInAMillion() {
         ActionCard actionCard = new ActionCard();
-        CardText cardText = new CardText();
+        ActionCardText actionCardText = new ActionCardText();
         ArrayList<Leader> leaders = new ArrayList<>();
 
-        cardText.setTitle("One In A Million");
-        cardText.setCardType("Special");
-        cardText.setDescription("""
+        actionCardText.setTitle("One In A Million");
+        actionCardText.setCardType("Special");
+        actionCardText.setDescription("""
                 Use during either a combat
                 or a mission. Instead of rolling
                 up to 2 of your dice, place
                 them on the table showing
                 the results of your choice.
                 """);
-        actionCard.setCardText(cardText);
+        actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(true);
         leaders.add(RebelLeaders.WEDGE_ANTILLES);
@@ -106,12 +106,12 @@ public class RebelActionCards {
 
     private static ActionCard getAnOldFriend() {
         ActionCard actionCard = new ActionCard();
-        CardText cardText = new CardText();
+        ActionCardText actionCardText = new ActionCardText();
         ArrayList<Leader> leaders = new ArrayList<>();
 
-        cardText.setTitle("An Old Friend");
-        cardText.setCardType("Assignment");
-        cardText.setDescription("""
+        actionCardText.setTitle("An Old Friend");
+        actionCardText.setCardType("Assignment");
+        actionCardText.setDescription("""
                 Place this leader in
                 either the Bespin system
                 to recruit Lando Calrissian
@@ -120,7 +120,7 @@ public class RebelActionCards {
                 Place the recruited leader
                 in Han's Solo system.
                 """);
-        actionCard.setCardText(cardText);
+        actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(true);
         leaders.add(RebelLeaders.HAN_SOLO);
@@ -131,18 +131,18 @@ public class RebelActionCards {
 
     private static ActionCard getNobleSacrifice() {
         ActionCard actionCard = new ActionCard();
-        CardText cardText = new CardText();
+        ActionCardText actionCardText = new ActionCardText();
         ArrayList<Leader> leaders = new ArrayList<>();
 
-        cardText.setTitle("Noble Sacrifice");
-        cardText.setCardType("Special");
-        cardText.setDescription("""
+        actionCardText.setTitle("Noble Sacrifice");
+        actionCardText.setCardType("Special");
+        actionCardText.setDescription("""
                 Use when this leader
                 becomes captured. He is
                 eliminated, and you gain
                 1 reputation.
                 """);
-        actionCard.setCardText(cardText);
+        actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(true);
         leaders.add(RebelLeaders.OBI_WAN_KENOBI);
@@ -153,19 +153,19 @@ public class RebelActionCards {
 
     private static ActionCard getPointBlankAssault() {
         ActionCard actionCard = new ActionCard();
-        CardText cardText = new CardText();
+        ActionCardText actionCardText = new ActionCardText();
         ArrayList<Leader> leaders = new ArrayList<>();
 
-        cardText.setTitle("""
+        actionCardText.setTitle("""
                 Point-Blank
                 Assault
                 """);
-        cardText.setCardType("Start of Combat");
-        cardText.setDescription("""
+        actionCardText.setCardType("Start of Combat");
+        actionCardText.setDescription("""
                 All units in this system have
                 -1 health, to a minimum of 1.
                 """);
-        actionCard.setCardText(cardText);
+        actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(true);
         leaders.add(RebelLeaders.ADMIRAL_ACKBAR);
@@ -177,17 +177,17 @@ public class RebelActionCards {
 
     private static ActionCard getItsATrap() {
         ActionCard actionCard = new ActionCard();
-        CardText cardText = new CardText();
+        ActionCardText actionCardText = new ActionCardText();
         ArrayList<Leader> leaders = new ArrayList<>();
 
-        cardText.setTitle("It's a Trap");
-        cardText.setCardType("Start of Combat");
-        cardText.setDescription("""
+        actionCardText.setTitle("It's a Trap");
+        actionCardText.setCardType("Start of Combat");
+        actionCardText.setDescription("""
                 During the first round
                 of combat, your opponent
                 cannot play space tactic cards.
                 """);
-        actionCard.setCardText(cardText);
+        actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(true);
         leaders.add(RebelLeaders.ADMIRAL_ACKBAR);
@@ -198,15 +198,15 @@ public class RebelActionCards {
 
     private static ActionCard getTheMillenniumFalcon() {
         ActionCard actionCard = new ActionCard();
-        CardText cardText = new CardText();
+        ActionCardText actionCardText = new ActionCardText();
         ArrayList<Leader> leaders = new ArrayList<>();
 
-        cardText.setTitle("""
+        actionCardText.setTitle("""
                 The Millennium
                 Falcon
                 """);
-        cardText.setCardType("Immediate");
-        cardText.setDescription("""
+        actionCardText.setCardType("Immediate");
+        actionCardText.setDescription("""
                 Attach the Millennium
                 Falcon ring to this leader.
                 
@@ -216,7 +216,7 @@ public class RebelActionCards {
                 to rescue 1 captured
                 leader in this system.
                 """);
-        actionCard.setCardText(cardText);
+        actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(true);
         leaders.add(RebelLeaders.HAN_SOLO);
@@ -228,21 +228,21 @@ public class RebelActionCards {
 
     private static ActionCard getTargetTheStarDestroyers() {
         ActionCard actionCard = new ActionCard();
-        CardText cardText = new CardText();
+        ActionCardText actionCardText = new ActionCardText();
         ArrayList<Leader> leaders = new ArrayList<>();
 
-        cardText.setTitle("""
+        actionCardText.setTitle("""
                 Target The
                 Star Destroyers
                 """);
-        cardText.setCardType("Start of Combat");
-        cardText.setDescription("""
+        actionCardText.setCardType("Start of Combat");
+        actionCardText.setDescription("""
                 During the space battle
                 of each combat round,
                 treat up to 2 of your
                 black ? as red ?.
                 """); // TODO we will have to find a way to include symbols for the die into the text - Ryan Llamas
-        actionCard.setCardText(cardText);
+        actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(true);
         leaders.add(RebelLeaders.WEDGE_ANTILLES);
@@ -253,18 +253,18 @@ public class RebelActionCards {
 
     private static ActionCard getAmbush() {
         ActionCard actionCard = new ActionCard();
-        CardText cardText = new CardText();
+        ActionCardText actionCardText = new ActionCardText();
         ArrayList<Leader> leaders = new ArrayList<>();
 
-        cardText.setTitle("Ambush");
-        cardText.setCardType("Assignment");
-        cardText.setDescription("""
+        actionCardText.setTitle("Ambush");
+        actionCardText.setCardType("Assignment");
+        actionCardText.setDescription("""
                 Place this leader in any
                 system. Destroy up to 3-health
                 worth of Imperial ground units
                 of your choice in this system.
                 """);
-        actionCard.setCardText(cardText);
+        actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(true);
         leaders.add(RebelLeaders.GENERAL_MADINE);
@@ -275,12 +275,12 @@ public class RebelActionCards {
 
     private static ActionCard getIndependentOperation() {
         ActionCard actionCard = new ActionCard();
-        CardText cardText = new CardText();
+        ActionCardText actionCardText = new ActionCardText();
         ArrayList<Leader> leaders = new ArrayList<>();
 
-        cardText.setTitle("Independent Operation");
-        cardText.setCardType("Assignment");
-        cardText.setDescription("""
+        actionCardText.setTitle("Independent Operation");
+        actionCardText.setCardType("Assignment");
+        actionCardText.setDescription("""
                 Place this leader in any
                 subjugated system. The
                 Imperial player must move
@@ -289,7 +289,7 @@ public class RebelActionCards {
                 of his choice, ignoring adjacency
                 and transport capacity.
                 """);
-        actionCard.setCardText(cardText);
+        actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(true);
         leaders.add(RebelLeaders.LANDO_CALRISSIAN);
@@ -300,18 +300,18 @@ public class RebelActionCards {
 
     private static ActionCard getWookieeGuardian() {
         ActionCard actionCard = new ActionCard();
-        CardText cardText = new CardText();
+        ActionCardText actionCardText = new ActionCardText();
         ArrayList<Leader> leaders = new ArrayList<>();
 
-        cardText.setTitle("Wookie Guardian");
-        cardText.setCardType("Special");
-        cardText.setDescription("""
+        actionCardText.setTitle("Wookie Guardian");
+        actionCardText.setCardType("Special");
+        actionCardText.setDescription("""
                 Use when your opponent
                 attempts a spec ops (?)
                 mission, before rolling dice.
                 The mission automatically fails.
                 """); // TODO need to find a away to include mission symbols in text
-        actionCard.setCardText(cardText);
+        actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(true);
         leaders.add(RebelLeaders.CHEWBACCA);
@@ -322,12 +322,12 @@ public class RebelActionCards {
 
     private static ActionCard getSonOfSkywalker() {
         ActionCard actionCard = new ActionCard();
-        CardText cardText = new CardText();
+        ActionCardText actionCardText = new ActionCardText();
         ArrayList<Leader> leaders = new ArrayList<>();
 
-        cardText.setTitle("Son of Skywalker");
-        cardText.setCardType("Special");
-        cardText.setDescription("""
+        actionCardText.setTitle("Son of Skywalker");
+        actionCardText.setCardType("Special");
+        actionCardText.setDescription("""
                 After you succeed at a
                 mission in this leader's system,
                 search your mission deck for
@@ -336,7 +336,7 @@ public class RebelActionCards {
                 in your hand. Then shuffle
                 your mission deck.
                 """);
-        actionCard.setCardText(cardText);
+        actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(true);
         leaders.add(RebelLeaders.LUKE_SKYWALKER);
@@ -347,17 +347,17 @@ public class RebelActionCards {
 
     private static ActionCard getRebelPlanning() {
         ActionCard actionCard = new ActionCard();
-        CardText cardText = new CardText();
+        ActionCardText actionCardText = new ActionCardText();
         ArrayList<Leader> leaders = new ArrayList<>();
 
-        cardText.setTitle("Rebel Planning");
-        cardText.setCardType("Assignment");
-        cardText.setDescription("""
+        actionCardText.setTitle("Rebel Planning");
+        actionCardText.setCardType("Assignment");
+        actionCardText.setDescription("""
                 Place this leader in the
                 "Rebel Base" space. Then
                 draw 1 objective card.
                 """);
-        actionCard.setCardText(cardText);
+        actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(false);
         leaders.add(RebelLeaders.JAN_DODONNA);
@@ -368,14 +368,14 @@ public class RebelActionCards {
 
     private static ActionCard getResourcefulAstromech() {
         ActionCard actionCard = new ActionCard();
-        CardText cardText = new CardText();
+        ActionCardText actionCardText = new ActionCardText();
 
-        cardText.setTitle("""
+        actionCardText.setTitle("""
                 Resourceful
                 Astromech
                 """);
-        cardText.setCardType("Immediate");
-        cardText.setDescription("""
+        actionCardText.setCardType("Immediate");
+        actionCardText.setDescription("""
                 Attach the R2-D2 ring
                 to any leader.
                 
@@ -385,7 +385,7 @@ public class RebelActionCards {
                 turn 1 of your opponent's
                 dice to its blank side.
                 """);
-        actionCard.setCardText(cardText);
+        actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(false);
         //TODO Add ring here in future as no leaders are needed for this data card
@@ -395,15 +395,15 @@ public class RebelActionCards {
 
     private static ActionCard getStartTheEvacuation() {
         ActionCard actionCard = new ActionCard();
-        CardText cardText = new CardText();
+        ActionCardText actionCardText = new ActionCardText();
         ArrayList<Leader> leaders = new ArrayList<>();
 
-        cardText.setTitle("""
+        actionCardText.setTitle("""
                 Start the
                 Evacuation
                 """);
-        cardText.setCardType("Assignment");
-        cardText.setDescription("""
+        actionCardText.setCardType("Assignment");
+        actionCardText.setDescription("""
                 Place this leader in any
                 system that does not contain
                 Imperial units. Then move any
@@ -411,7 +411,7 @@ public class RebelActionCards {
                 Base" space to this system
                 as if they were adjacent.
                 """);
-        actionCard.setCardText(cardText);
+        actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(false);
         leaders.add(RebelLeaders.GENERAL_RIEEKAN);
@@ -422,14 +422,14 @@ public class RebelActionCards {
 
     private static ActionCard getHumanCyborgRelations() {
         ActionCard actionCard = new ActionCard();
-        CardText cardText = new CardText();
+        ActionCardText actionCardText = new ActionCardText();
 
-        cardText.setTitle("""
+        actionCardText.setTitle("""
                 Human-Cyborg
                 Relations
                 """);
-        cardText.setCardType("Immediate");
-        cardText.setDescription("""
+        actionCardText.setCardType("Immediate");
+        actionCardText.setDescription("""
                 Attach the C-3PO ring
                 to any leader.
                 
@@ -438,7 +438,7 @@ public class RebelActionCards {
                 discard this ring to make the
                 mission succeed instead.
                 """);// TODO need to find a away to include mission symbols in text
-        actionCard.setCardText(cardText);
+        actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(false);
         //TODO Add ring here in future as no leaders are needed for this data card
@@ -448,22 +448,22 @@ public class RebelActionCards {
 
     private static ActionCard getOurMostDesperateHour() {
         ActionCard actionCard = new ActionCard();
-        CardText cardText = new CardText();
+        ActionCardText actionCardText = new ActionCardText();
         ArrayList<Leader> leaders = new ArrayList<>();
 
-        cardText.setTitle("""
+        actionCardText.setTitle("""
                 Our Most
                 Desperate Hour
                 """);
-        cardText.setCardType("Assignment");
-        cardText.setDescription("""
+        actionCardText.setCardType("Assignment");
+        actionCardText.setDescription("""
                 Search your mission deck for
                 1 card of your choice and
                 assign this leader to that
                 mission. Then shuffle your
                 mission deck.
                 """);
-        actionCard.setCardText(cardText);
+        actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(false);
         leaders.add(RebelLeaders.PRINCESS_LEIA);
@@ -474,22 +474,22 @@ public class RebelActionCards {
 
     private static ActionCard getTemporaryAlliance() {
         ActionCard actionCard = new ActionCard();
-        CardText cardText = new CardText();
+        ActionCardText actionCardText = new ActionCardText();
         ArrayList<Leader> leaders = new ArrayList<>();
 
-        cardText.setTitle("""
+        actionCardText.setTitle("""
                 Temporary
                 Alliance
                 """);
-        cardText.setCardType("Assignment");
-        cardText.setDescription("""
+        actionCardText.setCardType("Assignment");
+        actionCardText.setDescription("""
                 Place this leader in any
                 neutral system. Then
                 place units on the build
                 queue using this system's
                 resource icons and number.
                 """);
-        actionCard.setCardText(cardText);
+        actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.REBEL);
         actionCard.setStartingCard(false);
         leaders.add(RebelLeaders.MON_MOTHMA);

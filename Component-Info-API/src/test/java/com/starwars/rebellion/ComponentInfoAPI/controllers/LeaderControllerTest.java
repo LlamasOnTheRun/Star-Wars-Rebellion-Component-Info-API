@@ -14,7 +14,7 @@ class LeaderControllerTest {
 
 	@Test
 	void givenChewbaccaDataIsAvailable_ThenChewbaccaNameIsReturned() {
-		Assertions.assertEquals("Chewbacca", leaderController.getLeader());
+		Assertions.assertEquals("Chewbacca", leaderController.getLeaderRebel());
 	}
 
 	@Test
@@ -26,5 +26,15 @@ class LeaderControllerTest {
 	void givenAllRebelLeaderDataReturnsOnOneEndpoint_ThenAllHasRebelFactionOnly() {
 		leaderController.getAllRebelLeaders().forEach(
 				leader -> Assertions.assertEquals(Faction.REBEL, leader.getFaction()));
+	}
+
+	@Test
+	void givenYularenDataIsAvailable_ThenYularenNameIsReturned(){
+		Assertions.assertEquals("Colonel Yularen", leaderController.getLeaderEmpire());
+	}
+
+	@Test
+	void givenAllEmpireDataIsAvailable_ThenTwelveEmpireLeadersAreReturned(){
+		Assertions.assertEquals(12, leaderController.getAllEmpireLeaders().size());
 	}
 }

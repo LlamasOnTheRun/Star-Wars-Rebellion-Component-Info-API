@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class RebelLeaders {
+public class RebelLeaderData {
     public static final Leader CHEWBACCA = getChewbacca();
     public static final Leader GENERAL_MADINE = getGeneralMadine();
     public static final Leader GENERAL_RIEEKAN = getGeneralRieekan();

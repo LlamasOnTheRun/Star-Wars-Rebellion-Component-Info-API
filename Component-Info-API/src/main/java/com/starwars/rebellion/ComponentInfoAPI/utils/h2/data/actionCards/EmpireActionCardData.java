@@ -26,7 +26,8 @@ public class EmpireActionCardData {
     public static final ActionCard BOBA_FETT_WHERE = getBobaFettWhere();
     public static final ActionCard TARGET_THE_GENERATORS = getTargetTheGenerator();
     public static final ActionCard PUBLIC_SUPPORT = getPublicSupport();
-
+    public static final ActionCard SCOUTING_MISSION = getScoutingMission();
+    public static final ActionCard CATCH_THEM_BY_SURPRISE = getCatchThemBySurprise();
 
     public static List<ActionCard> fetch() {
         List<ActionCard> empireActionCards = new ArrayList<>();
@@ -45,6 +46,8 @@ public class EmpireActionCardData {
         empireActionCards.add(BOBA_FETT_WHERE);
         empireActionCards.add(TARGET_THE_GENERATORS);
         empireActionCards.add(PUBLIC_SUPPORT);
+        empireActionCards.add(SCOUTING_MISSION);
+        empireActionCards.add(CATCH_THEM_BY_SURPRISE);
 
         return empireActionCards;
     }
@@ -384,5 +387,55 @@ public class EmpireActionCardData {
 
         return actionCard;
     }
-    //TODO complete Scouting Mission and Catch Them By Surprise
+
+    private static ActionCard getScoutingMission() {
+        ActionCard actionCard = new ActionCard();
+        ActionCardText actionCardText = new ActionCardText();
+        ArrayList<Leader> leaders = new ArrayList<>();
+
+        actionCardText.setTitle("Scouting Mission");
+        actionCardText.setCardType("Assignment");
+        actionCardText.setDescription("""
+                Place this leader in any system.
+                Then move up to 4 TIE Fighters
+                from any system(s) to this
+                system. Ignoring transport
+                restrictions and adjacency.
+                If there are Rebel ships in this
+                system, resolve a combat.
+                """);
+        actionCard.setActionCardText(actionCardText);
+        actionCard.setFaction(Faction.IMPERIAL);
+        actionCard.setStartingCard(true);
+        leaders.add(EmpireLeaderData.SOONTIR_FEL);
+        actionCard.setLeaderChoices(leaders);
+
+        return actionCard;
+    }
+
+    private static ActionCard getCatchThemBySurprise() {
+        ActionCard actionCard = new ActionCard();
+        ActionCardText actionCardText = new ActionCardText();
+        ArrayList<Leader> leaders = new ArrayList<>();
+
+        actionCardText.setTitle("""
+                Catch Them
+                By Surprise
+                """);
+        actionCardText.setCardType("Assignment");
+        actionCardText.setDescription("""
+                Place this leader in any
+                system. Then move Imperial
+                units from adjacent systems to
+                this system. If there are Rebel units in this system,
+                resolve a combat.
+                """);
+        actionCard.setActionCardText(actionCardText);
+        actionCard.setFaction(Faction.IMPERIAL);
+        actionCard.setStartingCard(true);
+        leaders.add(EmpireLeaderData.ADMIRAL_OZZEL);
+        actionCard.setLeaderChoices(leaders);
+
+        return actionCard;
+    }
 }

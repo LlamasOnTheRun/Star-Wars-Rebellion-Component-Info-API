@@ -15,6 +15,7 @@ public class EmpireActionCards {
     public static final ActionCard MORE_DANGEROUS_THAN_YOU_REALIZE = getMoreDangerousThanYouRealize();
     public static final ActionCard BRILLIANT_ADMINISTRATOR = getBrilliantAdministrator();
     public static final ActionCard ACCORDING_TO_MY_DESIGN = getAccordingToMyDesign();
+    public static final ActionCard IT_IS_YOUR_DESTINY = getItIsYourDestiny();
 
     public static List<ActionCard> fetch() {
         List<ActionCard> empireActionCards = new ArrayList<>();
@@ -22,6 +23,7 @@ public class EmpireActionCards {
         empireActionCards.add(MORE_DANGEROUS_THAN_YOU_REALIZE);
         empireActionCards.add(BRILLIANT_ADMINISTRATOR);
         empireActionCards.add(ACCORDING_TO_MY_DESIGN);
+        empireActionCards.add(IT_IS_YOUR_DESTINY);
 
         return empireActionCards;
     }
@@ -94,7 +96,29 @@ public class EmpireActionCards {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.IMPERIAL);
         actionCard.setStartingCard(false);
-        leaders.add(EmpireLeaders.EMPOROR_PALPATINE);
+        leaders.add(EmpireLeaders.EMPEROR_PALPATINE);
+        actionCard.setLeaderChoices(leaders);
+
+        return actionCard;
+    }
+
+    private static ActionCard getItIsYourDestiny() {
+        ActionCard actionCard = new ActionCard();
+        ActionCardText actionCardText = new ActionCardText();
+        ArrayList<Leader> leaders = new ArrayList<>();
+
+        actionCardText.setTitle("It Is Your Destiny");
+        actionCardText.setCardType("Special");
+        actionCardText.setDescription("""
+                Use during a mission after a
+                leader is rescued. Capture
+                1 leader who attempted
+                this mission.
+                """);
+        actionCard.setActionCardText(actionCardText);
+        actionCard.setFaction(Faction.IMPERIAL);
+        actionCard.setStartingCard(false);
+        leaders.add(EmpireLeaders.DARTH_VADER);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;

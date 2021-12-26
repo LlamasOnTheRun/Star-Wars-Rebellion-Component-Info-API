@@ -1,4 +1,4 @@
-package com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.MissionCards;
+package com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.missionCards;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.MissionCard;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;

@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_ACTION_CARDS;
+
 @SpringBootTest
 class ActionCardControllerTest {
 
@@ -17,7 +19,7 @@ class ActionCardControllerTest {
 	}
 
 	@Test
-	void givenAllActionCardDataIsAvailable_ThenEighteenCardsShouldBeReturned() {
-		Assertions.assertEquals(18, actionCardsController.getAllRebelActionCards().size());
+	void givenAllActionCardDataIsAvailable_ThenThirtyFourCardsShouldBeReturned() {
+		Assertions.assertEquals(TOTAL_ACTION_CARDS, actionCardsController.getAllActionCards().size());
 	}
 }

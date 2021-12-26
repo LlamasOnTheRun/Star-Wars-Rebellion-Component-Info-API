@@ -21,6 +21,7 @@ public class EmpireActionCards {
     public static final ActionCard READY_FOR_ACTION = getReadyForAction();
     public static final ActionCard BLINDSIDE = getBlindside();
     public static final ActionCard FULLY_OPERATIONAL = getFullyOperational();
+    public static final ActionCard PROCEEDING_AS_PLANNED = getProceedingAsPlanned();
 
     public static List<ActionCard> fetch() {
         List<ActionCard> empireActionCards = new ArrayList<>();
@@ -34,6 +35,7 @@ public class EmpireActionCards {
         empireActionCards.add(READY_FOR_ACTION);
         empireActionCards.add(BLINDSIDE);
         empireActionCards.add(FULLY_OPERATIONAL);
+        empireActionCards.add(PROCEEDING_AS_PLANNED);
 
         return empireActionCards;
     }
@@ -243,6 +245,33 @@ public class EmpireActionCards {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.IMPERIAL);
         actionCard.setStartingCard(true);
+        leaders.add(EmpireLeaders.MOFF_JERJERROD);
+        actionCard.setLeaderChoices(leaders);
+
+        return actionCard;
+    }
+
+    private static ActionCard getProceedingAsPlanned() {
+        ActionCard actionCard = new ActionCard();
+        ActionCardText actionCardText = new ActionCardText();
+        ArrayList<Leader> leaders = new ArrayList<>();
+
+        actionCardText.setTitle("""
+                Proceeding
+                As Planned
+                """);
+        actionCardText.setCardType("Assignment");
+        actionCardText.setDescription("""
+                Search the project deck for
+                1 card of your choice and
+                assign this leader to that
+                mission. Then shuffle your
+                project deck.
+                """);
+        actionCard.setActionCardText(actionCardText);
+        actionCard.setFaction(Faction.IMPERIAL);
+        actionCard.setStartingCard(true);
+        leaders.add(EmpireLeaders.ADMIRAL_OZZEL);
         leaders.add(EmpireLeaders.MOFF_JERJERROD);
         actionCard.setLeaderChoices(leaders);
 

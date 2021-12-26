@@ -4,7 +4,7 @@ import com.starwars.rebellion.ComponentInfoAPI.dao.entities.ActionCard;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.Leader;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.ActionCardText;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
-import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.EmpireLeaders;
+import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.EmpireLeaderData;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -59,7 +59,7 @@ public class EmpireActionCardData {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.IMPERIAL);
         actionCard.setStartingCard(false);
-        leaders.add(EmpireLeaders.GENERAL_TAGGE);
+        leaders.add(EmpireLeaderData.GENERAL_TAGGE);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -85,7 +85,7 @@ public class EmpireActionCardData {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.IMPERIAL);
         actionCard.setStartingCard(false);
-        leaders.add(EmpireLeaders.GRAND_MOFF_TARKIN);
+        leaders.add(EmpireLeaderData.GRAND_MOFF_TARKIN);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -110,7 +110,7 @@ public class EmpireActionCardData {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.IMPERIAL);
         actionCard.setStartingCard(false);
-        leaders.add(EmpireLeaders.EMPEROR_PALPATINE);
+        leaders.add(EmpireLeaderData.EMPEROR_PALPATINE);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -132,7 +132,7 @@ public class EmpireActionCardData {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.IMPERIAL);
         actionCard.setStartingCard(false);
-        leaders.add(EmpireLeaders.DARTH_VADER);
+        leaders.add(EmpireLeaderData.DARTH_VADER);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -154,7 +154,7 @@ public class EmpireActionCardData {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.IMPERIAL);
         actionCard.setStartingCard(true);
-        leaders.add(EmpireLeaders.ADMIRAL_PIETT);
+        leaders.add(EmpireLeaderData.ADMIRAL_PIETT);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -174,8 +174,8 @@ public class EmpireActionCardData {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.IMPERIAL);
         actionCard.setStartingCard(true);
-        leaders.add(EmpireLeaders.SOONTIR_FEL);
-        leaders.add(EmpireLeaders.COLONEL_YULAREN);
+        leaders.add(EmpireLeaderData.SOONTIR_FEL);
+        leaders.add(EmpireLeaderData.COLONEL_YULAREN);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -199,8 +199,8 @@ public class EmpireActionCardData {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.IMPERIAL);
         actionCard.setStartingCard(true);
-        leaders.add(EmpireLeaders.ADMIRAL_PIETT);
-        leaders.add(EmpireLeaders.GENERAL_VEERS);
+        leaders.add(EmpireLeaderData.ADMIRAL_PIETT);
+        leaders.add(EmpireLeaderData.GENERAL_VEERS);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -223,8 +223,8 @@ public class EmpireActionCardData {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.IMPERIAL);
         actionCard.setStartingCard(true);
-        leaders.add(EmpireLeaders.JANUS_GREEJATUS);
-        leaders.add(EmpireLeaders.BOBA_FETT);
+        leaders.add(EmpireLeaderData.JANUS_GREEJATUS);
+        leaders.add(EmpireLeaderData.BOBA_FETT);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -247,7 +247,7 @@ public class EmpireActionCardData {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.IMPERIAL);
         actionCard.setStartingCard(true);
-        leaders.add(EmpireLeaders.MOFF_JERJERROD);
+        leaders.add(EmpireLeaderData.MOFF_JERJERROD);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -273,8 +273,8 @@ public class EmpireActionCardData {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.IMPERIAL);
         actionCard.setStartingCard(true);
-        leaders.add(EmpireLeaders.ADMIRAL_OZZEL);
-        leaders.add(EmpireLeaders.MOFF_JERJERROD);
+        leaders.add(EmpireLeaderData.ADMIRAL_OZZEL);
+        leaders.add(EmpireLeaderData.MOFF_JERJERROD);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;
@@ -297,7 +297,7 @@ public class EmpireActionCardData {
         actionCard.setActionCardText(actionCardText);
         actionCard.setFaction(Faction.IMPERIAL);
         actionCard.setStartingCard(true);
-        leaders.add(EmpireLeaders.COLONEL_YULAREN);
+        leaders.add(EmpireLeaderData.COLONEL_YULAREN);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;

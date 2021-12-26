@@ -4,6 +4,7 @@ import com.starwars.rebellion.ComponentInfoAPI.repositorys.ActionCardRepository;
 import com.starwars.rebellion.ComponentInfoAPI.repositorys.LeaderRepository;
 import com.starwars.rebellion.ComponentInfoAPI.repositorys.MissionCardRepository;
 import com.starwars.rebellion.ComponentInfoAPI.repositorys.RingRepository;
+import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards.EmpireActionCardData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards.RebelActionCardData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.EmpireLeaderData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeaderData;
@@ -35,6 +36,7 @@ public class H2StartUpDataLoader implements ApplicationRunner {
 
     private void saveActionCards() {
         actionCardRepository.saveAll(RebelActionCardData.fetch());
+        actionCardRepository.saveAll(EmpireActionCardData.fetch());
     }
 
     private void saveLeaders() {

@@ -23,6 +23,8 @@ public class EmpireActionCardData {
     public static final ActionCard FULLY_OPERATIONAL = getFullyOperational();
     public static final ActionCard PROCEEDING_AS_PLANNED = getProceedingAsPlanned();
     public static final ActionCard LOCAL_RUMORS = getLocalRumors();
+    public static final ActionCard BOBA_FETT_WHERE = getBobaFettWhere();
+    public static final ActionCard TARGET_THE_GENERATORS = getTargetTheGenerator();
 
     public static List<ActionCard> fetch() {
         List<ActionCard> empireActionCards = new ArrayList<>();
@@ -38,6 +40,8 @@ public class EmpireActionCardData {
         empireActionCards.add(FULLY_OPERATIONAL);
         empireActionCards.add(PROCEEDING_AS_PLANNED);
         empireActionCards.add(LOCAL_RUMORS);
+        empireActionCards.add(BOBA_FETT_WHERE);
+        empireActionCards.add(TARGET_THE_GENERATORS);
 
         return empireActionCards;
     }
@@ -302,5 +306,55 @@ public class EmpireActionCardData {
 
         return actionCard;
     }
-    //TODO complete Bobo Fett Where, Target The Generator, Public Support, Scouting Mission, and Catch Them By Surprise
+
+    private static ActionCard getBobaFettWhere() {
+        ActionCard actionCard = new ActionCard();
+        ActionCardText actionCardText = new ActionCardText();
+        ArrayList<Leader> leaders = new ArrayList<>();
+
+        actionCardText.setTitle("""
+                Boba Fett?
+                Where?
+                """);
+        actionCardText.setCardType("Assignment");
+        actionCardText.setDescription("""
+                Place this leader in any
+                Imperial system. During the
+                next Command Phase, Rebel
+                leaders cannot attempt
+                missions in this system or
+                use action cards in this system.
+                """);
+        actionCard.setActionCardText(actionCardText);
+        actionCard.setFaction(Faction.IMPERIAL);
+        actionCard.setStartingCard(true);
+        leaders.add(EmpireLeaderData.BOBA_FETT);
+        actionCard.setLeaderChoices(leaders);
+
+        return actionCard;
+    }
+
+    private static ActionCard getTargetTheGenerator() {
+        ActionCard actionCard = new ActionCard();
+        ActionCardText actionCardText = new ActionCardText();
+        ArrayList<Leader> leaders = new ArrayList<>();
+
+        actionCardText.setTitle("""
+                Target The
+                Generator
+                """);
+        actionCardText.setCardType("Start of Combat");
+        actionCardText.setDescription("""
+                Destroy 1 structure of your
+                choice in this system.
+                """);
+        actionCard.setActionCardText(actionCardText);
+        actionCard.setFaction(Faction.IMPERIAL);
+        actionCard.setStartingCard(true);
+        leaders.add(EmpireLeaderData.GENERAL_VEERS);
+        actionCard.setLeaderChoices(leaders);
+
+        return actionCard;
+    }
+    //TODO complete Public Support, Scouting Mission, and Catch Them By Surprise
 }

@@ -17,6 +17,7 @@ public class EmpireActionCards {
     public static final ActionCard ACCORDING_TO_MY_DESIGN = getAccordingToMyDesign();
     public static final ActionCard IT_IS_YOUR_DESTINY = getItIsYourDestiny();
     public static final ActionCard KEEP_THEM_FROM_ESCAPING = getKeepThemFromEscaping();
+    public static final ActionCard GOOD_INTEL = getGoodIntel();
 
     public static List<ActionCard> fetch() {
         List<ActionCard> empireActionCards = new ArrayList<>();
@@ -26,6 +27,7 @@ public class EmpireActionCards {
         empireActionCards.add(ACCORDING_TO_MY_DESIGN);
         empireActionCards.add(IT_IS_YOUR_DESTINY);
         empireActionCards.add(KEEP_THEM_FROM_ESCAPING);
+        empireActionCards.add(GOOD_INTEL);
 
         return empireActionCards;
     }
@@ -143,6 +145,27 @@ public class EmpireActionCards {
         actionCard.setFaction(Faction.IMPERIAL);
         actionCard.setStartingCard(true);
         leaders.add(EmpireLeaders.ADMIRAL_PIETT);
+        actionCard.setLeaderChoices(leaders);
+
+        return actionCard;
+    }
+
+    private static ActionCard getGoodIntel() {
+        ActionCard actionCard = new ActionCard();
+        ActionCardText actionCardText = new ActionCardText();
+        ArrayList<Leader> leaders = new ArrayList<>();
+
+        actionCardText.setTitle("Good Intel");
+        actionCardText.setCardType("Start of Combat");
+        actionCardText.setDescription("""
+                The Rebel player must keep
+                his hand of tactic cards faceup.
+                """);
+        actionCard.setActionCardText(actionCardText);
+        actionCard.setFaction(Faction.IMPERIAL);
+        actionCard.setStartingCard(true);
+        leaders.add(EmpireLeaders.SOONTIR_FEL);
+        leaders.add(EmpireLeaders.COLONEL_YULAREN);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;

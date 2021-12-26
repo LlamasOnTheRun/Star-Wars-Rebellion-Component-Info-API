@@ -22,6 +22,7 @@ public class EmpireActionCards {
     public static final ActionCard BLINDSIDE = getBlindside();
     public static final ActionCard FULLY_OPERATIONAL = getFullyOperational();
     public static final ActionCard PROCEEDING_AS_PLANNED = getProceedingAsPlanned();
+    public static final ActionCard LOCAL_RUMORS = getLocalRumors();
 
     public static List<ActionCard> fetch() {
         List<ActionCard> empireActionCards = new ArrayList<>();
@@ -36,6 +37,7 @@ public class EmpireActionCards {
         empireActionCards.add(BLINDSIDE);
         empireActionCards.add(FULLY_OPERATIONAL);
         empireActionCards.add(PROCEEDING_AS_PLANNED);
+        empireActionCards.add(LOCAL_RUMORS);
 
         return empireActionCards;
     }
@@ -273,6 +275,29 @@ public class EmpireActionCards {
         actionCard.setStartingCard(true);
         leaders.add(EmpireLeaders.ADMIRAL_OZZEL);
         leaders.add(EmpireLeaders.MOFF_JERJERROD);
+        actionCard.setLeaderChoices(leaders);
+
+        return actionCard;
+    }
+
+    private static ActionCard getLocalRumors() {
+        ActionCard actionCard = new ActionCard();
+        ActionCardText actionCardText = new ActionCardText();
+        ArrayList<Leader> leaders = new ArrayList<>();
+
+        actionCardText.setTitle("Local Rumors");
+        actionCardText.setCardType("Assignment");
+        actionCardText.setDescription("""
+                Place this leader in any system
+                that contains an Imperial unit.
+                The Rebel player must state
+                whether the Rebel base
+                is in this region.
+                """);
+        actionCard.setActionCardText(actionCardText);
+        actionCard.setFaction(Faction.IMPERIAL);
+        actionCard.setStartingCard(true);
+        leaders.add(EmpireLeaders.COLONEL_YULAREN);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;

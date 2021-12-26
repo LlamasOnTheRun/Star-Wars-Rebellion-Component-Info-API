@@ -18,6 +18,7 @@ public class EmpireActionCards {
     public static final ActionCard IT_IS_YOUR_DESTINY = getItIsYourDestiny();
     public static final ActionCard KEEP_THEM_FROM_ESCAPING = getKeepThemFromEscaping();
     public static final ActionCard GOOD_INTEL = getGoodIntel();
+    public static final ActionCard READY_FOR_ACTION = getReadyForAction();
 
     public static List<ActionCard> fetch() {
         List<ActionCard> empireActionCards = new ArrayList<>();
@@ -28,6 +29,7 @@ public class EmpireActionCards {
         empireActionCards.add(IT_IS_YOUR_DESTINY);
         empireActionCards.add(KEEP_THEM_FROM_ESCAPING);
         empireActionCards.add(GOOD_INTEL);
+        empireActionCards.add(READY_FOR_ACTION);
 
         return empireActionCards;
     }
@@ -166,6 +168,31 @@ public class EmpireActionCards {
         actionCard.setStartingCard(true);
         leaders.add(EmpireLeaders.SOONTIR_FEL);
         leaders.add(EmpireLeaders.COLONEL_YULAREN);
+        actionCard.setLeaderChoices(leaders);
+
+        return actionCard;
+    }
+
+    private static ActionCard getReadyForAction() {
+        ActionCard actionCard = new ActionCard();
+        ActionCardText actionCardText = new ActionCardText();
+        ArrayList<Leader> leaders = new ArrayList<>();
+
+        actionCardText.setTitle("Ready For Action");
+        actionCardText.setCardType("Start of Combat");
+        actionCardText.setDescription("""
+                Take this leader from your
+                leader pool and place him
+                in this system. This leader
+                cannot retreat, and he
+                returns to your leader pool
+                at the end of the combat.
+                """);
+        actionCard.setActionCardText(actionCardText);
+        actionCard.setFaction(Faction.IMPERIAL);
+        actionCard.setStartingCard(true);
+        leaders.add(EmpireLeaders.ADMIRAL_PIETT);
+        leaders.add(EmpireLeaders.GENERAL_VEERS);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;

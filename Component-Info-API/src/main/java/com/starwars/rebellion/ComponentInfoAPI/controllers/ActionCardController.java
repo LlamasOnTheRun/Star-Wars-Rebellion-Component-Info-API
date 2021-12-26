@@ -24,7 +24,7 @@ public class ActionCardController {
 
     @GetMapping(path=GET_ALL_REBEL_ACTION_CARDS_ENDPOINT)
     @ResponseBody
-    public List<ActionCard> getAllRebelActionCards() {
+    public List<ActionCard> getAllActionCards() {
         return (List<ActionCard>) actionCardRepository.findAll();
     }
 }

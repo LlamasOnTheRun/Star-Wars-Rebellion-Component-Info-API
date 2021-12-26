@@ -19,6 +19,7 @@ public class EmpireActionCards {
     public static final ActionCard KEEP_THEM_FROM_ESCAPING = getKeepThemFromEscaping();
     public static final ActionCard GOOD_INTEL = getGoodIntel();
     public static final ActionCard READY_FOR_ACTION = getReadyForAction();
+    public static final ActionCard BLINDSIDE = getBlindside();
 
     public static List<ActionCard> fetch() {
         List<ActionCard> empireActionCards = new ArrayList<>();
@@ -30,6 +31,7 @@ public class EmpireActionCards {
         empireActionCards.add(KEEP_THEM_FROM_ESCAPING);
         empireActionCards.add(GOOD_INTEL);
         empireActionCards.add(READY_FOR_ACTION);
+        empireActionCards.add(BLINDSIDE);
 
         return empireActionCards;
     }
@@ -193,6 +195,30 @@ public class EmpireActionCards {
         actionCard.setStartingCard(true);
         leaders.add(EmpireLeaders.ADMIRAL_PIETT);
         leaders.add(EmpireLeaders.GENERAL_VEERS);
+        actionCard.setLeaderChoices(leaders);
+
+        return actionCard;
+    }
+
+    private static ActionCard getBlindside() {
+        ActionCard actionCard = new ActionCard();
+        ActionCardText actionCardText = new ActionCardText();
+        ArrayList<Leader> leaders = new ArrayList<>();
+
+        actionCardText.setTitle("Blindside");
+        actionCardText.setCardType("Special");
+        actionCardText.setDescription("""
+                Use before revealing this
+                leader's mission. Your
+                opponent cannot send
+                leaders from his leader pool
+                to oppose this mission.
+                """);
+        actionCard.setActionCardText(actionCardText);
+        actionCard.setFaction(Faction.IMPERIAL);
+        actionCard.setStartingCard(true);
+        leaders.add(EmpireLeaders.JANUS_GREEJATUS);
+        leaders.add(EmpireLeaders.BOBA_FETT);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;

@@ -7,7 +7,7 @@ import com.starwars.rebellion.ComponentInfoAPI.repositorys.LeaderRepository;
 import com.starwars.rebellion.ComponentInfoAPI.repositorys.RingRepository;
 
 import com.starwars.rebellion.ComponentInfoAPI.repositorys.MissionCardRepository;
-import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.MissionCards.RebelMissionCards;
+import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.missionCards.RebelMissionCards;
 
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards.RebelActionCards;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeaders;

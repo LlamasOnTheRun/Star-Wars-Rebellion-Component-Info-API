@@ -25,6 +25,8 @@ public class EmpireActionCardData {
     public static final ActionCard LOCAL_RUMORS = getLocalRumors();
     public static final ActionCard BOBA_FETT_WHERE = getBobaFettWhere();
     public static final ActionCard TARGET_THE_GENERATORS = getTargetTheGenerator();
+    public static final ActionCard PUBLIC_SUPPORT = getPublicSupport();
+
 
     public static List<ActionCard> fetch() {
         List<ActionCard> empireActionCards = new ArrayList<>();
@@ -42,6 +44,7 @@ public class EmpireActionCardData {
         empireActionCards.add(LOCAL_RUMORS);
         empireActionCards.add(BOBA_FETT_WHERE);
         empireActionCards.add(TARGET_THE_GENERATORS);
+        empireActionCards.add(PUBLIC_SUPPORT);
 
         return empireActionCards;
     }
@@ -356,5 +359,30 @@ public class EmpireActionCardData {
 
         return actionCard;
     }
-    //TODO complete Public Support, Scouting Mission, and Catch Them By Surprise
+
+    private static ActionCard getPublicSupport() {
+        ActionCard actionCard = new ActionCard();
+        ActionCardText actionCardText = new ActionCardText();
+        ArrayList<Leader> leaders = new ArrayList<>();
+
+        actionCardText.setTitle("Public Support");
+        actionCardText.setCardType("Assignment");
+        actionCardText.setDescription("""
+                Place this leader in any
+                Imperial system that does not
+                contain a Rebel ground unit.
+                Gain 3 Stormtroopers in the
+                system. This leader des not
+                prevent you from moving units
+                out of this system this round.
+                """);
+        actionCard.setActionCardText(actionCardText);
+        actionCard.setFaction(Faction.IMPERIAL);
+        actionCard.setStartingCard(true);
+        leaders.add(EmpireLeaderData.JANUS_GREEJATUS);
+        actionCard.setLeaderChoices(leaders);
+
+        return actionCard;
+    }
+    //TODO complete Scouting Mission and Catch Them By Surprise
 }

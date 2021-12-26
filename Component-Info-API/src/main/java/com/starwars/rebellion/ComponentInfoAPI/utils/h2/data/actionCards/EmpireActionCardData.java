@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class EmpireActionCards {
+public class EmpireActionCardData {
     public static final ActionCard MORE_DANGEROUS_THAN_YOU_REALIZE = getMoreDangerousThanYouRealize();
     public static final ActionCard BRILLIANT_ADMINISTRATOR = getBrilliantAdministrator();
     public static final ActionCard ACCORDING_TO_MY_DESIGN = getAccordingToMyDesign();

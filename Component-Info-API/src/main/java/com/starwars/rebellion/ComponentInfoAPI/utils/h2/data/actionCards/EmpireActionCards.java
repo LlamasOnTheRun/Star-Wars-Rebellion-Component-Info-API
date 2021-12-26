@@ -20,6 +20,7 @@ public class EmpireActionCards {
     public static final ActionCard GOOD_INTEL = getGoodIntel();
     public static final ActionCard READY_FOR_ACTION = getReadyForAction();
     public static final ActionCard BLINDSIDE = getBlindside();
+    public static final ActionCard FULLY_OPERATIONAL = getFullyOperational();
 
     public static List<ActionCard> fetch() {
         List<ActionCard> empireActionCards = new ArrayList<>();
@@ -32,6 +33,7 @@ public class EmpireActionCards {
         empireActionCards.add(GOOD_INTEL);
         empireActionCards.add(READY_FOR_ACTION);
         empireActionCards.add(BLINDSIDE);
+        empireActionCards.add(FULLY_OPERATIONAL);
 
         return empireActionCards;
     }
@@ -219,6 +221,29 @@ public class EmpireActionCards {
         actionCard.setStartingCard(true);
         leaders.add(EmpireLeaders.JANUS_GREEJATUS);
         leaders.add(EmpireLeaders.BOBA_FETT);
+        actionCard.setLeaderChoices(leaders);
+
+        return actionCard;
+    }
+
+    private static ActionCard getFullyOperational() {
+        ActionCard actionCard = new ActionCard();
+        ActionCardText actionCardText = new ActionCardText();
+        ArrayList<Leader> leaders = new ArrayList<>();
+
+        actionCardText.setTitle("Fully Operational");
+        actionCardText.setCardType("Start of Combat");
+        actionCardText.setDescription("""
+                If either a Death Star
+                or Death Star Under
+                Construction is in this system,
+                destroy 1 Rebel ship of your
+                choice in the system.
+                """);
+        actionCard.setActionCardText(actionCardText);
+        actionCard.setFaction(Faction.IMPERIAL);
+        actionCard.setStartingCard(true);
+        leaders.add(EmpireLeaders.MOFF_JERJERROD);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;

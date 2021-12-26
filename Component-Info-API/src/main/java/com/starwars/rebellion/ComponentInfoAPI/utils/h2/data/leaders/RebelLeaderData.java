@@ -1,7 +1,7 @@
 package com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders;
 
-import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.Leader;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Rank;
 import org.springframework.stereotype.Service;
 
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class RebelLeaders {
+public class RebelLeaderData {
     public static final Leader CHEWBACCA = getChewbacca();
     public static final Leader GENERAL_MADINE = getGeneralMadine();
     public static final Leader GENERAL_RIEEKAN = getGeneralRieekan();

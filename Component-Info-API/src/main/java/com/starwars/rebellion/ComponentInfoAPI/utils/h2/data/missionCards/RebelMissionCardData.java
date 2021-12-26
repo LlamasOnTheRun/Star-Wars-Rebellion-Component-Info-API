@@ -4,14 +4,14 @@ import com.starwars.rebellion.ComponentInfoAPI.dao.entities.MissionCard;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.MissionCardText;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.MissionSkillType;
-import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeaders;
+import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeaderData;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class RebelMissionCards {
+public class RebelMissionCardData {
     public static final MissionCard FOR_THE_GREATER_GOOD = getForTheGreaterGood();
 
     public static List<MissionCard> fetch() {
@@ -44,7 +44,7 @@ public class RebelMissionCards {
         missionCard.setMinSkillNumRequired(3);
         missionCard.setSkillType(MissionSkillType.Intel);
         missionCard.setTotalInDeck(1);
-        missionCard.setLeaderBonus(RebelLeaders.OBI_WAN_KENOBI);
+        missionCard.setLeaderBonus(RebelLeaderData.OBI_WAN_KENOBI);
         return missionCard;
     }
 }

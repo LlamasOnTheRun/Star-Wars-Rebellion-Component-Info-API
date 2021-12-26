@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class Rings {
+public class RingData {
     public static List<Ring> fetch(){
         List<Ring> ringList = new ArrayList<>();
         Ring ring = new Ring();

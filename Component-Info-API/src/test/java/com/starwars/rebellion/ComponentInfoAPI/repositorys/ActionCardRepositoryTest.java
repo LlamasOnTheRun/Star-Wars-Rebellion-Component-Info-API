@@ -1,9 +1,12 @@
 package com.starwars.rebellion.ComponentInfoAPI.repositorys;
 
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.ActionCard;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.List;
 
 import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -46,6 +49,6 @@ class ActionCardRepositoryTest {
 
 	@Test
 	void givenAllActionCardsAreAvailable_thenThirtyFourActionCardsAreReturned() {
-		assertEquals(TOTAL_ACTION_CARDS, actionCardRepository.findAll().size());
+		assertEquals(TOTAL_ACTION_CARDS, ((List<ActionCard>)actionCardRepository.findAll()).size());
 	}
 }

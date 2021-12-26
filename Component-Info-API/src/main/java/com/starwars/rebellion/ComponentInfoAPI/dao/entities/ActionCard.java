@@ -22,5 +22,6 @@ public class ActionCard {
     @ManyToMany
     private List<Leader> leaderChoices;
     private boolean isStartingCard;
-    //TODO need to add ring object with manytoone relationship here
+   // @OneToOne
+   // private Ring leaderChoices;
 }

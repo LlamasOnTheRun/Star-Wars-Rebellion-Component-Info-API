@@ -2,17 +2,21 @@ package com.starwars.rebellion.ComponentInfoAPI.utils.h2;
 
 import com.starwars.rebellion.ComponentInfoAPI.repositorys.ActionCardRepository;
 import com.starwars.rebellion.ComponentInfoAPI.repositorys.LeaderRepository;
-import com.starwars.rebellion.ComponentInfoAPI.repositorys.MissionCardRepository;
+
+
 import com.starwars.rebellion.ComponentInfoAPI.repositorys.RingRepository;
-import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards.EmpireActionCards;
-import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards.RebelActionCardData;
-import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.EmpireLeaders;
-import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeaderData;
+
+import com.starwars.rebellion.ComponentInfoAPI.repositorys.MissionCardRepository;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.missionCards.RebelMissionCardData;
+
+import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards.RebelActionCardData;
+import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeaderData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.rings.RingData;
+import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.EmpireLeaders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -36,7 +40,6 @@ public class H2StartUpDataLoader implements ApplicationRunner {
 
     private void saveActionCards() {
         actionCardRepository.saveAll(RebelActionCardData.fetch());
-        actionCardRepository.saveAll(EmpireActionCards.fetch());
     }
 
     private void saveLeaders() {

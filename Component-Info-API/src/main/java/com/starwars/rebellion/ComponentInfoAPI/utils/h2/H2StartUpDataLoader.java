@@ -1,9 +1,9 @@
 package com.starwars.rebellion.ComponentInfoAPI.utils.h2;
 
-import com.starwars.rebellion.ComponentInfoAPI.repositorys.ActionCardRepository;
-import com.starwars.rebellion.ComponentInfoAPI.repositorys.LeaderRepository;
-import com.starwars.rebellion.ComponentInfoAPI.repositorys.MissionCardRepository;
-import com.starwars.rebellion.ComponentInfoAPI.repositorys.RingRepository;
+import com.starwars.rebellion.ComponentInfoAPI.repositories.ActionCardRepository;
+import com.starwars.rebellion.ComponentInfoAPI.repositories.LeaderRepository;
+import com.starwars.rebellion.ComponentInfoAPI.repositories.MissionCardRepository;
+import com.starwars.rebellion.ComponentInfoAPI.repositories.RingRepository;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards.EmpireActionCardData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards.RebelActionCardData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.EmpireLeaderData;

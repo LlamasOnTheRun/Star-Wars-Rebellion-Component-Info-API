@@ -1,4 +1,4 @@
-package com.starwars.rebellion.ComponentInfoAPI.repositorys;
+package com.starwars.rebellion.ComponentInfoAPI.repositories;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

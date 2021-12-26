@@ -16,6 +16,7 @@ public class EmpireActionCards {
     public static final ActionCard BRILLIANT_ADMINISTRATOR = getBrilliantAdministrator();
     public static final ActionCard ACCORDING_TO_MY_DESIGN = getAccordingToMyDesign();
     public static final ActionCard IT_IS_YOUR_DESTINY = getItIsYourDestiny();
+    public static final ActionCard KEEP_THEM_FROM_ESCAPING = getKeepThemFromEscaping();
 
     public static List<ActionCard> fetch() {
         List<ActionCard> empireActionCards = new ArrayList<>();
@@ -24,6 +25,7 @@ public class EmpireActionCards {
         empireActionCards.add(BRILLIANT_ADMINISTRATOR);
         empireActionCards.add(ACCORDING_TO_MY_DESIGN);
         empireActionCards.add(IT_IS_YOUR_DESTINY);
+        empireActionCards.add(KEEP_THEM_FROM_ESCAPING);
 
         return empireActionCards;
     }
@@ -119,6 +121,28 @@ public class EmpireActionCards {
         actionCard.setFaction(Faction.IMPERIAL);
         actionCard.setStartingCard(false);
         leaders.add(EmpireLeaders.DARTH_VADER);
+        actionCard.setLeaderChoices(leaders);
+
+        return actionCard;
+    }
+
+    private static ActionCard getKeepThemFromEscaping() {
+        ActionCard actionCard = new ActionCard();
+        ActionCardText actionCardText = new ActionCardText();
+        ArrayList<Leader> leaders = new ArrayList<>();
+
+        actionCardText.setTitle("""
+                Keep Them
+                From Escaping
+                """);
+        actionCardText.setCardType("Start of Combat");
+        actionCardText.setDescription("""
+                Rebel units cannot retreat.
+                """);
+        actionCard.setActionCardText(actionCardText);
+        actionCard.setFaction(Faction.IMPERIAL);
+        actionCard.setStartingCard(true);
+        leaders.add(EmpireLeaders.ADMIRAL_PIETT);
         actionCard.setLeaderChoices(leaders);
 
         return actionCard;

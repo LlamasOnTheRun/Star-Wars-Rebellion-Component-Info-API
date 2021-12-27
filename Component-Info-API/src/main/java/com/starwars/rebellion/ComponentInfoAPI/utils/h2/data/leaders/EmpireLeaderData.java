@@ -1,13 +1,15 @@
 package com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders;
+
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.Leader;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Rank;
 import org.springframework.stereotype.Service;
+
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class EmpireLeaders {
+public class EmpireLeaderData {
     public static final Leader COLONEL_YULAREN = getColonelyularen();
     public static final Leader GENERAL_VEERS = getGeneralVeers();
     public static final Leader GENERAL_TAGGE = getGeneralTagge();
@@ -15,7 +17,7 @@ public class EmpireLeaders {
     public static final Leader BOBA_FETT = getBobaFett();
     public static final Leader MOFF_JERJERROD = getMoffJerjerrod();
     public static final Leader ADMIRAL_OZZEL = getAdmiralOzzel();
-    public static final Leader EMPOROR_PALPATINE = getEmperorPalpatine();
+    public static final Leader EMPEROR_PALPATINE = getEmperorPalpatine();
     public static final Leader GRAND_MOFF_TARKIN = getGrandMoffTarkin();
     public static final Leader ADMIRAL_PIETT = getAdmiralPiett();
     public static final Leader SOONTIR_FEL = getSoontirFel();
@@ -40,7 +42,7 @@ public class EmpireLeaders {
 
     private static void addAdmiralsToList(List<Leader> empireLeaderList) {
         empireLeaderList.add(ADMIRAL_OZZEL);
-        empireLeaderList.add(EMPOROR_PALPATINE);
+        empireLeaderList.add(EMPEROR_PALPATINE);
         empireLeaderList.add(GRAND_MOFF_TARKIN);
         empireLeaderList.add(ADMIRAL_PIETT);
         empireLeaderList.add(SOONTIR_FEL);

@@ -1,4 +1,4 @@
-package com.starwars.rebellion.ComponentInfoAPI.repositorys;
+package com.starwars.rebellion.ComponentInfoAPI.repositories;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.ActionCard;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;

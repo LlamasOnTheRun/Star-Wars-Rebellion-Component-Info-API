@@ -1,13 +1,15 @@
 package com.starwars.rebellion.ComponentInfoAPI.controllers;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.ActionCard;
-import com.starwars.rebellion.ComponentInfoAPI.repositorys.ActionCardRepository;
+import com.starwars.rebellion.ComponentInfoAPI.repositories.ActionCardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import java.util.List;
+
 import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.*;
 
 @Controller

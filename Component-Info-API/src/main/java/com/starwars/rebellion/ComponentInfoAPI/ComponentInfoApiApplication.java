@@ -9,5 +9,4 @@ public class ComponentInfoApiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ComponentInfoApiApplication.class, args);
 	}
-
 }

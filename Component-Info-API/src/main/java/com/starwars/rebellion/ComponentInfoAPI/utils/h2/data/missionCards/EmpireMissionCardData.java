@@ -16,12 +16,14 @@ public class EmpireMissionCardData {
     public static final MissionCard DISPLAY_OF_POWER = getDisplayOfPower();
     public static final MissionCard INTERROGATION_DROID = getInterrogationDroid();
     public static final MissionCard IMPERIAL_PROPAGANDA = getImperialPropaganda();
+    public static final MissionCard INTERROGATION = getInterrogation();
 
     public static List<MissionCard> fetch() {
         List<MissionCard> empireMissionCards = new ArrayList<>();
         empireMissionCards.add(DISPLAY_OF_POWER);
         empireMissionCards.add(INTERROGATION_DROID);
         empireMissionCards.add(IMPERIAL_PROPAGANDA);
+        empireMissionCards.add(INTERROGATION);
         return empireMissionCards;
     }
 
@@ -94,6 +96,27 @@ public class EmpireMissionCardData {
         missionCard.setSkillType(MissionSkillType.Diplomacy);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(EmpireLeaderData.JANUS_GREEJATUS);
+        return missionCard;
+    }
+
+    private static MissionCard getInterrogation() {
+        MissionCard missionCard = new MissionCard();
+
+        MissionCardText cardText = new MissionCardText();
+        cardText.setTitle("Interrogation");
+        cardText.setDescription("""
+                Attempt against a captured leader.
+                
+                If successful, the Rebel player must
+                reveal his hand of objective cards.
+                """);
+        missionCard.setCardText(cardText);
+
+        missionCard.setFaction(Faction.IMPERIAL);
+        missionCard.setStartingCard(false);
+        missionCard.setMinSkillNumRequired(2);
+        missionCard.setSkillType(MissionSkillType.SpecOps);
+        missionCard.setTotalInDeck(2);
         return missionCard;
     }
 }

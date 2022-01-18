@@ -1,6 +1,7 @@
 package com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.missionCards;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.MissionCard;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.ProjectCard;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.MissionCardText;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.MissionSkillType;
@@ -28,7 +29,13 @@ public class EmpireMissionCardData {
     public static final MissionCard RETRIEVE_THE_PLANS = getRetrieveThePlans();
     public static final MissionCard HUNT_THEM_DOWN = getHuntThemDown();
     public static final MissionCard FEAR_WILL_KEEP_THEM_IN_LINE = getFearWillKeepThemInLine();
-
+    public static final MissionCard RULE_BY_FEAR = getRuleByFear();
+    public static final MissionCard PROBE_DROID_INITIATIVE = getProbeDroidInitiative();
+    public static final MissionCard TRADE_NEGOTIATIONS = getTradeNegotiations();
+    public static final MissionCard INTERCEPT_TRANSMISSION = getInterceptTransmission();
+    public static final MissionCard CONSTRUCT_FACTORY = getConstructFactory();
+    public static final MissionCard OVERSEE_PROJECT = getOverseeProject();
+    public static final MissionCard SUPERLASER_ONLINE = getSuperLaserOnline();
 
     public static List<MissionCard> fetch() {
         List<MissionCard> empireMissionCards = new ArrayList<>();
@@ -47,6 +54,13 @@ public class EmpireMissionCardData {
         empireMissionCards.add(RETRIEVE_THE_PLANS);
         empireMissionCards.add(HUNT_THEM_DOWN);
         empireMissionCards.add(FEAR_WILL_KEEP_THEM_IN_LINE);
+        empireMissionCards.add(RULE_BY_FEAR);
+        empireMissionCards.add(PROBE_DROID_INITIATIVE);
+        empireMissionCards.add(TRADE_NEGOTIATIONS);
+        empireMissionCards.add(INTERCEPT_TRANSMISSION);
+        empireMissionCards.add(CONSTRUCT_FACTORY);
+        empireMissionCards.add(OVERSEE_PROJECT);
+        empireMissionCards.add(SUPERLASER_ONLINE);
         return empireMissionCards;
     }
 
@@ -408,6 +422,173 @@ public class EmpireMissionCardData {
         missionCard.setSkillType(MissionSkillType.Diplomacy);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(EmpireLeaderData.GRAND_MOFF_TARKIN);
+        return missionCard;
+    }
+
+    private static MissionCard getRuleByFear() {
+        MissionCard missionCard = new MissionCard();
+
+        MissionCardText cardText = new MissionCardText();
+        cardText.setTitle("Rule By Fear");
+        cardText.setDescription("""
+                Attempt in any populous system
+                that contains an Imperial unit.
+                                
+                If successful, gain 1 loyalty in this system.
+                """);
+        missionCard.setCardText(cardText);
+
+        missionCard.setFaction(Faction.IMPERIAL);
+        missionCard.setStartingCard(true);
+        missionCard.setMinSkillNumRequired(1);
+        missionCard.setSkillType(MissionSkillType.Diplomacy);
+        missionCard.setTotalInDeck(1);
+        return missionCard;
+    }
+
+    private static MissionCard getProbeDroidInitiative() {
+        MissionCard missionCard = new MissionCard();
+
+        MissionCardText cardText = new MissionCardText();
+        cardText.setTitle("""
+                Probe Droid
+                Initiative
+                """);
+        cardText.setDescription("""
+                Resolve in any system that contains a
+                Star Destroyer or Super Star Destroyer.
+                                
+                Draw 2 cards from the probe deck.
+                If Admiral Ozzel resolves this mission,
+                draw 2 additional cards.
+                """);
+        missionCard.setCardText(cardText);
+
+        missionCard.setFaction(Faction.IMPERIAL);
+        missionCard.setStartingCard(false);
+        missionCard.setMinSkillNumRequired(1);
+        missionCard.setSkillType(MissionSkillType.Intel);
+        missionCard.setTotalInDeck(1);
+        missionCard.setLeaderBonus(EmpireLeaderData.ADMIRAL_OZZEL);
+        return missionCard;
+    }
+
+    private static MissionCard getTradeNegotiations() {
+        MissionCard missionCard = new MissionCard();
+
+        MissionCardText cardText = new MissionCardText();
+        cardText.setTitle("""
+                Trade
+                Negotiations
+                """);
+        cardText.setDescription("""
+                Attempt in any populous system.
+                                
+                If successful, gain 1 loyalty in this system.
+                """);
+        missionCard.setCardText(cardText);
+
+        missionCard.setFaction(Faction.IMPERIAL);
+        missionCard.setStartingCard(false);
+        missionCard.setMinSkillNumRequired(2);
+        missionCard.setSkillType(MissionSkillType.Diplomacy);
+        missionCard.setTotalInDeck(2);
+        return missionCard;
+    }
+
+    private static MissionCard getInterceptTransmission() {
+        MissionCard missionCard = new MissionCard();
+
+        MissionCardText cardText = new MissionCardText();
+        cardText.setTitle("""
+                Intercept
+                Transmission
+                """);
+        cardText.setDescription("""
+                Attempt in any Rebel system.
+                                
+                If successful, the Rebel player draws
+                8 cards from the probe deck. He gives
+                you all cards belonging to systems that
+                contain an Imperial unit. Then he shuffles
+                the other cards back into the deck.
+                """);
+        missionCard.setCardText(cardText);
+
+        missionCard.setFaction(Faction.IMPERIAL);
+        missionCard.setStartingCard(false);
+        missionCard.setMinSkillNumRequired(2);
+        missionCard.setSkillType(MissionSkillType.Intel);
+        missionCard.setTotalInDeck(2);
+        return missionCard;
+    }
+
+    private static MissionCard getConstructFactory() {
+        MissionCard missionCard = new ProjectCard();
+
+        MissionCardText cardText = new MissionCardText();
+        cardText.setTitle("Construct Factory");
+        cardText.setDescription("""
+                Resolve in any Imperial system.
+                                
+                Place units on the build
+                queue using this system's resource
+                icons and number. If there is a sabatoage
+                marker in this system, remove the
+                marker before resolving this ability.
+                """);
+        missionCard.setCardText(cardText);
+
+        missionCard.setFaction(Faction.IMPERIAL);
+        missionCard.setStartingCard(false);
+        missionCard.setMinSkillNumRequired(1);
+        missionCard.setSkillType(MissionSkillType.Logistics);
+        missionCard.setTotalInDeck(2);
+        return missionCard;
+    }
+
+    private static MissionCard getOverseeProject() {
+        MissionCard missionCard = new ProjectCard();
+
+        MissionCardText cardText = new MissionCardText();
+        cardText.setTitle("Oversee Project");
+        cardText.setDescription("""
+                Resolve in any system that contains
+                an Imperial unit and no Rebel units.
+                                
+                Choose 1 Imperial unit on space
+                1 or 2 of the build queue and
+                deploy if in this system.
+                """);
+        missionCard.setCardText(cardText);
+
+        missionCard.setFaction(Faction.IMPERIAL);
+        missionCard.setStartingCard(false);
+        missionCard.setMinSkillNumRequired(1);
+        missionCard.setSkillType(MissionSkillType.Logistics);
+        missionCard.setTotalInDeck(2);
+        return missionCard;
+    }
+
+    private static MissionCard getSuperLaserOnline() {
+        MissionCard missionCard = new ProjectCard();
+
+        MissionCardText cardText = new MissionCardText();
+        cardText.setTitle("Superlaser Online");
+        cardText.setDescription("""
+                Resolve in any system
+                that contains a Death Star.
+                                
+                Destroy this system and gain 1 loyalty
+                in q populous system in this region.
+                """);
+        missionCard.setCardText(cardText);
+
+        missionCard.setFaction(Faction.IMPERIAL);
+        missionCard.setStartingCard(false);
+        missionCard.setMinSkillNumRequired(1);
+        missionCard.setSkillType(MissionSkillType.Logistics);
+        missionCard.setTotalInDeck(3);
         return missionCard;
     }
 }

@@ -36,6 +36,8 @@ public class EmpireMissionCardData {
     public static final MissionCard CONSTRUCT_FACTORY = getConstructFactory();
     public static final MissionCard OVERSEE_PROJECT = getOverseeProject();
     public static final MissionCard SUPERLASER_ONLINE = getSuperLaserOnline();
+    public static final MissionCard CONSTRUCT_SUPER_STAR_DESTROYER = getConstructSuperStarDestroyer();
+    public static final MissionCard CONSTRUCT_DEATH_STAR = getConstructDeathStar();
 
     public static List<MissionCard> fetch() {
         List<MissionCard> empireMissionCards = new ArrayList<>();
@@ -61,6 +63,8 @@ public class EmpireMissionCardData {
         empireMissionCards.add(CONSTRUCT_FACTORY);
         empireMissionCards.add(OVERSEE_PROJECT);
         empireMissionCards.add(SUPERLASER_ONLINE);
+        empireMissionCards.add(CONSTRUCT_SUPER_STAR_DESTROYER);
+        empireMissionCards.add(CONSTRUCT_DEATH_STAR);
         return empireMissionCards;
     }
 
@@ -589,6 +593,60 @@ public class EmpireMissionCardData {
         missionCard.setMinSkillNumRequired(1);
         missionCard.setSkillType(MissionSkillType.Logistics);
         missionCard.setTotalInDeck(3);
+        return missionCard;
+    }
+
+    private static MissionCard getConstructSuperStarDestroyer() {
+        MissionCard missionCard = new ProjectCard();
+
+        MissionCardText cardText = new MissionCardText();
+        cardText.setTitle("""
+                Construct Super
+                Star Destroyer
+                """);
+        cardText.setDescription("""
+                Resolve in any Imperial system
+                that has a blue (?) resource icon.
+                                
+                Place 1 Super Star Destroyer
+                on space 3 of the build queue.
+                """);
+        missionCard.setCardText(cardText);
+
+        missionCard.setFaction(Faction.IMPERIAL);
+        missionCard.setStartingCard(false);
+        missionCard.setMinSkillNumRequired(1);
+        missionCard.setSkillType(MissionSkillType.Logistics);
+        missionCard.setTotalInDeck(2);
+        return missionCard;
+    }
+
+    private static MissionCard getConstructDeathStar() {
+        MissionCard missionCard = new ProjectCard();
+
+        MissionCardText cardText = new MissionCardText();
+        cardText.setTitle("""
+                Construct
+                Death Star
+                """);
+        cardText.setDescription("""
+                Resolve in any remote system that
+                does not contain a Rebel unit.
+                                
+                Gain 1 Death Star Under Construction
+                as this system and place 1 Death Star
+                on space 3 of the build queue.
+                                
+                When the Death Star is deployed, it
+                replaces the Death Star Under Construction.
+                """);
+        missionCard.setCardText(cardText);
+
+        missionCard.setFaction(Faction.IMPERIAL);
+        missionCard.setStartingCard(false);
+        missionCard.setMinSkillNumRequired(1);
+        missionCard.setSkillType(MissionSkillType.Logistics);
+        missionCard.setTotalInDeck(1);
         return missionCard;
     }
 }

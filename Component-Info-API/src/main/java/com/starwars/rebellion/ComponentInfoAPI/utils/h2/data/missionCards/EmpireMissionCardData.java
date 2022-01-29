@@ -38,6 +38,11 @@ public class EmpireMissionCardData {
     public static final MissionCard SUPERLASER_ONLINE = getSuperLaserOnline();
     public static final MissionCard CONSTRUCT_SUPER_STAR_DESTROYER = getConstructSuperStarDestroyer();
     public static final MissionCard CONSTRUCT_DEATH_STAR = getConstructDeathStar();
+    public static final MissionCard GATHER_INTEL = getGatherIntel();
+    public static final MissionCard RESEARCH_AND_DEVELOPMENT = getResearchAndDevelopment();
+    public static final MissionCard LURE_OF_THE_DARK_SIDE = getLureOfTheDarkSide();
+    public static final MissionCard CARBON_FREEZING = getCarbonFreezing();
+    public static final MissionCard CAPTURE_REBEL_OPERATIVE = getCaptureRebelOperative();
 
     public static List<MissionCard> fetch() {
         List<MissionCard> empireMissionCards = new ArrayList<>();
@@ -65,6 +70,11 @@ public class EmpireMissionCardData {
         empireMissionCards.add(SUPERLASER_ONLINE);
         empireMissionCards.add(CONSTRUCT_SUPER_STAR_DESTROYER);
         empireMissionCards.add(CONSTRUCT_DEATH_STAR);
+        empireMissionCards.add(GATHER_INTEL);
+        empireMissionCards.add(RESEARCH_AND_DEVELOPMENT);
+        empireMissionCards.add(LURE_OF_THE_DARK_SIDE);
+        empireMissionCards.add(CARBON_FREEZING);
+        empireMissionCards.add(CAPTURE_REBEL_OPERATIVE);
         return empireMissionCards;
     }
 
@@ -646,6 +656,136 @@ public class EmpireMissionCardData {
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(1);
         missionCard.setSkillType(MissionSkillType.Logistics);
+        missionCard.setTotalInDeck(1);
+        return missionCard;
+    }
+
+    private static MissionCard getGatherIntel() {
+        MissionCard missionCard = new MissionCard();
+
+        MissionCardText cardText = new MissionCardText();
+        cardText.setTitle("Gather Intel");
+        cardText.setDescription("""
+                Attempt in any Rebel system.
+                                
+                If successful, draw 1 probe card
+                for every 4 Rebel units at the
+                Rebel base (Minimum of 1 card).
+                """);
+        missionCard.setCardText(cardText);
+
+        missionCard.setFaction(Faction.IMPERIAL);
+        missionCard.setStartingCard(true);
+        missionCard.setMinSkillNumRequired(1);
+        missionCard.setSkillType(MissionSkillType.Intel);
+        missionCard.setTotalInDeck(1);
+        return missionCard;
+    }
+
+    private static MissionCard getResearchAndDevelopment() {
+        MissionCard missionCard = new MissionCard();
+
+        MissionCardText cardText = new MissionCardText();
+        cardText.setTitle("""
+                Research And
+                Development
+                """);
+        cardText.setDescription("""
+                Resolve in any system that has Imperial
+                loyalty. Choose 1 of the following:
+                                
+                - Draw 2 project cards. Choose 1
+                to keep and place the other
+                on the bottom of the deck.
+                                
+                - Remove a sabotage marker from this
+                system and draw 1 project card.
+                """);
+        missionCard.setCardText(cardText);
+
+        missionCard.setFaction(Faction.IMPERIAL);
+        missionCard.setStartingCard(true);
+        missionCard.setMinSkillNumRequired(1);
+        missionCard.setSkillType(MissionSkillType.Logistics);
+        missionCard.setTotalInDeck(1);
+        return missionCard;
+    }
+
+    private static MissionCard getLureOfTheDarkSide() {
+        MissionCard missionCard = new MissionCard();
+
+        MissionCardText cardText = new MissionCardText();
+        cardText.setTitle("""
+                Lure Of The
+                Dark Side
+                """);
+        cardText.setDescription("""
+                Attempt against a captured leader.
+                Count all skill icons during this attempt.
+                                
+                If successful, attach the Lure of the
+                Dark Side ring to the Rebel leader.
+                It becomes an Imperial leader for
+                the rest of the game. If successful
+                against Luke Skywalker, the Rebel
+                player loses 1 reputation.
+                """);
+        missionCard.setCardText(cardText);
+
+        missionCard.setFaction(Faction.IMPERIAL);
+        missionCard.setStartingCard(false);
+        missionCard.setMinSkillNumRequired(3);
+        missionCard.setSkillType(MissionSkillType.Logistics);
+        missionCard.setTotalInDeck(1);
+        missionCard.setLeaderBonus(EmpireLeaderData.EMPEROR_PALPATINE);
+        return missionCard;
+    }
+
+    private static MissionCard getCarbonFreezing() {
+        MissionCard missionCard = new MissionCard();
+
+        MissionCardText cardText = new MissionCardText();
+        cardText.setTitle("Carbon Freezing");
+        cardText.setDescription("""
+                Attempt against a captured leader.
+                                
+                If successful, attach the Carbonite
+                ring to that leader, and the Rebel
+                player loses 1 reputation.
+                                
+                This leader is considered captured. When
+                rescued, discard this attachment ring.
+                """);
+        missionCard.setCardText(cardText);
+
+        missionCard.setFaction(Faction.IMPERIAL);
+        missionCard.setStartingCard(false);
+        missionCard.setMinSkillNumRequired(3);
+        missionCard.setSkillType(MissionSkillType.SpecOps);
+        missionCard.setTotalInDeck(1);
+        return missionCard;
+    }
+
+    private static MissionCard getCaptureRebelOperative() {
+        MissionCard missionCard = new MissionCard();
+
+        MissionCardText cardText = new MissionCardText();
+        cardText.setTitle("""
+                Capture Rebel
+                Operative
+                """);
+        cardText.setDescription("""
+                Attempt against a Rebel leader that is in
+                a system that contains a Imperial unit.
+                                
+                If successful, capture that leader.
+                """);
+        missionCard.setCardText(cardText);
+
+        missionCard.setFaction(Faction.IMPERIAL);
+        missionCard.setStartingCard(true);
+        missionCard.setMinSkillNumRequired(1);
+        missionCard.setSkillType(MissionSkillType.SpecOps);
         missionCard.setTotalInDeck(1);
         return missionCard;
     }

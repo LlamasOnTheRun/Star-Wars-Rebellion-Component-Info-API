@@ -8,6 +8,7 @@ import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards.EmpireA
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards.RebelActionCardData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.EmpireLeaderData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeaderData;
+import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.missionCards.EmpireMissionCardData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.missionCards.RebelMissionCardData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.rings.RingData;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +51,6 @@ public class H2StartUpDataLoader implements ApplicationRunner {
 
     private void saveMissionCards() {
         missionCardRepository.saveAll(RebelMissionCardData.fetch());
-
+        missionCardRepository.saveAll(EmpireMissionCardData.fetch());
     }
 }

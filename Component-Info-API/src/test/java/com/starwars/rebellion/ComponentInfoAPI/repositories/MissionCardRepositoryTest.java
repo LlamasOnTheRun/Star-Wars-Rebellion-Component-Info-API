@@ -33,7 +33,29 @@ class MissionCardRepositoryTest {
 	}
 
 	@Test
-	void givenAllRebelMissionCardsAreAvailable_thenCountOfStartingCardsMatches() {
-		assertEquals(TOTAL_STARTING_REBEL_MISSION_CARDS, missionCardRepository.findAllByIsStartingCard(true).size());
+	void givenAllMissionCardsAreAvailable_thenCountOfStartingCardsMatches() {
+		assertEquals(TOTAL_STARTING_MISSION_CARDS, missionCardRepository.findAllByIsStartingCard(true).size());
+	}
+
+	@Test
+	void givenAllEmpireMissionCardsAreAvailable_thenCountOfNonDistinctCardsMatches() {
+		List<MissionCard> allRebelMissionCards = missionCardRepository.findAllByFaction(Faction.IMPERIAL);
+		assertEquals(TOTAL_EMPIRE_MISSION_CARDS, allRebelMissionCards.stream().mapToInt(MissionCard::getTotalInDeck).sum());
+	}
+
+	@Test
+	void givenAllEmpireMissionCardsAreAvailable_thenCountOfDistinctCardsMatches() {
+		assertEquals(TOTAL_UNIQUE_EMPIRE_MISSION_CARDS, missionCardRepository.findAllByFaction(Faction.IMPERIAL).size());
+	}
+
+	@Test
+	void givenAllEmpireMissionCardsAreAvailable_thenCountOfNonDistinctProjectCardsMatches() {
+		List<MissionCard> allEmpireMissionCards = missionCardRepository.findAllByFactionAndIsProjectCard(Faction.IMPERIAL,true);
+		assertEquals(TOTAL_EMPIRE_PROJECT_CARDS, allEmpireMissionCards.stream().mapToInt(MissionCard::getTotalInDeck).sum());
+	}
+
+	@Test
+	void givenAllEmpireMissionCardsAreAvailable_thenCountOfDistinctProjectCardsMatches() {
+		assertEquals(TOTAL_UNIQUE_EMPIRE_PROJECT_CARDS, missionCardRepository.findAllByFactionAndIsProjectCard(Faction.IMPERIAL, true).size());
 	}
 }

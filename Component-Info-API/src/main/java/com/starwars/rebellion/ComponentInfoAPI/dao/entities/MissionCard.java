@@ -26,4 +26,5 @@ public class MissionCard {
     private Faction faction;
     private boolean isStartingCard;
     private int totalInDeck;
+    private boolean isProjectCard = false;
 }

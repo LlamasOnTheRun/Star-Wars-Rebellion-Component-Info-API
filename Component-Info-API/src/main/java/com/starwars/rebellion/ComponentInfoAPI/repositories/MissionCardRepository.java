@@ -9,8 +9,7 @@ import java.util.List;
 
 public interface MissionCardRepository extends CrudRepository<MissionCard, Integer> {
     MissionCard findByCardTextTitle(String title);
-
     List<MissionCard> findAllByFaction(Faction faction);
-
+    List<MissionCard> findAllByFactionAndIsProjectCard(Faction faction, boolean isProjectCard);
     List<MissionCard> findAllByIsStartingCard(boolean returnOnlyStartingCards);
 }

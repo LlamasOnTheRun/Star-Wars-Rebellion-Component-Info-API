@@ -11,12 +11,14 @@ import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeader
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.missionCards.EmpireMissionCardData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.missionCards.RebelMissionCardData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.rings.RingData;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 @Component
+@Slf4j
 public class H2StartUpDataLoader implements ApplicationRunner {
 
     @Autowired
@@ -29,6 +31,7 @@ public class H2StartUpDataLoader implements ApplicationRunner {
     private MissionCardRepository missionCardRepository;
 
     public void run(ApplicationArguments args) {
+        log.debug("Starting H2 data load up for boardgame components");
         saveLeaders();
         saveActionCards();
         saveRings();

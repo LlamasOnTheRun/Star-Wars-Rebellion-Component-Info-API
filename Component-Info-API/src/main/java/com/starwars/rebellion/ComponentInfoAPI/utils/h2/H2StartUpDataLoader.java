@@ -31,12 +31,11 @@ public class H2StartUpDataLoader implements ApplicationRunner {
     private MissionCardRepository missionCardRepository;
 
     public void run(ApplicationArguments args) {
-        log.info("doodlebop");
+        log.debug("Starting H2 data load up for boardgame components");
         saveLeaders();
         saveActionCards();
         saveRings();
         saveMissionCards();
-        log.info("doodlebop2 - The Wumobioing returns");
     }
 
     private void saveActionCards() {

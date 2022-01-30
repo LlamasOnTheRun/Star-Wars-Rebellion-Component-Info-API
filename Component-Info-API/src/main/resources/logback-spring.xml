@@ -1,8 +1,9 @@
 
 <configuration debug="true" scan="true" scanPeriod="15 seconds">
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <withJansi>false</withJansi>
         <encoder>
-            <pattern>%d{HH} Ryan is a wumbo [%thread] %-5level %logger{36} - %msg%n</pattern>
+            <pattern>%d{HH:mm:ss.SSS, America/Chicago} [%thread]  %highlight(%-5level)  %-50.50logger{50} |%-10.10(Line - %L)| %msg%n</pattern>
         </encoder>
     </appender>
 

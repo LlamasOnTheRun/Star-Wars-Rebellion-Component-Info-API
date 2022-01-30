@@ -36,6 +36,7 @@ public class H2StartUpDataLoader implements ApplicationRunner {
         saveActionCards();
         saveRings();
         saveMissionCards();
+        log.info("doodlebop2 - The Wumobioing returns");
     }
 
     private void saveActionCards() {

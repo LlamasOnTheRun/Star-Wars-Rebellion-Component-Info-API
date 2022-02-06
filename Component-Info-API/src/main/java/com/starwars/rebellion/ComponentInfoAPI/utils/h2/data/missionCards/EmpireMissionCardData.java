@@ -111,8 +111,8 @@ public class EmpireMissionCardData {
                 Count all skill icons during this attempt.
                 
                 If successful, the Rebel player must
-                name 3 actualSystems. One of these
-                actualSystems must contain the Rebel base.
+                name 3 systems. One of these
+                systems must contain the Rebel base.
                 """);
         missionCard.setCardText(cardText);
 
@@ -426,7 +426,7 @@ public class EmpireMissionCardData {
                 Super Star Destroyer.
                                 
                 If successful, gain 1 loyalty
-                in 2 actualSystems in this region.
+                in 2 systems in this region.
                 """);
         missionCard.setCardText(cardText);
 
@@ -523,7 +523,7 @@ public class EmpireMissionCardData {
                                 
                 If successful, the Rebel player draws
                 8 cards from the probe deck. He gives
-                you all cards belonging to actualSystems that
+                you all cards belonging to systems that
                 contain an Imperial unit. Then he shuffles
                 the other cards back into the deck.
                 """);

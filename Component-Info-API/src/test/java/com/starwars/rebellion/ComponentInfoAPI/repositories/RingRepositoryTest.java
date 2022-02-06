@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 public class RingRepositoryTest {
+
    @Autowired
    private RingRepository ringRepository;
 

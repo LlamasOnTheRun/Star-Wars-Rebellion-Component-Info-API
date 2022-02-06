@@ -4,17 +4,16 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_REGIONS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
-public class RegionRepositoryTest {
+public class SystemRepositoryTest {
 
     @Autowired
-    RegionRepository regionRepository;
+    SystemRepository systemRepository;
 
     @Test
-    void givenAllRegionDataIsAdded_thenEightRegionsAreReturned() {
-        assertEquals(TOTAL_REGIONS, regionRepository.findAll().size());
+    void givenAllSystemDataIsAdded_thenThirtyTwoSystemsAreReturned() {
+        assertEquals(32, systemRepository.findAll().size());
     }
 }

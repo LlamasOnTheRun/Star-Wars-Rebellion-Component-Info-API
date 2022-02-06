@@ -7,7 +7,7 @@ import javax.persistence.Embeddable;
 @Data
 @Embeddable
 public class LandProduction {
-    private int landLight;
-    private int landMedium;
-    private int landHeavy;
+    private int landLight = 0;
+    private int landMedium = 0;
+    private int landHeavy = 0;
 }

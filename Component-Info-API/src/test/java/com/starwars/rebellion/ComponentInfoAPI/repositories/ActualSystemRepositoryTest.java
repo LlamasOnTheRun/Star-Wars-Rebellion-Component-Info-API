@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_SYSTEMS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
@@ -14,6 +15,6 @@ public class ActualSystemRepositoryTest {
 
     @Test
     void givenAllSystemDataIsAdded_thenThirtyTwoSystemsAreReturned() {
-        assertEquals(32, systemRepository.findAll().size());
+        assertEquals(TOTAL_SYSTEMS, systemRepository.findAll().size());
     }
 }

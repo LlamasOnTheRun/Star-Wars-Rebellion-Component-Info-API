@@ -7,7 +7,7 @@ import javax.persistence.Embeddable;
 @Data
 @Embeddable
 public class ShipProduction {
-    private int shipLight;
-    private int shipMedium;
-    private int shipHeavy;
+    private int shipLight = 0;
+    private int shipMedium = 0;
+    private int shipHeavy = 0;
 }

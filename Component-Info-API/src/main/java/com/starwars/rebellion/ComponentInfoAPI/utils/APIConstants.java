@@ -32,5 +32,9 @@ public class APIConstants {
     public static final int TOTAL_UNIQUE_EMPIRE_PROJECT_CARDS = 5;
 
     public static final int TOTAL_REGIONS = 8;
+    public static final char TOTAL_SYSTEMS = 32;
+    public static final char NEUTRAL_LOYALTY = 'N';
+    public static final char SHIP_PRODUCTION_SYMBOL_FIRST = 'S';
+    public static final char LAND_PRODUCTION_SYMBOL_FIRST = 'L';
 }
 

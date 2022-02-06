@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_ACTION_CARDS;
 
 @SpringBootTest
-class ActionCardControllerTest {
+	class ActionCardControllerTest {
 
 	@Autowired
 	ActionCardController actionCardsController;

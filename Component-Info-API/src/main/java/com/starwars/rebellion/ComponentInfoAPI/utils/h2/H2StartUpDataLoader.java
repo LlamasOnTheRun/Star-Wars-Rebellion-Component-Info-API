@@ -1,15 +1,13 @@
 package com.starwars.rebellion.ComponentInfoAPI.utils.h2;
 
-import com.starwars.rebellion.ComponentInfoAPI.repositories.ActionCardRepository;
-import com.starwars.rebellion.ComponentInfoAPI.repositories.LeaderRepository;
-import com.starwars.rebellion.ComponentInfoAPI.repositories.MissionCardRepository;
-import com.starwars.rebellion.ComponentInfoAPI.repositories.RingRepository;
+import com.starwars.rebellion.ComponentInfoAPI.repositories.*;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards.EmpireActionCardData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards.RebelActionCardData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.EmpireLeaderData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeaderData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.missionCards.EmpireMissionCardData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.missionCards.RebelMissionCardData;
+import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.region.RegionData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.rings.RingData;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +27,8 @@ public class H2StartUpDataLoader implements ApplicationRunner {
     private RingRepository ringRepository;
     @Autowired
     private MissionCardRepository missionCardRepository;
+    @Autowired
+    private RegionRepository regionRepository;
 
     public void run(ApplicationArguments args) {
         log.debug("Starting H2 data load up for boardgame components");
@@ -36,6 +36,7 @@ public class H2StartUpDataLoader implements ApplicationRunner {
         saveActionCards();
         saveRings();
         saveMissionCards();
+        saveRegions();
     }
 
     private void saveActionCards() {
@@ -55,5 +56,9 @@ public class H2StartUpDataLoader implements ApplicationRunner {
     private void saveMissionCards() {
         missionCardRepository.saveAll(RebelMissionCardData.fetch());
         missionCardRepository.saveAll(EmpireMissionCardData.fetch());
+    }
+
+    private void saveRegions() {
+        regionRepository.saveAll(RegionData.fetch());
     }
 }

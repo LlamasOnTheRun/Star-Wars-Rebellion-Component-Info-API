@@ -1,4 +1,4 @@
-package com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.region;
+package com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.regions;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.Region;
 

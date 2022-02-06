@@ -426,7 +426,7 @@ public class EmpireActionCardData {
         actionCardText.setDescription("""
                 Place this leader in any
                 system. Then move Imperial
-                units from adjacent systems to
+                units from adjacent actualSystems to
                 this system. If there are Rebel units in this system,
                 resolve a combat.
                 """);

@@ -1,12 +1,11 @@
 package com.starwars.rebellion.ComponentInfoAPI.repositories;
 
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.ActualSystem;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
-public interface SystemRepository extends CrudRepository<System, Integer> {
+public interface SystemRepository extends CrudRepository<ActualSystem, Integer> {
     @Override
-    List<System> findAll();
+    List<ActualSystem> findAll();
 }

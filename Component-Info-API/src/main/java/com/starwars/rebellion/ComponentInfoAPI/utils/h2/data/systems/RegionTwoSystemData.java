@@ -1,8 +1,6 @@
 package com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.System;
-import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.LandProduction;
-import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.ShipProduction;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.regions.RegionData;
 
 import java.util.ArrayList;
@@ -32,13 +30,7 @@ public class RegionTwoSystemData {
         system.setName("Kessel");
         system.setRemote(false);
         system.setLoyalty(NEUTRAL_LOYALTY);
-
-        ShipProduction shipProduction = new ShipProduction();
-        system.setShipProduction(shipProduction);
-        LandProduction landProduction = new LandProduction();
-        landProduction.setLandLight(1);
-        system.setLandProduction(landProduction);
-
+        system.getLandProduction().setLandLight(1);
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(1);
 
@@ -52,13 +44,7 @@ public class RegionTwoSystemData {
         system.setName("Toydaria");
         system.setRemote(false);
         system.setLoyalty(NEUTRAL_LOYALTY);
-
-        ShipProduction shipProduction = new ShipProduction();
-        shipProduction.setShipMedium(1);
-        system.setShipProduction(shipProduction);
-        LandProduction landProduction = new LandProduction();
-        system.setLandProduction(landProduction);
-
+        system.getShipProduction().setShipMedium(1);
         system.setFirstProductionSymbol(SHIP_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(2);
 
@@ -72,14 +58,8 @@ public class RegionTwoSystemData {
         system.setName("Nal Hutta");
         system.setRemote(false);
         system.setLoyalty(NEUTRAL_LOYALTY);
-
-        ShipProduction shipProduction = new ShipProduction();
-        shipProduction.setShipLight(1);
-        system.setShipProduction(shipProduction);
-        LandProduction landProduction = new LandProduction();
-        landProduction.setLandLight(1);
-        system.setLandProduction(landProduction);
-
+        system.getShipProduction().setShipLight(1);
+        system.getLandProduction().setLandLight(1);
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(2);
 
@@ -93,13 +73,7 @@ public class RegionTwoSystemData {
         system.setName("Bothawui");
         system.setRemote(false);
         system.setLoyalty(NEUTRAL_LOYALTY);
-
-        ShipProduction shipProduction = new ShipProduction();
-        shipProduction.setShipMedium(1);
-        system.setShipProduction(shipProduction);
-        LandProduction landProduction = new LandProduction();
-        system.setLandProduction(landProduction);
-
+        system.getShipProduction().setShipMedium(1);
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(1);
 

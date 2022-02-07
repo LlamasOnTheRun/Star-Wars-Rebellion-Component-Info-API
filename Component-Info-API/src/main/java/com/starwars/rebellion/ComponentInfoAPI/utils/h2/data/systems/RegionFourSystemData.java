@@ -1,8 +1,6 @@
 package com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.System;
-import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.LandProduction;
-import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.ShipProduction;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.regions.RegionData;
 
 import java.util.ArrayList;
@@ -32,14 +30,8 @@ public class RegionFourSystemData {
         system.setName("Naboo");
         system.setRemote(false);
         system.setLoyalty(NEUTRAL_LOYALTY);
-
-        ShipProduction shipProduction = new ShipProduction();
-        shipProduction.setShipLight(1);
-        system.setShipProduction(shipProduction);
-        LandProduction landProduction = new LandProduction();
-        landProduction.setLandLight(1);
-        system.setLandProduction(landProduction);
-
+        system.getShipProduction().setShipLight(1);
+        system.getLandProduction().setLandLight(1);
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(1);
 
@@ -53,14 +45,8 @@ public class RegionFourSystemData {
         system.setName("Sullust");
         system.setRemote(false);
         system.setLoyalty(NEUTRAL_LOYALTY);
-
-        ShipProduction shipProduction = new ShipProduction();
-        system.setShipProduction(shipProduction);
-        LandProduction landProduction = new LandProduction();
-        landProduction.setLandLight(1);
-        landProduction.setLandHeavy(1);
-        system.setLandProduction(landProduction);
-
+        system.getLandProduction().setLandLight(1);
+        system.getLandProduction().setLandHeavy(1);
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(2);
 
@@ -74,11 +60,6 @@ public class RegionFourSystemData {
         system.setName("Dagobah");
         system.setRemote(true);
 
-        ShipProduction shipProduction = new ShipProduction();
-        system.setShipProduction(shipProduction);
-        LandProduction landProduction = new LandProduction();
-        system.setLandProduction(landProduction);
-
         return system;
     }
 
@@ -89,14 +70,8 @@ public class RegionFourSystemData {
         system.setName("Utapau");
         system.setRemote(false);
         system.setLoyalty(NEUTRAL_LOYALTY);
-
-        ShipProduction shipProduction = new ShipProduction();
-        shipProduction.setShipMedium(1);
-        shipProduction.setShipHeavy(1);
-        system.setShipProduction(shipProduction);
-        LandProduction landProduction = new LandProduction();
-        system.setLandProduction(landProduction);
-
+        system.getShipProduction().setShipMedium(1);
+        system.getShipProduction().setShipHeavy(1);
         system.setFirstProductionSymbol(SHIP_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(3);
 

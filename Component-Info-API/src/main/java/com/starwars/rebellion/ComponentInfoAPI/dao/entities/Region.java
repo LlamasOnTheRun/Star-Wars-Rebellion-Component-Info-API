@@ -13,7 +13,6 @@ public class Region {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    @OneToMany
+    @OneToMany(targetEntity = System.class, mappedBy = "region", fetch = FetchType.EAGER)
     List<System> systems;
-    //TODO add onetomany annotation here for systems
 }

@@ -9,7 +9,8 @@ import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.missionCards.Empire
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.missionCards.RebelMissionCardData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.regions.RegionData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.rings.RingData;
-import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.SystemData;
+import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.RegionOneSystemData;
+import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.RegionTwoSystemData;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -34,7 +35,7 @@ public class H2StartUpDataLoader implements ApplicationRunner {
     private SystemRepository systemRepository;
 
     public void run(ApplicationArguments args) {
-        log.debug("Starting H2 data load up for boardgame components");
+        log.debug("Starting H2 data load up for board game components");
         saveLeaders();
         saveActionCards();
         saveRings();
@@ -63,6 +64,7 @@ public class H2StartUpDataLoader implements ApplicationRunner {
 
     private void saveRegionsAndSystems() {
         regionRepository.saveAll(RegionData.fetch());
-        systemRepository.saveAll(SystemData.fetch());
+        systemRepository.saveAll(RegionOneSystemData.fetch());
+        systemRepository.saveAll(RegionTwoSystemData.fetch());
     }
 }

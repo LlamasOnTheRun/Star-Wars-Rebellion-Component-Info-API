@@ -14,6 +14,6 @@ public class Region {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @OneToMany
-    List<ActualSystem> systems;
+    List<System> systems;
     //TODO add onetomany annotation here for systems
 }

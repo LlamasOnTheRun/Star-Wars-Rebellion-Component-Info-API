@@ -8,7 +8,7 @@ import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_S
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
-public class ActualSystemRepositoryTest {
+public class SystemRepositoryTest {
 
     @Autowired
     SystemRepository systemRepository;

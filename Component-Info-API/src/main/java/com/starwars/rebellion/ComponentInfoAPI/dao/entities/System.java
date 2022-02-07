@@ -10,8 +10,8 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@Table(name="System")
-public class ActualSystem {
+@Table(name = "System")
+public class System {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;

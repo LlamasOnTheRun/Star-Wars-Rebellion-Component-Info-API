@@ -7,6 +7,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.REMOTE_SYSTEM_IDENTIFICATION;
+
 @Entity
 @Getter
 @Setter
@@ -18,12 +20,12 @@ public class System {
     @ManyToOne
     private Region region;
     private String name;
-    private char loyalty = 'X';
+    private char loyalty = REMOTE_SYSTEM_IDENTIFICATION;
     private boolean isRemote;
     @Embedded
     private LandProduction landProduction = new LandProduction();
     @Embedded
     private ShipProduction shipProduction = new ShipProduction();
-    private char firstProductionSymbol = 'X';
+    private char firstProductionSymbol = REMOTE_SYSTEM_IDENTIFICATION;
     private int queueTime;
 }

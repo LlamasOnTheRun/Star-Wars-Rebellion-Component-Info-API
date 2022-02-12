@@ -1,5 +1,6 @@
 package com.starwars.rebellion.ComponentInfoAPI.utils.h2;
 
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.ObjectiveCard;
 import com.starwars.rebellion.ComponentInfoAPI.repositories.*;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards.EmpireActionCardData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards.RebelActionCardData;
@@ -7,6 +8,7 @@ import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.EmpireLeade
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeaderData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.missionCards.EmpireMissionCardData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.missionCards.RebelMissionCardData;
+import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.objectiveCards.ObjectiveCardData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.regions.RegionData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.rings.RingData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.*;
@@ -32,6 +34,8 @@ public class H2StartUpDataLoader implements ApplicationRunner {
     private RegionRepository regionRepository;
     @Autowired
     private SystemRepository systemRepository;
+    @Autowired
+    private ObjectiveCardRepository objectiveCardRepository;
 
     public void run(ApplicationArguments args) {
         log.debug("Starting H2 data load up for board game components");
@@ -40,6 +44,7 @@ public class H2StartUpDataLoader implements ApplicationRunner {
         saveRings();
         saveMissionCards();
         saveRegionsAndSystems();
+        saveObjectiveCards();
     }
 
     private void saveActionCards() {
@@ -59,6 +64,10 @@ public class H2StartUpDataLoader implements ApplicationRunner {
     private void saveMissionCards() {
         missionCardRepository.saveAll(RebelMissionCardData.fetch());
         missionCardRepository.saveAll(EmpireMissionCardData.fetch());
+    }
+
+    private void saveObjectiveCards() {
+        objectiveCardRepository.saveAll(ObjectiveCardData.fetch());
     }
 
     private void saveRegionsAndSystems() {

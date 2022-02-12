@@ -1,8 +1,8 @@
 package com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.missionCards;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.MissionCard;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.CardText;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
-import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.MissionCardText;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.MissionSkillType;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeaderData;
 import org.springframework.stereotype.Service;
@@ -69,7 +69,7 @@ public class RebelMissionCardData {
     private static MissionCard getForTheGreaterGood() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("""
                 For The
                 Greater Good
@@ -97,7 +97,7 @@ public class RebelMissionCardData {
     private static MissionCard getStolenPlans() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Stolen Plans");
         cardText.setDescription("""
                 Attempt in any system that
@@ -121,7 +121,7 @@ public class RebelMissionCardData {
     private static MissionCard getWookieUprising() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Wookie Uprising");
         cardText.setDescription("""
                 Attempt in the Kashyyyk system.
@@ -144,7 +144,7 @@ public class RebelMissionCardData {
     private static MissionCard getDemolition() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Demolition");
         cardText.setDescription("""
                 Attempt in any Imperial system.
@@ -166,7 +166,7 @@ public class RebelMissionCardData {
     private static MissionCard getSupportOfMonCalamari() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("""
                 Support of
                 Mon Calamari
@@ -192,7 +192,7 @@ public class RebelMissionCardData {
     private static MissionCard getDaringSupport() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Daring Rescue");
         cardText.setDescription("""
                 Attempt in any system that
@@ -213,7 +213,7 @@ public class RebelMissionCardData {
     private static MissionCard getEstablishTradeRelations() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Establish Trade Relations");
         cardText.setDescription("""
                 Attempt in any system that does
@@ -238,7 +238,7 @@ public class RebelMissionCardData {
     private static MissionCard getHitAndRun() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Hit And Run");
         cardText.setDescription("""
                 Attempt in any system.
@@ -259,7 +259,7 @@ public class RebelMissionCardData {
     private static MissionCard getInfiltration() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Infiltration");
         cardText.setDescription("""
                 Attempt in any system that
@@ -283,7 +283,7 @@ public class RebelMissionCardData {
     private static MissionCard getMisdirection() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Misdirection");
         cardText.setDescription("""
                 Attempt in any system that
@@ -308,7 +308,7 @@ public class RebelMissionCardData {
     private static MissionCard getBuildAlliance() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Build Alliance");
         cardText.setDescription("""
                 Attempt in any populous system.
@@ -330,7 +330,7 @@ public class RebelMissionCardData {
     private static MissionCard getPublicUprising() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Public Uprising");
         cardText.setDescription("""
                 Attempt in any subjugated system.
@@ -352,7 +352,7 @@ public class RebelMissionCardData {
     private static MissionCard getHiddenFleet() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Hidden Fleet");
         cardText.setDescription("""
                 Resolve in any system that does not
@@ -376,7 +376,7 @@ public class RebelMissionCardData {
     private static MissionCard getPlanTheAssault() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("""
                 Plan the
                 Assault
@@ -406,7 +406,7 @@ public class RebelMissionCardData {
     private static MissionCard getPlantFalseLead() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Plant False Lead");
         cardText.setDescription("""
                 Resolve in any system that contains
@@ -431,7 +431,7 @@ public class RebelMissionCardData {
     private static MissionCard getContingencyPlan() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Contingency Plan");
         cardText.setDescription("""
                 Assign this leader to a starting mission
@@ -457,7 +457,7 @@ public class RebelMissionCardData {
     private static MissionCard getRapidMobilization() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Rapid Mobilization");
         cardText.setDescription("""
                 Resolve in the "Rebel Base" space. At the
@@ -484,7 +484,7 @@ public class RebelMissionCardData {
     private static MissionCard getSeekYoda() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Seek Yoda");
         cardText.setDescription("""
                 Resolve in the Dagobah system.
@@ -512,7 +512,7 @@ public class RebelMissionCardData {
     private static MissionCard getRougeSquadronRaid() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("""
                 Rouge
                 Squadron Raid
@@ -537,7 +537,7 @@ public class RebelMissionCardData {
     private static MissionCard getSabotage() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Sabotage");
         cardText.setDescription("""
                 Attempt in any system.
@@ -560,7 +560,7 @@ public class RebelMissionCardData {
     private static MissionCard getBaseDefenses() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Base Defenses");
         cardText.setDescription("""
                 Attempt in any Rebel system.
@@ -583,7 +583,7 @@ public class RebelMissionCardData {
     private static MissionCard getCovertOperation() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Covert Operation");
         cardText.setDescription("""
                 Attempt in any system that
@@ -606,7 +606,7 @@ public class RebelMissionCardData {
     private static MissionCard getInciteRebellion() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Incite Rebellion");
         cardText.setDescription("""
                 Attempt in any subjugated system.
@@ -627,7 +627,7 @@ public class RebelMissionCardData {
     private static MissionCard getLeadStrikeTeam() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("""
                 Lead the
                 Strike Team

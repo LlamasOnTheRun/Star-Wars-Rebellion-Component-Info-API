@@ -2,8 +2,8 @@ package com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.missionCards;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.MissionCard;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.ProjectCard;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.CardText;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
-import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.MissionCardText;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.MissionSkillType;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.EmpireLeaderData;
 import org.springframework.stereotype.Service;
@@ -81,7 +81,7 @@ public class EmpireMissionCardData {
     private static MissionCard getDisplayOfPower() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Display of Power");
         cardText.setDescription("""
                 Attempt in any populous system.
@@ -101,7 +101,7 @@ public class EmpireMissionCardData {
     private static MissionCard getInterrogationDroid() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("""
                 Interrogation
                 Droid
@@ -128,7 +128,7 @@ public class EmpireMissionCardData {
     private static MissionCard getImperialPropaganda() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("""
                 Imperial
                 Propaganda
@@ -153,7 +153,7 @@ public class EmpireMissionCardData {
     private static MissionCard getInterrogation() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Interrogation");
         cardText.setDescription("""
                 Attempt against a captured leader.
@@ -174,7 +174,7 @@ public class EmpireMissionCardData {
     private static MissionCard getAddressDelays() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Address Delays");
         cardText.setDescription("""
                 Resolve in any Imperial system.
@@ -196,7 +196,7 @@ public class EmpireMissionCardData {
     private static MissionCard getDoubleOurEfforts() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("""
                 Double Our
                 Efforts
@@ -223,7 +223,7 @@ public class EmpireMissionCardData {
     private static MissionCard getSecretWeaponsResearch() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("""
                 Secret Weapons
                 Research
@@ -246,7 +246,7 @@ public class EmpireMissionCardData {
     private static MissionCard getDetained() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Detained");
         cardText.setDescription("""
                 Attempt against a Rebel leader
@@ -270,7 +270,7 @@ public class EmpireMissionCardData {
     private static MissionCard getHomingBeacon() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Homing Beacon");
         cardText.setDescription("""
                 Attempt against a captured leader.
@@ -292,7 +292,7 @@ public class EmpireMissionCardData {
     private static MissionCard getPlanetaryConquest() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("""
                 Planetary
                 Conquest
@@ -322,7 +322,7 @@ public class EmpireMissionCardData {
     private static MissionCard getLongRangeProbe() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Long-Range Probe");
         cardText.setDescription("""
                 Attempt in any system.
@@ -344,7 +344,7 @@ public class EmpireMissionCardData {
     private static MissionCard getCollectBounty() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Collect Bounty");
         cardText.setDescription("""
                 Attempt against a Rebel leader
@@ -369,7 +369,7 @@ public class EmpireMissionCardData {
     private static MissionCard getRetrieveThePlans() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Retrieve The Plans");
         cardText.setDescription("""
                 Attempt against a captured leader.
@@ -393,7 +393,7 @@ public class EmpireMissionCardData {
     private static MissionCard getHuntThemDown() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Hunt Them Down");
         cardText.setDescription("""
                 Attempt in any system.
@@ -415,7 +415,7 @@ public class EmpireMissionCardData {
     private static MissionCard getFearWillKeepThemInLine() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("""
                 Fear Will Keep
                 Them In Line
@@ -442,7 +442,7 @@ public class EmpireMissionCardData {
     private static MissionCard getRuleByFear() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Rule By Fear");
         cardText.setDescription("""
                 Attempt in any populous system
@@ -463,7 +463,7 @@ public class EmpireMissionCardData {
     private static MissionCard getProbeDroidInitiative() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("""
                 Probe Droid
                 Initiative
@@ -490,7 +490,7 @@ public class EmpireMissionCardData {
     private static MissionCard getTradeNegotiations() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("""
                 Trade
                 Negotiations
@@ -513,7 +513,7 @@ public class EmpireMissionCardData {
     private static MissionCard getInterceptTransmission() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("""
                 Intercept
                 Transmission
@@ -540,7 +540,7 @@ public class EmpireMissionCardData {
     private static MissionCard getConstructFactory() {
         MissionCard missionCard = new ProjectCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Construct Factory");
         cardText.setDescription("""
                 Resolve in any Imperial system.
@@ -564,7 +564,7 @@ public class EmpireMissionCardData {
     private static MissionCard getOverseeProject() {
         MissionCard missionCard = new ProjectCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Oversee Project");
         cardText.setDescription("""
                 Resolve in any system that contains
@@ -587,7 +587,7 @@ public class EmpireMissionCardData {
     private static MissionCard getSuperLaserOnline() {
         MissionCard missionCard = new ProjectCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Superlaser Online");
         cardText.setDescription("""
                 Resolve in any system
@@ -609,7 +609,7 @@ public class EmpireMissionCardData {
     private static MissionCard getConstructSuperStarDestroyer() {
         MissionCard missionCard = new ProjectCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("""
                 Construct Super
                 Star Destroyer
@@ -634,7 +634,7 @@ public class EmpireMissionCardData {
     private static MissionCard getConstructDeathStar() {
         MissionCard missionCard = new ProjectCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("""
                 Construct
                 Death Star
@@ -663,7 +663,7 @@ public class EmpireMissionCardData {
     private static MissionCard getGatherIntel() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Gather Intel");
         cardText.setDescription("""
                 Attempt in any Rebel system.
@@ -685,7 +685,7 @@ public class EmpireMissionCardData {
     private static MissionCard getResearchAndDevelopment() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("""
                 Research And
                 Development
@@ -714,7 +714,7 @@ public class EmpireMissionCardData {
     private static MissionCard getLureOfTheDarkSide() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("""
                 Lure Of The
                 Dark Side
@@ -744,7 +744,7 @@ public class EmpireMissionCardData {
     private static MissionCard getCarbonFreezing() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("Carbon Freezing");
         cardText.setDescription("""
                 Attempt against a captured leader.
@@ -769,7 +769,7 @@ public class EmpireMissionCardData {
     private static MissionCard getCaptureRebelOperative() {
         MissionCard missionCard = new MissionCard();
 
-        MissionCardText cardText = new MissionCardText();
+        CardText cardText = new CardText();
         cardText.setTitle("""
                 Capture Rebel
                 Operative

@@ -7,7 +7,7 @@ import javax.persistence.Lob;
 
 @Data
 @Embeddable
-public class MissionCardText {
+public class CardText {
     private String title;
     @Lob
     private String description;

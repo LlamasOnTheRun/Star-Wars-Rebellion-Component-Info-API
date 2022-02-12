@@ -15,6 +15,6 @@ public class SystemRepositoryTest {
 
     @Test
     void givenAllSystemDataIsAdded_thenThirtyTwoSystemsAreReturned() {
-        assertEquals(TOTAL_SYSTEMS, systemRepository.findAll().size());
+        assertEquals(TOTAL_SYSTEMS, systemRepository.findAll().stream().distinct().count());
     }
 }

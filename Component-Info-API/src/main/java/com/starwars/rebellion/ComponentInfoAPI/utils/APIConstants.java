@@ -34,6 +34,7 @@ public class APIConstants {
     public static final int TOTAL_REGIONS = 8;
     public static final char TOTAL_SYSTEMS = 32;
     public static final char NEUTRAL_LOYALTY = 'N';
+    public static final char IMPERIAL_LOYALTY = 'I';
     public static final char SHIP_PRODUCTION_SYMBOL_FIRST = 'S';
     public static final char LAND_PRODUCTION_SYMBOL_FIRST = 'L';
     public static final char REMOTE_SYSTEM_IDENTIFICATION = 'X';

@@ -70,5 +70,6 @@ public class H2StartUpDataLoader implements ApplicationRunner {
         systemRepository.saveAll(RegionFiveSystemData.fetch());
         systemRepository.saveAll(RegionSixSystemData.fetch());
         systemRepository.saveAll(RegionSevenSystemData.fetch());
+        systemRepository.saveAll(RegionEightSystemData.fetch());
     }
 }

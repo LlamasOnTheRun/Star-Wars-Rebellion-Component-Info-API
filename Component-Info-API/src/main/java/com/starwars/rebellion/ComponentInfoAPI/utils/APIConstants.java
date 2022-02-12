@@ -21,6 +21,8 @@ public class APIConstants {
     public static final int TOTAL_NON_STARTING_REBEL_ACTION_CARDS = 6;
     public static final int TOTAL_ACTION_CARDS = 34;
 
+    public static final int TOTAL_OBJECTIVE_CARDS = 15;
+
     public static final int TOTAL_STARTING_MISSION_CARDS = 8;
 
     public static final int TOTAL_REBEL_MISSION_CARDS = 29;

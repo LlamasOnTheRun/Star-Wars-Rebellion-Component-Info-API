@@ -16,5 +16,8 @@ public class ObjectiveCard {
     private char reputationGained;
     @Embedded
     private CardText cardText;
-    private String actionText;
+    private String actionType;
+    private boolean InDeckLevelOne = false;
+    private boolean InDeckLevelTwo = false;
+    private boolean InDeckLevelThree = false;
 }

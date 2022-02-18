@@ -54,8 +54,8 @@ public class RebelLeaderData {
     private static Leader getAdmiralAckbar() {
         Leader leader = new Leader();
         leader.setName("Admiral Ackbar");
-        leader.setMissionSkillPoints(0,0,2,true);
-        leader.setMilitarySkillPoints(Rank.Admiral,1,3);
+        leader.setMissionSkillPoints(0, 0, 2, true);
+        leader.setMilitarySkillPoints(Rank.ADMIRAL, 1, 3);
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
@@ -65,8 +65,8 @@ public class RebelLeaderData {
     private static Leader getChewbacca() {
         Leader leader = new Leader();
         leader.setName("Chewbacca");
-        leader.setMissionSkillPoints(0,3,0,false);
-        leader.setMilitarySkillPoints(Rank.General,2,1);
+        leader.setMissionSkillPoints(0, 3, 0, false);
+        leader.setMilitarySkillPoints(Rank.GENERAL, 2, 1);
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
@@ -77,7 +77,7 @@ public class RebelLeaderData {
         Leader leader = new Leader();
         leader.setName("General Madine");
         leader.setMissionSkillPoints(2, 2, 0, false);
-        leader.setMilitarySkillPoints(Rank.General, 3, 1);
+        leader.setMilitarySkillPoints(Rank.GENERAL, 3, 1);
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
@@ -88,7 +88,7 @@ public class RebelLeaderData {
         Leader leader = new Leader();
         leader.setName("General Rieekan");
         leader.setMissionSkillPoints(0, 1, 1, true);
-        leader.setMilitarySkillPoints(Rank.General, 3, 1);
+        leader.setMilitarySkillPoints(Rank.GENERAL, 3, 1);
         leader.setStartingLeader(true);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
@@ -98,8 +98,8 @@ public class RebelLeaderData {
     private static Leader getHanSolo() {
         Leader leader = new Leader();
         leader.setName("Han Solo");
-        leader.setMissionSkillPoints(1,2,1,false);
-        leader.setMilitarySkillPoints(Rank.Admiral,2,2);
+        leader.setMissionSkillPoints(1, 2, 1, false);
+        leader.setMilitarySkillPoints(Rank.ADMIRAL, 2, 2);
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
@@ -109,8 +109,8 @@ public class RebelLeaderData {
     private static Leader getJanDodonna() {
         Leader leader = new Leader();
         leader.setName("Jan Dodonna");
-        leader.setMissionSkillPoints(2,0,1,false);
-        leader.setMilitarySkillPoints(Rank.Admiral,1,2);
+        leader.setMissionSkillPoints(2, 0, 1, false);
+        leader.setMilitarySkillPoints(Rank.ADMIRAL, 1, 2);
         leader.setStartingLeader(true);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
@@ -120,8 +120,8 @@ public class RebelLeaderData {
     private static Leader getLandoCalrissian() {
         Leader leader = new Leader();
         leader.setName("Lando Calrissian");
-        leader.setMissionSkillPoints(1,1,1,true);
-        leader.setMilitarySkillPoints(Rank.Admiral,2,2);
+        leader.setMissionSkillPoints(1, 1, 1, true);
+        leader.setMilitarySkillPoints(Rank.ADMIRAL, 2, 2);
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
@@ -132,7 +132,7 @@ public class RebelLeaderData {
         Leader leader = new Leader();
         leader.setName("Luke Skywalker");
         leader.setMissionSkillPoints(2, 1, 0, false);
-        leader.setMilitarySkillPoints(Rank.General, 2, 2);
+        leader.setMilitarySkillPoints(Rank.GENERAL, 2, 2);
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
@@ -143,7 +143,7 @@ public class RebelLeaderData {
         Leader leader = new Leader();
         leader.setName("Luke Skywalker (Jedi)");
         leader.setMissionSkillPoints(3, 2, 0, false);
-        leader.setMilitarySkillPoints(Rank.General, 3, 3);
+        leader.setMilitarySkillPoints(Rank.GENERAL, 3, 3);
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
@@ -153,8 +153,8 @@ public class RebelLeaderData {
     private static Leader getMonMothma() {
         Leader leader = new Leader();
         leader.setName("Mon Mothma");
-        leader.setMissionSkillPoints(0,0,3,true);
-        leader.setMilitarySkillPoints(Rank.Admiral,0,0);
+        leader.setMissionSkillPoints(0, 0, 3, true);
+        leader.setMilitarySkillPoints(Rank.ADMIRAL, 0, 0);
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
@@ -164,8 +164,8 @@ public class RebelLeaderData {
     private static Leader getObiWanKenobi() {
         Leader leader = new Leader();
         leader.setName("Obi Wan Kenobi");
-        leader.setMissionSkillPoints(3,0,1,false);
-        leader.setMilitarySkillPoints(Rank.General,0,0);
+        leader.setMissionSkillPoints(3, 0, 1, false);
+        leader.setMilitarySkillPoints(Rank.GENERAL, 0, 0);
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
@@ -176,7 +176,7 @@ public class RebelLeaderData {
         Leader leader = new Leader();
         leader.setName("Princess Leia");
         leader.setMissionSkillPoints(2, 1, 2, false);
-        leader.setMilitarySkillPoints(Rank.General,1,1);
+        leader.setMilitarySkillPoints(Rank.GENERAL, 1, 1);
         leader.setStartingLeader(true);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
@@ -187,7 +187,7 @@ public class RebelLeaderData {
         Leader leader = new Leader();
         leader.setName("Wedge Antilles");
         leader.setMissionSkillPoints(0, 2, 0, false);
-        leader.setMilitarySkillPoints(Rank.Admiral,1,3);
+        leader.setMilitarySkillPoints(Rank.ADMIRAL, 1, 3);
         leader.setStartingLeader(false);
         leader.setRingID(0);
         leader.setFaction(Faction.REBEL);

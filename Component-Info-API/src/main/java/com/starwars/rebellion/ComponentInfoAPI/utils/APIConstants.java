@@ -41,5 +41,7 @@ public class APIConstants {
     public static final char SHIP_PRODUCTION_SYMBOL_FIRST = 'S';
     public static final char LAND_PRODUCTION_SYMBOL_FIRST = 'L';
     public static final char REMOTE_SYSTEM_IDENTIFICATION = 'X';
+
+    public static final int DEATH_STAR_HEALTH = 0;
 }
 

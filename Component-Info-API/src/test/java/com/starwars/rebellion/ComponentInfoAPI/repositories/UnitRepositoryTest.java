@@ -39,6 +39,6 @@ class UnitRepositoryTest {
 
     @Test
     void givenUnitRepositoryIsUp_thenRebelGroundUnitIsReturned() {
-        assertTrue(true);
+        assertEquals("Rebel Trooper", unitRepository.findByTitle("Rebel Trooper").getTitle());
     }
 }

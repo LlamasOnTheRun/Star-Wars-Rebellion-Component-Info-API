@@ -43,5 +43,7 @@ public class APIConstants {
     public static final char REMOTE_SYSTEM_IDENTIFICATION = 'X';
 
     public static final int DEATH_STAR_HEALTH = 0;
+    public static final char BLACK_HEALTH_COLOR = 'B';
+    public static final char RED_HEALTH_COLOR = 'R';
 }
 

@@ -93,7 +93,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(3);
-        missionCard.setSkillType(MissionSkillType.Diplomacy);
+        missionCard.setSkillType(MissionSkillType.DIPLOMACY);
         missionCard.setTotalInDeck(1);
         return missionCard;
     }
@@ -119,7 +119,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(3);
-        missionCard.setSkillType(MissionSkillType.Intel);
+        missionCard.setSkillType(MissionSkillType.INTEL);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(EmpireLeaderData.COLONEL_YULAREN);
         return missionCard;
@@ -144,7 +144,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(2);
-        missionCard.setSkillType(MissionSkillType.Diplomacy);
+        missionCard.setSkillType(MissionSkillType.DIPLOMACY);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(EmpireLeaderData.JANUS_GREEJATUS);
         return missionCard;
@@ -166,7 +166,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(2);
-        missionCard.setSkillType(MissionSkillType.SpecOps);
+        missionCard.setSkillType(MissionSkillType.SPEC_OPS);
         missionCard.setTotalInDeck(2);
         return missionCard;
     }
@@ -188,7 +188,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.Logistics);
+        missionCard.setSkillType(MissionSkillType.LOGISTICS);
         missionCard.setTotalInDeck(2);
         return missionCard;
     }
@@ -214,7 +214,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.Diplomacy);
+        missionCard.setSkillType(MissionSkillType.DIPLOMACY);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(EmpireLeaderData.MOFF_JERJERROD);
         return missionCard;
@@ -238,7 +238,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.Logistics);
+        missionCard.setSkillType(MissionSkillType.LOGISTICS);
         missionCard.setTotalInDeck(2);
         return missionCard;
     }
@@ -261,7 +261,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.SpecOps);
+        missionCard.setSkillType(MissionSkillType.SPEC_OPS);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(EmpireLeaderData.GENERAL_TAGGE);
         return missionCard;
@@ -284,7 +284,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(3);
-        missionCard.setSkillType(MissionSkillType.Intel);
+        missionCard.setSkillType(MissionSkillType.INTEL);
         missionCard.setTotalInDeck(1);
         return missionCard;
     }
@@ -313,7 +313,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(2);
-        missionCard.setSkillType(MissionSkillType.SpecOps);
+        missionCard.setSkillType(MissionSkillType.SPEC_OPS);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(EmpireLeaderData.GENERAL_VEERS);
         return missionCard;
@@ -335,7 +335,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(2);
-        missionCard.setSkillType(MissionSkillType.Intel);
+        missionCard.setSkillType(MissionSkillType.INTEL);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(EmpireLeaderData.ADMIRAL_PIETT);
         return missionCard;
@@ -360,7 +360,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(3);
-        missionCard.setSkillType(MissionSkillType.SpecOps);
+        missionCard.setSkillType(MissionSkillType.SPEC_OPS);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(EmpireLeaderData.BOBA_FETT);
         return missionCard;
@@ -384,7 +384,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(3);
-        missionCard.setSkillType(MissionSkillType.SpecOps);
+        missionCard.setSkillType(MissionSkillType.SPEC_OPS);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(EmpireLeaderData.DARTH_VADER);
         return missionCard;
@@ -406,7 +406,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(2);
-        missionCard.setSkillType(MissionSkillType.SpecOps);
+        missionCard.setSkillType(MissionSkillType.SPEC_OPS);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(EmpireLeaderData.SOONTIR_FEL);
         return missionCard;
@@ -433,7 +433,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.Diplomacy);
+        missionCard.setSkillType(MissionSkillType.DIPLOMACY);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(EmpireLeaderData.GRAND_MOFF_TARKIN);
         return missionCard;
@@ -455,7 +455,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(true);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.Diplomacy);
+        missionCard.setSkillType(MissionSkillType.DIPLOMACY);
         missionCard.setTotalInDeck(1);
         return missionCard;
     }
@@ -481,7 +481,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.Intel);
+        missionCard.setSkillType(MissionSkillType.INTEL);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(EmpireLeaderData.ADMIRAL_OZZEL);
         return missionCard;
@@ -505,7 +505,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(2);
-        missionCard.setSkillType(MissionSkillType.Diplomacy);
+        missionCard.setSkillType(MissionSkillType.DIPLOMACY);
         missionCard.setTotalInDeck(2);
         return missionCard;
     }
@@ -532,7 +532,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(2);
-        missionCard.setSkillType(MissionSkillType.Intel);
+        missionCard.setSkillType(MissionSkillType.INTEL);
         missionCard.setTotalInDeck(2);
         return missionCard;
     }
@@ -556,7 +556,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.Logistics);
+        missionCard.setSkillType(MissionSkillType.LOGISTICS);
         missionCard.setTotalInDeck(2);
         return missionCard;
     }
@@ -579,7 +579,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.Logistics);
+        missionCard.setSkillType(MissionSkillType.LOGISTICS);
         missionCard.setTotalInDeck(2);
         return missionCard;
     }
@@ -601,7 +601,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.Logistics);
+        missionCard.setSkillType(MissionSkillType.LOGISTICS);
         missionCard.setTotalInDeck(3);
         return missionCard;
     }
@@ -626,7 +626,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.Logistics);
+        missionCard.setSkillType(MissionSkillType.LOGISTICS);
         missionCard.setTotalInDeck(2);
         return missionCard;
     }
@@ -655,7 +655,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.Logistics);
+        missionCard.setSkillType(MissionSkillType.LOGISTICS);
         missionCard.setTotalInDeck(1);
         return missionCard;
     }
@@ -677,7 +677,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(true);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.Intel);
+        missionCard.setSkillType(MissionSkillType.INTEL);
         missionCard.setTotalInDeck(1);
         return missionCard;
     }
@@ -706,7 +706,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(true);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.Logistics);
+        missionCard.setSkillType(MissionSkillType.LOGISTICS);
         missionCard.setTotalInDeck(1);
         return missionCard;
     }
@@ -735,7 +735,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(3);
-        missionCard.setSkillType(MissionSkillType.Logistics);
+        missionCard.setSkillType(MissionSkillType.LOGISTICS);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(EmpireLeaderData.EMPEROR_PALPATINE);
         return missionCard;
@@ -761,7 +761,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(3);
-        missionCard.setSkillType(MissionSkillType.SpecOps);
+        missionCard.setSkillType(MissionSkillType.SPEC_OPS);
         missionCard.setTotalInDeck(1);
         return missionCard;
     }
@@ -785,7 +785,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(true);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.SpecOps);
+        missionCard.setSkillType(MissionSkillType.SPEC_OPS);
         missionCard.setTotalInDeck(1);
         return missionCard;
     }

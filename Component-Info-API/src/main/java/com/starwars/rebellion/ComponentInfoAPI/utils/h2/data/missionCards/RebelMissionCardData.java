@@ -88,7 +88,7 @@ public class RebelMissionCardData {
         missionCard.setFaction(Faction.REBEL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(3);
-        missionCard.setSkillType(MissionSkillType.Intel);
+        missionCard.setSkillType(MissionSkillType.INTEL);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(RebelLeaderData.OBI_WAN_KENOBI);
         return missionCard;
@@ -112,7 +112,7 @@ public class RebelMissionCardData {
         missionCard.setFaction(Faction.REBEL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(2);
-        missionCard.setSkillType(MissionSkillType.Intel);
+        missionCard.setSkillType(MissionSkillType.INTEL);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(RebelLeaderData.PRINCESS_LEIA);
         return missionCard;
@@ -135,7 +135,7 @@ public class RebelMissionCardData {
         missionCard.setFaction(Faction.REBEL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(3);
-        missionCard.setSkillType(MissionSkillType.SpecOps);
+        missionCard.setSkillType(MissionSkillType.SPEC_OPS);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(RebelLeaderData.CHEWBACCA);
         return missionCard;
@@ -158,7 +158,7 @@ public class RebelMissionCardData {
         missionCard.setFaction(Faction.REBEL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(3);
-        missionCard.setSkillType(MissionSkillType.SpecOps);
+        missionCard.setSkillType(MissionSkillType.SPEC_OPS);
         missionCard.setTotalInDeck(1);
         return missionCard;
     }
@@ -183,7 +183,7 @@ public class RebelMissionCardData {
         missionCard.setFaction(Faction.REBEL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(2);
-        missionCard.setSkillType(MissionSkillType.Diplomacy);
+        missionCard.setSkillType(MissionSkillType.DIPLOMACY);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(RebelLeaderData.ADMIRAL_ACKBAR);
         return missionCard;
@@ -205,7 +205,7 @@ public class RebelMissionCardData {
         missionCard.setFaction(Faction.REBEL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(2);
-        missionCard.setSkillType(MissionSkillType.Diplomacy);
+        missionCard.setSkillType(MissionSkillType.DIPLOMACY);
         missionCard.setTotalInDeck(2);
         return missionCard;
     }
@@ -229,7 +229,7 @@ public class RebelMissionCardData {
         missionCard.setFaction(Faction.REBEL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(3);
-        missionCard.setSkillType(MissionSkillType.Diplomacy);
+        missionCard.setSkillType(MissionSkillType.DIPLOMACY);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(RebelLeaderData.MON_MOTHMA);
         return missionCard;
@@ -251,7 +251,7 @@ public class RebelMissionCardData {
         missionCard.setFaction(Faction.REBEL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(2);
-        missionCard.setSkillType(MissionSkillType.SpecOps);
+        missionCard.setSkillType(MissionSkillType.SPEC_OPS);
         missionCard.setTotalInDeck(2);
         return missionCard;
     }
@@ -275,7 +275,7 @@ public class RebelMissionCardData {
         missionCard.setFaction(Faction.REBEL);
         missionCard.setStartingCard(true);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.Intel);
+        missionCard.setSkillType(MissionSkillType.INTEL);
         missionCard.setTotalInDeck(1);
         return missionCard;
     }
@@ -299,7 +299,7 @@ public class RebelMissionCardData {
         missionCard.setFaction(Faction.REBEL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.SpecOps);
+        missionCard.setSkillType(MissionSkillType.SPEC_OPS);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(RebelLeaderData.GENERAL_MADINE);
         return missionCard;
@@ -322,7 +322,7 @@ public class RebelMissionCardData {
         missionCard.setFaction(Faction.REBEL);
         missionCard.setStartingCard(true);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.Diplomacy);
+        missionCard.setSkillType(MissionSkillType.DIPLOMACY);
         missionCard.setTotalInDeck(1);
         return missionCard;
     }
@@ -344,7 +344,7 @@ public class RebelMissionCardData {
         missionCard.setFaction(Faction.REBEL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(3);
-        missionCard.setSkillType(MissionSkillType.Diplomacy);
+        missionCard.setSkillType(MissionSkillType.DIPLOMACY);
         missionCard.setTotalInDeck(1);
         return missionCard;
     }
@@ -368,7 +368,7 @@ public class RebelMissionCardData {
         missionCard.setFaction(Faction.REBEL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.Logistics);
+        missionCard.setSkillType(MissionSkillType.LOGISTICS);
         missionCard.setTotalInDeck(3);
         return missionCard;
     }
@@ -397,7 +397,7 @@ public class RebelMissionCardData {
         missionCard.setFaction(Faction.REBEL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(2);
-        missionCard.setSkillType(MissionSkillType.Intel);
+        missionCard.setSkillType(MissionSkillType.INTEL);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(RebelLeaderData.JAN_DODONNA);
         return missionCard;
@@ -423,7 +423,7 @@ public class RebelMissionCardData {
         missionCard.setFaction(Faction.REBEL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.Logistics);
+        missionCard.setSkillType(MissionSkillType.LOGISTICS);
         missionCard.setTotalInDeck(1);
         return missionCard;
     }
@@ -448,7 +448,7 @@ public class RebelMissionCardData {
         missionCard.setFaction(Faction.REBEL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.Logistics);
+        missionCard.setSkillType(MissionSkillType.LOGISTICS);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(RebelLeaderData.LANDO_CALRISSIAN);
         return missionCard;
@@ -476,7 +476,7 @@ public class RebelMissionCardData {
         missionCard.setFaction(Faction.REBEL);
         missionCard.setStartingCard(true);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.Logistics);
+        missionCard.setSkillType(MissionSkillType.LOGISTICS);
         missionCard.setTotalInDeck(1);
         return missionCard;
     }
@@ -503,7 +503,7 @@ public class RebelMissionCardData {
         missionCard.setFaction(Faction.REBEL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.Intel);
+        missionCard.setSkillType(MissionSkillType.INTEL);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(RebelLeaderData.LUKE_SKYWALKER);
         return missionCard;
@@ -528,7 +528,7 @@ public class RebelMissionCardData {
         missionCard.setFaction(Faction.REBEL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(2);
-        missionCard.setSkillType(MissionSkillType.SpecOps);
+        missionCard.setSkillType(MissionSkillType.SPEC_OPS);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(RebelLeaderData.WEDGE_ANTILLES);
         return missionCard;
@@ -552,7 +552,7 @@ public class RebelMissionCardData {
         missionCard.setFaction(Faction.REBEL);
         missionCard.setStartingCard(true);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.SpecOps);
+        missionCard.setSkillType(MissionSkillType.SPEC_OPS);
         missionCard.setTotalInDeck(1);
         return missionCard;
     }
@@ -574,7 +574,7 @@ public class RebelMissionCardData {
         missionCard.setFaction(Faction.REBEL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.Diplomacy);
+        missionCard.setSkillType(MissionSkillType.DIPLOMACY);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(RebelLeaderData.GENERAL_RIEEKAN);
         return missionCard;
@@ -598,7 +598,7 @@ public class RebelMissionCardData {
         missionCard.setFaction(Faction.REBEL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(1);
-        missionCard.setSkillType(MissionSkillType.Intel);
+        missionCard.setSkillType(MissionSkillType.INTEL);
         missionCard.setTotalInDeck(1);
         return missionCard;
     }
@@ -619,7 +619,7 @@ public class RebelMissionCardData {
         missionCard.setFaction(Faction.REBEL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(2);
-        missionCard.setSkillType(MissionSkillType.Diplomacy);
+        missionCard.setSkillType(MissionSkillType.DIPLOMACY);
         missionCard.setTotalInDeck(2);
         return missionCard;
     }
@@ -648,7 +648,7 @@ public class RebelMissionCardData {
         missionCard.setFaction(Faction.REBEL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(2);
-        missionCard.setSkillType(MissionSkillType.SpecOps);
+        missionCard.setSkillType(MissionSkillType.SPEC_OPS);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(RebelLeaderData.HAN_SOLO);
         return missionCard;

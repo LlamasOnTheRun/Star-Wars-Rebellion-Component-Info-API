@@ -1,5 +1,6 @@
 package com.starwars.rebellion.ComponentInfoAPI.repositories;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -13,7 +14,31 @@ class UnitRepositoryTest {
     UnitRepository unitRepository;
 
     @Test
-    void givenAllRebelActionCardDataIsAvailable_thenSixNonStartingCardsAreAvailable() {
+    @Disabled
+    void givenAllRebelShipUnitsAreAvailable_thenFiveUniqueUnitsAreReturned() {
+        assertTrue(true);
+    }
+
+    @Test
+    @Disabled
+    void givenAllRebelGroundUnitsAreAvailable_thenFourUniqueUnitsAreReturned() {
+        assertTrue(true);
+    }
+
+    @Test
+    @Disabled
+    void givenAllEmpireShipUnitsAreAvailable_thenSixUniqueShipsAreReturned() {
+        assertTrue(true);
+    }
+
+    @Test
+    @Disabled
+    void givenAllEmpireGroundUnitsAreAvailable_thenThreeUniqueUnitsAreReturned() {
+        assertTrue(true);
+    }
+
+    @Test
+    void givenUnitRepositoryIsUp_thenRebelGroundUnitIsReturned() {
         assertTrue(true);
     }
 }

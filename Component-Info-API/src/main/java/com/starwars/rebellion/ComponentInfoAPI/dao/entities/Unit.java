@@ -16,7 +16,6 @@ import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.DEATH_S
 @Entity
 @Getter
 @Setter
-//@Builder
 public class Unit {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

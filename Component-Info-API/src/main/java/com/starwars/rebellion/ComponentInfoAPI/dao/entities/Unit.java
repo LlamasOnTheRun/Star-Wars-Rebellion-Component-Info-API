@@ -24,6 +24,7 @@ public class Unit {
     private Faction faction;
     private UnitType unitType;
     private ProductionType productionType;
+    private String specialText;
     private int blackDie = 0;
     private int redDie = 0;
     private int health = DEATH_STAR_HEALTH;

@@ -12,6 +12,7 @@ import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.regions.RegionData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.rings.RingData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.*;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.units.RebelGroundUnitData;
+import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.units.RebelShipUnitData;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -87,5 +88,6 @@ public class H2StartUpDataLoader implements ApplicationRunner {
 
     private void saveUnits() {
         unitRepository.saveAll(RebelGroundUnitData.fetch());
+        unitRepository.saveAll(RebelShipUnitData.fetch());
     }
 }

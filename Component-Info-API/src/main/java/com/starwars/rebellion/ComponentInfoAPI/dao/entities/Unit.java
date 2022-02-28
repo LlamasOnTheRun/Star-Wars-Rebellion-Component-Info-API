@@ -32,5 +32,6 @@ public class Unit {
     private int shipCarryingCapacity = 0;
     private boolean invincible = false;
     private boolean needsTransport = false;
+    private boolean structure = false;
     private int totalInGame;
 }

@@ -1,15 +1,10 @@
 package com.starwars.rebellion.ComponentInfoAPI.repositories;
 
-import com.starwars.rebellion.ComponentInfoAPI.dao.entities.MissionCard;
-import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.List;
-
-import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.*;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_DISTINCT_OBJECTIVE_CARDS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
@@ -18,9 +13,8 @@ class ObjectiveCardRepositoryTest {
 	ObjectiveCardRepository objectiveCardRepository;
 
 	@Test
-	@Disabled
 	void givenAllObjectiveCardDataIsPresent_thenFifteenDistinctEntriesAreReturned() {
-		assertEquals(TOTAL_OBJECTIVE_CARDS, objectiveCardRepository.findAll().stream().distinct().count());
+		assertEquals(TOTAL_DISTINCT_OBJECTIVE_CARDS, objectiveCardRepository.findAll().stream().distinct().count());
 	}
 
 	@Test

@@ -1,6 +1,8 @@
 package com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables;
 
-public enum Rank {
-    ADMIRAL,
-    GENERAL
+public enum ProductionType {
+    LIGHT,
+    MEDIUM,
+    HEAVY,
+    PROJECT
 }

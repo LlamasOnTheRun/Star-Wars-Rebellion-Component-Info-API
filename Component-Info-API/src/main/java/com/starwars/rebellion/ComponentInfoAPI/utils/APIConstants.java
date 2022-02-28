@@ -21,7 +21,7 @@ public class APIConstants {
     public static final int TOTAL_NON_STARTING_REBEL_ACTION_CARDS = 6;
     public static final int TOTAL_ACTION_CARDS = 34;
 
-    public static final int TOTAL_OBJECTIVE_CARDS = 15;
+    public static final int TOTAL_DISTINCT_OBJECTIVE_CARDS = 14;
     public static final char INSPIRE_SYMPATHY_EDGE_CASE = '*';
 
     public static final int TOTAL_STARTING_MISSION_CARDS = 8;
@@ -41,5 +41,9 @@ public class APIConstants {
     public static final char SHIP_PRODUCTION_SYMBOL_FIRST = 'S';
     public static final char LAND_PRODUCTION_SYMBOL_FIRST = 'L';
     public static final char REMOTE_SYSTEM_IDENTIFICATION = 'X';
+
+    public static final int DEATH_STAR_HEALTH = 0;
+    public static final char BLACK_HEALTH_COLOR = 'B';
+    public static final char RED_HEALTH_COLOR = 'R';
 }
 

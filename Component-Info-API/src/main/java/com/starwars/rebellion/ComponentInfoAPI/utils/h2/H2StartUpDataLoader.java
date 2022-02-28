@@ -1,6 +1,5 @@
 package com.starwars.rebellion.ComponentInfoAPI.utils.h2;
 
-import com.starwars.rebellion.ComponentInfoAPI.dao.entities.ObjectiveCard;
 import com.starwars.rebellion.ComponentInfoAPI.repositories.*;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards.EmpireActionCardData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards.RebelActionCardData;
@@ -12,6 +11,7 @@ import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.objectiveCards.Obje
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.regions.RegionData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.rings.RingData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.*;
+import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.units.RebelGroundUnitData;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -36,6 +36,8 @@ public class H2StartUpDataLoader implements ApplicationRunner {
     private SystemRepository systemRepository;
     @Autowired
     private ObjectiveCardRepository objectiveCardRepository;
+    @Autowired
+    private UnitRepository unitRepository;
 
     public void run(ApplicationArguments args) {
         log.debug("Starting H2 data load up for board game components");
@@ -45,6 +47,7 @@ public class H2StartUpDataLoader implements ApplicationRunner {
         saveMissionCards();
         saveRegionsAndSystems();
         saveObjectiveCards();
+        saveUnits();
     }
 
     private void saveActionCards() {
@@ -80,5 +83,9 @@ public class H2StartUpDataLoader implements ApplicationRunner {
         systemRepository.saveAll(RegionSixSystemData.fetch());
         systemRepository.saveAll(RegionSevenSystemData.fetch());
         systemRepository.saveAll(RegionEightSystemData.fetch());
+    }
+
+    private void saveUnits() {
+        unitRepository.saveAll(RebelGroundUnitData.fetch());
     }
 }

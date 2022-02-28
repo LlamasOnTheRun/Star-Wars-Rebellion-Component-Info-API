@@ -1,5 +1,7 @@
 package com.starwars.rebellion.ComponentInfoAPI.repositories;
 
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.UnitType;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,15 +17,18 @@ class UnitRepositoryTest {
     UnitRepository unitRepository;
 
     @Test
-    @Disabled
-    void givenAllRebelShipUnitsAreAvailable_thenFiveUniqueUnitsAreReturned() {
-        assertTrue(true);
+    void givenAllRebelUnitsAreAvailable_thenNineUnitsAreReturned() {
+        assertEquals(9, unitRepository.findByFaction(Faction.REBEL).size());
     }
 
     @Test
-    @Disabled
+    void givenAllRebelShipUnitsAreAvailable_thenFiveUniqueUnitsAreReturned() {
+        assertEquals(5, unitRepository.findByFactionAndUnitType(Faction.REBEL, UnitType.SHIP).size());
+    }
+
+    @Test
     void givenAllRebelGroundUnitsAreAvailable_thenFourUniqueUnitsAreReturned() {
-        assertTrue(true);
+        assertEquals(4, unitRepository.findByFactionAndUnitType(Faction.REBEL, UnitType.GROUND).size());
     }
 
     @Test

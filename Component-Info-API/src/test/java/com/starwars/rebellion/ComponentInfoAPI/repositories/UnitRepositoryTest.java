@@ -18,17 +18,17 @@ class UnitRepositoryTest {
 
     @Test
     void givenAllRebelUnitsAreAvailable_thenNineUnitsAreReturned() {
-        assertEquals(9, unitRepository.findByFaction(Faction.REBEL));
+        assertEquals(9, unitRepository.findByFaction(Faction.REBEL).size());
     }
 
     @Test
     void givenAllRebelShipUnitsAreAvailable_thenFiveUniqueUnitsAreReturned() {
-        assertEquals(5, unitRepository.findByFactionAndUnitType(Faction.REBEL, UnitType.SHIP));
+        assertEquals(5, unitRepository.findByFactionAndUnitType(Faction.REBEL, UnitType.SHIP).size());
     }
 
     @Test
     void givenAllRebelGroundUnitsAreAvailable_thenFourUniqueUnitsAreReturned() {
-        assertEquals(4, unitRepository.findByFactionAndUnitType(Faction.REBEL, UnitType.GROUND));
+        assertEquals(4, unitRepository.findByFactionAndUnitType(Faction.REBEL, UnitType.GROUND).size());
     }
 
     @Test

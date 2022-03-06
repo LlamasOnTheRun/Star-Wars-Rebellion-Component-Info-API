@@ -45,5 +45,6 @@ public class APIConstants {
     public static final int DEATH_STAR_HEALTH = 0;
     public static final char BLACK_HEALTH_COLOR = 'B';
     public static final char RED_HEALTH_COLOR = 'R';
+    public static final char NO_HEALTH_COLOR = 'P';
 }
 

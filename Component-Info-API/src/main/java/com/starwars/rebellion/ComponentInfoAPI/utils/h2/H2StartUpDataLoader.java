@@ -11,6 +11,7 @@ import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.objectiveCards.Obje
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.regions.RegionData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.rings.RingData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.*;
+import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.units.ImperialGroundUnitData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.units.ImperialShipUnitData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.units.RebelGroundUnitData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.units.RebelShipUnitData;
@@ -91,5 +92,6 @@ public class H2StartUpDataLoader implements ApplicationRunner {
         unitRepository.saveAll(RebelGroundUnitData.fetch());
         unitRepository.saveAll(RebelShipUnitData.fetch());
         unitRepository.saveAll(ImperialShipUnitData.fetch());
+        unitRepository.saveAll(ImperialGroundUnitData.fetch());
     }
 }

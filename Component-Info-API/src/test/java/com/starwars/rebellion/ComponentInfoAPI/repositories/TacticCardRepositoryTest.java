@@ -28,4 +28,14 @@ class TacticCardRepositoryTest {
     void givenAllGroundTacticCardsAreAvailable_thenFifteenIsTotalSumOfCardsReturned() {
         assertEquals(15, tacticCardRepository.findByTacticType(TacticType.GROUND).stream().mapToInt(TacticCard::getTotalInDeck).sum());
     }
+
+    @Test
+    void givenAllSpaceTacticCardsAreAvailable_thenNineUniqueCardsAreReturned() {
+        assertEquals(9, tacticCardRepository.findByTacticType(TacticType.SPACE).size());
+    }
+
+    @Test
+    void givenAllSpaceTacticCardsAreAvailable_thenFifteenIsTotalSumOfCardsReturned() {
+        assertEquals(15, tacticCardRepository.findByTacticType(TacticType.SPACE).stream().mapToInt(TacticCard::getTotalInDeck).sum());
+    }
 }

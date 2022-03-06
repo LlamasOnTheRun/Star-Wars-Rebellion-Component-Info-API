@@ -2,13 +2,11 @@ package com.starwars.rebellion.ComponentInfoAPI.repositories;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.UnitType;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 class UnitRepositoryTest {
@@ -32,15 +30,13 @@ class UnitRepositoryTest {
     }
 
     @Test
-    @Disabled
     void givenAllEmpireShipUnitsAreAvailable_thenSixUniqueShipsAreReturned() {
-        assertTrue(true);
+        assertEquals(6, unitRepository.findByFactionAndUnitType(Faction.IMPERIAL, UnitType.SHIP).size());
     }
 
     @Test
-    @Disabled
     void givenAllEmpireGroundUnitsAreAvailable_thenThreeUniqueUnitsAreReturned() {
-        assertTrue(true);
+        assertEquals(3, unitRepository.findByFactionAndUnitType(Faction.IMPERIAL, UnitType.GROUND).size());
     }
 
     @Test

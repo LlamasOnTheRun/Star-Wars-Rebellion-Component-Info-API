@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.DEATH_STAR_HEALTH;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.NO_HEALTH_COLOR;
 
 @Entity
 @Getter
@@ -28,7 +29,7 @@ public class Unit {
     private int blackDie = 0;
     private int redDie = 0;
     private int health = DEATH_STAR_HEALTH;
-    private char healthColor;
+    private char healthColor = NO_HEALTH_COLOR;
     private int shipCarryingCapacity = 0;
     private boolean invincible = false;
     private boolean needsTransport = false;

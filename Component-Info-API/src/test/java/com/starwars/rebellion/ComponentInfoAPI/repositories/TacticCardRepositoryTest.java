@@ -1,8 +1,12 @@
 package com.starwars.rebellion.ComponentInfoAPI.repositories;
 
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.TacticCard;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.TacticType;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 class TacticCardRepositoryTest {
@@ -11,17 +15,17 @@ class TacticCardRepositoryTest {
     TacticCardRepository tacticCardRepository;
 
     @Test
-    void givenAllGroundTacticCardsAreAvailable_thenTenUniqueCardsAreReturned() {
-        assertEquals("Escape Plan", tacticCardRepository.findByTitle("Escape Plan").getTitle());
+    void givenAllGroundTacticCardsAreAvailable_thenOneCardIsReturned() {
+        assertEquals("Escape Plan", tacticCardRepository.findByCardTextTitle("Escape Plan").getCardText().getTitle());
     }
 
     @Test
     void givenAllGroundTacticCardsAreAvailable_thenTenUniqueCardsAreReturned() {
-        assertEquals(10, tacticCardRepository.findByType(TaticType.GROUND));
+        assertEquals(10, tacticCardRepository.findByTacticType(TacticType.GROUND).size());
     }
 
     @Test
     void givenAllGroundTacticCardsAreAvailable_thenFifteenIsTotalSumOfCardsReturned() {
-        assertEquals(15, tacticCardRepository.findByType(TaticType.GROUND).stream().mapToInt(TaticCard::getTotalInDeck).sum();
+        assertEquals(15, tacticCardRepository.findByTacticType(TacticType.GROUND).stream().mapToInt(TacticCard::getTotalInDeck).sum());
     }
 }

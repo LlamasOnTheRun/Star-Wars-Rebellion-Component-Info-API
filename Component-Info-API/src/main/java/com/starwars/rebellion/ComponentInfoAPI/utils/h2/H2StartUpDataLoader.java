@@ -12,6 +12,7 @@ import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.regions.RegionData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.rings.RingData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.*;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.tacticCards.GroundTacticCardData;
+import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.tacticCards.SpaceTacticCardData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.units.ImperialGroundUnitData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.units.ImperialShipUnitData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.units.RebelGroundUnitData;
@@ -101,5 +102,6 @@ public class H2StartUpDataLoader implements ApplicationRunner {
 
     private void saveTacticCards() {
         tacticCardRepository.saveAll(GroundTacticCardData.fetch());
+        tacticCardRepository.saveAll(SpaceTacticCardData.fetch());
     }
 }

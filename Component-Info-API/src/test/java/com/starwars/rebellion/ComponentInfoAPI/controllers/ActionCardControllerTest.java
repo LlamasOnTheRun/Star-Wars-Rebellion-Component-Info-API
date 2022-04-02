@@ -14,11 +14,6 @@ import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_A
 	ActionCardController actionCardsController;
 
 	@Test
-	void givenUndercoverActionCardDataIsAvailable_ThenUndercoverNameIsReturned() {
-		Assertions.assertEquals("Undercover", actionCardsController.getActionCard());
-	}
-
-	@Test
 	void givenAllActionCardDataIsAvailable_ThenThirtyFourCardsShouldBeReturned() {
 		Assertions.assertEquals(TOTAL_ACTION_CARDS, actionCardsController.getAllActionCards().size());
 	}

@@ -1,7 +1,9 @@
 package com.starwars.rebellion.ComponentInfoAPI.controllers;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.ActionCard;
+import com.starwars.rebellion.ComponentInfoAPI.dao.request.ActionCardRequest;
 import com.starwars.rebellion.ComponentInfoAPI.repositories.ActionCardRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,13 +17,15 @@ import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.*;
 
 @Controller
 @RequestMapping(value=BASE_CONTROLLER_PATH)
+@Slf4j
 public class ActionCardController {
     @Autowired
     private ActionCardRepository actionCardRepository;
 
     @PostMapping(path= ACTION_CARD_ENDPOINT)
     @ResponseBody
-    public String getActionCard() {
+    public String getActionCard(ActionCardRequest actionCardRequest) {
+        log.info("Request Object: {}", actionCardRequest.toString());
         return actionCardRepository.findByActionCardTextTitle("Undercover").getActionCardText().getTitle();
     }
 

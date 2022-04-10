@@ -20,6 +20,8 @@ public class ActionCard {
     @Enumerated(EnumType.STRING)
     private Faction faction;
     @ManyToMany
+    //TODO Add below annotation back in order to fix recursion problem within JSON
+    //@JsonIgnoreProperties("inActionCards")
     private List<Leader> leaderChoices;
     private boolean isStartingCard;
    // @OneToOne

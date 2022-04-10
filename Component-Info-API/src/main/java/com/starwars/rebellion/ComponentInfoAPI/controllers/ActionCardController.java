@@ -25,7 +25,7 @@ public class ActionCardController {
 
     @PostMapping(path= ACTION_CARD_ENDPOINT)
     @ResponseBody
-    public String getActionCard(@RequestBody ActionCardRequest actionCardRequest) {
+    public List<ActionCard> getActionCard(@RequestBody ActionCardRequest actionCardRequest) {
         log.info("Request Object: {}", actionCardRequest.toString());
         return actionCardRepository.findAll(actionCardSpecification.getActionCards(actionCardRequest));
     }

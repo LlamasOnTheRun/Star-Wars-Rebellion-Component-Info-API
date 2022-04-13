@@ -1,17 +1,19 @@
 package com.starwars.rebellion.ComponentInfoAPI.controllers;
 
-import com.starwars.rebellion.ComponentInfoAPI.dao.entities.Leader;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jayway.jsonassert.JsonAssert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
+import java.io.StringWriter;
 
 import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_ACTION_CARDS;
 
 @SpringBootTest
-	class ActionCardControllerTest {
+class ActionCardControllerTest {
 
 	@Autowired
 	ActionCardController actionCardsController;
@@ -22,11 +24,13 @@ import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_A
 	}
 
 	@Test
-	//TODO Complete test case. May need to add service layer with @transactional
-	void givenActionCardReferBackToLeaderChoices_ThenRecursionShouldNotPropagateDueToLeadersReferencingBackToActionCards() {
-		actionCardsController.getAllActionCards().forEach(actionCard -> {
-			List<Leader> leaders = actionCard.getLeaderChoices();
-			Assertions.assertNull(leaders.get(0).getInActionCards());
-		});
+	@Transactional
+	void givenActionCardReferBackToLeaderChoices_ThenRecursionShouldNotPropagateDueToLeadersReferencingBackToActionCards() throws Exception {
+		StringWriter writer = new StringWriter();
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.writeValue(writer, actionCardsController.getAllActionCards());
+		final String json = writer.toString();
+
+		JsonAssert.with(json).assertNotDefined("items[0].leaderChoices[0].inActionCards");
 	}
 }

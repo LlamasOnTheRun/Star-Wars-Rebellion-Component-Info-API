@@ -30,9 +30,9 @@ public class ActionCardController {
         return actionCardRepository.findAll(actionCardSpecification.getActionCards(actionCardRequest));
     }
 
-    @GetMapping(path=GET_ALL_REBEL_ACTION_CARDS_ENDPOINT)
+    @GetMapping(path = ALL_ACTION_CARDS_ENDPOINT)
     @ResponseBody
     public List<ActionCard> getAllActionCards() {
-        return (List<ActionCard>) actionCardRepository.findAll();
+        return actionCardRepository.findAll();
     }
 }

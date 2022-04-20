@@ -8,11 +8,10 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 import java.util.List;
 
-public interface ActionCardRepository extends JpaRepository<ActionCard, Integer>,
-        JpaSpecificationExecutor<ActionCard> {
-    ActionCard findByActionCardTextTitle(String title);
+public interface ActionCardRepository extends JpaRepository<ActionCard, Integer>, JpaSpecificationExecutor<ActionCard> {
     List<ActionCard> findByIsStartingCardAndFaction(boolean isStartingCard, Faction faction);
+
     List<ActionCard> findByFaction(Faction faction);
 
-    public List<ActionCard> findAll(Specification<ActionCard> spec);
+    List<ActionCard> findAll(Specification<ActionCard> spec);
 }

@@ -21,6 +21,12 @@ class ActionCardControllerTest {
 	ActionCardController actionCardsController;
 
 	@Test
+		// TODO will need to use restassurrd to test this one, which is integration. Will leave as a later task
+	void givenInvalidIDIsProvidedInJsonRequest_thenExceptionIsThrown() throws Exception {
+
+	}
+
+	@Test
 	@Transactional
 	void givenStringIDIsProvidedInJsonRequest_thenThreeIDsAreReturnedForLeadersAndActionCards() throws Exception {
 		ObjectMapper objectMapper = new ObjectMapper();
@@ -63,5 +69,11 @@ class ActionCardControllerTest {
 
 		assertTrue(responseJson.contains("leaderChoices"));
 		assertFalse(responseJson.contains("inActionCards"));
+	}
+
+	//TODO make a test scenerio where a invalid string is passed in json for faction
+	@Test
+	@Transactional
+	void givenFactionIsInvalidType_thenExceptionIsThrown() {
 	}
 }

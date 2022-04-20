@@ -11,16 +11,16 @@ import java.util.List;
 
 @Component
 public class ActionCardSpecification {
+
     public Specification<ActionCard> getActionCards(ActionCardRequest actionCardRequest) {
         return (root, query, criteriaBuilder) -> {
             List<Predicate> predicates = new ArrayList<>();
 
-            if(actionCardRequest.getId() >= 0) {
-                predicates.add(criteriaBuilder.equal(root.get("id"),
-                        actionCardRequest.getId()));
+            if (actionCardRequest.getId() > 0) {
+                predicates.add(criteriaBuilder.equal(root.get("id"), actionCardRequest.getId()));
             }
-
             return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
         };
     }
+
 }

@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 public class ActionCardRequest {
     private int id;
+    private String title;
     private Faction faction;
-    private String leaderName;
     private boolean startingCard;
 }

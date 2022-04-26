@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.List;
 
 import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_EMPIRE_ACTION_CARDS;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_REBEL_ACTION_CARDS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -64,7 +65,12 @@ public class ActionCardSpecificationTest {
 
     @Test
     void givenFactionIsRebel_thenFactionEqualPredicateIsAdded() {
+        ActionCardRequest actionCardRequest = new ActionCardRequest();
+        actionCardRequest.setFaction(Faction.REBEL);
 
+        List<ActionCard> actionCardList = actionCardRepository.findAll(actionCardSpecification.getActionCards(actionCardRequest));
+
+        assertEquals(TOTAL_REBEL_ACTION_CARDS, actionCardList.size());
     }
 
     @Test

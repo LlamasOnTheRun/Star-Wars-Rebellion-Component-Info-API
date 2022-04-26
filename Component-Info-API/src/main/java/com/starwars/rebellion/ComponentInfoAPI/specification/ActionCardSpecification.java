@@ -19,6 +19,11 @@ public class ActionCardSpecification {
             if (actionCardRequest.getId() > 0) {
                 predicates.add(criteriaBuilder.equal(root.get("id"), actionCardRequest.getId()));
             }
+
+            if (actionCardRequest.getFaction() != null) {
+                predicates.add(criteriaBuilder.equal(root.get("faction"), actionCardRequest.getFaction()));
+            }
+
             return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
         };
     }

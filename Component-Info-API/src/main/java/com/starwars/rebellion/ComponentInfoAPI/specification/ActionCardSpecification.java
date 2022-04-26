@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import javax.persistence.criteria.Predicate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Component
 public class ActionCardSpecification {
@@ -22,6 +23,10 @@ public class ActionCardSpecification {
 
             if (actionCardRequest.getFaction() != null) {
                 predicates.add(criteriaBuilder.equal(root.get("faction"), actionCardRequest.getFaction()));
+            }
+
+            if (actionCardRequest.getTitle() != null && !Objects.equals(actionCardRequest.getTitle(), "")) {
+                predicates.add(criteriaBuilder.like(root.get("actionCardText").get("title"), "%"+actionCardRequest.getTitle()+"%"));
             }
 
             return criteriaBuilder.and(predicates.toArray(new Predicate[0]));

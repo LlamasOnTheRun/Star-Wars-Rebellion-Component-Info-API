@@ -83,7 +83,14 @@ public class ActionCardSpecificationTest {
 
     @Test
     void givenTitleIsSimilar_thenTitlePredicateIsAdded() {
+        ActionCardRequest actionCardRequest = new ActionCardRequest();
+        actionCardRequest.setTitle("To");
 
+        List<ActionCard> actionCardList = actionCardRepository.findAll(actionCardSpecification.getActionCards(actionCardRequest));
+
+        assertEquals(1, actionCardList.size());
+        assertEquals("According\nTo My Design\n",
+                actionCardList.get(0).getActionCardText().getTitle());
     }
 
     @Test
@@ -93,6 +100,11 @@ public class ActionCardSpecificationTest {
 
     @Test
     void givenTitleIsNull_thenTitlePredicateIsNotAdded() {
+
+    }
+
+    @Test
+    void givenStartingCard() {
 
     }
 }

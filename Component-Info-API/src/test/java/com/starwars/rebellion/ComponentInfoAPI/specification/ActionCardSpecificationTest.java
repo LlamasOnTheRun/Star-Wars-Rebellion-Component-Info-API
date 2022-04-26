@@ -1,6 +1,7 @@
 package com.starwars.rebellion.ComponentInfoAPI.specification;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.ActionCard;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
 import com.starwars.rebellion.ComponentInfoAPI.dao.request.ActionCardRequest;
 import com.starwars.rebellion.ComponentInfoAPI.repositories.ActionCardRepository;
 import org.junit.jupiter.api.Test;
@@ -9,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_EMPIRE_ACTION_CARDS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -52,7 +54,12 @@ public class ActionCardSpecificationTest {
 
     @Test
     void givenFactionIsEmpire_thenFactionEqualPredicateIsAdded() {
+        ActionCardRequest actionCardRequest = new ActionCardRequest();
+        actionCardRequest.setFaction(Faction.IMPERIAL);
 
+        List<ActionCard> actionCardList = actionCardRepository.findAll(actionCardSpecification.getActionCards(actionCardRequest));
+
+        assertEquals(TOTAL_EMPIRE_ACTION_CARDS, actionCardList.size());
     }
 
     @Test

@@ -10,10 +10,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_EMPIRE_ACTION_CARDS;
-import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_REBEL_ACTION_CARDS;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 public class ActionCardSpecificationTest {
@@ -30,7 +28,7 @@ public class ActionCardSpecificationTest {
 
         List<ActionCard> actionCardList = actionCardRepository.findAll(actionCardSpecification.getActionCards(actionCardRequest));
 
-        assertTrue(actionCardList.size() > 1);
+        assertEquals(TOTAL_ACTION_CARDS, actionCardList.size());
     }
 
     @Test
@@ -74,13 +72,13 @@ public class ActionCardSpecificationTest {
     }
 
     @Test
-    void givenFactionIsBlank_thenFactionEqualPredicateIsNotAdded() {
-
-    }
-
-    @Test
     void givenFactionIsNull_thenFactionEqualPredicateIsNotAdded() {
+        ActionCardRequest actionCardRequest = new ActionCardRequest();
+        actionCardRequest.setFaction(null);
 
+        List<ActionCard> actionCardList = actionCardRepository.findAll(actionCardSpecification.getActionCards(actionCardRequest));
+
+        assertEquals(TOTAL_ACTION_CARDS, actionCardList.size());
     }
 
     @Test

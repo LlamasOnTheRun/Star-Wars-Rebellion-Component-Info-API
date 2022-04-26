@@ -95,7 +95,22 @@ public class ActionCardSpecificationTest {
 
     @Test
     void givenTitleIsExact_thenTitlePredicateIsAdded() {
+        ActionCardRequest actionCardRequest = new ActionCardRequest();
+        actionCardRequest.setTitle("Brilliant\nAdministrator\n");
 
+        List<ActionCard> actionCardList = actionCardRepository.findAll(actionCardSpecification.getActionCards(actionCardRequest));
+
+        assertEquals(1, actionCardList.size());
+    }
+
+    @Test
+    void givenTitleIsExactWithoutNewlines_thenTitlePredicateIsAdded() {
+        ActionCardRequest actionCardRequest = new ActionCardRequest();
+        actionCardRequest.setTitle("Brilliant Administrator");
+
+        List<ActionCard> actionCardList = actionCardRepository.findAll(actionCardSpecification.getActionCards(actionCardRequest));
+
+        assertEquals(1, actionCardList.size());
     }
 
     @Test

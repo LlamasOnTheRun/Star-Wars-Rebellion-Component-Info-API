@@ -8,5 +8,5 @@ public class ActionCardRequest {
     private int id;
     private String title;
     private Faction faction;
-    private boolean startingCard;
+    private Boolean startingCard;
 }

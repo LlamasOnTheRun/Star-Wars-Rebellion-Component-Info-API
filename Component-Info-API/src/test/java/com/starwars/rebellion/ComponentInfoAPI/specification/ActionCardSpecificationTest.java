@@ -18,6 +18,7 @@ public class ActionCardSpecificationTest {
 
     @Autowired
     private ActionCardSpecification actionCardSpecification;
+
     @Autowired
     private ActionCardRepository actionCardRepository;
 
@@ -115,11 +116,51 @@ public class ActionCardSpecificationTest {
 
     @Test
     void givenTitleIsNull_thenTitlePredicateIsNotAdded() {
+        ActionCardRequest actionCardRequest = new ActionCardRequest();
+        actionCardRequest.setTitle(null);
 
+        List<ActionCard> actionCardList = actionCardRepository.findAll(actionCardSpecification.getActionCards(actionCardRequest));
+
+        assertEquals(TOTAL_ACTION_CARDS, actionCardList.size());
     }
 
     @Test
-    void givenStartingCard() {
+    void givenTitleIsBlank_thenTitlePredicateIsNotAdded() {
+        ActionCardRequest actionCardRequest = new ActionCardRequest();
+        actionCardRequest.setTitle("");
 
+        List<ActionCard> actionCardList = actionCardRepository.findAll(actionCardSpecification.getActionCards(actionCardRequest));
+
+        assertEquals(TOTAL_ACTION_CARDS, actionCardList.size());
+    }
+
+    @Test
+    void givenStartingCardIsTrue_thenStartingCardPredicateIsAdded() {
+        ActionCardRequest actionCardRequest = new ActionCardRequest();
+        actionCardRequest.setStartingCard(true);
+
+        List<ActionCard> actionCardList = actionCardRepository.findAll(actionCardSpecification.getActionCards(actionCardRequest));
+
+        assertEquals(TOTAL_STARTING_REBEL_ACTION_CARDS + TOTAL_STARTING_EMPIRE_ACTION_CARDS, actionCardList.size());
+    }
+
+    @Test
+    void givenStartingCardIsFalse_thenStartingCardPredicateIsAdded() {
+        ActionCardRequest actionCardRequest = new ActionCardRequest();
+        actionCardRequest.setStartingCard(false);
+
+        List<ActionCard> actionCardList = actionCardRepository.findAll(actionCardSpecification.getActionCards(actionCardRequest));
+
+        assertEquals(TOTAL_NON_STARTING_EMPIRE_ACTION_CARDS + TOTAL_NON_STARTING_REBEL_ACTION_CARDS, actionCardList.size());
+    }
+
+    @Test
+    void givenStartingCardIsNull_thenStartingCardPredicateIsNotAdded() {
+        ActionCardRequest actionCardRequest = new ActionCardRequest();
+        actionCardRequest.setStartingCard(null);
+
+        List<ActionCard> actionCardList = actionCardRepository.findAll(actionCardSpecification.getActionCards(actionCardRequest));
+
+        assertEquals(TOTAL_ACTION_CARDS, actionCardList.size());
     }
 }

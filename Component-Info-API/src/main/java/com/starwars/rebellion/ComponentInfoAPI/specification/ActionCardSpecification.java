@@ -36,6 +36,11 @@ public class ActionCardSpecification {
                         "%"+word+"%")));
             }
 
+            if (actionCardRequest.getStartingCard() != null) {
+                predicates.add(criteriaBuilder.equal(root.get("isStartingCard"),
+                        actionCardRequest.getStartingCard()));
+            }
+
             return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
         };
     }

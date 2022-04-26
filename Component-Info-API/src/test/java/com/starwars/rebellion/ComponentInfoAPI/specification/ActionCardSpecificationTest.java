@@ -104,9 +104,9 @@ public class ActionCardSpecificationTest {
     }
 
     @Test
-    void givenTitleIsExactWithoutNewlines_thenTitlePredicateIsAdded() {
+    void givenTitleWithoutNewlines_thenTitlePredicateIsAdded() {
         ActionCardRequest actionCardRequest = new ActionCardRequest();
-        actionCardRequest.setTitle("Brilliant Administrator");
+        actionCardRequest.setTitle("The Millennium Falcon");
 
         List<ActionCard> actionCardList = actionCardRepository.findAll(actionCardSpecification.getActionCards(actionCardRequest));
 

@@ -13,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 class MissionCardRepositoryTest {
+
 	@Autowired
 	MissionCardRepository missionCardRepository;
 

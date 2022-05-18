@@ -1,10 +1,12 @@
 package com.starwars.rebellion.ComponentInfoAPI.dao.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.MilitarySkillPoints;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.MissionSkillPoints;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Rank;
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
@@ -26,7 +28,8 @@ public class Leader {
     private boolean isStartingLeader;
     private boolean outOfAction = false; //TODO may get rid of
     private int ringID; //TODO may get rid of
-    @ManyToMany(targetEntity= ActionCard.class, mappedBy="leaderChoices", fetch = FetchType.EAGER)
+    @ManyToMany(targetEntity = ActionCard.class, mappedBy = "leaderChoices", fetch = FetchType.EAGER)
+    @JsonIgnoreProperties("leaderChoices")
     private List<ActionCard> inActionCards;
 
     public Leader() { }

@@ -26,8 +26,6 @@ public class Leader {
     @Enumerated(EnumType.STRING)
     private Faction faction;
     private boolean isStartingLeader;
-    private boolean outOfAction = false; //TODO may get rid of
-    private int ringID; //TODO may get rid of
     @ManyToMany(targetEntity = ActionCard.class, mappedBy = "leaderChoices", fetch = FetchType.EAGER)
     @JsonIgnoreProperties("leaderChoices")
     private List<ActionCard> inActionCards;

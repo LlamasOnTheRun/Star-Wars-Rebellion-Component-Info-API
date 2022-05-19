@@ -24,11 +24,11 @@ public class APIConstants {
     public static final int TOTAL_DISTINCT_OBJECTIVE_CARDS = 14;
     public static final char INSPIRE_SYMPATHY_EDGE_CASE = '*';
 
-    public static final int TOTAL_STARTING_MISSION_CARDS = 8;
+    public static final int TOTAL_REBEL_LEADERS = 13;
 
+    public static final int TOTAL_STARTING_MISSION_CARDS = 8;
     public static final int TOTAL_REBEL_MISSION_CARDS = 29;
     public static final int TOTAL_UNIQUE_REBEL_MISSION_CARDS = 24;
-
     public static final int TOTAL_EMPIRE_MISSION_CARDS = 39;
     public static final int TOTAL_UNIQUE_EMPIRE_MISSION_CARDS = 29;
     public static final int TOTAL_EMPIRE_PROJECT_CARDS = 10;

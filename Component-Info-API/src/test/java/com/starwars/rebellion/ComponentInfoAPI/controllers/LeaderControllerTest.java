@@ -55,4 +55,13 @@ class LeaderControllerTest {
 		Assertions.assertEquals(TOTAL_EMPIRE_LEADERS,
 				leaderController.getAllEmpireLeaders().size());
 	}
+
+	@Test
+	void givenAllEmpireLeaderDataIsAvailable_thenAllHasEmpireFactionOnly() {
+		LeaderRequest leaderRequest = new LeaderRequest();
+		leaderRequest.setFaction(Faction.IMPERIAL);
+
+		leaderController.getLeader(leaderRequest).forEach(
+				leader -> Assertions.assertEquals(Faction.IMPERIAL, leader.getFaction()));
+	}
 }

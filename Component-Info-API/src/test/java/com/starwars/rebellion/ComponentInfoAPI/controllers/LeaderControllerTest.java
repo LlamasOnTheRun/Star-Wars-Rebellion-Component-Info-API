@@ -31,7 +31,10 @@ class LeaderControllerTest {
 
 	@Test
 	void givenAllRebelLeaderDataIsAvailable_ThenThirteenRebelLeadersAreReturned() {
-		Assertions.assertEquals(13, leaderController.getAllRebelLeaders().size());
+		LeaderRequest leaderRequest = new LeaderRequest();
+		leaderRequest.setFaction(Faction.REBEL);
+
+		Assertions.assertEquals(13, leaderController.getLeader(leaderRequest).size());
 	}
 
 	@Test

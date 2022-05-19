@@ -23,12 +23,12 @@ public class LeaderSpecification {
             /*if (actionCardRequest.getId() > 0) {
                 predicates.add(criteriaBuilder.equal(root.get("id"),
                         actionCardRequest.getId()));
-            }
-
-            if (actionCardRequest.getFaction() != null) {
-                predicates.add(criteriaBuilder.equal(root.get("faction"),
-                        actionCardRequest.getFaction()));
             }*/
+
+            if (leaderRequest.getFaction() != null) {
+                predicates.add(criteriaBuilder.equal(root.get("faction"),
+                        leaderRequest.getFaction()));
+            }
 
             if (leaderRequest.getName() != null && !Objects.equals(leaderRequest.getName(), "")) {
                 String[] splitTitle = leaderRequest.getName().split("[\n\r\s]+");

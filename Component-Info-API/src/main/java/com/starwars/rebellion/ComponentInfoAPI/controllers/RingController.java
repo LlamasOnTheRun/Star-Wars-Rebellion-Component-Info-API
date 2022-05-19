@@ -22,4 +22,6 @@ public class RingController {
         return ringRepository.findByTitle("C3PO").getTitle();
     }
 
+    //TODO Add new endpoints in order to utilize newly made specification.
+
 }

@@ -34,6 +34,8 @@ public class APIConstants {
     public static final int TOTAL_EMPIRE_PROJECT_CARDS = 10;
     public static final int TOTAL_UNIQUE_EMPIRE_PROJECT_CARDS = 5;
 
+    public static final int TOTAL_RINGS = 7;
+
     public static final int TOTAL_REGIONS = 8;
     public static final char TOTAL_SYSTEMS = 32;
     public static final char NEUTRAL_LOYALTY = 'N';

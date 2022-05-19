@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_EMPIRE_LEADERS;
 import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_REBEL_LEADERS;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -22,7 +23,7 @@ class LeaderControllerTest {
 
 	@Test
 	@Transactional
-	void givenChewbaccaDataIsAvailable_thenChewbaccaNameIsReturned() {
+	void givenNameIsGiven_thenParticularDataIsOnlyReturned() {
 		LeaderRequest leaderRequest = new LeaderRequest();
 		leaderRequest.setName("Chewbacca");
 
@@ -36,7 +37,8 @@ class LeaderControllerTest {
 		LeaderRequest leaderRequest = new LeaderRequest();
 		leaderRequest.setFaction(Faction.REBEL);
 
-		Assertions.assertEquals(TOTAL_REBEL_LEADERS, leaderController.getLeader(leaderRequest).size());
+		Assertions.assertEquals(TOTAL_REBEL_LEADERS,
+				leaderController.getLeader(leaderRequest).size());
 	}
 
 	@Test
@@ -49,12 +51,8 @@ class LeaderControllerTest {
 	}
 
 	@Test
-	void givenYularenDataIsAvailable_thenYularenNameIsReturned(){
-		Assertions.assertEquals("Colonel Yularen", leaderController.getLeaderEmpire());
-	}
-
-	@Test
 	void givenAllEmpireDataIsAvailable_thenTwelveEmpireLeadersAreReturned(){
-		Assertions.assertEquals(12, leaderController.getAllEmpireLeaders().size());
+		Assertions.assertEquals(TOTAL_EMPIRE_LEADERS,
+				leaderController.getAllEmpireLeaders().size());
 	}
 }

@@ -52,8 +52,11 @@ class LeaderControllerTest {
 
 	@Test
 	void givenAllEmpireDataIsAvailable_thenTwelveEmpireLeadersAreReturned(){
+		LeaderRequest leaderRequest = new LeaderRequest();
+		leaderRequest.setFaction(Faction.IMPERIAL);
+
 		Assertions.assertEquals(TOTAL_EMPIRE_LEADERS,
-				leaderController.getAllEmpireLeaders().size());
+				leaderController.getLeader(leaderRequest).size());
 	}
 
 	@Test

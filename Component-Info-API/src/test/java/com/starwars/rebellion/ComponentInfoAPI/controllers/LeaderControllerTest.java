@@ -2,16 +2,14 @@ package com.starwars.rebellion.ComponentInfoAPI.controllers;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
 import com.starwars.rebellion.ComponentInfoAPI.dao.request.LeaderRequest;
+import com.starwars.rebellion.ComponentInfoAPI.specification.LeaderSpecification;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
-import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.LEADER_ENDPOINT;
-import static io.restassured.RestAssured.with;
-import static org.hamcrest.Matchers.equalTo;
-
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class LeaderControllerTest {
 
 	@Autowired
@@ -21,12 +19,14 @@ class LeaderControllerTest {
 	LeaderSpecification leaderSpecification;
 
 	@Test
+	@Transactional
 	void givenChewbaccaDataIsAvailable_ThenChewbaccaNameIsReturned() {
 		LeaderRequest leaderRequest = new LeaderRequest();
 		leaderRequest.setName("Chewbacca");
-		with().body(leaderRequest)
-				.when().post(LEADER_ENDPOINT)
-				.then().statusCode(200).assertThat().body("name", equalTo("Chewbacca"));
+
+		Assertions.assertEquals("Chewbacca",
+				leaderController.getLeader(leaderRequest).get(0).getName());
+		Assertions.assertEquals(1, leaderController.getLeader(leaderRequest).size());
 	}
 
 	@Test

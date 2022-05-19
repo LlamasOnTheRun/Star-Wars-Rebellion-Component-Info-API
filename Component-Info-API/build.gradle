@@ -36,8 +36,6 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
-	testImplementation 'org.codehaus.groovy:groovy-all:3.0.10'
-	testImplementation 'io.rest-assured:rest-assured'
 }
 
 test {

@@ -20,8 +20,7 @@ class ActionCardControllerTest {
 	@Autowired
 	ActionCardController actionCardsController;
 
-	@Test
-		// TODO will need to use restassurrd to test this one, which is integration. Will leave as a later task
+	@Test// TODO new plan, update to Integer or Boolean for entitys and request objects instead of int and boolean
 	void givenInvalidIDIsProvidedInJsonRequest_thenExceptionIsThrown() throws Exception {
 
 	}

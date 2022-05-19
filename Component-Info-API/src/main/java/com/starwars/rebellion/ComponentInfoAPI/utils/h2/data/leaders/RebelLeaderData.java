@@ -54,8 +54,13 @@ public class RebelLeaderData {
     private static Leader getAdmiralAckbar() {
         Leader leader = new Leader();
         leader.setName("Admiral Ackbar");
-        leader.setMissionSkillPoints(0, 0, 2, true);
-        leader.setMilitarySkillPoints(Rank.ADMIRAL, 1, 3);
+        leader.setIntel(0);
+        leader.setSpecOps(0);
+        leader.setDiplomacySkill(2);
+        leader.setProficientInLogistics(true);
+        leader.setRank(Rank.ADMIRAL);
+        leader.setGroundTacticDraw(1);
+        leader.setSpaceTacticDraw(3);
         leader.setStartingLeader(false);
         leader.setFaction(Faction.REBEL);
         return leader;
@@ -64,8 +69,13 @@ public class RebelLeaderData {
     private static Leader getChewbacca() {
         Leader leader = new Leader();
         leader.setName("Chewbacca");
-        leader.setMissionSkillPoints(0, 3, 0, false);
-        leader.setMilitarySkillPoints(Rank.GENERAL, 2, 1);
+        leader.setIntel(0);
+        leader.setSpecOps(3);
+        leader.setDiplomacySkill(0);
+        leader.setProficientInLogistics(false);
+        leader.setRank(Rank.GENERAL);
+        leader.setGroundTacticDraw(2);
+        leader.setSpaceTacticDraw(1);
         leader.setStartingLeader(false);
         leader.setFaction(Faction.REBEL);
         return leader;
@@ -74,8 +84,13 @@ public class RebelLeaderData {
     private static Leader getGeneralMadine() {
         Leader leader = new Leader();
         leader.setName("General Madine");
-        leader.setMissionSkillPoints(2, 2, 0, false);
-        leader.setMilitarySkillPoints(Rank.GENERAL, 3, 1);
+        leader.setIntel(2);
+        leader.setSpecOps(2);
+        leader.setDiplomacySkill(0);
+        leader.setProficientInLogistics(false);
+        leader.setRank(Rank.GENERAL);
+        leader.setGroundTacticDraw(3);
+        leader.setSpaceTacticDraw(1);
         leader.setStartingLeader(false);
         leader.setFaction(Faction.REBEL);
         return leader;
@@ -84,8 +99,13 @@ public class RebelLeaderData {
     private static Leader getGeneralRieekan() {
         Leader leader = new Leader();
         leader.setName("General Rieekan");
-        leader.setMissionSkillPoints(0, 1, 1, true);
-        leader.setMilitarySkillPoints(Rank.GENERAL, 3, 1);
+        leader.setIntel(0);
+        leader.setSpecOps(1);
+        leader.setDiplomacySkill(1);
+        leader.setProficientInLogistics(true);
+        leader.setRank(Rank.GENERAL);
+        leader.setGroundTacticDraw(3);
+        leader.setSpaceTacticDraw(1);
         leader.setStartingLeader(true);
         leader.setFaction(Faction.REBEL);
         return leader;
@@ -94,8 +114,13 @@ public class RebelLeaderData {
     private static Leader getHanSolo() {
         Leader leader = new Leader();
         leader.setName("Han Solo");
-        leader.setMissionSkillPoints(1, 2, 1, false);
-        leader.setMilitarySkillPoints(Rank.ADMIRAL, 2, 2);
+        leader.setIntel(1);
+        leader.setSpecOps(2);
+        leader.setDiplomacySkill(1);
+        leader.setProficientInLogistics(false);
+        leader.setRank(Rank.ADMIRAL);
+        leader.setGroundTacticDraw(2);
+        leader.setSpaceTacticDraw(2);
         leader.setStartingLeader(false);
         leader.setFaction(Faction.REBEL);
         return leader;
@@ -104,8 +129,13 @@ public class RebelLeaderData {
     private static Leader getJanDodonna() {
         Leader leader = new Leader();
         leader.setName("Jan Dodonna");
-        leader.setMissionSkillPoints(2, 0, 1, false);
-        leader.setMilitarySkillPoints(Rank.ADMIRAL, 1, 2);
+        leader.setIntel(2);
+        leader.setSpecOps(0);
+        leader.setDiplomacySkill(1);
+        leader.setProficientInLogistics(false);
+        leader.setRank(Rank.ADMIRAL);
+        leader.setGroundTacticDraw(1);
+        leader.setSpaceTacticDraw(2);
         leader.setStartingLeader(true);
         leader.setFaction(Faction.REBEL);
         return leader;
@@ -114,8 +144,13 @@ public class RebelLeaderData {
     private static Leader getLandoCalrissian() {
         Leader leader = new Leader();
         leader.setName("Lando Calrissian");
-        leader.setMissionSkillPoints(1, 1, 1, true);
-        leader.setMilitarySkillPoints(Rank.ADMIRAL, 2, 2);
+        leader.setIntel(1);
+        leader.setSpecOps(1);
+        leader.setDiplomacySkill(1);
+        leader.setProficientInLogistics(true);
+        leader.setRank(Rank.ADMIRAL);
+        leader.setGroundTacticDraw(2);
+        leader.setSpaceTacticDraw(2);
         leader.setStartingLeader(false);
         leader.setFaction(Faction.REBEL);
         return leader;
@@ -124,8 +159,13 @@ public class RebelLeaderData {
     private static Leader getLukeSkywalker() {
         Leader leader = new Leader();
         leader.setName("Luke Skywalker");
-        leader.setMissionSkillPoints(2, 1, 0, false);
-        leader.setMilitarySkillPoints(Rank.GENERAL, 2, 2);
+        leader.setIntel(2);
+        leader.setSpecOps(1);
+        leader.setDiplomacySkill(0);
+        leader.setProficientInLogistics(false);
+        leader.setRank(Rank.GENERAL);
+        leader.setGroundTacticDraw(2);
+        leader.setSpaceTacticDraw(2);
         leader.setStartingLeader(false);
         leader.setFaction(Faction.REBEL);
         return leader;
@@ -134,8 +174,13 @@ public class RebelLeaderData {
     private static Leader getLukeSkywalkerJedi() {
         Leader leader = new Leader();
         leader.setName("Luke Skywalker (Jedi)");
-        leader.setMissionSkillPoints(3, 2, 0, false);
-        leader.setMilitarySkillPoints(Rank.GENERAL, 3, 3);
+        leader.setIntel(3);
+        leader.setSpecOps(2);
+        leader.setDiplomacySkill(0);
+        leader.setProficientInLogistics(false);
+        leader.setRank(Rank.GENERAL);
+        leader.setGroundTacticDraw(3);
+        leader.setSpaceTacticDraw(3);
         leader.setStartingLeader(false);
         leader.setFaction(Faction.REBEL);
         return leader;
@@ -144,8 +189,13 @@ public class RebelLeaderData {
     private static Leader getMonMothma() {
         Leader leader = new Leader();
         leader.setName("Mon Mothma");
-        leader.setMissionSkillPoints(0, 0, 3, true);
-        leader.setMilitarySkillPoints(Rank.ADMIRAL, 0, 0);
+        leader.setIntel(0);
+        leader.setSpecOps(0);
+        leader.setDiplomacySkill(3);
+        leader.setProficientInLogistics(true);
+        leader.setRank(Rank.ADMIRAL);
+        leader.setGroundTacticDraw(0);
+        leader.setSpaceTacticDraw(0);
         leader.setStartingLeader(false);
         leader.setFaction(Faction.REBEL);
         return leader;
@@ -154,8 +204,13 @@ public class RebelLeaderData {
     private static Leader getObiWanKenobi() {
         Leader leader = new Leader();
         leader.setName("Obi Wan Kenobi");
-        leader.setMissionSkillPoints(3, 0, 1, false);
-        leader.setMilitarySkillPoints(Rank.GENERAL, 0, 0);
+        leader.setIntel(3);
+        leader.setSpecOps(0);
+        leader.setDiplomacySkill(1);
+        leader.setProficientInLogistics(false);
+        leader.setRank(Rank.GENERAL);
+        leader.setGroundTacticDraw(3);
+        leader.setSpaceTacticDraw(1);
         leader.setStartingLeader(false);
         leader.setFaction(Faction.REBEL);
         return leader;
@@ -164,8 +219,13 @@ public class RebelLeaderData {
     private static Leader getPrincessLeia() {
         Leader leader = new Leader();
         leader.setName("Princess Leia");
-        leader.setMissionSkillPoints(2, 1, 2, false);
-        leader.setMilitarySkillPoints(Rank.GENERAL, 1, 1);
+        leader.setIntel(2);
+        leader.setSpecOps(1);
+        leader.setDiplomacySkill(2);
+        leader.setProficientInLogistics(false);
+        leader.setRank(Rank.GENERAL);
+        leader.setGroundTacticDraw(1);
+        leader.setSpaceTacticDraw(1);
         leader.setStartingLeader(true);
         leader.setFaction(Faction.REBEL);
         return leader;
@@ -174,8 +234,13 @@ public class RebelLeaderData {
     private static Leader getWedgeAntilles() {
         Leader leader = new Leader();
         leader.setName("Wedge Antilles");
-        leader.setMissionSkillPoints(0, 2, 0, false);
-        leader.setMilitarySkillPoints(Rank.ADMIRAL, 1, 3);
+        leader.setIntel(0);
+        leader.setSpecOps(2);
+        leader.setDiplomacySkill(0);
+        leader.setProficientInLogistics(false);
+        leader.setRank(Rank.ADMIRAL);
+        leader.setGroundTacticDraw(1);
+        leader.setSpaceTacticDraw(3);
         leader.setStartingLeader(false);
         leader.setFaction(Faction.REBEL);
         return leader;

@@ -86,6 +86,10 @@ class LeaderControllerTest {
 
 	@Test
 	void givenStartingLeaderIsFalse_thenCertainNumOfDataIsReturned() {
+		LeaderRequest leaderRequest = new LeaderRequest();
+		leaderRequest.setStartingLeader(false);
 
+		Assertions.assertEquals(TOTAL_NON_STARTING_LEADERS,
+				leaderController.getLeader(leaderRequest).size());
 	}
 }

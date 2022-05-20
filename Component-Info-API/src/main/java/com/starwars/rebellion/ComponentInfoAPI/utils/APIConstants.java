@@ -26,6 +26,7 @@ public class APIConstants {
 
     public static final int TOTAL_REBEL_LEADERS = 13;
     public static final int TOTAL_EMPIRE_LEADERS = 12;
+    public static final int TOTAL_STARTING_LEADERS = 8;
 
     public static final int TOTAL_STARTING_MISSION_CARDS = 8;
     public static final int TOTAL_REBEL_MISSION_CARDS = 29;

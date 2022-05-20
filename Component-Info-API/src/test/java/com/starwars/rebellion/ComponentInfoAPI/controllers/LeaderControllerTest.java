@@ -74,4 +74,18 @@ class LeaderControllerTest {
 		Assertions.assertEquals(1,
 				leaderController.getLeader(leaderRequest).size());
 	}
+
+	@Test
+	void givenStartingLeaderIsTrue_thenCertainNumOfDataIsReturned() {
+		LeaderRequest leaderRequest = new LeaderRequest();
+		leaderRequest.setStartingLeader(true);
+
+		Assertions.assertEquals(TOTAL_STARTING_LEADERS,
+				leaderController.getLeader(leaderRequest).size());
+	}
+
+	@Test
+	void givenStartingLeaderIsFalse_thenCertainNumOfDataIsReturned() {
+
+	}
 }

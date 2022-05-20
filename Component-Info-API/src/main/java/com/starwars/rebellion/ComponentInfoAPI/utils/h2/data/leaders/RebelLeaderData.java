@@ -196,7 +196,7 @@ public class RebelLeaderData {
         leader.setRank(Rank.ADMIRAL);
         leader.setGroundTacticDraw(0);
         leader.setSpaceTacticDraw(0);
-        leader.setStartingLeader(false);
+        leader.setStartingLeader(true);
         leader.setFaction(Faction.REBEL);
         return leader;
     }

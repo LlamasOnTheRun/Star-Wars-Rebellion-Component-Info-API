@@ -36,10 +36,10 @@ public class LeaderSpecification {
                         "%"+word+"%")));
             }
 
-            /*if (actionCardRequest.getStartingCard() != null) {
-                predicates.add(criteriaBuilder.equal(root.get("isStartingCard"),
-                        actionCardRequest.getStartingCard()));
-            }*/
+            if (leaderRequest.getStartingLeader() != null) {
+                predicates.add(criteriaBuilder.equal(root.get("isStartingLeader"),
+                        leaderRequest.getStartingLeader()));
+            }
 
             return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
         };

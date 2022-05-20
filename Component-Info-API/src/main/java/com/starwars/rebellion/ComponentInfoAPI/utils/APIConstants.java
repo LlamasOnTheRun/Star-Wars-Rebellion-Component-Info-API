@@ -37,6 +37,9 @@ public class APIConstants {
 
     public static final int TOTAL_REGIONS = 8;
     public static final char TOTAL_SYSTEMS = 32;
+
+    public static final int HAN_SOLO_LEADER_ID = 9;
+
     public static final char NEUTRAL_LOYALTY = 'N';
     public static final char IMPERIAL_LOYALTY = 'I';
     public static final char SHIP_PRODUCTION_SYMBOL_FIRST = 'S';

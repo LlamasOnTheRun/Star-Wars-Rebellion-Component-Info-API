@@ -20,10 +20,10 @@ public class LeaderSpecification {
         return (root, query, criteriaBuilder) -> {
             List<Predicate> predicates = new ArrayList<>();
 
-            /*if (actionCardRequest.getId() > 0) {
+            if (leaderRequest.getId() != null && leaderRequest.getId() > 0) {
                 predicates.add(criteriaBuilder.equal(root.get("id"),
-                        actionCardRequest.getId()));
-            }*/
+                        leaderRequest.getId()));
+            }
 
             if (leaderRequest.getFaction() != null) {
                 predicates.add(criteriaBuilder.equal(root.get("faction"),

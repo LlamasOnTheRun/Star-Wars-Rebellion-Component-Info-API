@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 public class LeaderRequest {
-    private String id;
+    private Integer id;
     private String name;
     private Faction faction;
     private Boolean startingLeader;

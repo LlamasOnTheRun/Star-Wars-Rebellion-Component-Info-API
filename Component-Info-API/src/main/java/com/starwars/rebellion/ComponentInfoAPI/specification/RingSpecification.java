@@ -18,7 +18,7 @@ public class RingSpecification {
         return(root, query, criteriaBuilder) -> {
             List<Predicate> predicates = new ArrayList<>();
 
-            if(ringRequest.getId() > 0){
+            if(ringRequest.getId() != null && ringRequest.getId() > 0){
                 predicates.add(criteriaBuilder.equal(root.get("id"), ringRequest.getId()));
             }
             if(ringRequest.getTitle() != null && !Objects.equals(ringRequest.getTitle(), "")){

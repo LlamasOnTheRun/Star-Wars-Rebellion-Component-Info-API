@@ -9,9 +9,5 @@ import java.util.List;
 
 public interface RingRepository extends JpaRepository<Ring, Integer>, JpaSpecificationExecutor<Ring> {
 
-    Ring findByTitle(String title);
-    @Override
-    List<Ring> findAll();
-
     List<Ring> findAll(Specification<Ring> spec);
 }

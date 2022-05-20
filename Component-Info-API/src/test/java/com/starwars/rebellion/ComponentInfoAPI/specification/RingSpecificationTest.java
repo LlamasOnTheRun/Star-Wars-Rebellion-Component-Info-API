@@ -100,7 +100,6 @@ public class RingSpecificationTest {
         List<Ring> ringList = ringRepository.findAll(ringSpecification.getRings(ringRequest));
 
         assertEquals(TOTAL_RINGS, ringList.size());
-
     }
 
 }

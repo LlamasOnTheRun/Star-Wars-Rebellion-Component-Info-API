@@ -12,6 +12,7 @@ public class APIConstants {
     public static final String ACTION_CARD_ENDPOINT = "/actioncards";
     public static final String ALL_ACTION_CARDS_ENDPOINT = "/actioncards/all";
     public static final String GET_RING_ENDPOINT = "/ring";
+    public static final String ALL_RINGS_ENDPOINT = "/ring/all";
 
     public static final int TOTAL_EMPIRE_ACTION_CARDS = 16;
     public static final int TOTAL_STARTING_EMPIRE_ACTION_CARDS = 12;

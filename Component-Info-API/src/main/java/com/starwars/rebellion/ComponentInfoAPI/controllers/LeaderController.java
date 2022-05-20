@@ -34,4 +34,6 @@ public class LeaderController {
         log.info("Request Object: {}", leaderRequest.toString());
         return leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
     }
+
+    //TODO add a controller for getting all leaders here
 }

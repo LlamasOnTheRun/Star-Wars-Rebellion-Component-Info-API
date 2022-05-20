@@ -21,7 +21,7 @@ class ActionCardRepositoryTest {
 	@Autowired
 	ActionCardSpecification specification;
 
-	@Test
+	@Test //TODO make sure to update these with specification in mind
 	void givenAllRebelActionCardDataIsAvailable_thenSixNonStartingCardsAreAvailable() {
 		ActionCardRequest actionCardRequest = new ActionCardRequest();
 		actionCardRequest.setStartingCard(false);

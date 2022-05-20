@@ -62,7 +62,7 @@ public class LeaderSpecificationTest {
         assertEquals(TOTAL_LEADERS, leaderRequestList.size());
     }
 
-    @Test
+    @Test //TODO finish these test cases
     void givenFactionIsEmpire_thenFactionEqualPredicateIsAdded() {
     }
 

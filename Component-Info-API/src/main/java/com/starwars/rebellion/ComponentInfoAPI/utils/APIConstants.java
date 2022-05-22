@@ -12,6 +12,8 @@ public class APIConstants {
     public static final String ACTION_CARD_ENDPOINT = "/actioncards";
     public static final String ALL_ACTION_CARDS_ENDPOINT = "/actioncards/all";
     public static final String GET_RING_ENDPOINT = "/ring";
+    public static final String MISSION_CARD_ENDPOINT = "/missioncards";
+    public static final String GET_ALL_MISSION_CARD_ENDPOINT = "/missioncards/all";
 
     public static final int TOTAL_EMPIRE_ACTION_CARDS = 16;
     public static final int TOTAL_STARTING_EMPIRE_ACTION_CARDS = 12;
@@ -25,6 +27,9 @@ public class APIConstants {
     public static final char INSPIRE_SYMPATHY_EDGE_CASE = '*';
 
     public static final int TOTAL_STARTING_MISSION_CARDS = 8;
+    public static final int TOTAL_NON_STARTING_MISSION_CARDS = 45;
+    public static final int TOTAL_UNIQUE_MISSION_CARDS = 53;
+    public static final int TOTAL_PROJECT_CARDS = 5;
 
     public static final int TOTAL_REBEL_MISSION_CARDS = 29;
     public static final int TOTAL_UNIQUE_REBEL_MISSION_CARDS = 24;

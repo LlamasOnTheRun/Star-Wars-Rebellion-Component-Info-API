@@ -93,27 +93,55 @@ public class LeaderSpecificationTest {
     }
 
     @Test
-    void givenTitleIsSimilar_thenTitlePredicateIsAdded() {
+    void givenNameIsSimilar_thenNamePredicateIsAdded() {
+        LeaderRequest leaderRequest = new LeaderRequest();
+        leaderRequest.setName("Mon");
+
+        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+
+        assertEquals(1, leaderRequestList.size());
+        assertEquals("Mon Mothma", leaderRequestList.get(0).getName());
     }
 
     @Test
-    void givenTitleIsExact_thenTitlePredicateIsAdded() {
+    void givenNameIsExact_thenNamePredicateIsAdded() {
+        LeaderRequest leaderRequest = new LeaderRequest();
+        leaderRequest.setName("Mon Mothma");
+
+        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+
+        assertEquals(1, leaderRequestList.size());
+        assertEquals("Mon Mothma", leaderRequestList.get(0).getName());
     }
 
     @Test
-    void givenTitleWithoutNewlines_thenTitlePredicateIsAdded() {
-    }
+    void givenNameIsNull_thenNamePredicateIsNotAdded() {
+        LeaderRequest leaderRequest = new LeaderRequest();
+        leaderRequest.setName(null);
 
-    @Test
-    void givenTitleIsNull_thenTitlePredicateIsNotAdded() {
+        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+
+        assertEquals(TOTAL_LEADERS, leaderRequestList.size());
     }
 
     @Test
     void givenTitleIsBlank_thenTitlePredicateIsNotAdded() {
+        LeaderRequest leaderRequest = new LeaderRequest();
+        leaderRequest.setName("");
+
+        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+
+        assertEquals(TOTAL_LEADERS, leaderRequestList.size());
     }
 
     @Test
     void givenStartingCardIsTrue_thenStartingCardPredicateIsAdded() {
+        LeaderRequest leaderRequest = new LeaderRequest();
+        leaderRequest.setStartingLeader(true);
+
+        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+
+        assertEquals(TOTAL_STARTING_LEADERS, leaderRequestList.size());
     }
 
     @Test

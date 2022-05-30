@@ -23,7 +23,7 @@ public class MissionCardController {
 
     @GetMapping(path=GET_ALL_MISSION_CARD_ENDPOINT)
     @ResponseBody
-    public List<MissionCard> getAllMissionCards(){ return missionCardRepository.findAll();}
+    public List<MissionCard> getAllMissionCards(){ return missionCardRepository.findAll(missionCardSpecification.getAllMissionCards());}
 
     @PostMapping(path=MISSION_CARD_ENDPOINT)
     @ResponseBody

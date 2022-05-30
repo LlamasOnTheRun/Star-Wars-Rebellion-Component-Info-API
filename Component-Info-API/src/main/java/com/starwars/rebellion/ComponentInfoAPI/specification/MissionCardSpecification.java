@@ -14,6 +14,16 @@ import java.util.Objects;
 @Component
 public class MissionCardSpecification {
 
+    public Specification<MissionCard> getAllMissionCards() {
+      return(root, query, criteriaBuilder)->{
+          List<Predicate> predicates = new ArrayList<>();
+
+          predicates.add(criteriaBuilder.equal(root.get("isProjectCard"), false));
+
+          return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
+      };
+    }
+
 public Specification<MissionCard> getMissionCards(MissionCardRequest missionCardRequest){
         return(root, query, criteriaBuilder) -> {
             List<Predicate> predicates = new ArrayList<>();
@@ -45,9 +55,7 @@ public Specification<MissionCard> getMissionCards(MissionCardRequest missionCard
                 predicates.add(criteriaBuilder.equal(root.get("skillType"), missionCardRequest.getSkillType()));
             }
 
-            if (missionCardRequest.getIsProjectCard() != null) {
-                predicates.add(criteriaBuilder.equal(root.get("isProjectCard"), missionCardRequest.getIsProjectCard()));
-            }
+            predicates.add(criteriaBuilder.equal(root.get("isProjectCard"), false));
 
             if(missionCardRequest.getIsStartingCard() != null){
                 predicates.add(criteriaBuilder.equal(root.get("isStartingCard"), missionCardRequest.getIsStartingCard()));

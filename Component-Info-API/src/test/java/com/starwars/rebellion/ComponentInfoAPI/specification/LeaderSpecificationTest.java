@@ -1,6 +1,7 @@
 package com.starwars.rebellion.ComponentInfoAPI.specification;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.Leader;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
 import com.starwars.rebellion.ComponentInfoAPI.dao.request.LeaderRequest;
 import com.starwars.rebellion.ComponentInfoAPI.repositories.LeaderRepository;
 import org.junit.jupiter.api.Test;
@@ -9,8 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.HAN_SOLO_LEADER_ID;
-import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_LEADERS;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
@@ -62,16 +62,34 @@ public class LeaderSpecificationTest {
         assertEquals(TOTAL_LEADERS, leaderRequestList.size());
     }
 
-    @Test //TODO finish these test cases
+    @Test
     void givenFactionIsEmpire_thenFactionEqualPredicateIsAdded() {
+        LeaderRequest leaderRequest = new LeaderRequest();
+        leaderRequest.setFaction(Faction.IMPERIAL);
+
+        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+
+        assertEquals(TOTAL_EMPIRE_LEADERS, leaderRequestList.size());
     }
 
     @Test
     void givenFactionIsRebel_thenFactionEqualPredicateIsAdded() {
+        LeaderRequest leaderRequest = new LeaderRequest();
+        leaderRequest.setFaction(Faction.REBEL);
+
+        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+
+        assertEquals(TOTAL_REBEL_LEADERS, leaderRequestList.size());
     }
 
     @Test
     void givenFactionIsNull_thenFactionEqualPredicateIsNotAdded() {
+        LeaderRequest leaderRequest = new LeaderRequest();
+        leaderRequest.setFaction(null);
+
+        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+
+        assertEquals(TOTAL_LEADERS, leaderRequestList.size());
     }
 
     @Test

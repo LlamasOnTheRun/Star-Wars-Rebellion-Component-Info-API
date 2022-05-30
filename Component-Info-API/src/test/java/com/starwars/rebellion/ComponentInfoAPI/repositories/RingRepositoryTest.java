@@ -1,9 +1,13 @@
 package com.starwars.rebellion.ComponentInfoAPI.repositories;
 
+import com.starwars.rebellion.ComponentInfoAPI.dao.request.RingRequest;
+import com.starwars.rebellion.ComponentInfoAPI.specification.RingSpecification;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_RINGS;
 
 @SpringBootTest
 public class RingRepositoryTest {
@@ -11,14 +15,14 @@ public class RingRepositoryTest {
    @Autowired
    private RingRepository ringRepository;
 
-   @Test
-   void givenRingRepositoryIsUp_C3PORingIsAvailable_thenTitleReturns(){
-       Assertions.assertEquals("C3PO", ringRepository.findByTitle("C3PO").getTitle());
-   }
+   @Autowired
+   private RingSpecification ringSpecification;
 
    @Test
-   void givenAllRingDataIsAvailable_thenSevenRingsShouldBeReturned() {
-      Assertions.assertEquals(7, ringRepository.findAll().size());
+   void givenRingData_thenEquivalentRingShouldBeReturned() {
+      RingRequest ringRequest = new RingRequest();
+
+      Assertions.assertEquals(TOTAL_RINGS, ringRepository.findAll(ringSpecification.getRings(ringRequest)).size());
    }
 
   /* TODO - Until all action card data is available, then make connection between action card and rings

@@ -57,7 +57,6 @@ public class RebelLeaderData {
         leader.setMissionSkillPoints(0, 0, 2, true);
         leader.setMilitarySkillPoints(Rank.ADMIRAL, 1, 3);
         leader.setStartingLeader(false);
-        leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
         return leader;
     }
@@ -68,7 +67,6 @@ public class RebelLeaderData {
         leader.setMissionSkillPoints(0, 3, 0, false);
         leader.setMilitarySkillPoints(Rank.GENERAL, 2, 1);
         leader.setStartingLeader(false);
-        leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
         return leader;
     }
@@ -79,7 +77,6 @@ public class RebelLeaderData {
         leader.setMissionSkillPoints(2, 2, 0, false);
         leader.setMilitarySkillPoints(Rank.GENERAL, 3, 1);
         leader.setStartingLeader(false);
-        leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
         return leader;
     }
@@ -90,7 +87,6 @@ public class RebelLeaderData {
         leader.setMissionSkillPoints(0, 1, 1, true);
         leader.setMilitarySkillPoints(Rank.GENERAL, 3, 1);
         leader.setStartingLeader(true);
-        leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
         return leader;
     }
@@ -101,7 +97,6 @@ public class RebelLeaderData {
         leader.setMissionSkillPoints(1, 2, 1, false);
         leader.setMilitarySkillPoints(Rank.ADMIRAL, 2, 2);
         leader.setStartingLeader(false);
-        leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
         return leader;
     }
@@ -112,7 +107,6 @@ public class RebelLeaderData {
         leader.setMissionSkillPoints(2, 0, 1, false);
         leader.setMilitarySkillPoints(Rank.ADMIRAL, 1, 2);
         leader.setStartingLeader(true);
-        leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
         return leader;
     }
@@ -123,7 +117,6 @@ public class RebelLeaderData {
         leader.setMissionSkillPoints(1, 1, 1, true);
         leader.setMilitarySkillPoints(Rank.ADMIRAL, 2, 2);
         leader.setStartingLeader(false);
-        leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
         return leader;
     }
@@ -134,7 +127,6 @@ public class RebelLeaderData {
         leader.setMissionSkillPoints(2, 1, 0, false);
         leader.setMilitarySkillPoints(Rank.GENERAL, 2, 2);
         leader.setStartingLeader(false);
-        leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
         return leader;
     }
@@ -145,7 +137,6 @@ public class RebelLeaderData {
         leader.setMissionSkillPoints(3, 2, 0, false);
         leader.setMilitarySkillPoints(Rank.GENERAL, 3, 3);
         leader.setStartingLeader(false);
-        leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
         return leader;
     }
@@ -156,7 +147,6 @@ public class RebelLeaderData {
         leader.setMissionSkillPoints(0, 0, 3, true);
         leader.setMilitarySkillPoints(Rank.ADMIRAL, 0, 0);
         leader.setStartingLeader(false);
-        leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
         return leader;
     }
@@ -167,7 +157,6 @@ public class RebelLeaderData {
         leader.setMissionSkillPoints(3, 0, 1, false);
         leader.setMilitarySkillPoints(Rank.GENERAL, 0, 0);
         leader.setStartingLeader(false);
-        leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
         return leader;
     }
@@ -178,7 +167,6 @@ public class RebelLeaderData {
         leader.setMissionSkillPoints(2, 1, 2, false);
         leader.setMilitarySkillPoints(Rank.GENERAL, 1, 1);
         leader.setStartingLeader(true);
-        leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
         return leader;
     }
@@ -189,7 +177,6 @@ public class RebelLeaderData {
         leader.setMissionSkillPoints(0, 2, 0, false);
         leader.setMilitarySkillPoints(Rank.ADMIRAL, 1, 3);
         leader.setStartingLeader(false);
-        leader.setRingID(0);
         leader.setFaction(Faction.REBEL);
         return leader;
     }

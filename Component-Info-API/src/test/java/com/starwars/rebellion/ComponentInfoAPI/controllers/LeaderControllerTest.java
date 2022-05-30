@@ -92,4 +92,10 @@ class LeaderControllerTest {
 		Assertions.assertEquals(TOTAL_NON_STARTING_LEADERS,
 				leaderController.getLeader(leaderRequest).size());
 	}
+
+	@Test
+	void givenAllLeadersEndpointIsCalled_thenAllLeadersAreReturned() {
+		Assertions.assertEquals(TOTAL_LEADERS,
+				leaderController.getAllLeader().size());
+	}
 }

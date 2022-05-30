@@ -7,15 +7,11 @@ import com.starwars.rebellion.ComponentInfoAPI.specification.LeaderSpecification
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.BASE_CONTROLLER_PATH;
-import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.LEADER_ENDPOINT;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.*;
 
 @Controller
 @RequestMapping(value=BASE_CONTROLLER_PATH)
@@ -35,5 +31,9 @@ public class LeaderController {
         return leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
     }
 
-    //TODO add a controller for getting all leaders here
+    @GetMapping(path=ALL_LEADER_ENDPOINT)
+    @ResponseBody
+    public List<Leader> getAllLeader() {
+        return leaderRepository.findAll();
+    }
 }

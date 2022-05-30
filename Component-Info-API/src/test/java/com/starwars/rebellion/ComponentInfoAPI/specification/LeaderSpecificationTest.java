@@ -146,9 +146,21 @@ public class LeaderSpecificationTest {
 
     @Test
     void givenStartingCardIsFalse_thenStartingCardPredicateIsAdded() {
+        LeaderRequest leaderRequest = new LeaderRequest();
+        leaderRequest.setStartingLeader(false);
+
+        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+
+        assertEquals(TOTAL_NON_STARTING_LEADERS, leaderRequestList.size());
     }
 
     @Test
     void givenStartingCardIsNull_thenStartingCardPredicateIsNotAdded() {
+        LeaderRequest leaderRequest = new LeaderRequest();
+        leaderRequest.setStartingLeader(null);
+
+        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+
+        assertEquals(TOTAL_LEADERS, leaderRequestList.size());
     }
 }

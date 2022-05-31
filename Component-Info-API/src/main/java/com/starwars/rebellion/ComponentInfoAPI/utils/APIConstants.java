@@ -5,9 +5,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class APIConstants {
     public static final String BASE_CONTROLLER_PATH="/components";
-    public static final String GET_LEADER_ENDPOINT_EMPIRE="imperial/getLeader";
-    public static final String GET_ALL_REBEL_LEADERS_ENDPOINT="rebel/getAllLeaders";
-    public static final String GET_ALL_IMPERIAL_LEADERS_ENDPOINT="imperial/getAllLeaders";
     public static final String ACTION_CARD_ENDPOINT = "/actioncards";
     public static final String ALL_ACTION_CARDS_ENDPOINT = "/actioncards/all";
     public static final String LEADER_ENDPOINT = "/leaders";
@@ -42,11 +39,8 @@ public class APIConstants {
     public static final int TOTAL_UNIQUE_PROJECT_CARDS = 5;
     public static final int TOTAL_PROJECT_CARDS = 10;
 
-    public static final int TOTAL_STARTING_MISSION_CARDS = 8;
     public static final int TOTAL_REBEL_MISSION_CARDS = 29;
     public static final int TOTAL_UNIQUE_REBEL_MISSION_CARDS = 24;
-    public static final int TOTAL_EMPIRE_PROJECT_CARDS = 10;
-    public static final int TOTAL_UNIQUE_EMPIRE_PROJECT_CARDS = 5;
 
     public static final int TOTAL_EMPIRE_MISSION_CARDS = 29;
     public static final int TOTAL_UNIQUE_EMPIRE_MISSION_CARDS = 24;

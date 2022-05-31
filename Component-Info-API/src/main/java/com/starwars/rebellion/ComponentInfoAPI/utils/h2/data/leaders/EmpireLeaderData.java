@@ -55,7 +55,6 @@ public class EmpireLeaderData {
         leader.setMissionSkillPoints(3, 0, 0, false);
         leader.setMilitarySkillPoints(Rank.GENERAL, 2, 2);
         leader.setStartingLeader(false);
-        leader.setRingID(0);
         leader.setFaction(Faction.IMPERIAL);
 
         return leader;
@@ -67,7 +66,6 @@ public class EmpireLeaderData {
         leader.setMissionSkillPoints(0, 2, 0, false);
         leader.setMilitarySkillPoints(Rank.GENERAL, 3, 1);
         leader.setStartingLeader(false);
-        leader.setRingID(0);
         leader.setFaction(Faction.IMPERIAL);
 
         return leader;
@@ -79,7 +77,6 @@ public class EmpireLeaderData {
         leader.setMissionSkillPoints(0, 1, 0, true);
         leader.setMilitarySkillPoints(Rank.GENERAL, 2, 1);
         leader.setStartingLeader(true);
-        leader.setRingID(0);
         leader.setFaction(Faction.IMPERIAL);
 
         return leader;
@@ -91,7 +88,6 @@ public class EmpireLeaderData {
         leader.setMissionSkillPoints(0, 3, 2, false);
         leader.setMilitarySkillPoints(Rank.GENERAL, 3, 2);
         leader.setStartingLeader(true);
-        leader.setRingID(0);
         leader.setFaction(Faction.IMPERIAL);
 
         return leader;
@@ -103,7 +99,6 @@ public class EmpireLeaderData {
         leader.setMissionSkillPoints(2, 3, 0, false);
         leader.setMilitarySkillPoints(Rank.GENERAL, 0, 0);
         leader.setStartingLeader(false);
-        leader.setRingID(0);
         leader.setFaction(Faction.IMPERIAL);
 
         return leader;
@@ -115,7 +110,6 @@ public class EmpireLeaderData {
         leader.setMissionSkillPoints(0, 0, 1, true);
         leader.setMilitarySkillPoints(Rank.GENERAL, 1, 1);
         leader.setStartingLeader(false);
-        leader.setRingID(0);
         leader.setFaction(Faction.IMPERIAL);
 
         return leader;
@@ -128,7 +122,6 @@ public class EmpireLeaderData {
         leader.setMissionSkillPoints(1, 0, 0, true);
         leader.setMilitarySkillPoints(Rank.ADMIRAL, 1, 2);
         leader.setStartingLeader(false);
-        leader.setRingID(0);
         leader.setFaction(Faction.IMPERIAL);
 
         return leader;
@@ -140,7 +133,6 @@ public class EmpireLeaderData {
         leader.setMissionSkillPoints(2, 0, 3, false);
         leader.setMilitarySkillPoints(Rank.ADMIRAL, 2, 3);
         leader.setStartingLeader(true);
-        leader.setRingID(0);
         leader.setFaction(Faction.IMPERIAL);
 
         return leader;
@@ -152,7 +144,6 @@ public class EmpireLeaderData {
         leader.setMissionSkillPoints(1, 0, 1, true);
         leader.setMilitarySkillPoints(Rank.ADMIRAL, 1, 2);
         leader.setStartingLeader(true);
-        leader.setRingID(0);
         leader.setFaction(Faction.IMPERIAL);
 
         return leader;
@@ -164,7 +155,6 @@ public class EmpireLeaderData {
         leader.setMissionSkillPoints(2, 1, 0, false);
         leader.setMilitarySkillPoints(Rank.ADMIRAL, 1, 3);
         leader.setStartingLeader(false);
-        leader.setRingID(0);
         leader.setFaction(Faction.IMPERIAL);
 
         return leader;
@@ -176,7 +166,6 @@ public class EmpireLeaderData {
         leader.setMissionSkillPoints(1, 2, 0, false);
         leader.setMilitarySkillPoints(Rank.ADMIRAL, 1, 2);
         leader.setStartingLeader(false);
-        leader.setRingID(0);
         leader.setFaction(Faction.IMPERIAL);
 
         return leader;
@@ -188,7 +177,6 @@ public class EmpireLeaderData {
         leader.setMissionSkillPoints(1, 0, 2, false);
         leader.setMilitarySkillPoints(Rank.ADMIRAL, 0, 0);
         leader.setStartingLeader(false);
-        leader.setRingID(0);
         leader.setFaction(Faction.IMPERIAL);
 
         return leader;

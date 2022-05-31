@@ -6,6 +6,5 @@ import lombok.Data;
 public class ProjectCardRequest {
     private Integer id;
     private String title;
-    private Boolean isProjectCard = true;
     private Integer totalInDeck;
 }

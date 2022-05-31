@@ -9,7 +9,7 @@ import org.springframework.util.StringUtils;
 
 import java.io.StringWriter;
 
-import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_PROJECT_CARDS;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_UNIQUE_PROJECT_CARDS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
@@ -19,7 +19,7 @@ public class ProjectCardControllerTest {
 
     @Test
     void givenAllProjectCardDataIsAvailable_thenFiveCardsShouldReturn(){
-        assertEquals(TOTAL_PROJECT_CARDS, projectCardController.getAllProjectCards().size());
+        assertEquals(TOTAL_UNIQUE_PROJECT_CARDS, projectCardController.getAllProjectCards().size());
     }
 
 

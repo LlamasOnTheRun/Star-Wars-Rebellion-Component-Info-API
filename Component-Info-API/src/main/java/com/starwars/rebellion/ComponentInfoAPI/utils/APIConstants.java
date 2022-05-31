@@ -31,15 +31,15 @@ public class APIConstants {
     public static final int TOTAL_STARTING_MISSION_CARDS = 8;
     public static final int TOTAL_NON_STARTING_MISSION_CARDS = 40;
     public static final int TOTAL_UNIQUE_MISSION_CARDS = 48;
-    public static final int TOTAL_PROJECT_CARDS = 5;
+    public static final int TOTAL_MISSION_CARDS = 58;
+    public static final int TOTAL_UNIQUE_PROJECT_CARDS = 5;
+    public static final int TOTAL_PROJECT_CARDS = 10;
 
     public static final int TOTAL_REBEL_MISSION_CARDS = 29;
     public static final int TOTAL_UNIQUE_REBEL_MISSION_CARDS = 24;
 
-    public static final int TOTAL_EMPIRE_MISSION_CARDS = 34;
+    public static final int TOTAL_EMPIRE_MISSION_CARDS = 29;
     public static final int TOTAL_UNIQUE_EMPIRE_MISSION_CARDS = 24;
-    public static final int TOTAL_EMPIRE_PROJECT_CARDS = 10;
-    public static final int TOTAL_UNIQUE_EMPIRE_PROJECT_CARDS = 5;
 
     public static final int TOTAL_REGIONS = 8;
     public static final char TOTAL_SYSTEMS = 32;

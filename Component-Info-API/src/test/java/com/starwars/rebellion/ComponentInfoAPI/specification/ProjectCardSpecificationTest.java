@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.List;
 
 import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_PROJECT_CARDS;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_UNIQUE_PROJECT_CARDS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
@@ -20,6 +21,25 @@ public class ProjectCardSpecificationTest {
     @Autowired
     private ProjectCardSpecification projectCardSpecification;
 
+    // Total project cards including copies
+
+    @Test
+    void givenProjectCardsAvailable_thenCardsIncludingCopiesPredicatesShouldBeReturned(){
+        ProjectCardRequest projectCardRequest = new ProjectCardRequest();
+        List<ProjectCard> projectCardList = projectCardRepository.findAll(projectCardSpecification.getProjectCards(projectCardRequest));
+
+        assertEquals(TOTAL_PROJECT_CARDS, projectCardList.stream().mapToInt(ProjectCard::getTotalInDeck).sum());
+    }
+
+    // Total project cards excluding copies
+
+    @Test
+    void givenProjectCardsAvailable_thenUniqueCardsPredicatesShouldBeReturned() {
+        ProjectCardRequest projectCardRequest = new ProjectCardRequest();
+        List<ProjectCard> projectCardList = projectCardRepository.findAll(projectCardSpecification.getProjectCards(projectCardRequest));
+
+        assertEquals(TOTAL_UNIQUE_PROJECT_CARDS, projectCardList.size());
+    }
     /********
      ID tests
      *********/
@@ -31,7 +51,7 @@ public class ProjectCardSpecificationTest {
 
         List<ProjectCard> projectCardList = projectCardRepository.findAll(projectCardSpecification.getProjectCards(projectCardRequest));
 
-        assertEquals(TOTAL_PROJECT_CARDS, projectCardList.size());
+        assertEquals(TOTAL_UNIQUE_PROJECT_CARDS, projectCardList.size());
     }
 
     @Test
@@ -41,7 +61,7 @@ public class ProjectCardSpecificationTest {
 
         List<ProjectCard> projectCardList = projectCardRepository.findAll(projectCardSpecification.getProjectCards(projectCardRequest));
 
-        assertEquals(TOTAL_PROJECT_CARDS, projectCardList.size());
+        assertEquals(TOTAL_UNIQUE_PROJECT_CARDS, projectCardList.size());
     }
 
     @Test
@@ -96,7 +116,7 @@ public class ProjectCardSpecificationTest {
 
         List<ProjectCard> projectCardList = projectCardRepository.findAll(projectCardSpecification.getProjectCards(projectCardRequest));
 
-        assertEquals(TOTAL_PROJECT_CARDS, projectCardList.size());
+        assertEquals(TOTAL_UNIQUE_PROJECT_CARDS, projectCardList.size());
     }
 
     @Test
@@ -106,31 +126,7 @@ public class ProjectCardSpecificationTest {
 
         List<ProjectCard> projectCardList = projectCardRepository.findAll(projectCardSpecification.getProjectCards(projectCardRequest));
 
-        assertEquals(TOTAL_PROJECT_CARDS, projectCardList.size());
-    }
-
-    /**************************
-     IsProjectCard Tests
-     **************************/
-
-    @Test
-    void givenIsAProjectCardIsNull_thenPredicateIsNotAdded(){
-        ProjectCardRequest projectCardRequest = new ProjectCardRequest();
-        projectCardRequest.setIsProjectCard(null);
-
-        List<ProjectCard> projectCardList = projectCardRepository.findAll(projectCardSpecification.getProjectCards(projectCardRequest));
-
-        assertEquals(TOTAL_PROJECT_CARDS, projectCardList.size());
-    }
-
-    @Test
-    void givenIsAProjectCardIsFalse_thenPredicateIsNotAdded(){
-        ProjectCardRequest projectCardRequest = new ProjectCardRequest();
-        projectCardRequest.setIsProjectCard(false);
-
-        List<ProjectCard> projectCardList = projectCardRepository.findAll(projectCardSpecification.getProjectCards(projectCardRequest));
-
-        assertEquals(TOTAL_PROJECT_CARDS, projectCardList.size());
+        assertEquals(TOTAL_UNIQUE_PROJECT_CARDS, projectCardList.size());
     }
 
     /**************************
@@ -144,7 +140,7 @@ public class ProjectCardSpecificationTest {
 
         List<ProjectCard> projectCardList = projectCardRepository.findAll(projectCardSpecification.getProjectCards(projectCardRequest));
 
-        assertEquals(TOTAL_PROJECT_CARDS, projectCardList.size());
+        assertEquals(TOTAL_UNIQUE_PROJECT_CARDS, projectCardList.size());
     }
 
     @Test
@@ -154,7 +150,7 @@ public class ProjectCardSpecificationTest {
 
         List<ProjectCard> projectCardList = projectCardRepository.findAll(projectCardSpecification.getProjectCards(projectCardRequest));
 
-        assertEquals(TOTAL_PROJECT_CARDS, projectCardList.size());
+        assertEquals(TOTAL_UNIQUE_PROJECT_CARDS, projectCardList.size());
     }
 
     @Test

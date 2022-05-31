@@ -13,7 +13,6 @@ public class MissionCardRequest {
     private MissionSkillType skillType;
     private Integer minSkillNumRequired;
     private Faction faction;
-    private Boolean isProjectCard;
     private Boolean isStartingCard;
     private Integer totalInDeck;
 }

@@ -25,11 +25,20 @@ public class MissionCardSpecificationTest{
     private MissionCardSpecification missionCardSpecification;
 
     @Test
-    void givenAllMissionCardAvailable_thenOnlyMissionCardsShoudBeRetruned(){
+    void givenAllMissionCardAvailable_thenOnlyMissionCardsShouldBeReturned(){
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getAllMissionCards());
         assertEquals(TOTAL_UNIQUE_MISSION_CARDS, missionCardList.size());
     }
 
+    // Gets all cards, including several copies of the same card
+
+    @Test
+    void givenAllCardsAvailable_thenRepeatsShouldAlsoReturn(){
+        MissionCardRequest missionCardRequest = new MissionCardRequest();
+        List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
+
+        assertEquals(TOTAL_MISSION_CARDS, missionCardList.stream().mapToInt(MissionCard::getTotalInDeck).sum());
+    }
     /********
      ID tests
      *********/
@@ -38,7 +47,7 @@ public class MissionCardSpecificationTest{
     void givenIDIsLessThanOne_thenIDEqualPredicateIsNotAdded(){
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setId(0);
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
@@ -49,7 +58,7 @@ public class MissionCardSpecificationTest{
     void givenIDIsNull_thenIDEqualPredicateIsNotAdded(){
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setId(null);
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
@@ -60,7 +69,7 @@ public class MissionCardSpecificationTest{
     void givenIDIsMoreThanZero_thenIDEqualPredicateIsAdded(){
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setId(67);
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
@@ -71,7 +80,7 @@ public class MissionCardSpecificationTest{
     void givenIDDoesNotExist_thenIDEqualPredicateIsStillAdded(){
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setId(1);
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
@@ -86,7 +95,7 @@ public class MissionCardSpecificationTest{
     void givenTitleIsSimilar_thenTitlePredicateIsAdded() {
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setTitle("Plans");
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
@@ -98,7 +107,7 @@ public class MissionCardSpecificationTest{
     void givenTitleIsExact_thenTitlePredicateIsAdded() {
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setTitle("For The Greater Good ");
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
@@ -109,7 +118,7 @@ public class MissionCardSpecificationTest{
     void givenTitleIsNull_thenTitlePredicateIsNotAdded() {
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setTitle(null);
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
@@ -120,7 +129,7 @@ public class MissionCardSpecificationTest{
     void givenTitleIsBlank_thenTitlePredicateIsNotAdded() {
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setTitle("");
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
@@ -135,7 +144,7 @@ public class MissionCardSpecificationTest{
     void givenLeaderBonusIsNull_thenPredicateIsNotAdded(){
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setLeaderBonus(null);
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
@@ -147,7 +156,7 @@ public class MissionCardSpecificationTest{
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setFaction(Faction.REBEL);
         missionCardRequest.setLeaderBonus(RebelLeaderData.ADMIRAL_ACKBAR);
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
@@ -159,7 +168,7 @@ public class MissionCardSpecificationTest{
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setFaction(Faction.IMPERIAL);
         missionCardRequest.setLeaderBonus(EmpireLeaderData.BOBA_FETT);
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
@@ -174,7 +183,7 @@ public class MissionCardSpecificationTest{
     void givenMinSkillNumRequiredIsNull_thenPredicateIsNotAdded(){
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setMinSkillNumRequired(null);
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
@@ -185,7 +194,7 @@ public class MissionCardSpecificationTest{
     void givenMinSkillNumRequiredIsLessThanOne_thenPredicateIsNotAdded(){
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setMinSkillNumRequired(0);
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
@@ -196,7 +205,7 @@ public class MissionCardSpecificationTest{
     void givenMinSkillNumRequiredIsMoreThanZero_thenPredicateIsNotAdded(){
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setMinSkillNumRequired(1);
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
@@ -211,7 +220,7 @@ public class MissionCardSpecificationTest{
     void givenFactionIsNull_thenFactionEqualPredicateIsNotAdded(){
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setFaction(null);
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
@@ -219,27 +228,46 @@ public class MissionCardSpecificationTest{
     }
 
     @Test
+    void givenFactionIsEmpire_thenFactionEqualUniquePredicateIsAdded(){
+        MissionCardRequest missionCardRequest = new MissionCardRequest();
+        missionCardRequest.setFaction(Faction.IMPERIAL);
+
+
+        List<MissionCard> empireMissionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
+
+        assertEquals(TOTAL_UNIQUE_EMPIRE_MISSION_CARDS, empireMissionCardList.size());
+    }
+
+    @Test
     void givenFactionIsEmpire_thenFactionEqualPredicateIsAdded(){
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setFaction(Faction.IMPERIAL);
-        missionCardRequest.setIsProjectCard(false);
 
-        List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
+        List<MissionCard> empireMissionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
-        assertEquals(TOTAL_UNIQUE_EMPIRE_MISSION_CARDS, missionCardList.size());
+        assertEquals(TOTAL_EMPIRE_MISSION_CARDS, empireMissionCardList.stream().mapToInt(MissionCard::getTotalInDeck).sum());
+    }
+
+    @Test
+    void givenFactionIsRebel_thenFactionEqualUniquePredicateIsAdded(){
+        MissionCardRequest missionCardRequest = new MissionCardRequest();
+        missionCardRequest.setFaction(Faction.REBEL);
+
+
+        List<MissionCard> rebelMissionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
+
+        assertEquals(TOTAL_UNIQUE_REBEL_MISSION_CARDS, rebelMissionCardList.size());
     }
 
     @Test
     void givenFactionIsRebel_thenFactionEqualPredicateIsAdded(){
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setFaction(Faction.REBEL);
-        missionCardRequest.setIsProjectCard(false);
 
-        List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
+        List<MissionCard> rebelMissionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
-        assertEquals(TOTAL_UNIQUE_REBEL_MISSION_CARDS, missionCardList.size());
+        assertEquals(TOTAL_REBEL_MISSION_CARDS, rebelMissionCardList.stream().mapToInt(MissionCard::getTotalInDeck).sum());
     }
-
     /**************************
      Skill Types Tests
      **************************/
@@ -248,7 +276,7 @@ public class MissionCardSpecificationTest{
     void givenSkillTypeIsNull_thenSkillTypeEqualPredicateIsNotAdded(){
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setSkillType(null);
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
@@ -259,7 +287,7 @@ public class MissionCardSpecificationTest{
     void givenSkillTypeIsLogistics_thenSkillTypeEqualPredicateIsStillAdded(){
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setSkillType(MissionSkillType.LOGISTICS);
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
@@ -270,7 +298,7 @@ public class MissionCardSpecificationTest{
     void givenSkillTypeIsDiplomacy_thenSkillTypeEqualPredicateIsStillAdded(){
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setSkillType(MissionSkillType.DIPLOMACY);
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
@@ -281,7 +309,7 @@ public class MissionCardSpecificationTest{
     void givenSkillTypeIsSpecOps_thenSkillTypeEqualPredicateIsStillAdded(){
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setSkillType(MissionSkillType.SPEC_OPS);
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
@@ -292,35 +320,11 @@ public class MissionCardSpecificationTest{
     void givenSkillTypeIsIntel_thenSkillTypeEqualPredicateIsStillAdded(){
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setSkillType(MissionSkillType.INTEL);
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
         assertEquals(12, missionCardList.size());
-    }
-
-    /**************************
-     IsProjectCard Tests
-     **************************/
-
-    @Test
-    void givenIsAProjectCardIsNull_thenPredicateIsNotAdded(){
-        MissionCardRequest missionCardRequest = new MissionCardRequest();
-        missionCardRequest.setIsProjectCard(null);
-
-        List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
-
-        assertEquals(TOTAL_UNIQUE_MISSION_CARDS, missionCardList.size());
-    }
-
-    @Test
-    void givenIsAProjectCardIsFalse_thenPredicateIsNotAdded(){
-        MissionCardRequest missionCardRequest = new MissionCardRequest();
-        missionCardRequest.setIsProjectCard(false);
-
-        List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
-
-        assertEquals(TOTAL_UNIQUE_MISSION_CARDS, missionCardList.size());
     }
 
     /**************************
@@ -331,7 +335,7 @@ public class MissionCardSpecificationTest{
     void givenStartingCardIsNull_thenStartingCardPredicateIsNotAdded() {
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setIsStartingCard(null);
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
@@ -342,7 +346,7 @@ public class MissionCardSpecificationTest{
     void givenStartingCardIsTrue_thenStartingCardPredicateIsAdded() {
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setIsStartingCard(true);
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
@@ -353,7 +357,7 @@ public class MissionCardSpecificationTest{
     void givenStartingCardIsFalse_thenStartingCardPredicateIsAdded() {
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setIsStartingCard(false);
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
@@ -368,7 +372,7 @@ public class MissionCardSpecificationTest{
     void givenTotalInDeckIsNull_thenPredicateIsNotAdded() {
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setTotalInDeck(null);
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
@@ -379,7 +383,7 @@ public class MissionCardSpecificationTest{
     void givenTotalInDeckIsLessThanOne_thenPredicateIsNotAdded() {
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setTotalInDeck(0);
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
@@ -390,10 +394,11 @@ public class MissionCardSpecificationTest{
     void givenTotalInDeckIsMoreThanZero_thenPredicatesAreAdded() {
         MissionCardRequest missionCardRequest = new MissionCardRequest();
         missionCardRequest.setTotalInDeck(1);
-        missionCardRequest.setIsProjectCard(false);
+
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
         assertEquals(39, missionCardList.size());
     }
+
 }

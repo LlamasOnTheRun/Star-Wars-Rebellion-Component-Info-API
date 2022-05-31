@@ -1,5 +1,7 @@
 package com.starwars.rebellion.ComponentInfoAPI.repositories;
 
+import com.starwars.rebellion.ComponentInfoAPI.dao.request.LeaderRequest;
+import com.starwars.rebellion.ComponentInfoAPI.specification.LeaderSpecification;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +13,16 @@ class LeaderRepositoryTest {
 	@Autowired
 	LeaderRepository leaderRepository;
 
+	@Autowired
+	private LeaderSpecification leaderSpecification;
+
 	@Test
 	void givenAdmiralAckbarIsInTwoActionCards_thenTwoActionCardsWillBeReturned() {
-		Assertions.assertEquals(2, leaderRepository.findByName("Admiral Ackbar").getInActionCards().size());
+		LeaderRequest leaderRequest = new LeaderRequest();
+		leaderRequest.setName("Admiral Ackbar");
+
+		Assertions.assertEquals(2, leaderRepository
+				.findAll(leaderSpecification.getLeaders(leaderRequest)).get(0)
+				.getInActionCards().size());
 	}
 }

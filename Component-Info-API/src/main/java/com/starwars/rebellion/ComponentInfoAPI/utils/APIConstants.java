@@ -5,12 +5,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class APIConstants {
     public static final String BASE_CONTROLLER_PATH="/components";
-    public static final String GET_LEADER_ENDPOINT_REBEL="rebel/getLeader";
-    public static final String GET_LEADER_ENDPOINT_EMPIRE="imperial/getLeader";
-    public static final String GET_ALL_REBEL_LEADERS_ENDPOINT="rebel/getAllLeaders";
-    public static final String GET_ALL_IMPERIAL_LEADERS_ENDPOINT="imperial/getAllLeaders";
     public static final String ACTION_CARD_ENDPOINT = "/actioncards";
     public static final String ALL_ACTION_CARDS_ENDPOINT = "/actioncards/all";
+    public static final String LEADER_ENDPOINT = "/leaders";
+    public static final String ALL_LEADER_ENDPOINT = "/leaders/all";
     public static final String GET_RING_ENDPOINT = "/ring";
     public static final String ALL_RINGS_ENDPOINT = "/ring/all";
     public static final String MISSION_CARD_ENDPOINT = "/missioncards";
@@ -29,6 +27,11 @@ public class APIConstants {
     public static final int TOTAL_DISTINCT_OBJECTIVE_CARDS = 14;
     public static final char INSPIRE_SYMPATHY_EDGE_CASE = '*';
 
+    public static final int TOTAL_REBEL_LEADERS = 13;
+    public static final int TOTAL_EMPIRE_LEADERS = 12;
+    public static final int TOTAL_LEADERS = TOTAL_REBEL_LEADERS + TOTAL_EMPIRE_LEADERS;
+    public static final int TOTAL_STARTING_LEADERS = 8;
+    public static final int TOTAL_NON_STARTING_LEADERS =17;
     public static final int TOTAL_STARTING_MISSION_CARDS = 8;
     public static final int TOTAL_NON_STARTING_MISSION_CARDS = 40;
     public static final int TOTAL_UNIQUE_MISSION_CARDS = 48;
@@ -46,6 +49,9 @@ public class APIConstants {
 
     public static final int TOTAL_REGIONS = 8;
     public static final char TOTAL_SYSTEMS = 32;
+
+    public static final int HAN_SOLO_LEADER_ID = 9;
+
     public static final char NEUTRAL_LOYALTY = 'N';
     public static final char IMPERIAL_LOYALTY = 'I';
     public static final char SHIP_PRODUCTION_SYMBOL_FIRST = 'S';

@@ -52,8 +52,13 @@ public class EmpireLeaderData {
     private static Leader getColonelyularen() {
         Leader leader = new Leader();
         leader.setName("Colonel Yularen");
-        leader.setMissionSkillPoints(3, 0, 0, false);
-        leader.setMilitarySkillPoints(Rank.GENERAL, 2, 2);
+        leader.setIntel(3);
+        leader.setSpecOps(0);
+        leader.setDiplomacySkill(0);
+        leader.setProficientInLogistics(false);
+        leader.setRank(Rank.GENERAL);
+        leader.setGroundTacticDraw(2);
+        leader.setSpaceTacticDraw(2);
         leader.setStartingLeader(false);
         leader.setFaction(Faction.IMPERIAL);
 
@@ -63,8 +68,13 @@ public class EmpireLeaderData {
     private static Leader getGeneralVeers() {
         Leader leader = new Leader();
         leader.setName("General Veers");
-        leader.setMissionSkillPoints(0, 2, 0, false);
-        leader.setMilitarySkillPoints(Rank.GENERAL, 3, 1);
+        leader.setIntel(0);
+        leader.setSpecOps(2);
+        leader.setDiplomacySkill(0);
+        leader.setProficientInLogistics(false);
+        leader.setRank(Rank.GENERAL);
+        leader.setGroundTacticDraw(3);
+        leader.setSpaceTacticDraw(1);
         leader.setStartingLeader(false);
         leader.setFaction(Faction.IMPERIAL);
 
@@ -74,8 +84,13 @@ public class EmpireLeaderData {
     private static Leader getGeneralTagge() {
         Leader leader = new Leader();
         leader.setName("General Tagge");
-        leader.setMissionSkillPoints(0, 1, 0, true);
-        leader.setMilitarySkillPoints(Rank.GENERAL, 2, 1);
+        leader.setIntel(0);
+        leader.setSpecOps(1);
+        leader.setDiplomacySkill(0);
+        leader.setProficientInLogistics(true);
+        leader.setRank(Rank.GENERAL);
+        leader.setGroundTacticDraw(2);
+        leader.setSpaceTacticDraw(1);
         leader.setStartingLeader(true);
         leader.setFaction(Faction.IMPERIAL);
 
@@ -85,8 +100,13 @@ public class EmpireLeaderData {
     private static Leader getDarthVader() {
         Leader leader = new Leader();
         leader.setName("Darth Vader");
-        leader.setMissionSkillPoints(0, 3, 2, false);
-        leader.setMilitarySkillPoints(Rank.GENERAL, 3, 2);
+        leader.setIntel(0);
+        leader.setSpecOps(3);
+        leader.setDiplomacySkill(2);
+        leader.setProficientInLogistics(false);
+        leader.setRank(Rank.GENERAL);
+        leader.setGroundTacticDraw(3);
+        leader.setSpaceTacticDraw(2);
         leader.setStartingLeader(true);
         leader.setFaction(Faction.IMPERIAL);
 
@@ -96,8 +116,13 @@ public class EmpireLeaderData {
     private static Leader getBobaFett() {
         Leader leader = new Leader();
         leader.setName("Boba Fett");
-        leader.setMissionSkillPoints(2, 3, 0, false);
-        leader.setMilitarySkillPoints(Rank.GENERAL, 0, 0);
+        leader.setIntel(2);
+        leader.setSpecOps(3);
+        leader.setDiplomacySkill(0);
+        leader.setProficientInLogistics(false);
+        leader.setRank(Rank.GENERAL);
+        leader.setGroundTacticDraw(0);
+        leader.setSpaceTacticDraw(0);
         leader.setStartingLeader(false);
         leader.setFaction(Faction.IMPERIAL);
 
@@ -107,20 +132,29 @@ public class EmpireLeaderData {
     private static Leader getMoffJerjerrod() {
         Leader leader = new Leader();
         leader.setName("Moff Jerjerrod");
-        leader.setMissionSkillPoints(0, 0, 1, true);
-        leader.setMilitarySkillPoints(Rank.GENERAL, 1, 1);
+        leader.setIntel(0);
+        leader.setSpecOps(0);
+        leader.setDiplomacySkill(1);
+        leader.setProficientInLogistics(true);
+        leader.setRank(Rank.GENERAL);
+        leader.setGroundTacticDraw(1);
+        leader.setSpaceTacticDraw(1);
         leader.setStartingLeader(false);
         leader.setFaction(Faction.IMPERIAL);
 
         return leader;
     }
 
-    //--------------------------Admirals------------------------
     private static Leader getAdmiralOzzel() {
         Leader leader = new Leader();
         leader.setName("Adiral Ozzel");
-        leader.setMissionSkillPoints(1, 0, 0, true);
-        leader.setMilitarySkillPoints(Rank.ADMIRAL, 1, 2);
+        leader.setIntel(1);
+        leader.setSpecOps(0);
+        leader.setDiplomacySkill(0);
+        leader.setProficientInLogistics(true);
+        leader.setRank(Rank.ADMIRAL);
+        leader.setGroundTacticDraw(1);
+        leader.setSpaceTacticDraw(2);
         leader.setStartingLeader(false);
         leader.setFaction(Faction.IMPERIAL);
 
@@ -130,8 +164,13 @@ public class EmpireLeaderData {
     private static Leader getEmperorPalpatine() {
         Leader leader = new Leader();
         leader.setName("Emperor Palpatine");
-        leader.setMissionSkillPoints(2, 0, 3, false);
-        leader.setMilitarySkillPoints(Rank.ADMIRAL, 2, 3);
+        leader.setIntel(2);
+        leader.setSpecOps(0);
+        leader.setDiplomacySkill(3);
+        leader.setProficientInLogistics(false);
+        leader.setRank(Rank.ADMIRAL);
+        leader.setGroundTacticDraw(2);
+        leader.setSpaceTacticDraw(3);
         leader.setStartingLeader(true);
         leader.setFaction(Faction.IMPERIAL);
 
@@ -141,8 +180,13 @@ public class EmpireLeaderData {
     private static Leader getGrandMoffTarkin() {
         Leader leader = new Leader();
         leader.setName("Grand Moff Tarkin");
-        leader.setMissionSkillPoints(1, 0, 1, true);
-        leader.setMilitarySkillPoints(Rank.ADMIRAL, 1, 2);
+        leader.setIntel(1);
+        leader.setSpecOps(0);
+        leader.setDiplomacySkill(1);
+        leader.setProficientInLogistics(true);
+        leader.setRank(Rank.ADMIRAL);
+        leader.setGroundTacticDraw(1);
+        leader.setSpaceTacticDraw(2);
         leader.setStartingLeader(true);
         leader.setFaction(Faction.IMPERIAL);
 
@@ -152,8 +196,13 @@ public class EmpireLeaderData {
     private static Leader getAdmiralPiett() {
         Leader leader = new Leader();
         leader.setName("Admiral Piett");
-        leader.setMissionSkillPoints(2, 1, 0, false);
-        leader.setMilitarySkillPoints(Rank.ADMIRAL, 1, 3);
+        leader.setIntel(2);
+        leader.setSpecOps(1);
+        leader.setDiplomacySkill(0);
+        leader.setProficientInLogistics(false);
+        leader.setRank(Rank.ADMIRAL);
+        leader.setGroundTacticDraw(1);
+        leader.setSpaceTacticDraw(3);
         leader.setStartingLeader(false);
         leader.setFaction(Faction.IMPERIAL);
 
@@ -163,8 +212,13 @@ public class EmpireLeaderData {
     private static Leader getSoontirFel() {
         Leader leader = new Leader();
         leader.setName("Soontir Fel");
-        leader.setMissionSkillPoints(1, 2, 0, false);
-        leader.setMilitarySkillPoints(Rank.ADMIRAL, 1, 2);
+        leader.setIntel(1);
+        leader.setSpecOps(2);
+        leader.setDiplomacySkill(0);
+        leader.setProficientInLogistics(false);
+        leader.setRank(Rank.ADMIRAL);
+        leader.setGroundTacticDraw(1);
+        leader.setSpaceTacticDraw(2);
         leader.setStartingLeader(false);
         leader.setFaction(Faction.IMPERIAL);
 
@@ -174,8 +228,13 @@ public class EmpireLeaderData {
     private static Leader getJanusGreejatus() {
         Leader leader = new Leader();
         leader.setName("Janus GreeJatus");
-        leader.setMissionSkillPoints(1, 0, 2, false);
-        leader.setMilitarySkillPoints(Rank.ADMIRAL, 0, 0);
+        leader.setIntel(1);
+        leader.setSpecOps(0);
+        leader.setDiplomacySkill(2);
+        leader.setProficientInLogistics(false);
+        leader.setRank(Rank.ADMIRAL);
+        leader.setGroundTacticDraw(0);
+        leader.setSpaceTacticDraw(0);
         leader.setStartingLeader(false);
         leader.setFaction(Faction.IMPERIAL);
 

@@ -39,4 +39,15 @@ class RegionControllerTest {
 		assertEquals(TOTAL_REGIONS, regionList.size());
 		assertEquals(REGION_ID_EXAMPLE, regionList.get(0).getId());
 	}
+
+	@Test
+	void givenSystemNameIsProvided_thenParticularDataIsOnlyReturned() {
+		RegionRequest regionRequest = new RegionRequest();
+		regionRequest.setContainsSystem("Felucia");
+
+		List<Region> regionList =  regionController.getRegion(regionRequest);
+
+		assertEquals(1, regionList.size());
+		assertEquals(REGION_ID_EXAMPLE, regionList.get(0).getId());
+	}
 }

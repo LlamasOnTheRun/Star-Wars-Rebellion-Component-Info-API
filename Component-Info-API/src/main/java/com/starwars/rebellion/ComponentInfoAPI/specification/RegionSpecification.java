@@ -18,7 +18,7 @@ public class RegionSpecification {
         return (root, query, criteriaBuilder) -> {
             List<Predicate> predicates = new ArrayList<>();
 
-            if (regionRequest.getId() > 0) {
+            if (regionRequest.getId() != null && regionRequest.getId() > 0) {
                 predicates.add(criteriaBuilder.equal(root.get("id"),
                         regionRequest.getId()));
             }

@@ -50,4 +50,26 @@ class RegionControllerTest {
 		assertEquals(1, regionList.size());
 		assertEquals(REGION_ID_EXAMPLE, regionList.get(0).getId());
 	}
+
+	@Test
+	void givenSystemNameIsBlank_thenAllDataIsReturned() {
+		RegionRequest regionRequest = new RegionRequest();
+		regionRequest.setContainsSystem("");
+
+		List<Region> regionList =  regionController.getRegion(regionRequest);
+
+		assertEquals(TOTAL_REGIONS, regionList.size());
+		assertEquals(REGION_ID_EXAMPLE, regionList.get(0).getId());
+	}
+
+	@Test
+	void givenSystemNameIsNull_thenAllDataIsReturned() {
+		RegionRequest regionRequest = new RegionRequest();
+		regionRequest.setContainsSystem(null);
+
+		List<Region> regionList =  regionController.getRegion(regionRequest);
+
+		assertEquals(TOTAL_REGIONS, regionList.size());
+		assertEquals(REGION_ID_EXAMPLE, regionList.get(0).getId());
+	}
 }

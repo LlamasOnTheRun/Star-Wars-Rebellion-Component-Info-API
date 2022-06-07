@@ -83,4 +83,11 @@ class RegionControllerTest {
 		assertEquals(1, regionList.size());
 		assertEquals(REGION_ID_EXAMPLE, regionList.get(0).getId());
 	}
+
+	@Test
+	void givenAllRegionsIsCalled_thenAllDataIsReturned() {
+		List<Region> regionList =  regionController.getAllRegions();
+
+		assertEquals(TOTAL_REGIONS, regionList.size());
+	}
 }

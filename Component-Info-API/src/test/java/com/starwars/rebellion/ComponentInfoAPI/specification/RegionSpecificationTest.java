@@ -34,6 +34,17 @@ public class RegionSpecificationTest {
     }
 
     @Test
+    void givenIDIsLessThanOne_thenPredicateIsNotAdded() {
+        RegionRequest regionRequest = new RegionRequest();
+        regionRequest.setId(0);
+
+        List<Region> regionList = regionRepository
+                .findAll(regionSpecification.getRegion(regionRequest));
+
+        assertEquals(TOTAL_REGIONS, regionList.size());
+    }
+
+    @Test
     void givenIDIsProvided_thenPredicateIsAdded() {
         RegionRequest regionRequest = new RegionRequest();
         regionRequest.setId(REGION_ID_EXAMPLE);

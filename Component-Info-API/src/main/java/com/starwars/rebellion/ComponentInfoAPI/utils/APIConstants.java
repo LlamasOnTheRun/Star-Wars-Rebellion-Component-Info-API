@@ -15,6 +15,8 @@ public class APIConstants {
     public static final String GET_ALL_MISSION_CARD_ENDPOINT = "/missioncards/all";
     public static final String PROJECT_CARD_ENDPOINT = "/projectcards";
     public static final String GET_ALL_PROJECT_CARD_ENDPOINT = "/projectcards/all";
+    public static final String REGION_ENDPOINT = "/regions";
+    public static final String GET_ALL_REGION_ENDPOINT = "/regions/all";
 
     public static final int TOTAL_EMPIRE_ACTION_CARDS = 16;
     public static final int TOTAL_STARTING_EMPIRE_ACTION_CARDS = 12;
@@ -51,6 +53,7 @@ public class APIConstants {
     public static final char TOTAL_SYSTEMS = 32;
 
     public static final int HAN_SOLO_LEADER_ID = 9;
+    public static final int REGION_ID_EXAMPLE = 120;
 
     public static final char NEUTRAL_LOYALTY = 'N';
     public static final char IMPERIAL_LOYALTY = 'I';

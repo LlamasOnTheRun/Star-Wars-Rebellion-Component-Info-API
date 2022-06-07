@@ -3,6 +3,7 @@ package com.starwars.rebellion.ComponentInfoAPI.specification;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.Region;
 import com.starwars.rebellion.ComponentInfoAPI.dao.request.RegionRequest;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.text.WordUtils;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 
@@ -28,8 +29,9 @@ public class RegionSpecification {
             if (regionRequest.getContainsSystem() != null
                     && !Objects.equals(regionRequest.getContainsSystem(), "")) {
                 Join<Object, Object> join = root.join("systems");
+                String modifiedSystemName = WordUtils.capitalizeFully(regionRequest.getContainsSystem());
                 predicates.add(criteriaBuilder.equal(join.get("name"),
-                        regionRequest.getContainsSystem()));
+                        modifiedSystemName));
             }
 
             return criteriaBuilder.and(predicates.toArray(new Predicate[0]));

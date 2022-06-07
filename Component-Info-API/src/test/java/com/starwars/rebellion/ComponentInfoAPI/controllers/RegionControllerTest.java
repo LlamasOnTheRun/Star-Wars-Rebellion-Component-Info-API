@@ -80,7 +80,7 @@ class RegionControllerTest {
 
 		List<Region> regionList =  regionController.getRegion(regionRequest);
 
-		assertEquals(TOTAL_REGIONS, regionList.size());
+		assertEquals(1, regionList.size());
 		assertEquals(REGION_ID_EXAMPLE, regionList.get(0).getId());
 	}
 }

@@ -19,6 +19,7 @@ class SystemControllerTest {
 
 	@Test
 	void givenIDIsProvided_thenParticularDataIsOnlyReturned() {
+
 		SystemRequest systemRequest = new SystemRequest();
 		systemRequest.setId(SYSTEM_ID_EXAMPLE);
 
@@ -30,6 +31,7 @@ class SystemControllerTest {
 
 	@Test
 	void givenSystemNameIsProvided_thenParticularDataIsOnlyReturned() {
+
 		SystemRequest systemRequest = new SystemRequest();
 		systemRequest.setName(SYSTEM_NAME_EXAMPLE);
 
@@ -41,6 +43,7 @@ class SystemControllerTest {
 
 	@Test
 	void givenRemoteIsProvided_thenParticularDataIsOnlyReturned() {
+
 		SystemRequest systemRequest = new SystemRequest();
 		systemRequest.setRemote(false);
 

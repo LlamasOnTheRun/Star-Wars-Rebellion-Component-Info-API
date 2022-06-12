@@ -29,6 +29,11 @@ public class SystemSpecification {
                         systemRequest.getName()));
             }
 
+            if (systemRequest.getRemote() != null) {
+                predicates.add(criteriaBuilder.equal(root.get("isRemote"),
+                        systemRequest.getRemote()));
+            }
+
             return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
         };
     }

@@ -8,8 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.SYSTEM_ID_EXAMPLE;
-import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.SYSTEM_NAME_EXAMPLE;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -37,6 +36,7 @@ class SystemControllerTest {
 		List<System> systemList =  systemController.getSystem(systemRequest);
 
 		assertEquals(1, systemList.size());
+		assertEquals(SYSTEM_NAME_EXAMPLE, systemList.get(0).getName());
 	}
 
 	@Test
@@ -46,6 +46,6 @@ class SystemControllerTest {
 
 		List<System> systemList =  systemController.getSystem(systemRequest);
 
-		assertEquals(1, systemList.size());
+		assertEquals(TOTAL_REMOTE_SYSTEMS, systemList.size());
 	}
 }

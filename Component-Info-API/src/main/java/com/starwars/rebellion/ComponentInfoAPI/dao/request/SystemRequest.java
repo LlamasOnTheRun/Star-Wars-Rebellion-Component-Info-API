@@ -6,4 +6,5 @@ import lombok.Data;
 public class SystemRequest {
     private Integer id;
     private String name;
+    private Boolean remote;
 }

@@ -7,15 +7,11 @@ import com.starwars.rebellion.ComponentInfoAPI.specification.SystemSpecification
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.BASE_CONTROLLER_PATH;
-import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.SYSTEM_ENDPOINT;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.*;
 
 @Controller
 @RequestMapping(value=BASE_CONTROLLER_PATH)
@@ -34,9 +30,9 @@ public class SystemController {
         return systemRepository.findAll(systemSpecification.getSystem(systemRequest));
     }
 
-    /*@GetMapping(path = GET_ALL_REGION_ENDPOINT)
+    @GetMapping(path = GET_ALL_SYSTEM_ENDPOINT)
     @ResponseBody
-    public List<Region> getAllRegions() {
-        return regionRepository.findAll();
-    }*/
+    public List<System> getAllSystems() {
+        return systemRepository.findAll();
+    }
 }

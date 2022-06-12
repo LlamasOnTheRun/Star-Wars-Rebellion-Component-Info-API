@@ -48,4 +48,12 @@ class SystemControllerTest {
 
 		assertEquals(TOTAL_NON_REMOTE_SYSTEMS, systemList.size());
 	}
+
+	@Test
+	void givenFindAllIsCalled_thenAllDataIsReturned() {
+
+		List<System> systemList =  systemController.getAllSystems();
+
+		assertEquals(TOTAL_SYSTEMS, systemList.size());
+	}
 }

@@ -3,6 +3,7 @@ package com.starwars.rebellion.ComponentInfoAPI.specification;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.System;
 import com.starwars.rebellion.ComponentInfoAPI.dao.request.SystemRequest;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.text.WordUtils;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 
@@ -25,8 +26,8 @@ public class SystemSpecification {
             }
 
             if (systemRequest.getName() != null && !Objects.equals(systemRequest.getName(), "")) {
-                predicates.add(criteriaBuilder.equal(root.get("name"),
-                        systemRequest.getName()));
+                String modifiedSystemName = WordUtils.capitalizeFully(systemRequest.getName());
+                predicates.add(criteriaBuilder.equal(root.get("name"), modifiedSystemName));
             }
 
             if (systemRequest.getRemote() != null) {

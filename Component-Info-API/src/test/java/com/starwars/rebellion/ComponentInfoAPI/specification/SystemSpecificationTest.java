@@ -31,4 +31,15 @@ public class SystemSpecificationTest {
 
         assertEquals(TOTAL_SYSTEMS, systemList.size());
     }
+
+    @Test
+    void givenIDIsLessThanOne_thenPredicateIsNotAdded() {
+        SystemRequest systemRequest = new SystemRequest();
+        systemRequest.setId(0);
+
+        List<System> systemList = systemRepository
+                .findAll(systemSpecification.getSystem(systemRequest));
+
+        assertEquals(TOTAL_SYSTEMS, systemList.size());
+    }
 }

@@ -9,8 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.SYSTEM_ID_EXAMPLE;
-import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_SYSTEMS;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
@@ -53,5 +52,16 @@ public class SystemSpecificationTest {
                 .findAll(systemSpecification.getSystem(systemRequest));
 
         assertEquals(TOTAL_SYSTEMS, systemList.size());
+    }
+
+    @Test
+    void givenNameIsProvided_thenPredicateIsAdded() {
+        SystemRequest systemRequest = new SystemRequest();
+        systemRequest.setName(SYSTEM_NAME_EXAMPLE);
+
+        List<System> systemList = systemRepository
+                .findAll(systemSpecification.getSystem(systemRequest));
+
+        assertEquals(1, systemList.size());
     }
 }

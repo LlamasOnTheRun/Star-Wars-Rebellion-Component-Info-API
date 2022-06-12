@@ -64,4 +64,15 @@ public class SystemSpecificationTest {
 
         assertEquals(1, systemList.size());
     }
+
+    @Test
+    void givenNameIsProvidedWithSimilarNaming_thenPredicateIsAdded() {
+        SystemRequest systemRequest = new SystemRequest();
+        systemRequest.setName("MoN CaLaMaRi");
+
+        List<System> systemList = systemRepository
+                .findAll(systemSpecification.getSystem(systemRequest));
+
+        assertEquals(1, systemList.size());
+    }
 }

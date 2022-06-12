@@ -75,4 +75,27 @@ public class SystemSpecificationTest {
 
         assertEquals(1, systemList.size());
     }
+
+    @Test
+    void givenNameIsNull_thenPredicateIsNotAdded() {
+        SystemRequest systemRequest = new SystemRequest();
+        systemRequest.setName(null);
+
+        List<System> systemList = systemRepository
+                .findAll(systemSpecification.getSystem(systemRequest));
+
+        assertEquals(TOTAL_SYSTEMS, systemList.size());
+    }
+
+    @Test
+    void givenNameIsBlank_thenPredicateIsNotAdded() {
+        SystemRequest systemRequest = new SystemRequest();
+        systemRequest.setName("");
+
+        List<System> systemList = systemRepository
+                .findAll(systemSpecification.getSystem(systemRequest));
+
+        assertEquals(TOTAL_SYSTEMS, systemList.size());
+    }
+
 }

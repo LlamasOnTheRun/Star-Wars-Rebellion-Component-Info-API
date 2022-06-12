@@ -46,6 +46,6 @@ class SystemControllerTest {
 
 		List<System> systemList =  systemController.getSystem(systemRequest);
 
-		assertEquals(TOTAL_REMOTE_SYSTEMS, systemList.size());
+		assertEquals(TOTAL_NON_REMOTE_SYSTEMS, systemList.size());
 	}
 }

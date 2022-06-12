@@ -98,4 +98,25 @@ public class SystemSpecificationTest {
         assertEquals(TOTAL_SYSTEMS, systemList.size());
     }
 
+    @Test
+    void givenRemoteIsProvided_thenPredicateIsAdded() {
+        SystemRequest systemRequest = new SystemRequest();
+        systemRequest.setRemote(false);
+
+        List<System> systemList = systemRepository
+                .findAll(systemSpecification.getSystem(systemRequest));
+
+        assertEquals(TOTAL_NON_REMOTE_SYSTEMS, systemList.size());
+    }
+
+    @Test
+    void givenRemoteIsNull_thenPredicateIsNotAdded() {
+        SystemRequest systemRequest = new SystemRequest();
+        systemRequest.setRemote(null);
+
+        List<System> systemList = systemRepository
+                .findAll(systemSpecification.getSystem(systemRequest));
+
+        assertEquals(TOTAL_SYSTEMS, systemList.size());
+    }
 }

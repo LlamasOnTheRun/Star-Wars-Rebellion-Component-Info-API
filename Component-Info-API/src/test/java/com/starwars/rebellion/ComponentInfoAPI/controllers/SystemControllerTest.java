@@ -38,4 +38,14 @@ class SystemControllerTest {
 
 		assertEquals(1, systemList.size());
 	}
+
+	@Test
+	void givenRemoteIsProvided_thenParticularDataIsOnlyReturned() {
+		SystemRequest systemRequest = new SystemRequest();
+		systemRequest.setRemote(false);
+
+		List<System> systemList =  systemController.getSystem(systemRequest);
+
+		assertEquals(1, systemList.size());
+	}
 }

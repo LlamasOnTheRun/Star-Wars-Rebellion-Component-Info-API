@@ -8,6 +8,5 @@ import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import java.util.List;
 
 public interface RingRepository extends JpaRepository<Ring, Integer>, JpaSpecificationExecutor<Ring> {
-
     List<Ring> findAll(Specification<Ring> spec);
 }

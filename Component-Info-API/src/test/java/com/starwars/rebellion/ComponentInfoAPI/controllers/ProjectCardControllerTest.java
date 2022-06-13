@@ -12,7 +12,7 @@ import java.io.StringWriter;
 import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_UNIQUE_PROJECT_CARDS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class ProjectCardControllerTest {
     @Autowired
     ProjectCardController projectCardController;

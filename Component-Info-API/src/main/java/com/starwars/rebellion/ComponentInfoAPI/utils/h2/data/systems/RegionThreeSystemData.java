@@ -1,12 +1,17 @@
 package com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.System;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.SystemMapping;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.regions.RegionData;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.*;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.RegionFourSystemData.NABOO;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.RegionFourSystemData.UTAPAU;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.RegionSevenSystemData.MALASTARE;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.RegionTwoSystemData.BOTHAWUI;
 
 public class RegionThreeSystemData {
     public static final System RODIA = getRodia();
@@ -34,6 +39,14 @@ public class RegionThreeSystemData {
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(1);
 
+        SystemMapping systemMapping = new SystemMapping();
+        systemMapping.setLeft(BOTHAWUI);
+        systemMapping.setTop(TATOOINE);
+        systemMapping.setRight(GEONOSIS);
+        systemMapping.setBottomRight(NABOO);
+        systemMapping.setBottom(MALASTARE);
+        system.setSystemMapping(systemMapping);
+
         return system;
     }
 
@@ -43,6 +56,13 @@ public class RegionThreeSystemData {
         system.setRegion(RegionData.REGION_THREE);
         system.setName("Tatooine");
         system.setRemote(true);
+
+        SystemMapping systemMapping = new SystemMapping();
+        systemMapping.setRight(RYLOTH);
+        systemMapping.setBottomRight(GEONOSIS);
+        systemMapping.setBottom(RODIA);
+        systemMapping.setBottomLeft(BOTHAWUI);
+        system.setSystemMapping(systemMapping);
 
         return system;
     }
@@ -59,6 +79,14 @@ public class RegionThreeSystemData {
         system.setFirstProductionSymbol(SHIP_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(2);
 
+        SystemMapping systemMapping = new SystemMapping();
+        systemMapping.setLeft(RODIA);
+        systemMapping.setTopLeft(TATOOINE);
+        systemMapping.setTop(RYLOTH);
+        systemMapping.setBottomRight(UTAPAU);
+        systemMapping.setBottom(NABOO);
+        system.setSystemMapping(systemMapping);
+
         return system;
     }
 
@@ -72,6 +100,11 @@ public class RegionThreeSystemData {
         system.getLandProduction().setLandLight(1);
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(1);
+
+        SystemMapping systemMapping = new SystemMapping();
+        systemMapping.setLeft(TATOOINE);
+        systemMapping.setBottom(GEONOSIS);
+        system.setSystemMapping(systemMapping);
 
         return system;
     }

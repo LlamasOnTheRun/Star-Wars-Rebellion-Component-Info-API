@@ -21,10 +21,25 @@ public class RegionThreeSystemData {
 
     public static List<System> fetch() {
         List<System> systems = new ArrayList<>();
-        systems.add(RODIA);
-        systems.add(TATOOINE);
-        systems.add(GEONOSIS);
-        systems.add(RYLOTH);
+
+        System targetedSystem;
+
+        targetedSystem = RODIA;
+        targetedSystem.setSystemMapping(getRodiaSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = TATOOINE;
+        targetedSystem.setSystemMapping(getTatooineSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = GEONOSIS;
+        targetedSystem.setSystemMapping(getGeonosisSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = RYLOTH;
+        targetedSystem.setSystemMapping(getRylothSystemMapping());
+        systems.add(targetedSystem);
+
         return systems;
     }
 
@@ -39,15 +54,19 @@ public class RegionThreeSystemData {
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(1);
 
+        return system;
+    }
+
+    private static SystemMapping getRodiaSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setLeft(BOTHAWUI);
         systemMapping.setTop(TATOOINE);
         systemMapping.setRight(GEONOSIS);
         systemMapping.setBottomRight(NABOO);
         systemMapping.setBottom(MALASTARE);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 
     private static System getTatooine() {
@@ -57,14 +76,18 @@ public class RegionThreeSystemData {
         system.setName("Tatooine");
         system.setRemote(true);
 
+        return system;
+    }
+
+    private static SystemMapping getTatooineSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setRight(RYLOTH);
         systemMapping.setBottomRight(GEONOSIS);
         systemMapping.setBottom(RODIA);
         systemMapping.setBottomLeft(BOTHAWUI);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 
     private static System getGeonosis() {
@@ -79,15 +102,19 @@ public class RegionThreeSystemData {
         system.setFirstProductionSymbol(SHIP_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(2);
 
+        return system;
+    }
+
+    private static SystemMapping getGeonosisSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setLeft(RODIA);
         systemMapping.setTopLeft(TATOOINE);
         systemMapping.setTop(RYLOTH);
         systemMapping.setBottomRight(UTAPAU);
         systemMapping.setBottom(NABOO);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 
     private static System getRyloth() {
@@ -101,11 +128,15 @@ public class RegionThreeSystemData {
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(1);
 
+        return system;
+    }
+
+    private static SystemMapping getRylothSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setLeft(TATOOINE);
         systemMapping.setBottom(GEONOSIS);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 }

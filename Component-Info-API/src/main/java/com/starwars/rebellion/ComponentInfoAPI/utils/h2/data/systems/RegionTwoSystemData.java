@@ -1,12 +1,18 @@
 package com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.System;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.SystemMapping;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.regions.RegionData;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.*;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.RegionOneSystemData.SALEUCAMI;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.RegionSevenSystemData.KASHYYYK;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.RegionSevenSystemData.MALASTARE;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.RegionThreeSystemData.RODIA;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.RegionThreeSystemData.TATOOINE;
 
 public class RegionTwoSystemData {
     public static final System KESSEL = getKessel();
@@ -34,6 +40,12 @@ public class RegionTwoSystemData {
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(1);
 
+        SystemMapping systemMapping = new SystemMapping();
+        systemMapping.setRight(NAL_HUTTA);
+        systemMapping.setBottomRight(TOYDARIA);
+        systemMapping.setBottomLeft(SALEUCAMI);
+        system.setSystemMapping(systemMapping);
+
         return system;
     }
 
@@ -47,6 +59,15 @@ public class RegionTwoSystemData {
         system.getShipProduction().setShipMedium(1);
         system.setFirstProductionSymbol(SHIP_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(2);
+
+        SystemMapping systemMapping = new SystemMapping();
+        systemMapping.setLeft(SALEUCAMI);
+        systemMapping.setTopLeft(KESSEL);
+        systemMapping.setTop(NAL_HUTTA);
+        systemMapping.setRight(BOTHAWUI);
+        systemMapping.setBottomRight(MALASTARE);
+        systemMapping.setBottom(KASHYYYK);
+        system.setSystemMapping(systemMapping);
 
         return system;
     }
@@ -63,6 +84,12 @@ public class RegionTwoSystemData {
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(2);
 
+        SystemMapping systemMapping = new SystemMapping();
+        systemMapping.setLeft(KESSEL);
+        systemMapping.setBottomRight(BOTHAWUI);
+        systemMapping.setBottom(TOYDARIA);
+        system.setSystemMapping(systemMapping);
+
         return system;
     }
 
@@ -76,6 +103,14 @@ public class RegionTwoSystemData {
         system.getShipProduction().setShipMedium(1);
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(1);
+
+        SystemMapping systemMapping = new SystemMapping();
+        systemMapping.setLeft(TOYDARIA);
+        systemMapping.setTopLeft(NAL_HUTTA);
+        systemMapping.setTopRight(TATOOINE);
+        systemMapping.setRight(RODIA);
+        systemMapping.setBottom(MALASTARE);
+        system.setSystemMapping(systemMapping);
 
         return system;
     }

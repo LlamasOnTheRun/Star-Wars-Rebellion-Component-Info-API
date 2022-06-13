@@ -20,10 +20,25 @@ public class RegionOneSystemData {
 
     public static List<System> fetch() {
         List<System> systems = new ArrayList<>();
-        systems.add(MON_CALAMARI);
-        systems.add(FELUCIA);
-        systems.add(YAVIN);
-        systems.add(SALEUCAMI);
+
+        System targetedSystem;
+
+        targetedSystem = MON_CALAMARI;
+        targetedSystem.setSystemMapping(getMonCalamariSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = FELUCIA;
+        targetedSystem.setSystemMapping(getFeluciaSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = YAVIN;
+        targetedSystem.setSystemMapping(getYavinSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = SALEUCAMI;
+        targetedSystem.setSystemMapping(getSaleucamiSystemMapping());
+        systems.add(targetedSystem);
+
         return systems;
     }
 
@@ -39,12 +54,15 @@ public class RegionOneSystemData {
         system.setFirstProductionSymbol(SHIP_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(3);
 
+        return system;
+    }
+
+    private static SystemMapping getMonCalamariSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
         systemMapping.setBottomRight(SALEUCAMI);
         systemMapping.setBottom(FELUCIA);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 
     private static System getFelucia() {
@@ -58,14 +76,17 @@ public class RegionOneSystemData {
         system.setFirstProductionSymbol(SHIP_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(3);
 
+        return system;
+    }
+
+    private static SystemMapping getFeluciaSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
         systemMapping.setLeft(YAVIN);
         systemMapping.setTop(MON_CALAMARI);
         systemMapping.setRight(SALEUCAMI);
         systemMapping.setBottomLeft(MANDALORE);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 
     private static System getYavin() {
@@ -75,12 +96,15 @@ public class RegionOneSystemData {
         system.setName("Yavin");
         system.setRemote(true);
 
+        return system;
+    }
+
+    private static SystemMapping getYavinSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
         systemMapping.setRight(FELUCIA);
         systemMapping.setBottom(DATHOMIR);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 
     private static System getSaleucami() {
@@ -94,6 +118,10 @@ public class RegionOneSystemData {
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(1);
 
+        return system;
+    }
+
+    private static SystemMapping getSaleucamiSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
         systemMapping.setLeft(FELUCIA);
         systemMapping.setTopLeft(MON_CALAMARI);
@@ -101,8 +129,7 @@ public class RegionOneSystemData {
         systemMapping.setRight(TOYDARIA);
         systemMapping.setBottomRight(KASHYYYK);
         systemMapping.setBottom(MANDALORE);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 }

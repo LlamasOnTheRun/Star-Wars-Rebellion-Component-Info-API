@@ -15,10 +15,12 @@ public class SystemMapping {
     @JsonIgnoreProperties({"region", "loyalty", "remote", "landProduction",
             "shipProduction", "firstProductionSymbol", "queueTime", "systemMapping"})
     private System top;
+
     @OneToOne
     @JsonIgnoreProperties({"region", "loyalty", "remote", "landProduction",
             "shipProduction", "firstProductionSymbol", "queueTime", "systemMapping"})
     private System topLeft;
+
     @OneToOne
     @JsonIgnoreProperties({"region", "loyalty", "remote", "landProduction",
             "shipProduction", "firstProductionSymbol", "queueTime", "systemMapping"})
@@ -28,10 +30,12 @@ public class SystemMapping {
     @JsonIgnoreProperties({"region", "loyalty", "remote", "landProduction",
             "shipProduction", "firstProductionSymbol", "queueTime", "systemMapping"})
     private System bottom;
+
     @OneToOne
     @JsonIgnoreProperties({"region", "loyalty", "remote", "landProduction",
             "shipProduction", "firstProductionSymbol", "queueTime", "systemMapping"})
     private System bottomLeft;
+
     @OneToOne
     @JsonIgnoreProperties({"region", "loyalty", "remote", "landProduction",
             "shipProduction", "firstProductionSymbol", "queueTime", "systemMapping"})
@@ -41,6 +45,7 @@ public class SystemMapping {
     @JsonIgnoreProperties({"region", "loyalty", "remote", "landProduction",
             "shipProduction", "firstProductionSymbol", "queueTime", "systemMapping"})
     private System left;
+
     @OneToOne
     @JsonIgnoreProperties({"region", "loyalty", "remote", "landProduction",
             "shipProduction", "firstProductionSymbol", "queueTime", "systemMapping"})

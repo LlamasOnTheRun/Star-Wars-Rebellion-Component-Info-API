@@ -22,10 +22,25 @@ public class RegionTwoSystemData {
 
     public static List<System> fetch() {
         List<System> systems = new ArrayList<>();
-        systems.add(KESSEL);
-        systems.add(TOYDARIA);
-        systems.add(NAL_HUTTA);
-        systems.add(BOTHAWUI);
+
+        System targetedSystem;
+
+        targetedSystem = KESSEL;
+        targetedSystem.setSystemMapping(getKesselSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = TOYDARIA;
+        targetedSystem.setSystemMapping(getToydariaSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = NAL_HUTTA;
+        targetedSystem.setSystemMapping(getNalHuttaSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = BOTHAWUI;
+        targetedSystem.setSystemMapping(getBothawuiSystemMapping());
+        systems.add(targetedSystem);
+
         return systems;
     }
 
@@ -40,13 +55,17 @@ public class RegionTwoSystemData {
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(1);
 
+        return system;
+    }
+
+    private static SystemMapping getKesselSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setRight(NAL_HUTTA);
         systemMapping.setBottomRight(TOYDARIA);
         systemMapping.setBottomLeft(SALEUCAMI);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 
     private static System getToydaria() {
@@ -60,16 +79,20 @@ public class RegionTwoSystemData {
         system.setFirstProductionSymbol(SHIP_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(2);
 
+        return system;
+    }
+
+    private static SystemMapping getToydariaSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setLeft(SALEUCAMI);
         systemMapping.setTopLeft(KESSEL);
         systemMapping.setTop(NAL_HUTTA);
         systemMapping.setRight(BOTHAWUI);
         systemMapping.setBottomRight(MALASTARE);
         systemMapping.setBottom(KASHYYYK);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 
     private static System getNalHutta() {
@@ -84,13 +107,17 @@ public class RegionTwoSystemData {
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(2);
 
+        return system;
+    }
+
+    private static SystemMapping getNalHuttaSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setLeft(KESSEL);
         systemMapping.setBottomRight(BOTHAWUI);
         systemMapping.setBottom(TOYDARIA);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 
     private static System getBothawui() {
@@ -104,14 +131,18 @@ public class RegionTwoSystemData {
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(1);
 
+        return system;
+    }
+
+    private static SystemMapping getBothawuiSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setLeft(TOYDARIA);
         systemMapping.setTopLeft(NAL_HUTTA);
         systemMapping.setTopRight(TATOOINE);
         systemMapping.setRight(RODIA);
         systemMapping.setBottom(MALASTARE);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 }

@@ -59,6 +59,7 @@ public class RegionOneSystemData {
 
     private static SystemMapping getMonCalamariSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setBottomRight(SALEUCAMI);
         systemMapping.setBottom(FELUCIA);
 
@@ -81,6 +82,7 @@ public class RegionOneSystemData {
 
     private static SystemMapping getFeluciaSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setLeft(YAVIN);
         systemMapping.setTop(MON_CALAMARI);
         systemMapping.setRight(SALEUCAMI);
@@ -101,6 +103,7 @@ public class RegionOneSystemData {
 
     private static SystemMapping getYavinSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setRight(FELUCIA);
         systemMapping.setBottom(DATHOMIR);
 
@@ -123,6 +126,7 @@ public class RegionOneSystemData {
 
     private static SystemMapping getSaleucamiSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setLeft(FELUCIA);
         systemMapping.setTopLeft(MON_CALAMARI);
         systemMapping.setTopRight(KESSEL);

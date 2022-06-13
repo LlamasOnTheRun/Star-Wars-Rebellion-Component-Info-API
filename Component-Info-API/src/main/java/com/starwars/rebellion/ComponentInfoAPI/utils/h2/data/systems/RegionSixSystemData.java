@@ -1,12 +1,16 @@
 package com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.System;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.SystemMapping;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.regions.RegionData;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.*;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.RegionEightSystemData.ORD_MANTELL;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.RegionFourSystemData.SULLUST;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.RegionSevenSystemData.*;
 
 public class RegionSixSystemData {
     public static final System CORELLIA = getCorellia();
@@ -35,6 +39,13 @@ public class RegionSixSystemData {
         system.setFirstProductionSymbol(SHIP_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(2);
 
+        SystemMapping systemMapping = new SystemMapping();
+        systemMapping.setLeft(CORUSCANT);
+        systemMapping.setTopLeft(ALDERAAN);
+        systemMapping.setTop(CATO_NEIMOIDIA);
+        systemMapping.setTopRight(SULLUST);
+        system.setSystemMapping(systemMapping);
+
         return system;
     }
 
@@ -50,6 +61,14 @@ public class RegionSixSystemData {
         system.setFirstProductionSymbol(SHIP_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(2);
 
+        SystemMapping systemMapping = new SystemMapping();
+        systemMapping.setLeft(ALDERAAN);
+        systemMapping.setTopLeft(KASHYYYK);
+        systemMapping.setTop(MALASTARE);
+        systemMapping.setRight(SULLUST);
+        systemMapping.setBottomRight(CORELLIA);
+        system.setSystemMapping(systemMapping);
+
         return system;
     }
 
@@ -64,6 +83,12 @@ public class RegionSixSystemData {
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(1);
 
+        SystemMapping systemMapping = new SystemMapping();
+        systemMapping.setLeft(ORD_MANTELL);
+        systemMapping.setTopLeft(ALDERAAN);
+        systemMapping.setRight(CORELLIA);
+        system.setSystemMapping(systemMapping);
+
         return system;
     }
 
@@ -77,6 +102,15 @@ public class RegionSixSystemData {
         system.getLandProduction().setLandLight(1);
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(1);
+
+        SystemMapping systemMapping = new SystemMapping();
+        systemMapping.setLeft(ORD_MANTELL);
+        systemMapping.setTopLeft(MANDALORE);
+        systemMapping.setTop(KASHYYYK);
+        systemMapping.setTopRight(CATO_NEIMOIDIA);
+        systemMapping.setRight(CORELLIA);
+        systemMapping.setBottomRight(CORUSCANT);
+        system.setSystemMapping(systemMapping);
 
         return system;
     }

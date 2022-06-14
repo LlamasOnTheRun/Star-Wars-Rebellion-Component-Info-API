@@ -150,4 +150,23 @@ public class SystemRepositoryTest {
             }
         });
     }
+
+    @Test
+    void givenSystemHasABottomRightNeighboringSystem_thenNeighboringSystemHasCorrectTopLeftSystem() {
+        List<System> systemList = systemRepository.findAll(systemSpecification.getSystem(new SystemRequest()));
+
+        systemList.forEach(topLeftSystem -> {
+            if(topLeftSystem.getSystemMapping() != null && topLeftSystem.getSystemMapping().getBottomRight() != null) {
+                SystemRequest bottomRightSystemRequest = new SystemRequest();
+                bottomRightSystemRequest.setId(topLeftSystem.getSystemMapping().getBottomRight().getId());
+
+                System bottomRightSystem = systemRepository.findAll(systemSpecification.getSystem(bottomRightSystemRequest)).get(0);
+
+                assertEquals(bottomRightSystem.getName(), topLeftSystem.getSystemMapping().getBottomRight().getName(),
+                        topLeftSystem.getName() + "'s bottom right system is not matching " + bottomRightSystem.getName());
+                assertEquals(topLeftSystem.getName(), bottomRightSystem.getSystemMapping().getTopLeft().getName(),
+                        bottomRightSystem.getName() + "'s top left system is not matching " + topLeftSystem.getName());
+            }
+        });
+    }
 }

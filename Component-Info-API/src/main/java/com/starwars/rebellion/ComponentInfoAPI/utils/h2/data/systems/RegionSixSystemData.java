@@ -86,7 +86,7 @@ public class RegionSixSystemData {
     private static SystemMapping getCatoNeimoidiaSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
 
-        systemMapping.setLeft(ALDERAAN);
+        systemMapping.setBottomLeft(ALDERAAN);
         systemMapping.setTopLeft(KASHYYYK);
         systemMapping.setTop(MALASTARE);
         systemMapping.setRight(SULLUST);
@@ -136,7 +136,7 @@ public class RegionSixSystemData {
     private static SystemMapping getAlderaanSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
 
-        systemMapping.setLeft(ORD_MANTELL);
+        systemMapping.setBottomLeft(ORD_MANTELL);
         systemMapping.setTopLeft(MANDALORE);
         systemMapping.setTop(KASHYYYK);
         systemMapping.setTopRight(CATO_NEIMOIDIA);

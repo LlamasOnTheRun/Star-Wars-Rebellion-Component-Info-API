@@ -116,8 +116,8 @@ public class RegionFourSystemData {
     private static SystemMapping getDagobahSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
 
-        systemMapping.setLeft(DAGOBAH);
-        systemMapping.setTopRight(UTAPAU);
+        systemMapping.setTopLeft(NABOO);
+        systemMapping.setTop(UTAPAU);
         systemMapping.setRight(MUSTAFAR);
         systemMapping.setBottomLeft(SULLUST);
 
@@ -142,9 +142,9 @@ public class RegionFourSystemData {
     private static SystemMapping getUtapauSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
 
-        systemMapping.setLeft(NABOO);
+        systemMapping.setBottomLeft(NABOO);
         systemMapping.setTopLeft(GEONOSIS);
-        systemMapping.setBottomLeft(DAGOBAH);
+        systemMapping.setBottom(DAGOBAH);
 
         return systemMapping;
     }

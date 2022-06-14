@@ -63,8 +63,8 @@ public class RegionEightSystemData {
         SystemMapping systemMapping = new SystemMapping();
 
         systemMapping.setTop(MANDALORE);
-        systemMapping.setRight(ALDERAAN);
-        systemMapping.setBottomRight(CORUSCANT);
+        systemMapping.setTopRight(ALDERAAN);
+        systemMapping.setRight(CORUSCANT);
         systemMapping.setBottomLeft(ILUM);
         systemMapping.setLeft(MYGEETO);
 

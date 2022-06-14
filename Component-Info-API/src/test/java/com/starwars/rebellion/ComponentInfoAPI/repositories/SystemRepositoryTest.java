@@ -47,4 +47,26 @@ public class SystemRepositoryTest {
 
         assertEquals(TOTAL_REMOTE_SYSTEMS, systemList.size());
     }
+
+    @Test
+    void givenSystemHasALeftNeighboringSystem_thenNeighboringSystemHasCorrectRightSystem() {
+        SystemRequest systemRequest = new SystemRequest();
+
+        List<System> systemList = systemRepository.findAll(systemSpecification.getSystem(systemRequest));
+
+        systemList.forEach(rightSystem -> {
+            if(rightSystem.getSystemMapping() != null && rightSystem.getSystemMapping().getLeft() != null) {
+                SystemRequest leftSystemRequest = new SystemRequest();
+                leftSystemRequest.setId(rightSystem.getSystemMapping().getLeft().getId());
+
+                System leftSystem = systemRepository.findAll(systemSpecification.getSystem(leftSystemRequest)).get(0);
+
+                java.lang.System.out.println(rightSystem.getName());
+                java.lang.System.out.println(leftSystem.getName());
+
+                assertEquals(leftSystem.getName(), rightSystem.getSystemMapping().getLeft().getName(), rightSystem.getName() + " left system is not matching " + leftSystem.getName());
+                assertEquals(rightSystem.getName(), leftSystem.getSystemMapping().getRight().getName(), leftSystem.getName() + " right system is not matching " + rightSystem.getName());
+            }
+        });
+    }
 }

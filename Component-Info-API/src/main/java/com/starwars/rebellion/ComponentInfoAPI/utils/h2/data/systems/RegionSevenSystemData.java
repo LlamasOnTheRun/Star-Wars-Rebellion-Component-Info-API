@@ -31,6 +31,25 @@ public class RegionSevenSystemData {
         systems.add(KASHYYYK);
         systems.add(MANDALORE);
         systems.add(DATHOMIR);
+
+        System targetedSystem;
+
+        targetedSystem = MALASTARE;
+        targetedSystem.setSystemMapping(getMalastareSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = KASHYYYK;
+        targetedSystem.setSystemMapping(getKashyyykSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = MANDALORE;
+        targetedSystem.setSystemMapping(getMandaloreSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = DATHOMIR;
+        targetedSystem.setSystemMapping(getDathomirSystemMapping());
+        systems.add(targetedSystem);
+
         return systems;
     }
 
@@ -45,7 +64,12 @@ public class RegionSevenSystemData {
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(1);
 
+        return system;
+    }
+
+    private static SystemMapping getMalastareSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setLeft(KASHYYYK);
         systemMapping.setTopLeft(TOYDARIA);
         systemMapping.setTop(BOTHAWUI);
@@ -53,9 +77,8 @@ public class RegionSevenSystemData {
         systemMapping.setRight(NABOO);
         systemMapping.setBottomRight(SULLUST);
         systemMapping.setBottom(CATO_NEIMOIDIA);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 
     private static System getKashyyyk() {
@@ -69,16 +92,20 @@ public class RegionSevenSystemData {
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(1);
 
+        return system;
+    }
+
+    private static SystemMapping getKashyyykSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setLeft(MANDALORE);
         systemMapping.setTopLeft(SALEUCAMI);
         systemMapping.setTop(TOYDARIA);
         systemMapping.setRight(MALASTARE);
         systemMapping.setBottomRight(CATO_NEIMOIDIA);
         systemMapping.setBottom(ALDERAAN);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 
     private static System getMandalore() {
@@ -93,7 +120,12 @@ public class RegionSevenSystemData {
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(1);
 
+        return system;
+    }
+
+    private static SystemMapping getMandaloreSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setLeft(DATHOMIR);
         systemMapping.setTopLeft(YAVIN);
         systemMapping.setTop(FELUCIA);
@@ -102,9 +134,8 @@ public class RegionSevenSystemData {
         systemMapping.setBottomRight(ALDERAAN);
         systemMapping.setBottom(ORD_MANTELL);
         systemMapping.setBottomLeft(MYGEETO);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 
     private static System getDathomir() {
@@ -114,13 +145,17 @@ public class RegionSevenSystemData {
         system.setName("Dathomir");
         system.setRemote(true);
 
+        return system;
+    }
+
+    private static SystemMapping getDathomirSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setTop(YAVIN);
         systemMapping.setRight(MANDALORE);
         systemMapping.setBottom(MYGEETO);
         systemMapping.setBottomLeft(DANTOOINE);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 }

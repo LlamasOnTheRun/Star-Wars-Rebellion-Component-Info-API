@@ -60,8 +60,10 @@ public class SystemRepositoryTest {
 
                 System leftSystem = systemRepository.findAll(systemSpecification.getSystem(leftSystemRequest)).get(0);
 
-                assertEquals(leftSystem.getName(), rightSystem.getSystemMapping().getLeft().getName(), rightSystem.getName() + " left system is not matching " + leftSystem.getName());
-                assertEquals(rightSystem.getName(), leftSystem.getSystemMapping().getRight().getName(), leftSystem.getName() + " right system is not matching " + rightSystem.getName());
+                assertEquals(leftSystem.getName(), rightSystem.getSystemMapping().getLeft().getName(),
+                        rightSystem.getName() + "'s left system is not matching " + leftSystem.getName());
+                assertEquals(rightSystem.getName(), leftSystem.getSystemMapping().getRight().getName(),
+                        leftSystem.getName() + "'s right system is not matching " + rightSystem.getName());
             }
         });
     }
@@ -78,8 +80,10 @@ public class SystemRepositoryTest {
 
                 System topLeftSystem = systemRepository.findAll(systemSpecification.getSystem(topLeftSystemRequest)).get(0);
 
-                assertEquals(topLeftSystem.getName(), bottomRightSystem.getSystemMapping().getTopLeft().getName(), bottomRightSystem.getName() + " top left system is not matching " + topLeftSystem.getName());
-                assertEquals(bottomRightSystem.getName(), topLeftSystem.getSystemMapping().getBottomRight().getName(), topLeftSystem.getName() + " bottom right system is not matching " + bottomRightSystem.getName());
+                assertEquals(topLeftSystem.getName(), bottomRightSystem.getSystemMapping().getTopLeft().getName(),
+                        bottomRightSystem.getName() + "'s top left system is not matching " + topLeftSystem.getName());
+                assertEquals(bottomRightSystem.getName(), topLeftSystem.getSystemMapping().getBottomRight().getName(),
+                        topLeftSystem.getName() + "'s bottom right system is not matching " + bottomRightSystem.getName());
             }
         });
     }
@@ -96,8 +100,10 @@ public class SystemRepositoryTest {
 
                 System topSystem = systemRepository.findAll(systemSpecification.getSystem(topSystemRequest)).get(0);
 
-                assertEquals(topSystem.getName(), bottomSystem.getSystemMapping().getTop().getName(), bottomSystem.getName() + " top system is not matching " + topSystem.getName());
-                assertEquals(bottomSystem.getName(), topSystem.getSystemMapping().getBottom().getName(), topSystem.getName() + " bottom system is not matching " + bottomSystem.getName());
+                assertEquals(topSystem.getName(), bottomSystem.getSystemMapping().getTop().getName(),
+                        bottomSystem.getName() + "'s top system is not matching " + topSystem.getName());
+                assertEquals(bottomSystem.getName(), topSystem.getSystemMapping().getBottom().getName(),
+                        topSystem.getName() + "'s bottom system is not matching " + bottomSystem.getName());
             }
         });
     }
@@ -117,8 +123,30 @@ public class SystemRepositoryTest {
                 java.lang.System.out.println(bottomLeftSystem.getName());
                 java.lang.System.out.println(topRightSystem.getName());
 
-                assertEquals(topRightSystem.getName(), bottomLeftSystem.getSystemMapping().getTopRight().getName(), bottomLeftSystem.getName() + " top right system is not matching " + topRightSystem.getName());
-                assertEquals(bottomLeftSystem.getName(), topRightSystem.getSystemMapping().getBottomLeft().getName(), topRightSystem.getName() + " bottom left system is not matching " + bottomLeftSystem.getName());
+                assertEquals(topRightSystem.getName(), bottomLeftSystem.getSystemMapping().getTopRight().getName(),
+                        bottomLeftSystem.getName() + "'s top right system is not matching " + topRightSystem.getName());
+                assertEquals(bottomLeftSystem.getName(), topRightSystem.getSystemMapping().getBottomLeft().getName(),
+                        topRightSystem.getName() + "'s bottom left system is not matching " + bottomLeftSystem.getName());
+            }
+        });
+    }
+
+    @Test
+    void givenSystemHasARightNeighboringSystem_thenNeighboringSystemHasCorrectLeftSystem() {
+
+        List<System> systemList = systemRepository.findAll(systemSpecification.getSystem(new SystemRequest()));
+
+        systemList.forEach(leftSystem -> {
+            if(leftSystem.getSystemMapping() != null && leftSystem.getSystemMapping().getRight() != null) {
+                SystemRequest rightSystemRequest = new SystemRequest();
+                rightSystemRequest.setId(leftSystem.getSystemMapping().getRight().getId());
+
+                System rightSystem = systemRepository.findAll(systemSpecification.getSystem(rightSystemRequest)).get(0);
+
+                assertEquals(rightSystem.getName(), leftSystem.getSystemMapping().getRight().getName(),
+                        leftSystem.getName() + "'s right system is not matching " + rightSystem.getName());
+                assertEquals(leftSystem.getName(), rightSystem.getSystemMapping().getLeft().getName(),
+                        rightSystem.getName() + "'s left system is not matching " + leftSystem.getName());
             }
         });
     }

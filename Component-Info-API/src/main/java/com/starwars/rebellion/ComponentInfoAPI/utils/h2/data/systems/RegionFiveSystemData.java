@@ -59,10 +59,10 @@ public class RegionFiveSystemData {
     private static SystemMapping getMustafarSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
 
-        systemMapping.setLeft(DAGOBAH);
+        systemMapping.setTopLeft(DAGOBAH);
         systemMapping.setBottomRight(HOTH);
         systemMapping.setBottom(BESPIN);
-        systemMapping.setBottomLeft(SULLUST);
+        systemMapping.setLeft(SULLUST);
 
         return systemMapping;
     }

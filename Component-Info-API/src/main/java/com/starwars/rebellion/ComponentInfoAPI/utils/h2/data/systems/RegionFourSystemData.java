@@ -118,7 +118,7 @@ public class RegionFourSystemData {
 
         systemMapping.setTopLeft(NABOO);
         systemMapping.setTop(UTAPAU);
-        systemMapping.setRight(MUSTAFAR);
+        systemMapping.setBottomRight(MUSTAFAR);
         systemMapping.setBottomLeft(SULLUST);
 
         return systemMapping;

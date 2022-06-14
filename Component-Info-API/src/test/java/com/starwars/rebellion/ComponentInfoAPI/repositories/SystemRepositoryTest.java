@@ -169,4 +169,23 @@ public class SystemRepositoryTest {
             }
         });
     }
+
+    @Test
+    void givenSystemHasABottomNeighboringSystem_thenNeighboringSystemHasCorrectTopSystem() {
+        List<System> systemList = systemRepository.findAll(systemSpecification.getSystem(new SystemRequest()));
+
+        systemList.forEach(topSystem -> {
+            if(topSystem.getSystemMapping() != null && topSystem.getSystemMapping().getBottom() != null) {
+                SystemRequest bottomSystemRequest = new SystemRequest();
+                bottomSystemRequest.setId(topSystem.getSystemMapping().getBottom().getId());
+
+                System bottomSystem = systemRepository.findAll(systemSpecification.getSystem(bottomSystemRequest)).get(0);
+
+                assertEquals(bottomSystem.getName(), topSystem.getSystemMapping().getBottom().getName(),
+                        topSystem.getName() + " and " + bottomSystem.getName() + " has a mismatch");
+                assertEquals(topSystem.getName(), bottomSystem.getSystemMapping().getTop().getName(),
+                        bottomSystem.getName() + " and " + topSystem.getName() + " has a mismatch");
+            }
+        });
+    }
 }

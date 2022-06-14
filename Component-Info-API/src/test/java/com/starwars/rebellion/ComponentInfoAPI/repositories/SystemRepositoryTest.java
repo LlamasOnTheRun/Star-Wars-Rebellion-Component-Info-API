@@ -68,7 +68,7 @@ public class SystemRepositoryTest {
     }
 
     @Test
-    void givenSystemHasATopLeftNeighboringSystem_thenNeighboringSystemHasCorrectRightSystem() {
+    void givenSystemHasATopLeftNeighboringSystem_thenNeighboringSystemHasCorrectBottomRightSystem() {
         SystemRequest systemRequest = new SystemRequest();
 
         List<System> systemList = systemRepository.findAll(systemSpecification.getSystem(systemRequest));
@@ -87,5 +87,10 @@ public class SystemRepositoryTest {
                 assertEquals(bottomRightSystem.getName(), topLeftSystem.getSystemMapping().getBottomRight().getName(), topLeftSystem.getName() + " bottom right system is not matching " + bottomRightSystem.getName());
             }
         });
+    }
+
+    @Test //TODO
+    void givenSystemHasATopNeighboringSystem_thenNeighboringSystemHasCorrectBottomSystem() {
+
     }
 }

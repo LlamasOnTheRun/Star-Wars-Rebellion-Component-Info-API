@@ -120,9 +120,6 @@ public class SystemRepositoryTest {
 
                 System topRightSystem = systemRepository.findAll(systemSpecification.getSystem(topRightSystemRequest)).get(0);
 
-                java.lang.System.out.println(bottomLeftSystem.getName());
-                java.lang.System.out.println(topRightSystem.getName());
-
                 assertEquals(topRightSystem.getName(), bottomLeftSystem.getSystemMapping().getTopRight().getName(),
                         bottomLeftSystem.getName() + "'s top right system is not matching " + topRightSystem.getName());
                 assertEquals(bottomLeftSystem.getName(), topRightSystem.getSystemMapping().getBottomLeft().getName(),
@@ -185,6 +182,25 @@ public class SystemRepositoryTest {
                         topSystem.getName() + " and " + bottomSystem.getName() + " has a mismatch");
                 assertEquals(topSystem.getName(), bottomSystem.getSystemMapping().getTop().getName(),
                         bottomSystem.getName() + " and " + topSystem.getName() + " has a mismatch");
+            }
+        });
+    }
+
+    @Test
+    void givenSystemHasABottomLeftNeighboringSystem_thenNeighboringSystemHasCorrectTopRightSystem() {
+        List<System> systemList = systemRepository.findAll(systemSpecification.getSystem(new SystemRequest()));
+
+        systemList.forEach(topRightSystem -> {
+            if(topRightSystem.getSystemMapping() != null && topRightSystem.getSystemMapping().getBottomLeft() != null) {
+                SystemRequest bottomLeftSystemRequest = new SystemRequest();
+                bottomLeftSystemRequest.setId(topRightSystem.getSystemMapping().getBottomLeft().getId());
+
+                System bottomLeftSystem = systemRepository.findAll(systemSpecification.getSystem(bottomLeftSystemRequest)).get(0);
+
+                assertEquals(bottomLeftSystem.getName(), topRightSystem.getSystemMapping().getBottomLeft().getName(),
+                        topRightSystem.getName() + " and " + bottomLeftSystem.getName() + " has a mismatch");
+                assertEquals(topRightSystem.getName(), bottomLeftSystem.getSystemMapping().getTopRight().getName(),
+                        bottomLeftSystem.getName() + " and " + topRightSystem.getName() + " has a mismatch");
             }
         });
     }

@@ -20,10 +20,25 @@ public class RegionSixSystemData {
 
     public static List<System> fetch() {
         List<System> systems = new ArrayList<>();
-        systems.add(CORELLIA);
-        systems.add(CATO_NEIMOIDIA);
-        systems.add(CORUSCANT);
-        systems.add(ALDERAAN);
+
+        System targetedSystem;
+
+        targetedSystem = CORELLIA;
+        targetedSystem.setSystemMapping(getCorelliaSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = CATO_NEIMOIDIA;
+        targetedSystem.setSystemMapping(getCatoNeimoidiaSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = CORUSCANT;
+        targetedSystem.setSystemMapping(getCoruscantSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = ALDERAAN;
+        targetedSystem.setSystemMapping(getAlderaanSystemMapping());
+        systems.add(targetedSystem);
+
         return systems;
     }
 
@@ -39,14 +54,18 @@ public class RegionSixSystemData {
         system.setFirstProductionSymbol(SHIP_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(2);
 
+        return system;
+    }
+
+    private static SystemMapping getCorelliaSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setLeft(CORUSCANT);
         systemMapping.setTopLeft(ALDERAAN);
         systemMapping.setTop(CATO_NEIMOIDIA);
         systemMapping.setTopRight(SULLUST);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 
     private static System getCatoNeimoidia() {
@@ -61,15 +80,19 @@ public class RegionSixSystemData {
         system.setFirstProductionSymbol(SHIP_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(2);
 
+        return system;
+    }
+
+    private static SystemMapping getCatoNeimoidiaSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setLeft(ALDERAAN);
         systemMapping.setTopLeft(KASHYYYK);
         systemMapping.setTop(MALASTARE);
         systemMapping.setRight(SULLUST);
         systemMapping.setBottomRight(CORELLIA);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 
     private static System getCoruscant() {
@@ -83,13 +106,17 @@ public class RegionSixSystemData {
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(1);
 
+        return system;
+    }
+
+    private static SystemMapping getCoruscantSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setLeft(ORD_MANTELL);
         systemMapping.setTopLeft(ALDERAAN);
         systemMapping.setRight(CORELLIA);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 
     private static System getAlderaan() {
@@ -103,15 +130,19 @@ public class RegionSixSystemData {
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(1);
 
+        return system;
+    }
+
+    private static SystemMapping getAlderaanSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setLeft(ORD_MANTELL);
         systemMapping.setTopLeft(MANDALORE);
         systemMapping.setTop(KASHYYYK);
         systemMapping.setTopRight(CATO_NEIMOIDIA);
         systemMapping.setRight(CORELLIA);
         systemMapping.setBottomRight(CORUSCANT);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 }

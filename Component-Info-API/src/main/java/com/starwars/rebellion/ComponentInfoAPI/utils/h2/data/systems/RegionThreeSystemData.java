@@ -64,7 +64,7 @@ public class RegionThreeSystemData {
         systemMapping.setTop(TATOOINE);
         systemMapping.setRight(GEONOSIS);
         systemMapping.setBottomRight(NABOO);
-        systemMapping.setBottom(MALASTARE);
+        systemMapping.setBottomLeft(MALASTARE);
 
         return systemMapping;
     }

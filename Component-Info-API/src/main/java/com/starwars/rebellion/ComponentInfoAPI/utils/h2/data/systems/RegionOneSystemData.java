@@ -133,7 +133,7 @@ public class RegionOneSystemData {
         systemMapping.setTopRight(KESSEL);
         systemMapping.setRight(TOYDARIA);
         systemMapping.setBottomRight(KASHYYYK);
-        systemMapping.setBottom(MANDALORE);
+        systemMapping.setBottomLeft(MANDALORE);
 
         return systemMapping;
     }

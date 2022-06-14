@@ -50,9 +50,8 @@ public class SystemRepositoryTest {
 
     @Test
     void givenSystemHasALeftNeighboringSystem_thenNeighboringSystemHasCorrectRightSystem() {
-        SystemRequest systemRequest = new SystemRequest();
 
-        List<System> systemList = systemRepository.findAll(systemSpecification.getSystem(systemRequest));
+        List<System> systemList = systemRepository.findAll(systemSpecification.getSystem(new SystemRequest()));
 
         systemList.forEach(rightSystem -> {
             if(rightSystem.getSystemMapping() != null && rightSystem.getSystemMapping().getLeft() != null) {
@@ -69,9 +68,8 @@ public class SystemRepositoryTest {
 
     @Test
     void givenSystemHasATopLeftNeighboringSystem_thenNeighboringSystemHasCorrectBottomRightSystem() {
-        SystemRequest systemRequest = new SystemRequest();
 
-        List<System> systemList = systemRepository.findAll(systemSpecification.getSystem(systemRequest));
+        List<System> systemList = systemRepository.findAll(systemSpecification.getSystem(new SystemRequest()));
 
         systemList.forEach(bottomRightSystem -> {
             if(bottomRightSystem.getSystemMapping() != null && bottomRightSystem.getSystemMapping().getTopLeft() != null) {
@@ -88,9 +86,8 @@ public class SystemRepositoryTest {
 
     @Test
     void givenSystemHasATopNeighboringSystem_thenNeighboringSystemHasCorrectBottomSystem() {
-        SystemRequest systemRequest = new SystemRequest();
 
-        List<System> systemList = systemRepository.findAll(systemSpecification.getSystem(systemRequest));
+        List<System> systemList = systemRepository.findAll(systemSpecification.getSystem(new SystemRequest()));
 
         systemList.forEach(bottomSystem -> {
             if(bottomSystem.getSystemMapping() != null && bottomSystem.getSystemMapping().getTop() != null) {
@@ -101,6 +98,27 @@ public class SystemRepositoryTest {
 
                 assertEquals(topSystem.getName(), bottomSystem.getSystemMapping().getTop().getName(), bottomSystem.getName() + " top system is not matching " + topSystem.getName());
                 assertEquals(bottomSystem.getName(), topSystem.getSystemMapping().getBottom().getName(), topSystem.getName() + " bottom system is not matching " + bottomSystem.getName());
+            }
+        });
+    }
+
+    @Test
+    void givenSystemHasATopRightNeighboringSystem_thenNeighboringSystemHasCorrectBottomLeftSystem() {
+
+        List<System> systemList = systemRepository.findAll(systemSpecification.getSystem(new SystemRequest()));
+
+        systemList.forEach(bottomLeftSystem -> {
+            if(bottomLeftSystem.getSystemMapping() != null && bottomLeftSystem.getSystemMapping().getTopRight() != null) {
+                SystemRequest topRightSystemRequest = new SystemRequest();
+                topRightSystemRequest.setId(bottomLeftSystem.getSystemMapping().getTopRight().getId());
+
+                System topRightSystem = systemRepository.findAll(systemSpecification.getSystem(topRightSystemRequest)).get(0);
+
+                java.lang.System.out.println(bottomLeftSystem.getName());
+                java.lang.System.out.println(topRightSystem.getName());
+
+                assertEquals(topRightSystem.getName(), bottomLeftSystem.getSystemMapping().getTopRight().getName(), bottomLeftSystem.getName() + " top right system is not matching " + topRightSystem.getName());
+                assertEquals(bottomLeftSystem.getName(), topRightSystem.getSystemMapping().getBottomLeft().getName(), topRightSystem.getName() + " bottom left system is not matching " + bottomLeftSystem.getName());
             }
         });
     }

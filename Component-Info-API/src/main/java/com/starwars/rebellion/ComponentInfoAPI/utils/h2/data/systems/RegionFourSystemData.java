@@ -98,7 +98,7 @@ public class RegionFourSystemData {
         systemMapping.setTopRight(DAGOBAH);
         systemMapping.setRight(MUSTAFAR);
         systemMapping.setBottomRight(BESPIN);
-        systemMapping.setBottom(CORELLIA);
+        systemMapping.setBottomLeft(CORELLIA);
 
         return systemMapping;
     }

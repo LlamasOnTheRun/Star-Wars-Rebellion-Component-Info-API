@@ -19,10 +19,25 @@ public class RegionFiveSystemData {
 
     public static List<System> fetch() {
         List<System> systems = new ArrayList<>();
-        systems.add(MUSTAFAR);
-        systems.add(BESPIN);
-        systems.add(ENDOR);
-        systems.add(HOTH);
+
+        System targetedSystem;
+
+        targetedSystem = MUSTAFAR;
+        targetedSystem.setSystemMapping(getMustafarSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = BESPIN;
+        targetedSystem.setSystemMapping(getBespinSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = ENDOR;
+        targetedSystem.setSystemMapping(getEndorSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = HOTH;
+        targetedSystem.setSystemMapping(getHothSystemMapping());
+        systems.add(targetedSystem);
+
         return systems;
     }
 
@@ -38,14 +53,18 @@ public class RegionFiveSystemData {
         system.setFirstProductionSymbol(SHIP_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(2);
 
+        return system;
+    }
+
+    private static SystemMapping getMustafarSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setLeft(DAGOBAH);
         systemMapping.setBottomRight(HOTH);
         systemMapping.setBottom(BESPIN);
         systemMapping.setBottomLeft(SULLUST);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 
     private static System getBespin() {
@@ -59,14 +78,18 @@ public class RegionFiveSystemData {
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(1);
 
+        return system;
+    }
+
+    private static SystemMapping getBespinSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setTopLeft(SULLUST);
         systemMapping.setTop(MUSTAFAR);
         systemMapping.setRight(HOTH);
         systemMapping.setBottom(ENDOR);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 
     private static System getEndor() {
@@ -76,12 +99,16 @@ public class RegionFiveSystemData {
         system.setName("Endor");
         system.setRemote(true);
 
+        return system;
+    }
+
+    private static SystemMapping getEndorSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setTop(BESPIN);
         systemMapping.setTopRight(HOTH);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 
     private static System getHoth() {
@@ -91,12 +118,16 @@ public class RegionFiveSystemData {
         system.setName("Hoth");
         system.setRemote(true);
 
+        return system;
+    }
+
+    private static SystemMapping getHothSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setLeft(BESPIN);
         systemMapping.setTopLeft(MUSTAFAR);
         systemMapping.setBottomLeft(ENDOR);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 }

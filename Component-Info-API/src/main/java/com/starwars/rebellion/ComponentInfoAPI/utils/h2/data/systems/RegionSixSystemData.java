@@ -90,7 +90,7 @@ public class RegionSixSystemData {
         systemMapping.setTopLeft(KASHYYYK);
         systemMapping.setTop(MALASTARE);
         systemMapping.setRight(SULLUST);
-        systemMapping.setBottomRight(CORELLIA);
+        systemMapping.setBottom(CORELLIA);
 
         return systemMapping;
     }

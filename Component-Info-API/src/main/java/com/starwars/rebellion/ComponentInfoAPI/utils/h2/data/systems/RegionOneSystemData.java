@@ -86,7 +86,7 @@ public class RegionOneSystemData {
         systemMapping.setLeft(YAVIN);
         systemMapping.setTop(MON_CALAMARI);
         systemMapping.setRight(SALEUCAMI);
-        systemMapping.setBottomLeft(MANDALORE);
+        systemMapping.setBottom(MANDALORE);
 
         return systemMapping;
     }

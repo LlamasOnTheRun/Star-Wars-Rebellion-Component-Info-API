@@ -27,10 +27,6 @@ public class RegionSevenSystemData {
 
     public static List<System> fetch() {
         List<System> systems = new ArrayList<>();
-        systems.add(MALASTARE);
-        systems.add(KASHYYYK);
-        systems.add(MANDALORE);
-        systems.add(DATHOMIR);
 
         System targetedSystem;
 

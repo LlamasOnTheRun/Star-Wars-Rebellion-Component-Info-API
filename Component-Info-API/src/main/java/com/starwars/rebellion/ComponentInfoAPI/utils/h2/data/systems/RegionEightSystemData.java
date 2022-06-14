@@ -22,10 +22,25 @@ public class RegionEightSystemData {
 
     public static List<System> fetch() {
         List<System> systems = new ArrayList<>();
-        systems.add(ORD_MANTELL);
-        systems.add(ILUM);
-        systems.add(MYGEETO);
-        systems.add(DANTOOINE);
+
+        System targetedSystem;
+
+        targetedSystem = ORD_MANTELL;
+        targetedSystem.setSystemMapping(getOrdMantellSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = ILUM;
+        targetedSystem.setSystemMapping(getIlumSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = MYGEETO;
+        targetedSystem.setSystemMapping(getMygeetoSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = DANTOOINE;
+        targetedSystem.setSystemMapping(getDantooineSystemMapping());
+        systems.add(targetedSystem);
+
         return systems;
     }
 
@@ -41,15 +56,19 @@ public class RegionEightSystemData {
         system.setFirstProductionSymbol(SHIP_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(2);
 
+        return system;
+    }
+
+    private static SystemMapping getOrdMantellSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setTop(MANDALORE);
         systemMapping.setRight(ALDERAAN);
         systemMapping.setBottomRight(CORUSCANT);
         systemMapping.setBottomLeft(ILUM);
         systemMapping.setLeft(MYGEETO);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 
     private static System getIlum() {
@@ -59,12 +78,16 @@ public class RegionEightSystemData {
         system.setName("Ilum");
         system.setRemote(true);
 
+        return system;
+    }
+
+    private static SystemMapping getIlumSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setTopLeft(MYGEETO);
         systemMapping.setTopRight(ORD_MANTELL);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 
     private static System getMygeeto() {
@@ -79,15 +102,19 @@ public class RegionEightSystemData {
         system.setFirstProductionSymbol(SHIP_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(2);
 
+        return system;
+    }
+
+    private static SystemMapping getMygeetoSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setLeft(DANTOOINE);
         systemMapping.setTop(DATHOMIR);
         systemMapping.setBottomRight(ILUM);
         systemMapping.setRight(ORD_MANTELL);
         systemMapping.setTopRight(MANDALORE);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 
     private static System getDantooine() {
@@ -97,12 +124,15 @@ public class RegionEightSystemData {
         system.setName("Dantooine");
         system.setRemote(true);
 
-        SystemMapping systemMapping = new SystemMapping();
-        systemMapping.setRight(MYGEETO);
-        systemMapping.setTopRight(DATHOMIR);
-        system.setSystemMapping(systemMapping);
-
         return system;
     }
 
+    private static SystemMapping getDantooineSystemMapping() {
+        SystemMapping systemMapping = new SystemMapping();
+
+        systemMapping.setRight(MYGEETO);
+        systemMapping.setTopRight(DATHOMIR);
+
+        return systemMapping;
+    }
 }

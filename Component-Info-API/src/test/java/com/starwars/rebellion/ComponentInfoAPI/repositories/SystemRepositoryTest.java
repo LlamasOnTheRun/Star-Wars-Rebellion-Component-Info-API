@@ -61,11 +61,30 @@ public class SystemRepositoryTest {
 
                 System leftSystem = systemRepository.findAll(systemSpecification.getSystem(leftSystemRequest)).get(0);
 
-                java.lang.System.out.println(rightSystem.getName());
-                java.lang.System.out.println(leftSystem.getName());
-
                 assertEquals(leftSystem.getName(), rightSystem.getSystemMapping().getLeft().getName(), rightSystem.getName() + " left system is not matching " + leftSystem.getName());
                 assertEquals(rightSystem.getName(), leftSystem.getSystemMapping().getRight().getName(), leftSystem.getName() + " right system is not matching " + rightSystem.getName());
+            }
+        });
+    }
+
+    @Test
+    void givenSystemHasATopLeftNeighboringSystem_thenNeighboringSystemHasCorrectRightSystem() {
+        SystemRequest systemRequest = new SystemRequest();
+
+        List<System> systemList = systemRepository.findAll(systemSpecification.getSystem(systemRequest));
+
+        systemList.forEach(bottomRightSystem -> {
+            if(bottomRightSystem.getSystemMapping() != null && bottomRightSystem.getSystemMapping().getTopLeft() != null) {
+                SystemRequest topLeftSystemRequest = new SystemRequest();
+                topLeftSystemRequest.setId(bottomRightSystem.getSystemMapping().getTopLeft().getId());
+
+                System topLeftSystem = systemRepository.findAll(systemSpecification.getSystem(topLeftSystemRequest)).get(0);
+
+                java.lang.System.out.println(bottomRightSystem.getName());
+                java.lang.System.out.println(topLeftSystem.getName());
+
+                assertEquals(topLeftSystem.getName(), bottomRightSystem.getSystemMapping().getTopLeft().getName(), bottomRightSystem.getName() + " top left system is not matching " + topLeftSystem.getName());
+                assertEquals(bottomRightSystem.getName(), topLeftSystem.getSystemMapping().getBottomRight().getName(), topLeftSystem.getName() + " bottom right system is not matching " + bottomRightSystem.getName());
             }
         });
     }

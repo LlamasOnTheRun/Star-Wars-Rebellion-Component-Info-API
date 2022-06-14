@@ -68,7 +68,7 @@ public class RegionFourSystemData {
         systemMapping.setTopLeft(RODIA);
         systemMapping.setTop(GEONOSIS);
         systemMapping.setTopRight(UTAPAU);
-        systemMapping.setRight(DAGOBAH);
+        systemMapping.setBottomRight(DAGOBAH);
         systemMapping.setBottom(SULLUST);
 
         return systemMapping;

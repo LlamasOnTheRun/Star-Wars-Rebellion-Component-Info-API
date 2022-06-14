@@ -106,6 +106,7 @@ public class RegionOneSystemData {
 
         systemMapping.setRight(FELUCIA);
         systemMapping.setBottom(DATHOMIR);
+        systemMapping.setBottomRight(MANDALORE);
 
         return systemMapping;
     }

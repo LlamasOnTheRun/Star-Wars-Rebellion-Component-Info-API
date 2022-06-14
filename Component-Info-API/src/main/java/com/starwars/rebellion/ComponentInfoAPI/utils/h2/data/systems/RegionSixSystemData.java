@@ -60,8 +60,8 @@ public class RegionSixSystemData {
     private static SystemMapping getCorelliaSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
 
-        systemMapping.setLeft(CORUSCANT);
-        systemMapping.setTopLeft(ALDERAAN);
+        systemMapping.setBottomLeft(CORUSCANT);
+        systemMapping.setLeft(ALDERAAN);
         systemMapping.setTop(CATO_NEIMOIDIA);
         systemMapping.setTopRight(SULLUST);
 
@@ -114,7 +114,7 @@ public class RegionSixSystemData {
 
         systemMapping.setLeft(ORD_MANTELL);
         systemMapping.setTopLeft(ALDERAAN);
-        systemMapping.setRight(CORELLIA);
+        systemMapping.setTopRight(CORELLIA);
 
         return systemMapping;
     }

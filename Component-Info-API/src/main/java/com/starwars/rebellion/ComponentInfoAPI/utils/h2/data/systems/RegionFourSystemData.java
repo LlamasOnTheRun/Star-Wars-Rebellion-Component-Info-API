@@ -24,10 +24,25 @@ public class RegionFourSystemData {
 
     public static List<System> fetch() {
         List<System> systems = new ArrayList<>();
-        systems.add(NABOO);
-        systems.add(SULLUST);
-        systems.add(DAGOBAH);
-        systems.add(UTAPAU);
+
+        System targetedSystem;
+
+        targetedSystem = NABOO;
+        targetedSystem.setSystemMapping(getNabooSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = SULLUST;
+        targetedSystem.setSystemMapping(getSullustSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = DAGOBAH;
+        targetedSystem.setSystemMapping(getDagobahSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = UTAPAU;
+        targetedSystem.setSystemMapping(getUtapauSystemMapping());
+        systems.add(targetedSystem);
+
         return systems;
     }
 
@@ -43,16 +58,20 @@ public class RegionFourSystemData {
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(1);
 
+        return system;
+    }
+
+    private static SystemMapping getNabooSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setLeft(MALASTARE);
         systemMapping.setTopLeft(RODIA);
         systemMapping.setTop(GEONOSIS);
         systemMapping.setTopRight(UTAPAU);
         systemMapping.setRight(DAGOBAH);
         systemMapping.setBottom(SULLUST);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 
     private static System getSullust() {
@@ -67,7 +86,12 @@ public class RegionFourSystemData {
         system.setFirstProductionSymbol(LAND_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(2);
 
+        return system;
+    }
+
+    private static SystemMapping getSullustSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setLeft(CATO_NEIMOIDIA);
         systemMapping.setTopLeft(MALASTARE);
         systemMapping.setTop(NABOO);
@@ -75,9 +99,8 @@ public class RegionFourSystemData {
         systemMapping.setRight(MUSTAFAR);
         systemMapping.setBottomRight(BESPIN);
         systemMapping.setBottom(CORELLIA);
-        system.setSystemMapping(systemMapping);
 
-        return system;
+        return systemMapping;
     }
 
     private static System getDagobah() {
@@ -88,6 +111,17 @@ public class RegionFourSystemData {
         system.setRemote(true);
 
         return system;
+    }
+
+    private static SystemMapping getDagobahSystemMapping() {
+        SystemMapping systemMapping = new SystemMapping();
+
+        systemMapping.setLeft(DAGOBAH);
+        systemMapping.setTopRight(UTAPAU);
+        systemMapping.setRight(MUSTAFAR);
+        systemMapping.setBottomLeft(SULLUST);
+
+        return systemMapping;
     }
 
     private static System getUtapau() {
@@ -102,12 +136,16 @@ public class RegionFourSystemData {
         system.setFirstProductionSymbol(SHIP_PRODUCTION_SYMBOL_FIRST);
         system.setQueueTime(3);
 
+        return system;
+    }
+
+    private static SystemMapping getUtapauSystemMapping() {
         SystemMapping systemMapping = new SystemMapping();
+
         systemMapping.setLeft(NABOO);
         systemMapping.setTopLeft(GEONOSIS);
-        systemMapping.setBottomRight(DAGOBAH);
-        system.setSystemMapping(systemMapping);
+        systemMapping.setBottomLeft(DAGOBAH);
 
-        return system;
+        return systemMapping;
     }
 }

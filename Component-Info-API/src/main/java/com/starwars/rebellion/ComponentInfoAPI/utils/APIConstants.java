@@ -52,6 +52,13 @@ public class APIConstants {
     public static final int TOTAL_REGIONS = 8;
     public static final char TOTAL_SYSTEMS = 32;
 
+    public static final int TOTAL_UNIQUE_UNITS = 18;
+    public static final int TOTAL_UNITS = 103;
+    public static final int TOTAL_UNIQUE_REBEL_UNITS = 9;
+    public static final int TOTAL_REBEL_UNITS = 50;
+    public static final int TOTAL_UNIQUE_EMPIRE_UNITS = 9;
+    public static final int TOTAL_EMPIRE_UNITS = 53;
+
     public static final int HAN_SOLO_LEADER_ID = 9;
     public static final int REGION_ID_EXAMPLE = 120;
 

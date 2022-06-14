@@ -1,5 +1,6 @@
 package com.starwars.rebellion.ComponentInfoAPI.utils.h2;
 
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.System;
 import com.starwars.rebellion.ComponentInfoAPI.repositories.*;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards.EmpireActionCardData;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.actionCards.RebelActionCardData;
@@ -22,6 +23,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Component
 @Slf4j
@@ -83,14 +87,17 @@ public class H2StartUpDataLoader implements ApplicationRunner {
 
     private void saveRegionsAndSystems() {
         regionRepository.saveAll(RegionData.fetch());
-        systemRepository.saveAll(RegionOneSystemData.fetch());
-        systemRepository.saveAll(RegionTwoSystemData.fetch());
-        systemRepository.saveAll(RegionThreeSystemData.fetch());
-        systemRepository.saveAll(RegionFourSystemData.fetch());
-        systemRepository.saveAll(RegionFiveSystemData.fetch());
-        systemRepository.saveAll(RegionSixSystemData.fetch());
-        systemRepository.saveAll(RegionSevenSystemData.fetch());
-        systemRepository.saveAll(RegionEightSystemData.fetch());
+
+        List<System> allSystems = new ArrayList<>();
+        allSystems.addAll(RegionOneSystemData.fetch());
+        allSystems.addAll(RegionTwoSystemData.fetch());
+        allSystems.addAll(RegionThreeSystemData.fetch());
+        allSystems.addAll(RegionFourSystemData.fetch());
+        allSystems.addAll(RegionFiveSystemData.fetch());
+        allSystems.addAll(RegionSixSystemData.fetch());
+        allSystems.addAll(RegionSevenSystemData.fetch());
+        allSystems.addAll(RegionEightSystemData.fetch());
+        systemRepository.saveAll(allSystems);
     }
 
     private void saveUnits() {

@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_DISTINCT_OBJECTIVE_CARDS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class ObjectiveCardRepositoryTest {
 	@Autowired
 	ObjectiveCardRepository objectiveCardRepository;

@@ -23,16 +23,6 @@ public class UnitSpecificationTest {
     @Autowired
     private UnitSpecification unitSpecification;
 
-    // Gets all cards, including several copies of the same card
-
-    @Test
-    void givenAllUnitsAvailable_thenRepeatsShouldAlsoReturn(){
-        UnitRequest unitRequest = new UnitRequest();
-        List<Unit> unitList = unitRepository.findAll(unitSpecification.getUnits(unitRequest));
-
-        assertEquals(TOTAL_UNITS, unitList.stream().mapToInt(Unit::getTotalInGame).sum());
-    }
-
     /************
      * ID Tests
      ************/

@@ -17,6 +17,8 @@ public class APIConstants {
     public static final String GET_ALL_PROJECT_CARD_ENDPOINT = "/projectcards/all";
     public static final String REGION_ENDPOINT = "/regions";
     public static final String GET_ALL_REGION_ENDPOINT = "/regions/all";
+    public static final String GET_UNIT_ENDPOINT = "/units";
+    public static final String GET_ALL_UNIT_ENDPOINT = "/units/all";
 
     public static final int TOTAL_EMPIRE_ACTION_CARDS = 16;
     public static final int TOTAL_STARTING_EMPIRE_ACTION_CARDS = 12;

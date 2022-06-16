@@ -13,7 +13,7 @@ import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_U
 import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_UNITS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class UnitRepositoryTest {
     @Autowired
     UnitRepository unitRepository;

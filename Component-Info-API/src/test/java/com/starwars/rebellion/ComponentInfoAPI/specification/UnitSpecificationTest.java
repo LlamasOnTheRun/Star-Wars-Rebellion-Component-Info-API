@@ -15,7 +15,7 @@ import java.util.List;
 import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class UnitSpecificationTest {
     @Autowired
     private UnitRepository unitRepository;

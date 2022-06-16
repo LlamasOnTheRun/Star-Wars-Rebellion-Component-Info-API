@@ -13,7 +13,7 @@ import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.REGION_
 import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_REGIONS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class RegionSpecificationTest {
 
     @Autowired

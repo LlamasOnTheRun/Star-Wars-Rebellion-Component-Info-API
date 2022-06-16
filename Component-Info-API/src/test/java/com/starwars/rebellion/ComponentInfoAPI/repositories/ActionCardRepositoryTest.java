@@ -12,7 +12,7 @@ import org.springframework.data.jpa.domain.Specification;
 import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class ActionCardRepositoryTest {
 
 	@Autowired

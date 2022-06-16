@@ -19,6 +19,8 @@ public class APIConstants {
     public static final String GET_ALL_REGION_ENDPOINT = "/regions/all";
     public static final String GET_UNIT_ENDPOINT = "/units";
     public static final String GET_ALL_UNIT_ENDPOINT = "/units/all";
+    public static final String SYSTEM_ENDPOINT = "/systems";
+    public static final String GET_ALL_SYSTEM_ENDPOINT = "/systems/all";
 
     public static final int TOTAL_EMPIRE_ACTION_CARDS = 16;
     public static final int TOTAL_STARTING_EMPIRE_ACTION_CARDS = 12;
@@ -42,6 +44,8 @@ public class APIConstants {
     public static final int TOTAL_MISSION_CARDS = 58;
     public static final int TOTAL_UNIQUE_PROJECT_CARDS = 5;
     public static final int TOTAL_PROJECT_CARDS = 10;
+    public static final int TOTAL_NON_REMOTE_SYSTEMS = 24;
+    public static final int TOTAL_REMOTE_SYSTEMS = 8;
 
     public static final int TOTAL_REBEL_MISSION_CARDS = 29;
     public static final int TOTAL_UNIQUE_REBEL_MISSION_CARDS = 24;
@@ -63,6 +67,8 @@ public class APIConstants {
 
     public static final int HAN_SOLO_LEADER_ID = 9;
     public static final int REGION_ID_EXAMPLE = 120;
+    public static final int SYSTEM_ID_EXAMPLE = 128;
+    public static final String SYSTEM_NAME_EXAMPLE = "Mon Calamari";
 
     public static final char NEUTRAL_LOYALTY = 'N';
     public static final char IMPERIAL_LOYALTY = 'I';

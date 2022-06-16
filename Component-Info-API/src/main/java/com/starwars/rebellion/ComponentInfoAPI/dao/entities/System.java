@@ -2,6 +2,7 @@ package com.starwars.rebellion.ComponentInfoAPI.dao.entities;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.LandProduction;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.ShipProduction;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.SystemMapping;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -28,4 +29,6 @@ public class System {
     private ShipProduction shipProduction = new ShipProduction();
     private char firstProductionSymbol = REMOTE_SYSTEM_IDENTIFICATION;
     private int queueTime;
+    @Embedded
+    private SystemMapping systemMapping;
 }

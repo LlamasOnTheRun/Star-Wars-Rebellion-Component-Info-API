@@ -12,7 +12,7 @@ import java.io.StringWriter;
 import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_RINGS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class RingControllerTest {
     @Autowired
     RingController ringController;

@@ -1,12 +1,17 @@
 package com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.System;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.SystemMapping;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.regions.RegionData;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.*;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.RegionFourSystemData.NABOO;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.RegionFourSystemData.UTAPAU;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.RegionSevenSystemData.MALASTARE;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.RegionTwoSystemData.BOTHAWUI;
 
 public class RegionThreeSystemData {
     public static final System RODIA = getRodia();
@@ -16,10 +21,25 @@ public class RegionThreeSystemData {
 
     public static List<System> fetch() {
         List<System> systems = new ArrayList<>();
-        systems.add(RODIA);
-        systems.add(TATOOINE);
-        systems.add(GEONOSIS);
-        systems.add(RYLOTH);
+
+        System targetedSystem;
+
+        targetedSystem = RODIA;
+        targetedSystem.setSystemMapping(getRodiaSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = TATOOINE;
+        targetedSystem.setSystemMapping(getTatooineSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = GEONOSIS;
+        targetedSystem.setSystemMapping(getGeonosisSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = RYLOTH;
+        targetedSystem.setSystemMapping(getRylothSystemMapping());
+        systems.add(targetedSystem);
+
         return systems;
     }
 
@@ -37,6 +57,18 @@ public class RegionThreeSystemData {
         return system;
     }
 
+    private static SystemMapping getRodiaSystemMapping() {
+        SystemMapping systemMapping = new SystemMapping();
+
+        systemMapping.setLeft(BOTHAWUI);
+        systemMapping.setTop(TATOOINE);
+        systemMapping.setRight(GEONOSIS);
+        systemMapping.setBottomRight(NABOO);
+        systemMapping.setBottomLeft(MALASTARE);
+
+        return systemMapping;
+    }
+
     private static System getTatooine() {
         System system = new System();
 
@@ -45,6 +77,17 @@ public class RegionThreeSystemData {
         system.setRemote(true);
 
         return system;
+    }
+
+    private static SystemMapping getTatooineSystemMapping() {
+        SystemMapping systemMapping = new SystemMapping();
+
+        systemMapping.setRight(RYLOTH);
+        systemMapping.setBottomRight(GEONOSIS);
+        systemMapping.setBottom(RODIA);
+        systemMapping.setBottomLeft(BOTHAWUI);
+
+        return systemMapping;
     }
 
     private static System getGeonosis() {
@@ -62,6 +105,18 @@ public class RegionThreeSystemData {
         return system;
     }
 
+    private static SystemMapping getGeonosisSystemMapping() {
+        SystemMapping systemMapping = new SystemMapping();
+
+        systemMapping.setLeft(RODIA);
+        systemMapping.setTopLeft(TATOOINE);
+        systemMapping.setTop(RYLOTH);
+        systemMapping.setBottomRight(UTAPAU);
+        systemMapping.setBottom(NABOO);
+
+        return systemMapping;
+    }
+
     private static System getRyloth() {
         System system = new System();
 
@@ -74,5 +129,14 @@ public class RegionThreeSystemData {
         system.setQueueTime(1);
 
         return system;
+    }
+
+    private static SystemMapping getRylothSystemMapping() {
+        SystemMapping systemMapping = new SystemMapping();
+
+        systemMapping.setLeft(TATOOINE);
+        systemMapping.setBottom(GEONOSIS);
+
+        return systemMapping;
     }
 }

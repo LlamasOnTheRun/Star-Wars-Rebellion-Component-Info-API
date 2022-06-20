@@ -1,12 +1,16 @@
 package com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.System;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.SystemMapping;
 import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.regions.RegionData;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.*;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.RegionSevenSystemData.*;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.RegionTwoSystemData.KESSEL;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.systems.RegionTwoSystemData.TOYDARIA;
 
 public class RegionOneSystemData {
     public static final System MON_CALAMARI = getMonCalamari();
@@ -16,10 +20,25 @@ public class RegionOneSystemData {
 
     public static List<System> fetch() {
         List<System> systems = new ArrayList<>();
-        systems.add(MON_CALAMARI);
-        systems.add(FELUCIA);
-        systems.add(YAVIN);
-        systems.add(SALEUCAMI);
+
+        System targetedSystem;
+
+        targetedSystem = MON_CALAMARI;
+        targetedSystem.setSystemMapping(getMonCalamariSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = FELUCIA;
+        targetedSystem.setSystemMapping(getFeluciaSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = YAVIN;
+        targetedSystem.setSystemMapping(getYavinSystemMapping());
+        systems.add(targetedSystem);
+
+        targetedSystem = SALEUCAMI;
+        targetedSystem.setSystemMapping(getSaleucamiSystemMapping());
+        systems.add(targetedSystem);
+
         return systems;
     }
 
@@ -38,6 +57,15 @@ public class RegionOneSystemData {
         return system;
     }
 
+    private static SystemMapping getMonCalamariSystemMapping() {
+        SystemMapping systemMapping = new SystemMapping();
+
+        systemMapping.setBottomRight(SALEUCAMI);
+        systemMapping.setBottom(FELUCIA);
+
+        return systemMapping;
+    }
+
     private static System getFelucia() {
         System system = new System();
 
@@ -52,6 +80,17 @@ public class RegionOneSystemData {
         return system;
     }
 
+    private static SystemMapping getFeluciaSystemMapping() {
+        SystemMapping systemMapping = new SystemMapping();
+
+        systemMapping.setLeft(YAVIN);
+        systemMapping.setTop(MON_CALAMARI);
+        systemMapping.setRight(SALEUCAMI);
+        systemMapping.setBottom(MANDALORE);
+
+        return systemMapping;
+    }
+
     private static System getYavin() {
         System system = new System();
 
@@ -60,6 +99,16 @@ public class RegionOneSystemData {
         system.setRemote(true);
 
         return system;
+    }
+
+    private static SystemMapping getYavinSystemMapping() {
+        SystemMapping systemMapping = new SystemMapping();
+
+        systemMapping.setRight(FELUCIA);
+        systemMapping.setBottom(DATHOMIR);
+        systemMapping.setBottomRight(MANDALORE);
+
+        return systemMapping;
     }
 
     private static System getSaleucami() {
@@ -74,5 +123,18 @@ public class RegionOneSystemData {
         system.setQueueTime(1);
 
         return system;
+    }
+
+    private static SystemMapping getSaleucamiSystemMapping() {
+        SystemMapping systemMapping = new SystemMapping();
+
+        systemMapping.setLeft(FELUCIA);
+        systemMapping.setTopLeft(MON_CALAMARI);
+        systemMapping.setTopRight(KESSEL);
+        systemMapping.setRight(TOYDARIA);
+        systemMapping.setBottomRight(KASHYYYK);
+        systemMapping.setBottomLeft(MANDALORE);
+
+        return systemMapping;
     }
 }

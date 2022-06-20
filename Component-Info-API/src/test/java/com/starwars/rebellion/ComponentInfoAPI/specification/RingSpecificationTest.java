@@ -13,7 +13,7 @@ import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_R
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class RingSpecificationTest {
 
     @Autowired

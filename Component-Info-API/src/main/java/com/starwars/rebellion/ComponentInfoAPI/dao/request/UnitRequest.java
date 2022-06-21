@@ -12,7 +12,6 @@ public class UnitRequest {
     private Faction faction;
     private UnitType unitType;
     private ProductionType productionType;
-    private String specialText;
     private Integer blackDie;
     private Integer redDie;
     private Integer health;

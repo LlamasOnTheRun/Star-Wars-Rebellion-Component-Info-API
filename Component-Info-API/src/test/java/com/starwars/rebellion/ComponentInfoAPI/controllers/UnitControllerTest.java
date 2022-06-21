@@ -93,20 +93,6 @@ public class UnitControllerTest {
     }
 
     @Test
-    void givenANearCompleteRequestFormWithSpecialText_thenEquivalentUnitShouldBeReturned() throws Exception{
-        ObjectMapper objectMapper = new ObjectMapper();
-        UnitRequest unitRequest =
-                objectMapper.readValue("{\"specialText\": null}",
-                        UnitRequest.class);
-
-        StringWriter writer = new StringWriter();
-        objectMapper.writeValue(writer, unitController.getUnits(unitRequest));
-        final String responseJson = writer.toString();
-
-        assertEquals(1, StringUtils.countOccurrencesOf(responseJson, "\"id\":174"));
-    }
-
-    @Test
     void givenANearCompleteRequestFormWithBlackDie_thenEquivalentUnitShouldBeReturned() throws Exception{
         ObjectMapper objectMapper = new ObjectMapper();
         UnitRequest unitRequest =

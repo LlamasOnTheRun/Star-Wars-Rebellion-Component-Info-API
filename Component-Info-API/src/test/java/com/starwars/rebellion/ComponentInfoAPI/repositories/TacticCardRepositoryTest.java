@@ -1,14 +1,16 @@
 package com.starwars.rebellion.ComponentInfoAPI.repositories;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.TacticCard;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.TacticType;
+import com.starwars.rebellion.ComponentInfoAPI.dao.request.TacticCardRequest;
+import com.starwars.rebellion.ComponentInfoAPI.specification.TacticCardSpecification;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_TACTIC_CARDS;
-import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_UNIQUE_TACTIC_CARDS;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -16,6 +18,8 @@ class TacticCardRepositoryTest {
 
     @Autowired
     TacticCardRepository tacticCardRepository;
+    @Autowired
+    TacticCardSpecification tacticCardSpecification;
 
     @Test
     void givenAllGroundTacticCardsAreAvailable_thenOneCardIsReturned() {
@@ -32,5 +36,29 @@ class TacticCardRepositoryTest {
     void givenAllTacticCardsAreAvailable_thenAllCardsAreReturned(){
         List<TacticCard> tacticCardList = tacticCardRepository.findAll();
         assertEquals(TOTAL_TACTIC_CARDS, tacticCardList.stream().mapToInt(TacticCard::getTotalInDeck).sum());
+    }
+
+    /***************************
+     * Tactic Type Count Tests
+     **************************/
+
+    @Test
+    void givenTacticTypeIsSpace_thenTypeEqualPredicateIsAdded(){
+        TacticCardRequest tacticCardRequest = new TacticCardRequest();
+        tacticCardRequest.setTacticType(TacticType.SPACE);
+
+        List<TacticCard> tacticCardList =
+                tacticCardRepository.findAll(tacticCardSpecification.getTacticCards(tacticCardRequest));
+        assertEquals(TOTAL_SPACE_TACTIC_CARDS, tacticCardList.size());
+    }
+
+    @Test
+    void givenTacticTypeIsGround_thenTypeEqualPredicateIsAdded(){
+        TacticCardRequest tacticCardRequest = new TacticCardRequest();
+        tacticCardRequest.setTacticType(TacticType.GROUND);
+
+        List<TacticCard> tacticCardList =
+                tacticCardRepository.findAll(tacticCardSpecification.getTacticCards(tacticCardRequest));
+        assertEquals(TOTAL_GROUND_TACTIC_CARDS, tacticCardList.size());
     }
 }

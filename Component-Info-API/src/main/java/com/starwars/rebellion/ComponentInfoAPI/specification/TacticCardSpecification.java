@@ -27,8 +27,8 @@ public class TacticCardSpecification {
 
             if(tacticCardRequest.getTitle() != null && !Objects.equals(tacticCardRequest.getTitle(), "")){
                 String[] splitTitle = tacticCardRequest.getTitle().split("[\n\r\s]+");
-                Arrays.stream(splitTitle).forEach(word -> predicates.add(criteriaBuilder.like(root.get("cardText").get("title"),
-                        "%"+word+"%")));
+                Arrays.stream(splitTitle).forEach(word ->
+                        predicates.add(criteriaBuilder.like(root.get("cardText").get("title"),"%"+word+"%")));
             }
 
             return criteriaBuilder.and(predicates.toArray(new Predicate[0]));

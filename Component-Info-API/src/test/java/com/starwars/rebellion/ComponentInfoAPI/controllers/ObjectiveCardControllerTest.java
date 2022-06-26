@@ -65,6 +65,6 @@ class ObjectiveCardControllerTest {
 
 		List<ObjectiveCard> objectiveCardList = objectiveCardController.getObjectiveCard(objectiveCardRequest);
 
-		assertEquals(0, objectiveCardList.size());
+		assertEquals(TOTAL_LEVEL_TWO_OBJECTIVE_CARDS, objectiveCardList.size());
 	}
 }

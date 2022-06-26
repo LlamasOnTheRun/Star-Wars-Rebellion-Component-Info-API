@@ -11,8 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.BLACK_HEALTH_COLOR;
-import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_UNIQUE_UNITS;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -49,7 +48,7 @@ public class UnitControllerTest {
         unitRequest.setFaction(Faction.REBEL);
 
         List<Unit> unitList = unitController.getUnits(unitRequest);
-        assertEquals(174, unitList.get(0).getId());
+        assertEquals(TOTAL_UNIQUE_REBEL_UNITS, unitList.size());
     }
 
     @Test
@@ -58,7 +57,7 @@ public class UnitControllerTest {
         unitRequest.setUnitType(UnitType.GROUND);
 
         List<Unit> unitList = unitController.getUnits(unitRequest);
-        assertEquals(174, unitList.get(0).getId());
+        assertEquals(TOTAL_UNIQUE_GROUND_UNITS, unitList.size());
     }
 
     @Test
@@ -67,7 +66,7 @@ public class UnitControllerTest {
         unitRequest.setProductionType(ProductionType.LIGHT);
 
         List<Unit> unitList = unitController.getUnits(unitRequest);
-        assertEquals(174, unitList.get(0).getId());
+        assertEquals(TOTAL_UNIQUE_LIGHT_UNITS, unitList.size());
     }
 
     @Test
@@ -76,7 +75,7 @@ public class UnitControllerTest {
         unitRequest.setBlackDie(1);
 
         List<Unit> unitList = unitController.getUnits(unitRequest);
-        assertEquals(174, unitList.get(0).getId());
+        assertEquals(TOTAL_UNIQUE_UNITS_W_BLACK_DIE_ONE, unitList.size());
     }
 
     @Test
@@ -85,7 +84,7 @@ public class UnitControllerTest {
         unitRequest.setRedDie(0);
 
         List<Unit> unitList = unitController.getUnits(unitRequest);
-        assertEquals(174, unitList.get(0).getId());
+        assertEquals(TOTAL_UNIQUE_UNITS_W_RED_DIE_ZERO, unitList.size());
     }
 
     @Test
@@ -94,7 +93,7 @@ public class UnitControllerTest {
         unitRequest.setHealth(1);
 
         List<Unit> unitList = unitController.getUnits(unitRequest);
-        assertEquals(174, unitList.get(0).getId());
+        assertEquals(TOTAL_UNIQUE_UNITS_W_ONE_HEALTH, unitList.size());
     }
 
     @Test
@@ -103,7 +102,7 @@ public class UnitControllerTest {
         unitRequest.setHealthColor(BLACK_HEALTH_COLOR);
 
         List<Unit> unitList = unitController.getUnits(unitRequest);
-        assertEquals(174, unitList.get(0).getId());
+        assertEquals(TOTAL_UNIQUE_UNITS_W_BLACK_HEALTH_COLOR, unitList.size());
     }
 
     @Test
@@ -112,7 +111,7 @@ public class UnitControllerTest {
         unitRequest.setShipCarryingCapacity(0);
 
         List<Unit> unitList = unitController.getUnits(unitRequest);
-        assertEquals(174, unitList.get(0).getId());
+        assertEquals(TOTAL_UNIQUE_UNITS_W_ZERO_SHIP_CAPACITY, unitList.size());
     }
 
     @Test
@@ -121,7 +120,7 @@ public class UnitControllerTest {
         unitRequest.setInvincible(false);
 
         List<Unit> unitList = unitController.getUnits(unitRequest);
-        assertEquals(174, unitList.get(0).getId());
+        assertEquals(TOTAL_UNIQUE_NON_INVINCIBLE_UNITS, unitList.size());
     }
 
     @Test
@@ -130,7 +129,7 @@ public class UnitControllerTest {
         unitRequest.setNeedsTransport(true);
 
         List<Unit> unitList = unitController.getUnits(unitRequest);
-        assertEquals(174, unitList.get(0).getId());
+        assertEquals(TOTAL_UNIQUE_UNITS_NEED_TRANSPORT, unitList.size());
     }
 
     @Test
@@ -139,7 +138,7 @@ public class UnitControllerTest {
         unitRequest.setStructure(false);
 
         List<Unit> unitList = unitController.getUnits(unitRequest);
-        assertEquals(174, unitList.get(0).getId());
+        assertEquals(TOTAL_UNIQUE_NON_STRUCTURE_UNITS, unitList.size());
     }
 
     @Test
@@ -149,5 +148,6 @@ public class UnitControllerTest {
 
         List<Unit> unitList = unitController.getUnits(unitRequest);
         assertEquals(174, unitList.get(0).getId());
+        assertEquals(1, unitList.size());
     }
 }

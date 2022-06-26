@@ -18,7 +18,7 @@ public class ObjectiveCardSpecification {
         return (root, query, criteriaBuilder) -> {
             List<Predicate> predicates = new ArrayList<>();
 
-            if (objectiveCardRequest.getId() > 0) {
+            if (objectiveCardRequest.getId() != null && objectiveCardRequest.getId() > 0) {
                 predicates.add(criteriaBuilder.equal(root.get("id"),
                         objectiveCardRequest.getId()));
             }

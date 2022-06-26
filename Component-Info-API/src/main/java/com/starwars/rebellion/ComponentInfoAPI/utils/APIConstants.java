@@ -60,6 +60,7 @@ public class APIConstants {
 
     public static final int HAN_SOLO_LEADER_ID = 9;
     public static final int INSPIRE_SYMPATHY_OBJECTIVE_CARD_ID = 160;
+    public static final String INSPIRE_SYMPATHY_OBJECTIVE_CARD_TITLE = "Inspire Sympathy";
     public static final int REGION_ID_EXAMPLE = 120;
     public static final int SYSTEM_ID_EXAMPLE = 128;
     public static final String SYSTEM_NAME_EXAMPLE = "Mon Calamari";

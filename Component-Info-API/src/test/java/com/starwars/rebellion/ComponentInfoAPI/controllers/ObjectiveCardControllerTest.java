@@ -67,4 +67,14 @@ class ObjectiveCardControllerTest {
 
 		assertEquals(TOTAL_LEVEL_TWO_OBJECTIVE_CARDS, objectiveCardList.size());
 	}
+
+	@Test
+	void givenDeckLevelThreeIsProvided_thenReturnedDataIsAccurate() {
+		ObjectiveCardRequest objectiveCardRequest = new ObjectiveCardRequest();
+		objectiveCardRequest.setDeckLevelThree(true);
+
+		List<ObjectiveCard> objectiveCardList = objectiveCardController.getObjectiveCard(objectiveCardRequest);
+
+		assertEquals(TOTAL_LEVEL_THREE_OBJECTIVE_CARDS, objectiveCardList.size());
+	}
 }

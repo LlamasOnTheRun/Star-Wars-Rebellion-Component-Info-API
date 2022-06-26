@@ -61,6 +61,7 @@ public class APIConstants {
     public static final int TOTAL_OBJECTIVE_CARDS = 14;
     public static final int TOTAL_LEVEL_ONE_OBJECTIVE_CARDS = 5;
     public static final int TOTAL_LEVEL_TWO_OBJECTIVE_CARDS = 5;
+    public static final int TOTAL_LEVEL_THREE_OBJECTIVE_CARDS = 5;
 
     public static final int HAN_SOLO_LEADER_ID = 9;
     public static final int INSPIRE_SYMPATHY_OBJECTIVE_CARD_ID = 160;

@@ -4,9 +4,9 @@ import lombok.Data;
 
 @Data
 public class ObjectiveCardRequest {
-    private int id;
+    private Integer id;
     private String title;
-    private boolean deckLevelOne;
-    private boolean deckLevelTwo;
-    private boolean deckLevelThree;
+    private Boolean deckLevelOne;
+    private Boolean deckLevelTwo;
+    private Boolean deckLevelThree;
 }

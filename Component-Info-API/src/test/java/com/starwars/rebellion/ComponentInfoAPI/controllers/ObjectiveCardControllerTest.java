@@ -18,6 +18,15 @@ class ObjectiveCardControllerTest {
 	ObjectiveCardController objectiveCardController;
 
 	@Test
+	void givenBlankRequestIsProvided_thenReturnedDataIsAccurate() {
+		ObjectiveCardRequest objectiveCardRequest = new ObjectiveCardRequest();
+
+		List<ObjectiveCard> objectiveCardList = objectiveCardController.getObjectiveCard(objectiveCardRequest);
+
+		assertEquals(TOTAL_OBJECTIVE_CARDS, objectiveCardList.size());
+	}
+
+	@Test
 	void givenIDIsProvided_thenReturnedDataIsAccurate() {
 		ObjectiveCardRequest objectiveCardRequest = new ObjectiveCardRequest();
 		objectiveCardRequest.setId(INSPIRE_SYMPATHY_OBJECTIVE_CARD_ID);
@@ -47,5 +56,15 @@ class ObjectiveCardControllerTest {
 		List<ObjectiveCard> objectiveCardList = objectiveCardController.getObjectiveCard(objectiveCardRequest);
 
 		assertEquals(TOTAL_LEVEL_ONE_OBJECTIVE_CARDS, objectiveCardList.size());
+	}
+
+	@Test
+	void givenDeckLevelTwoIsProvided_thenReturnedDataIsAccurate() {
+		ObjectiveCardRequest objectiveCardRequest = new ObjectiveCardRequest();
+		objectiveCardRequest.setDeckLevelTwo(true);
+
+		List<ObjectiveCard> objectiveCardList = objectiveCardController.getObjectiveCard(objectiveCardRequest);
+
+		assertEquals(0, objectiveCardList.size());
 	}
 }

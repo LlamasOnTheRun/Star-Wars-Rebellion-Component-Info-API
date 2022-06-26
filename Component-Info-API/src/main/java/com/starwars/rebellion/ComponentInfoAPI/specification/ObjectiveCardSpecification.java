@@ -39,6 +39,10 @@ public class ObjectiveCardSpecification {
                 predicates.add(criteriaBuilder.equal(root.get("inDeckLevelTwo"), objectiveCardRequest.getDeckLevelTwo()));
             }
 
+            if (objectiveCardRequest.getDeckLevelThree()!= null && objectiveCardRequest.getDeckLevelThree() != false) {
+                predicates.add(criteriaBuilder.equal(root.get("inDeckLevelThree"), objectiveCardRequest.getDeckLevelThree()));
+            }
+
             return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
         };
     }

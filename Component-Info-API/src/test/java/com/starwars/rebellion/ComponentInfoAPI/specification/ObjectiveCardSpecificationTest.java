@@ -121,4 +121,64 @@ public class ObjectiveCardSpecificationTest {
 
         assertEquals(TOTAL_LEVEL_ONE_OBJECTIVE_CARDS, objectiveCardList.size());
     }
+
+    @Test
+    void givenLevelTwoIsNull_thenPredicateIsNotAdded() {
+        ObjectiveCardRequest objectiveCardRequest = new ObjectiveCardRequest();
+        objectiveCardRequest.setDeckLevelTwo(null);
+
+        List<ObjectiveCard> objectiveCardList = objectiveCardRepository.findAll(objectiveCardSpecification.getObjectiveCard(objectiveCardRequest));
+
+        assertEquals(TOTAL_OBJECTIVE_CARDS, objectiveCardList.size());
+    }
+
+    @Test
+    void givenLevelTwoIsFalse_thenPredicateIsNotAdded() {
+        ObjectiveCardRequest objectiveCardRequest = new ObjectiveCardRequest();
+        objectiveCardRequest.setDeckLevelTwo(false);
+
+        List<ObjectiveCard> objectiveCardList = objectiveCardRepository.findAll(objectiveCardSpecification.getObjectiveCard(objectiveCardRequest));
+
+        assertEquals(TOTAL_OBJECTIVE_CARDS, objectiveCardList.size());
+    }
+
+    @Test
+    void givenLevelTwoIsTrue_thenPredicateIsAdded() {
+        ObjectiveCardRequest objectiveCardRequest = new ObjectiveCardRequest();
+        objectiveCardRequest.setDeckLevelTwo(true);
+
+        List<ObjectiveCard> objectiveCardList = objectiveCardRepository.findAll(objectiveCardSpecification.getObjectiveCard(objectiveCardRequest));
+
+        assertEquals(TOTAL_LEVEL_TWO_OBJECTIVE_CARDS, objectiveCardList.size());
+    }
+
+    @Test
+    void givenLevelThreeIsNull_thenPredicateIsNotAdded() {
+        ObjectiveCardRequest objectiveCardRequest = new ObjectiveCardRequest();
+        objectiveCardRequest.setDeckLevelThree(null);
+
+        List<ObjectiveCard> objectiveCardList = objectiveCardRepository.findAll(objectiveCardSpecification.getObjectiveCard(objectiveCardRequest));
+
+        assertEquals(TOTAL_OBJECTIVE_CARDS, objectiveCardList.size());
+    }
+
+    @Test
+    void givenLevelThreeIsFalse_thenPredicateIsNotAdded() {
+        ObjectiveCardRequest objectiveCardRequest = new ObjectiveCardRequest();
+        objectiveCardRequest.setDeckLevelThree(false);
+
+        List<ObjectiveCard> objectiveCardList = objectiveCardRepository.findAll(objectiveCardSpecification.getObjectiveCard(objectiveCardRequest));
+
+        assertEquals(TOTAL_OBJECTIVE_CARDS, objectiveCardList.size());
+    }
+
+    @Test
+    void givenLevelThreeIsTrue_thenPredicateIsAdded() {
+        ObjectiveCardRequest objectiveCardRequest = new ObjectiveCardRequest();
+        objectiveCardRequest.setDeckLevelThree(true);
+
+        List<ObjectiveCard> objectiveCardList = objectiveCardRepository.findAll(objectiveCardSpecification.getObjectiveCard(objectiveCardRequest));
+
+        assertEquals(TOTAL_LEVEL_THREE_OBJECTIVE_CARDS, objectiveCardList.size());
+    }
 }

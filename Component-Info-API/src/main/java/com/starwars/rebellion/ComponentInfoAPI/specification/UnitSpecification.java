@@ -40,15 +40,15 @@ public class UnitSpecification {
                 predicates.add(criteriaBuilder.equal(root.get("productionType"), unitRequest.getProductionType()));
             }
 
-            if(unitRequest.getBlackDie() != null){
+            if(unitRequest.getBlackDie() != null && unitRequest.getBlackDie() > -1){
                 predicates.add(criteriaBuilder.equal(root.get("blackDie"), unitRequest.getBlackDie()));
             }
 
-            if(unitRequest.getRedDie() != null){
+            if(unitRequest.getRedDie() != null && unitRequest.getRedDie() > -1){
                 predicates.add(criteriaBuilder.equal(root.get("redDie"), unitRequest.getRedDie()));
             }
 
-            if(unitRequest.getHealth() != null){
+            if(unitRequest.getHealth() != null && unitRequest.getHealth() > -1){
                 predicates.add(criteriaBuilder.equal(root.get("health"), unitRequest.getHealth()));
             }
 
@@ -56,7 +56,7 @@ public class UnitSpecification {
                 predicates.add(criteriaBuilder.equal(root.get("healthColor"), unitRequest.getHealthColor()));
             }
 
-            if(unitRequest.getShipCarryingCapacity() != null){
+            if(unitRequest.getShipCarryingCapacity() != null && unitRequest.getShipCarryingCapacity() > -1){
                 predicates.add(criteriaBuilder.equal(root.get("shipCarryingCapacity"),
                         unitRequest.getShipCarryingCapacity()));
             }

@@ -10,5 +10,4 @@ import java.util.List;
 
 public interface UnitRepository extends JpaRepository<Unit, Integer>, JpaSpecificationExecutor<Unit> {
     List<Unit> findAll(Specification unitSpecification);
-    List<Unit> findAll();
 }

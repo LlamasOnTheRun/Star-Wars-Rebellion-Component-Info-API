@@ -1,14 +1,17 @@
 package com.starwars.rebellion.ComponentInfoAPI.controllers;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.Unit;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.ProductionType;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.UnitType;
 import com.starwars.rebellion.ComponentInfoAPI.dao.request.UnitRequest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.util.StringUtils;
 
-import java.io.StringWriter;
+import java.util.List;
 
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.BLACK_HEALTH_COLOR;
 import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_UNIQUE_UNITS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -23,198 +26,128 @@ public class UnitControllerTest {
     }
 
     @Test
-    void givenANearCompleteRequestFormWithID_thenEquivalentUnitShouldBeReturned() throws Exception{
-        ObjectMapper objectMapper = new ObjectMapper();
-        UnitRequest unitRequest =
-                objectMapper.readValue("{\"id\": 174}",
-                        UnitRequest.class);
+    void givenANearCompleteRequestFormWithID_thenEquivalentUnitShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setId(174);
 
-        StringWriter writer = new StringWriter();
-        objectMapper.writeValue(writer, unitController.getUnits(unitRequest));
-        final String responseJson = writer.toString();
-
-        assertEquals(1, StringUtils.countOccurrencesOf(responseJson, "\"title\":\"Rebel Trooper\""));
+        List<Unit> unitList = unitController.getUnits(unitRequest);
+        assertEquals("Rebel Trooper", unitList.get(0).getTitle());
     }
 
     @Test
-    void givenANearCompleteRequestFormWithTitle_thenEquivalentUnitShouldBeReturned() throws Exception{
-        ObjectMapper objectMapper = new ObjectMapper();
-        UnitRequest unitRequest =
-                objectMapper.readValue("{\"title\": \"Rebel Trooper\"}",
-                        UnitRequest.class);
+    void givenANearCompleteRequestFormWithTitle_thenEquivalentUnitShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setTitle("Rebel Trooper");
 
-        StringWriter writer = new StringWriter();
-        objectMapper.writeValue(writer, unitController.getUnits(unitRequest));
-        final String responseJson = writer.toString();
-
-        assertEquals(1, StringUtils.countOccurrencesOf(responseJson, "\"id\":174"));
+        List<Unit> unitList = unitController.getUnits(unitRequest);
+        assertEquals(174, unitList.get(0).getId());
     }
 
     @Test
-    void givenANearCompleteRequestFormWithFaction_thenEquivalentUnitShouldBeReturned() throws Exception{
-        ObjectMapper objectMapper = new ObjectMapper();
-        UnitRequest unitRequest =
-                objectMapper.readValue("{\"faction\": \"REBEL\"}",
-                        UnitRequest.class);
+    void givenANearCompleteRequestFormWithFaction_thenEquivalentUnitShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setFaction(Faction.REBEL);
 
-        StringWriter writer = new StringWriter();
-        objectMapper.writeValue(writer, unitController.getUnits(unitRequest));
-        final String responseJson = writer.toString();
-
-        assertEquals(1, StringUtils.countOccurrencesOf(responseJson, "\"id\":174"));
+        List<Unit> unitList = unitController.getUnits(unitRequest);
+        assertEquals(174, unitList.get(0).getId());
     }
 
     @Test
-    void givenANearCompleteRequestFormWithUnitType_thenEquivalentUnitShouldBeReturned() throws Exception{
-        ObjectMapper objectMapper = new ObjectMapper();
-        UnitRequest unitRequest =
-                objectMapper.readValue("{\"unitType\": \"GROUND\"}",
-                        UnitRequest.class);
+    void givenANearCompleteRequestFormWithUnitType_thenEquivalentUnitShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setUnitType(UnitType.GROUND);
 
-        StringWriter writer = new StringWriter();
-        objectMapper.writeValue(writer, unitController.getUnits(unitRequest));
-        final String responseJson = writer.toString();
-
-        assertEquals(1, StringUtils.countOccurrencesOf(responseJson, "\"id\":174"));
+        List<Unit> unitList = unitController.getUnits(unitRequest);
+        assertEquals(174, unitList.get(0).getId());
     }
 
     @Test
-    void givenANearCompleteRequestFormWithProductionType_thenEquivalentUnitShouldBeReturned() throws Exception{
-        ObjectMapper objectMapper = new ObjectMapper();
-        UnitRequest unitRequest =
-                objectMapper.readValue("{\"productionType\": \"LIGHT\"}",
-                        UnitRequest.class);
+    void givenANearCompleteRequestFormWithProductionType_thenEquivalentUnitShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setProductionType(ProductionType.LIGHT);
 
-        StringWriter writer = new StringWriter();
-        objectMapper.writeValue(writer, unitController.getUnits(unitRequest));
-        final String responseJson = writer.toString();
-
-        assertEquals(1, StringUtils.countOccurrencesOf(responseJson, "\"id\":174"));
+        List<Unit> unitList = unitController.getUnits(unitRequest);
+        assertEquals(174, unitList.get(0).getId());
     }
 
     @Test
-    void givenANearCompleteRequestFormWithBlackDie_thenEquivalentUnitShouldBeReturned() throws Exception{
-        ObjectMapper objectMapper = new ObjectMapper();
-        UnitRequest unitRequest =
-                objectMapper.readValue("{\"blackDie\": 1}",
-                        UnitRequest.class);
+    void givenANearCompleteRequestFormWithBlackDie_thenEquivalentUnitShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setBlackDie(1);
 
-        StringWriter writer = new StringWriter();
-        objectMapper.writeValue(writer, unitController.getUnits(unitRequest));
-        final String responseJson = writer.toString();
-
-        assertEquals(1, StringUtils.countOccurrencesOf(responseJson, "\"id\":174"));
+        List<Unit> unitList = unitController.getUnits(unitRequest);
+        assertEquals(174, unitList.get(0).getId());
     }
 
     @Test
-    void givenANearCompleteRequestFormWithRedDie_thenEquivalentUnitShouldBeReturned() throws Exception{
-        ObjectMapper objectMapper = new ObjectMapper();
-        UnitRequest unitRequest =
-                objectMapper.readValue("{\"redDie\": 0}",
-                        UnitRequest.class);
+    void givenANearCompleteRequestFormWithRedDie_thenEquivalentUnitShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setRedDie(0);
 
-        StringWriter writer = new StringWriter();
-        objectMapper.writeValue(writer, unitController.getUnits(unitRequest));
-        final String responseJson = writer.toString();
-
-        assertEquals(1, StringUtils.countOccurrencesOf(responseJson, "\"id\":174"));
+        List<Unit> unitList = unitController.getUnits(unitRequest);
+        assertEquals(174, unitList.get(0).getId());
     }
 
     @Test
-    void givenANearCompleteRequestFormWithHealth_thenEquivalentUnitShouldBeReturned() throws Exception{
-        ObjectMapper objectMapper = new ObjectMapper();
-        UnitRequest unitRequest =
-                objectMapper.readValue("{\"health\": 1}",
-                        UnitRequest.class);
+    void givenANearCompleteRequestFormWithHealth_thenEquivalentUnitShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setHealth(1);
 
-        StringWriter writer = new StringWriter();
-        objectMapper.writeValue(writer, unitController.getUnits(unitRequest));
-        final String responseJson = writer.toString();
-
-        assertEquals(1, StringUtils.countOccurrencesOf(responseJson, "\"id\":174"));
+        List<Unit> unitList = unitController.getUnits(unitRequest);
+        assertEquals(174, unitList.get(0).getId());
     }
 
     @Test
-    void givenANearCompleteRequestFormWithHealthColor_thenEquivalentUnitShouldBeReturned() throws Exception{
-        ObjectMapper objectMapper = new ObjectMapper();
-        UnitRequest unitRequest =
-                objectMapper.readValue("{\"healthColor\": \"B\"}",
-                        UnitRequest.class);
+    void givenANearCompleteRequestFormWithHealthColor_thenEquivalentUnitShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setHealthColor(BLACK_HEALTH_COLOR);
 
-        StringWriter writer = new StringWriter();
-        objectMapper.writeValue(writer, unitController.getUnits(unitRequest));
-        final String responseJson = writer.toString();
-
-        assertEquals(1, StringUtils.countOccurrencesOf(responseJson, "\"id\":174"));
+        List<Unit> unitList = unitController.getUnits(unitRequest);
+        assertEquals(174, unitList.get(0).getId());
     }
 
     @Test
-    void givenANearCompleteRequestFormWithShipCarryingCapacity_thenEquivalentUnitShouldBeReturned() throws Exception{
-        ObjectMapper objectMapper = new ObjectMapper();
-        UnitRequest unitRequest =
-                objectMapper.readValue("{\"shipCarryingCapacity\": 0}",
-                        UnitRequest.class);
+    void givenANearCompleteRequestFormWithShipCarryingCapacity_thenEquivalentUnitShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setShipCarryingCapacity(0);
 
-        StringWriter writer = new StringWriter();
-        objectMapper.writeValue(writer, unitController.getUnits(unitRequest));
-        final String responseJson = writer.toString();
-
-        assertEquals(1, StringUtils.countOccurrencesOf(responseJson, "\"id\":174"));
+        List<Unit> unitList = unitController.getUnits(unitRequest);
+        assertEquals(174, unitList.get(0).getId());
     }
 
     @Test
-    void givenANearCompleteRequestFormWithInvincible_thenEquivalentUnitShouldBeReturned() throws Exception{
-        ObjectMapper objectMapper = new ObjectMapper();
-        UnitRequest unitRequest =
-                objectMapper.readValue("{\"invincible\": false}",
-                        UnitRequest.class);
+    void givenANearCompleteRequestFormWithInvincible_thenEquivalentUnitShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setInvincible(false);
 
-        StringWriter writer = new StringWriter();
-        objectMapper.writeValue(writer, unitController.getUnits(unitRequest));
-        final String responseJson = writer.toString();
-
-        assertEquals(1, StringUtils.countOccurrencesOf(responseJson, "\"id\":174"));
+        List<Unit> unitList = unitController.getUnits(unitRequest);
+        assertEquals(174, unitList.get(0).getId());
     }
 
     @Test
-    void givenANearCompleteRequestFormWithNeedsTransport_thenEquivalentUnitShouldBeReturned() throws Exception{
-        ObjectMapper objectMapper = new ObjectMapper();
-        UnitRequest unitRequest =
-                objectMapper.readValue("{\"needsTransport\": true}",
-                        UnitRequest.class);
+    void givenANearCompleteRequestFormWithNeedsTransport_thenEquivalentUnitShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setNeedsTransport(true);
 
-        StringWriter writer = new StringWriter();
-        objectMapper.writeValue(writer, unitController.getUnits(unitRequest));
-        final String responseJson = writer.toString();
-
-        assertEquals(1, StringUtils.countOccurrencesOf(responseJson, "\"id\":174"));
+        List<Unit> unitList = unitController.getUnits(unitRequest);
+        assertEquals(174, unitList.get(0).getId());
     }
 
     @Test
-    void givenANearCompleteRequestFormWithStructure_thenEquivalentUnitShouldBeReturned() throws Exception{
-        ObjectMapper objectMapper = new ObjectMapper();
-        UnitRequest unitRequest =
-                objectMapper.readValue("{\"structure\": false}",
-                        UnitRequest.class);
+    void givenANearCompleteRequestFormWithStructure_thenEquivalentUnitShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setStructure(false);
 
-        StringWriter writer = new StringWriter();
-        objectMapper.writeValue(writer, unitController.getUnits(unitRequest));
-        final String responseJson = writer.toString();
-
-        assertEquals(1, StringUtils.countOccurrencesOf(responseJson, "\"id\":174"));
+        List<Unit> unitList = unitController.getUnits(unitRequest);
+        assertEquals(174, unitList.get(0).getId());
     }
 
     @Test
-    void givenANearCompleteRequestFormWithTotalInGame_thenEquivalentUnitShouldBeReturned() throws Exception{
-        ObjectMapper objectMapper = new ObjectMapper();
-        UnitRequest unitRequest =
-                objectMapper.readValue("{\"totalInGame\": 15}",
-                        UnitRequest.class);
+    void givenANearCompleteRequestFormWithTotalInGame_thenEquivalentUnitShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setTotalInGame(15);
 
-        StringWriter writer = new StringWriter();
-        objectMapper.writeValue(writer, unitController.getUnits(unitRequest));
-        final String responseJson = writer.toString();
-
-        assertEquals(1, StringUtils.countOccurrencesOf(responseJson, "\"id\":174"));
+        List<Unit> unitList = unitController.getUnits(unitRequest);
+        assertEquals(174, unitList.get(0).getId());
     }
 }

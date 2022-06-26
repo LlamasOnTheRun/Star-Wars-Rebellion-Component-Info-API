@@ -1,6 +1,7 @@
 package com.starwars.rebellion.ComponentInfoAPI.specification;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.ObjectiveCard;
+import com.starwars.rebellion.ComponentInfoAPI.dao.request.ObjectiveCardRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;

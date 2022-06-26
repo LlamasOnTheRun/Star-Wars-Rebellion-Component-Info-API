@@ -1,6 +1,7 @@
 package com.starwars.rebellion.ComponentInfoAPI.controllers;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.ObjectiveCard;
+import com.starwars.rebellion.ComponentInfoAPI.dao.request.ObjectiveCardRequest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,7 +21,7 @@ class ObjectiveCardControllerTest {
 	@Transactional
 	void givenIDIsProvided_thenReturnedDataIsAccurate() {
 		ObjectiveCardRequest objectiveCardRequest = new ObjectiveCardRequest();
-		objectiveCardRequest.setID(1);//TODO make to a valid id
+		objectiveCardRequest.setId(1);//TODO make to a valid id
 
 		List<ObjectiveCard> objectiveCardList = objectiveCardController.getObjectiveCard(objectiveCardRequest);
 

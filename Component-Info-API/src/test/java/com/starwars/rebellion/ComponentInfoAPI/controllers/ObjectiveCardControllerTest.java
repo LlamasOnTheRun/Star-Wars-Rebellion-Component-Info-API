@@ -8,8 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.INSPIRE_SYMPATHY_OBJECTIVE_CARD_ID;
-import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.INSPIRE_SYMPATHY_OBJECTIVE_CARD_TITLE;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -47,6 +46,6 @@ class ObjectiveCardControllerTest {
 
 		List<ObjectiveCard> objectiveCardList = objectiveCardController.getObjectiveCard(objectiveCardRequest);
 
-		assertEquals(0, objectiveCardList.size());
+		assertEquals(TOTAL_LEVEL_ONE_OBJECTIVE_CARDS, objectiveCardList.size());
 	}
 }

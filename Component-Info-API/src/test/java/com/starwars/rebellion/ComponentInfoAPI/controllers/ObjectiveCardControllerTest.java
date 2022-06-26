@@ -18,7 +18,7 @@ class ObjectiveCardControllerTest {
 
 	@Test
 	@Transactional
-	void givenIDIsProvided_thenReturnedDataIsAccurate() throws Exception {
+	void givenIDIsProvided_thenReturnedDataIsAccurate() {
 		ObjectiveCardRequest objectiveCardRequest = new ObjectiveCardRequest();
 		objectiveCardRequest.setID(1);//TODO make to a valid id
 

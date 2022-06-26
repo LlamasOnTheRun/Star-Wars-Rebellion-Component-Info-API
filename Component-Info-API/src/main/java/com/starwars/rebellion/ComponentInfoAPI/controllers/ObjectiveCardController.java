@@ -2,6 +2,7 @@ package com.starwars.rebellion.ComponentInfoAPI.controllers;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.ObjectiveCard;
 import com.starwars.rebellion.ComponentInfoAPI.repositories.ObjectiveCardRepository;
+import com.starwars.rebellion.ComponentInfoAPI.specification.ObjectiveCardSpecification;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.INSPIRE_SYMPATHY_OBJECTIVE_CARD_ID;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -21,11 +22,11 @@ class ObjectiveCardControllerTest {
 	@Transactional
 	void givenIDIsProvided_thenReturnedDataIsAccurate() {
 		ObjectiveCardRequest objectiveCardRequest = new ObjectiveCardRequest();
-		objectiveCardRequest.setId(1);//TODO make to a valid id
+		objectiveCardRequest.setId(INSPIRE_SYMPATHY_OBJECTIVE_CARD_ID);
 
 		List<ObjectiveCard> objectiveCardList = objectiveCardController.getObjectiveCard(objectiveCardRequest);
 
 		assertEquals(1, objectiveCardList.size());
-		assertEquals("", objectiveCardList.get(0).getCardText().getTitle());
+		assertEquals("Inspire Sympathy", objectiveCardList.get(0).getCardText().getTitle());
 	}
 }

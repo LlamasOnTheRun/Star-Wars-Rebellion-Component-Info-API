@@ -43,7 +43,7 @@ class TacticCardRepositoryTest {
      **************************/
 
     @Test
-    void givenTacticTypeIsSpace_thenTypeEqualPredicateIsAdded(){
+    void givenTacticTypeIsSpace_thenTypeEqualCountShouldBeReturned(){
         TacticCardRequest tacticCardRequest = new TacticCardRequest();
         tacticCardRequest.setTacticType(TacticType.SPACE);
 
@@ -53,7 +53,7 @@ class TacticCardRepositoryTest {
     }
 
     @Test
-    void givenTacticTypeIsGround_thenTypeEqualPredicateIsAdded(){
+    void givenTacticTypeIsGround_thenTypeEqualCountShouldBeReturned(){
         TacticCardRequest tacticCardRequest = new TacticCardRequest();
         tacticCardRequest.setTacticType(TacticType.GROUND);
 

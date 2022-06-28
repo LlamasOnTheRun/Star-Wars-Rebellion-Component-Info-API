@@ -42,7 +42,7 @@ public class TacticCardControllerTest {
     }
 
     @Test
-    void givenANearCompleteFormWithTacticCard_thenEquivalentCardShouldBeReturned(){
+    void givenANearCompleteFormWithTacticCard_thenEquivalentCountShouldBeReturned(){
         TacticCardRequest tacticCardRequest = new TacticCardRequest();
         tacticCardRequest.setTacticType(TacticType.GROUND);
 

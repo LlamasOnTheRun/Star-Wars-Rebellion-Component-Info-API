@@ -1,6 +1,7 @@
 package com.starwars.rebellion.ComponentInfoAPI.specification;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.TacticCard;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.TacticType;
 import com.starwars.rebellion.ComponentInfoAPI.dao.request.TacticCardRequest;
 import com.starwars.rebellion.ComponentInfoAPI.repositories.TacticCardRepository;
 import org.junit.jupiter.api.Test;
@@ -9,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_SPACE_TACTIC_CARDS;
 import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_UNIQUE_TACTIC_CARDS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -122,5 +124,15 @@ public class TacticCardSpecificationTest {
         List<TacticCard> tacticCardList =
                 tacticCardRepository.findAll(tacticCardSpecification.getTacticCards(tacticCardRequest));
         assertEquals(TOTAL_UNIQUE_TACTIC_CARDS, tacticCardList.size());
+    }
+
+    @Test
+    void givenTacticTypeExists_thenTypeEqualPredicateIsAdded(){
+        TacticCardRequest tacticCardRequest = new TacticCardRequest();
+        tacticCardRequest.setTacticType(TacticType.SPACE);
+
+        List<TacticCard> tacticCardList =
+                tacticCardRepository.findAll(tacticCardSpecification.getTacticCards(tacticCardRequest));
+        assertEquals(TOTAL_SPACE_TACTIC_CARDS, tacticCardList.size());
     }
 }

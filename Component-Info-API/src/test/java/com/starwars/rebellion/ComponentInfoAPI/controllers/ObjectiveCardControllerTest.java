@@ -18,6 +18,13 @@ class ObjectiveCardControllerTest {
 	ObjectiveCardController objectiveCardController;
 
 	@Test
+	void givenCallToGetAllIsMade_thenReturnedDataIsAccurate() {
+		List<ObjectiveCard> objectiveCardList = objectiveCardController.getAllObjectiveCards();
+
+		assertEquals(TOTAL_OBJECTIVE_CARDS, objectiveCardList.size());
+	}
+
+	@Test
 	void givenBlankRequestIsProvided_thenReturnedDataIsAccurate() {
 		ObjectiveCardRequest objectiveCardRequest = new ObjectiveCardRequest();
 

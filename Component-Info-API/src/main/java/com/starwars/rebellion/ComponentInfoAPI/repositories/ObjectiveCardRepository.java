@@ -10,5 +10,4 @@ import java.util.List;
 
 public interface ObjectiveCardRepository extends JpaRepository<ObjectiveCard, Integer>, JpaSpecificationExecutor<ObjectiveCard> {
     List<ObjectiveCard> findAll(Specification<ObjectiveCard> objectiveCardSpecification);
-    ObjectiveCard findByCardTextTitle(String title);
 }

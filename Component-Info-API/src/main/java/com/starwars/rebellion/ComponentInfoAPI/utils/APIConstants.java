@@ -30,7 +30,6 @@ public class APIConstants {
     public static final int TOTAL_NON_STARTING_REBEL_ACTION_CARDS = 6;
     public static final int TOTAL_ACTION_CARDS = 34;
 
-    public static final int TOTAL_DISTINCT_OBJECTIVE_CARDS = 14;
     public static final char INSPIRE_SYMPATHY_EDGE_CASE = '*';
 
     public static final int TOTAL_REBEL_LEADERS = 13;

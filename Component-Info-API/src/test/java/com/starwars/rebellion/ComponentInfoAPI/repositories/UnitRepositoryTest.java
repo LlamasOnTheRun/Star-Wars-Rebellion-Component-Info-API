@@ -311,7 +311,7 @@ public class UnitRepositoryTest {
      **************************/
 
     @Test
-    void givenHealthColorExistsAndIsRed_thenHealthColorEqualUnitsShouldBeReturned(){
+    void givenHealthColorIsRed_thenHealthColorEqualUnitsShouldBeReturned(){
         UnitRequest unitRequest = new UnitRequest();
         unitRequest.setHealthColor(RED_HEALTH_COLOR);
 

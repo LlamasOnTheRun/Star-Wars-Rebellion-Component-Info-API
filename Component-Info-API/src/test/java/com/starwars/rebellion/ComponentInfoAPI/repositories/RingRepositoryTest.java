@@ -25,14 +25,14 @@ public class RingRepositoryTest {
       Assertions.assertEquals(TOTAL_RINGS, ringRepository.findAll(ringSpecification.getRings(ringRequest)).size());
    }
 
-  /* TODO - Until all action card data is available, then make connection between action card and rings
+  /* TODO - Until associations between rings and mission/action card are made with JPA, implement these test cases
    @Test
    void givenAllRing_andAllActionCardDataIsAvailable_thenThreeRingsWithActionCardsShouldBeReturned(){
       Assertions.assertEquals(3, );
    }
    */
 
-  /* TODO - Until all mission card data is available, then make connection between mission card and rings
+  /* TODO - Until associations between rings and mission/action card are made with JPA, implement these test cases
    @Test
    void givenAllRing_andAllMissionCardDataIsAvailable_thenFourRingsWithMissionCardsShouldBeReturned(){
       Assertions.assertEquals(4, );

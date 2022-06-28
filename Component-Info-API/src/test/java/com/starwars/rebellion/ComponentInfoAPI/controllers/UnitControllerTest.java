@@ -43,7 +43,7 @@ public class UnitControllerTest {
     }
 
     @Test
-    void givenANearCompleteRequestFormWithFaction_thenEquivalentUnitShouldBeReturned(){
+    void givenANearCompleteRequestFormWithFaction_thenEquivalentCounthouldBeReturned(){
         UnitRequest unitRequest = new UnitRequest();
         unitRequest.setFaction(Faction.REBEL);
 
@@ -52,7 +52,7 @@ public class UnitControllerTest {
     }
 
     @Test
-    void givenANearCompleteRequestFormWithUnitType_thenEquivalentUnitShouldBeReturned(){
+    void givenANearCompleteRequestFormWithUnitType_thenEquivalentCountShouldBeReturned(){
         UnitRequest unitRequest = new UnitRequest();
         unitRequest.setUnitType(UnitType.GROUND);
 
@@ -61,7 +61,7 @@ public class UnitControllerTest {
     }
 
     @Test
-    void givenANearCompleteRequestFormWithProductionType_thenEquivalentUnitShouldBeReturned(){
+    void givenANearCompleteRequestFormWithProductionType_thenEquivalentCountShouldBeReturned(){
         UnitRequest unitRequest = new UnitRequest();
         unitRequest.setProductionType(ProductionType.LIGHT);
 
@@ -70,7 +70,7 @@ public class UnitControllerTest {
     }
 
     @Test
-    void givenANearCompleteRequestFormWithBlackDie_thenEquivalentUnitShouldBeReturned(){
+    void givenANearCompleteRequestFormWithBlackDie_thenEquivalentCountShouldBeReturned(){
         UnitRequest unitRequest = new UnitRequest();
         unitRequest.setBlackDie(1);
 
@@ -79,7 +79,7 @@ public class UnitControllerTest {
     }
 
     @Test
-    void givenANearCompleteRequestFormWithRedDie_thenEquivalentUnitShouldBeReturned(){
+    void givenANearCompleteRequestFormWithRedDie_thenEquivalentCountShouldBeReturned(){
         UnitRequest unitRequest = new UnitRequest();
         unitRequest.setRedDie(0);
 
@@ -88,7 +88,7 @@ public class UnitControllerTest {
     }
 
     @Test
-    void givenANearCompleteRequestFormWithHealth_thenEquivalentUnitShouldBeReturned(){
+    void givenANearCompleteRequestFormWithHealth_thenEquivalentCountShouldBeReturned(){
         UnitRequest unitRequest = new UnitRequest();
         unitRequest.setHealth(1);
 
@@ -97,7 +97,7 @@ public class UnitControllerTest {
     }
 
     @Test
-    void givenANearCompleteRequestFormWithHealthColor_thenEquivalentUnitShouldBeReturned(){
+    void givenANearCompleteRequestFormWithHealthColor_thenEquivalentCountShouldBeReturned(){
         UnitRequest unitRequest = new UnitRequest();
         unitRequest.setHealthColor(BLACK_HEALTH_COLOR);
 
@@ -106,7 +106,7 @@ public class UnitControllerTest {
     }
 
     @Test
-    void givenANearCompleteRequestFormWithShipCarryingCapacity_thenEquivalentUnitShouldBeReturned(){
+    void givenANearCompleteRequestFormWithShipCarryingCapacity_thenEquivalentCountShouldBeReturned(){
         UnitRequest unitRequest = new UnitRequest();
         unitRequest.setShipCarryingCapacity(0);
 
@@ -115,7 +115,7 @@ public class UnitControllerTest {
     }
 
     @Test
-    void givenANearCompleteRequestFormWithInvincible_thenEquivalentUnitShouldBeReturned(){
+    void givenANearCompleteRequestFormWithInvincible_thenEquivalentCountShouldBeReturned(){
         UnitRequest unitRequest = new UnitRequest();
         unitRequest.setInvincible(false);
 
@@ -124,7 +124,7 @@ public class UnitControllerTest {
     }
 
     @Test
-    void givenANearCompleteRequestFormWithNeedsTransport_thenEquivalentUnitShouldBeReturned(){
+    void givenANearCompleteRequestFormWithNeedsTransport_thenEquivalentCountShouldBeReturned(){
         UnitRequest unitRequest = new UnitRequest();
         unitRequest.setNeedsTransport(true);
 
@@ -133,7 +133,7 @@ public class UnitControllerTest {
     }
 
     @Test
-    void givenANearCompleteRequestFormWithStructure_thenEquivalentUnitShouldBeReturned(){
+    void givenANearCompleteRequestFormWithStructure_thenEquivalentCountShouldBeReturned(){
         UnitRequest unitRequest = new UnitRequest();
         unitRequest.setStructure(false);
 

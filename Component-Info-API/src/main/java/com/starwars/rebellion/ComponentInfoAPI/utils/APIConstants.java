@@ -43,18 +43,29 @@ public class APIConstants {
     public static final int TOTAL_NON_STARTING_MISSION_CARDS = 40;
     public static final int TOTAL_UNIQUE_MISSION_CARDS = 48;
     public static final int TOTAL_MISSION_CARDS = 58;
+    public static final int TOTAL_REBEL_MISSION_CARDS = 29;
+    public static final int TOTAL_UNIQUE_REBEL_MISSION_CARDS = 24;
+    public static final int TOTAL_EMPIRE_MISSION_CARDS = 29;
+    public static final int TOTAL_UNIQUE_EMPIRE_MISSION_CARDS = 24;
+    public static final int TOTAL_UNIQUE_MISSION_CARDS_W_MIN_SKILL_ONE = 21;
+    public static final int TOTAL_UNIQUE_MISSION_CARDS_W_MIN_SKILL_TWO = 15;
+    public static final int TOTAL_UNIQUE_MISSION_CARDS_W_MIN_SKILL_THREE = 12;
+    public static final int TOTAL_UNIQUE_MISSION_CARDS_W_SKILL_TYPE_LOGISTICS = 8;
+    public static final int TOTAL_UNIQUE_MISSION_CARDS_W_SKILL_TYPE_DIPLOMACY = 13;
+    public static final int TOTAL_UNIQUE_MISSION_CARDS_W_SKILL_TYPE_SPEC_OPS = 15;
+    public static final int TOTAL_UNIQUE_MISSION_CARDS_W_SKILL_TYPE_INTEL = 12;
+    public static final int TOTAL_UNIQUE_MISSION_CARDS_W_TOTAL_IN_GAME_ONE = 39;
+    public static final int TOTAL_UNIQUE_MISSION_CARDS_W_TOTAL_IN_GAME_TWO = 8;
+    public static final int TOTAL_UNIQUE_MISSION_CARDS_W_TOTAL_IN_GAME_THREE = 1;
 
     public static final int TOTAL_UNIQUE_PROJECT_CARDS = 5;
     public static final int TOTAL_PROJECT_CARDS = 10;
+    public static final int TOTAL_UNIQUE_PROJECT_CARDS_W_TOTAL_IN_GAME_ONE = 1;
+    public static final int TOTAL_UNIQUE_PROJECT_CARDS_W_TOTAL_IN_GAME_TWO = 3;
+    public static final int TOTAL_UNIQUE_PROJECT_CARDS_W_TOTAL_IN_GAME_THREE = 1;
 
     public static final int TOTAL_NON_REMOTE_SYSTEMS = 24;
     public static final int TOTAL_REMOTE_SYSTEMS = 8;
-
-    public static final int TOTAL_REBEL_MISSION_CARDS = 29;
-    public static final int TOTAL_UNIQUE_REBEL_MISSION_CARDS = 24;
-
-    public static final int TOTAL_EMPIRE_MISSION_CARDS = 29;
-    public static final int TOTAL_UNIQUE_EMPIRE_MISSION_CARDS = 24;
 
     public static final int TOTAL_RINGS = 7;
 

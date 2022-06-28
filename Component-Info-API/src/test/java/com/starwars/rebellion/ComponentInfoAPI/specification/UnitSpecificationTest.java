@@ -1,6 +1,9 @@
 package com.starwars.rebellion.ComponentInfoAPI.specification;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.Unit;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.ProductionType;
+import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.UnitType;
 import com.starwars.rebellion.ComponentInfoAPI.dao.request.UnitRequest;
 import com.starwars.rebellion.ComponentInfoAPI.repositories.UnitRepository;
 import org.junit.jupiter.api.Test;
@@ -9,7 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_UNIQUE_UNITS;
+import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -124,6 +127,16 @@ public class UnitSpecificationTest {
         assertEquals(TOTAL_UNIQUE_UNITS, unitList.size());
     }
 
+    @Test
+    void givenFactionExists_thenFactionEqualUniquePredicatesShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setFaction(Faction.IMPERIAL);
+
+        List<Unit> unitEmpireList = unitRepository.findAll(unitSpecification.getUnits(unitRequest));
+
+        assertEquals(TOTAL_UNIQUE_EMPIRE_UNITS, unitEmpireList.size());
+    }
+
     /*******************
      * Unit Type Tests
      ******************/
@@ -136,6 +149,16 @@ public class UnitSpecificationTest {
         List<Unit> unitList = unitRepository.findAll((unitSpecification.getUnits(unitRequest)));
 
         assertEquals(TOTAL_UNIQUE_UNITS, unitList.size());
+    }
+
+    @Test
+    void givenUnitTypeExists_thenUnitTypeEqualPredicatesShouldBeAdded(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setUnitType(UnitType.SHIP);
+
+        List<Unit> unitList = unitRepository.findAll((unitSpecification.getUnits(unitRequest)));
+
+        assertEquals(TOTAL_UNIQUE_SHIP_UNITS, unitList.size());
     }
 
     /************************
@@ -152,6 +175,16 @@ public class UnitSpecificationTest {
         assertEquals(TOTAL_UNIQUE_UNITS, unitList.size());
     }
 
+    @Test
+    void givenProductionTypeExists_thenProductionTypeEqualPredicatesShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setProductionType(ProductionType.LIGHT);
+
+        List<Unit> unitList = unitRepository.findAll((unitSpecification.getUnits(unitRequest)));
+
+        assertEquals(TOTAL_UNIQUE_LIGHT_UNITS, unitList.size());
+    }
+
     /*****************
      * Black Die Tests
      *****************/
@@ -165,7 +198,6 @@ public class UnitSpecificationTest {
 
         assertEquals(TOTAL_UNIQUE_UNITS, unitList.size());
     }
-
 
     @Test
     void givenBlackDieIsLessThanZero_thenBlackDieEqualPredicateIsNotAdded(){
@@ -185,6 +217,16 @@ public class UnitSpecificationTest {
         List<Unit> unitList = unitRepository.findAll((unitSpecification.getUnits(unitRequest)));
 
         assertEquals(0, unitList.size());
+    }
+
+    @Test
+    void givenBlackDieExists_thenBlackDieEqualPredicatesShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setBlackDie(1);
+
+        List<Unit> unitList = unitRepository.findAll((unitSpecification.getUnits(unitRequest)));
+
+        assertEquals(TOTAL_UNIQUE_UNITS_W_BLACK_DIE_ONE, unitList.size());
     }
 
     /*****************
@@ -221,6 +263,16 @@ public class UnitSpecificationTest {
         assertEquals(0, unitList.size());
     }
 
+    @Test
+    void givenRedDieExists_thenRedDieEqualPredicatesShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setRedDie(1);
+
+        List<Unit> unitList = unitRepository.findAll((unitSpecification.getUnits(unitRequest)));
+
+        assertEquals(TOTAL_UNIQUE_UNITS_W_RED_DIE_ONE, unitList.size());
+    }
+
     /*****************
      * Health Tests
      *****************/
@@ -255,6 +307,16 @@ public class UnitSpecificationTest {
         assertEquals(0, unitList.size());
     }
 
+    @Test
+    void givenHealthExists_thenHealthEqualPredicatesShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setHealth(1);
+
+        List<Unit> unitList = unitRepository.findAll((unitSpecification.getUnits(unitRequest)));
+
+        assertEquals(TOTAL_UNIQUE_UNITS_W_ONE_HEALTH, unitList.size());
+    }
+
     /**********************
      * Health Color Tests
      **********************/
@@ -277,6 +339,16 @@ public class UnitSpecificationTest {
         List<Unit> unitList = unitRepository.findAll((unitSpecification.getUnits(unitRequest)));
 
         assertEquals(0, unitList.size());
+    }
+
+    @Test
+    void givenHealthColorExists_thenHealthColorEqualPredicatesShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setHealthColor(RED_HEALTH_COLOR);
+
+        List<Unit> unitList = unitRepository.findAll((unitSpecification.getUnits(unitRequest)));
+
+        assertEquals(TOTAL_UNIQUE_UNITS_W_RED_HEALTH_COLOR, unitList.size());
     }
 
     /********************************
@@ -313,6 +385,16 @@ public class UnitSpecificationTest {
         assertEquals(0, unitList.size());
     }
 
+    @Test
+    void givenShipCarryingCapacityExists_thenShipCarryingCapacityEqualPredicatesShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setShipCarryingCapacity(0);
+
+        List<Unit> unitList = unitRepository.findAll((unitSpecification.getUnits(unitRequest)));
+
+        assertEquals(TOTAL_UNIQUE_UNITS_W_ZERO_SHIP_CAPACITY, unitList.size());
+    }
+
     /********************************
      * Invincible Tests
      ********************************/
@@ -325,6 +407,16 @@ public class UnitSpecificationTest {
         List<Unit> unitList = unitRepository.findAll((unitSpecification.getUnits(unitRequest)));
 
         assertEquals(TOTAL_UNIQUE_UNITS, unitList.size());
+    }
+
+    @Test
+    void givenInvincibleIsExists_thenInvincibleEqualPredicatesShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setInvincible(false);
+
+        List<Unit> unitList = unitRepository.findAll((unitSpecification.getUnits(unitRequest)));
+
+        assertEquals(TOTAL_UNIQUE_NON_INVINCIBLE_UNITS, unitList.size());
     }
 
     /********************************
@@ -341,6 +433,16 @@ public class UnitSpecificationTest {
         assertEquals(TOTAL_UNIQUE_UNITS, unitList.size());
     }
 
+    @Test
+    void givenNeedsTransportExists_thenNeedsTransportEqualPredicatesShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setNeedsTransport(false);
+
+        List<Unit> unitList = unitRepository.findAll((unitSpecification.getUnits(unitRequest)));
+
+        assertEquals(TOTAL_UNIQUE_UNITS_DO_NOT_NEED_TRANSPORT, unitList.size());
+    }
+
     /********************************
      * Structure Tests
      ********************************/
@@ -353,6 +455,16 @@ public class UnitSpecificationTest {
         List<Unit> unitList = unitRepository.findAll((unitSpecification.getUnits(unitRequest)));
 
         assertEquals(TOTAL_UNIQUE_UNITS, unitList.size());
+    }
+
+    @Test
+    void givenStructureExists_thenStructureEqualPredicatesShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setStructure(false);
+
+        List<Unit> unitList = unitRepository.findAll((unitSpecification.getUnits(unitRequest)));
+
+        assertEquals(TOTAL_UNIQUE_NON_STRUCTURE_UNITS, unitList.size());
     }
 
     /********************************
@@ -387,5 +499,15 @@ public class UnitSpecificationTest {
         List<Unit> unitList = unitRepository.findAll((unitSpecification.getUnits(unitRequest)));
 
         assertEquals(0, unitList.size());
+    }
+
+    @Test
+    void givenTotalInGameExists_thenTotalInGameEqualPredicatesShouldBeReturned(){
+        UnitRequest unitRequest = new UnitRequest();
+        unitRequest.setTotalInGame(1);
+
+        List<Unit> unitList = unitRepository.findAll((unitSpecification.getUnits(unitRequest)));
+
+        assertEquals(TOTAL_UNIQUE_UNITS_W_TOTAL_IN_GAME_ONE, unitList.size());
     }
 }

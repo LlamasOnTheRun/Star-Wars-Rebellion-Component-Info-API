@@ -17,7 +17,7 @@ public class ObjectiveCard {
     @Embedded
     private CardText cardText;
     private String actionType;
-    private boolean InDeckLevelOne = false;
-    private boolean InDeckLevelTwo = false;
-    private boolean InDeckLevelThree = false;
+    private boolean inDeckLevelOne = false;
+    private boolean inDeckLevelTwo = false;
+    private boolean inDeckLevelThree = false;
 }

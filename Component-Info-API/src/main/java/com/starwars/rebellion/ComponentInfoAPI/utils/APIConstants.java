@@ -21,6 +21,8 @@ public class APIConstants {
     public static final String GET_ALL_UNIT_ENDPOINT = "/units/all";
     public static final String SYSTEM_ENDPOINT = "/systems";
     public static final String GET_ALL_SYSTEM_ENDPOINT = "/systems/all";
+    public static final String OBJECTIVE_CARD_ENDPOINT = "/objectivecards";
+    public static final String ALL_OBJECTIVE_CARDS_ENDPOINT = "/objectivecards/all";
 
     public static final int TOTAL_EMPIRE_ACTION_CARDS = 16;
     public static final int TOTAL_STARTING_EMPIRE_ACTION_CARDS = 12;
@@ -30,7 +32,6 @@ public class APIConstants {
     public static final int TOTAL_NON_STARTING_REBEL_ACTION_CARDS = 6;
     public static final int TOTAL_ACTION_CARDS = 34;
 
-    public static final int TOTAL_DISTINCT_OBJECTIVE_CARDS = 14;
     public static final char INSPIRE_SYMPATHY_EDGE_CASE = '*';
 
     public static final int TOTAL_REBEL_LEADERS = 13;
@@ -61,6 +62,11 @@ public class APIConstants {
     public static final int TOTAL_REGIONS = 8;
     public static final char TOTAL_SYSTEMS = 32;
 
+    public static final int TOTAL_OBJECTIVE_CARDS = 14;
+    public static final int TOTAL_LEVEL_ONE_OBJECTIVE_CARDS = 5;
+    public static final int TOTAL_LEVEL_TWO_OBJECTIVE_CARDS = 5;
+    public static final int TOTAL_LEVEL_THREE_OBJECTIVE_CARDS = 5;
+    
     public static final int TOTAL_UNIQUE_UNITS = 18;
     public static final int TOTAL_UNITS = 103;
     public static final int TOTAL_UNIQUE_REBEL_UNITS = 9;
@@ -112,6 +118,8 @@ public class APIConstants {
     public static final int TOTAL_UNIQUE_UNITS_W_TOTAL_IN_GAME_EIGHTEEN = 1;
 
     public static final int HAN_SOLO_LEADER_ID = 9;
+    public static final int INSPIRE_SYMPATHY_OBJECTIVE_CARD_ID = 160;
+    public static final String INSPIRE_SYMPATHY_OBJECTIVE_CARD_TITLE = "Inspire Sympathy";
     public static final int REGION_ID_EXAMPLE = 120;
     public static final int SYSTEM_ID_EXAMPLE = 128;
     public static final String SYSTEM_NAME_EXAMPLE = "Mon Calamari";

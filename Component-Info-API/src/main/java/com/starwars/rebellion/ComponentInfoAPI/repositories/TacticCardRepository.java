@@ -1,13 +1,15 @@
 package com.starwars.rebellion.ComponentInfoAPI.repositories;
 
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.TacticCard;
-import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.TacticType;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.domain.Specification;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
 import java.util.List;
 
 
-public interface TacticCardRepository extends CrudRepository<TacticCard, Integer> {
+public interface TacticCardRepository extends JpaRepository<TacticCard, Integer>, JpaSpecificationExecutor<TacticCard> {
     TacticCard findByCardTextTitle(String title);
-    List<TacticCard> findByTacticType(TacticType tacticType);
+    List<TacticCard> findAll(Specification<TacticCard> tacticCardSpecification);
+    List<TacticCard> findAll();
 }

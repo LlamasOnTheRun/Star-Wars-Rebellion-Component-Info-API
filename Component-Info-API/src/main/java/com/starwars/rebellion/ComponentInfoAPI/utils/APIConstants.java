@@ -21,6 +21,8 @@ public class APIConstants {
     public static final String GET_ALL_UNIT_ENDPOINT = "/units/all";
     public static final String SYSTEM_ENDPOINT = "/systems";
     public static final String GET_ALL_SYSTEM_ENDPOINT = "/systems/all";
+    public static final String GET_ALL_TACTIC_CARD_ENDPOINT = "/tacticcards/all";
+    public static final String TACTIC_CARD_ENDPOINT = "/tacticcards";
     public static final String OBJECTIVE_CARD_ENDPOINT = "/objectivecards";
     public static final String ALL_OBJECTIVE_CARDS_ENDPOINT = "/objectivecards/all";
 
@@ -53,9 +55,13 @@ public class APIConstants {
 
     public static final int TOTAL_REBEL_MISSION_CARDS = 29;
     public static final int TOTAL_UNIQUE_REBEL_MISSION_CARDS = 24;
-
     public static final int TOTAL_EMPIRE_MISSION_CARDS = 29;
     public static final int TOTAL_UNIQUE_EMPIRE_MISSION_CARDS = 24;
+
+    public static final int TOTAL_UNIQUE_TACTIC_CARDS = 19;
+    public static final int TOTAL_TACTIC_CARDS = 30;
+    public static final int TOTAL_GROUND_TACTIC_CARDS = 10;
+    public static final int TOTAL_SPACE_TACTIC_CARDS = 9;
 
     public static final int TOTAL_RINGS = 7;
 

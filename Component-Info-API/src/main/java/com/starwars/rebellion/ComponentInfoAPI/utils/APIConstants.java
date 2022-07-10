@@ -70,11 +70,6 @@ public class APIConstants {
     public static final int TOTAL_NON_REMOTE_SYSTEMS = 24;
     public static final int TOTAL_REMOTE_SYSTEMS = 8;
 
-    public static final int TOTAL_REBEL_MISSION_CARDS = 29;
-    public static final int TOTAL_UNIQUE_REBEL_MISSION_CARDS = 24;
-    public static final int TOTAL_EMPIRE_MISSION_CARDS = 29;
-    public static final int TOTAL_UNIQUE_EMPIRE_MISSION_CARDS = 24;
-
     public static final int TOTAL_UNIQUE_TACTIC_CARDS = 19;
     public static final int TOTAL_TACTIC_CARDS = 30;
     public static final int TOTAL_GROUND_TACTIC_CARDS = 10;

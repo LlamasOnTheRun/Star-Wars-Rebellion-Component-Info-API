@@ -11,7 +11,6 @@ import java.util.List;
 
 import static com.starwars.rebellion.ComponentInfoAPI.utils.APIConstants.TOTAL_RINGS;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class RingSpecificationTest {
@@ -28,7 +27,7 @@ public class RingSpecificationTest {
         ringRequest.setId(0);
         List<Ring> ringList = ringRepository.findAll(ringSpecification.getRings(ringRequest));
 
-        assertTrue(ringList.size() > 1);
+        assertEquals(TOTAL_RINGS, ringList.size());
     }
 
     @Test

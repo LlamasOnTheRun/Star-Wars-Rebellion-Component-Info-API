@@ -12,3 +12,9 @@ To understand where to place your test, we currently house three levels of testi
   - Tests here need to test both negative and positive flows for a given request attribute, such as passing in null or blank values. If the given predicate/criteria builder is complex (such as finding the title of a card with one word only), we ask testing is done to account for each scenerio possible.
 - Repository 
   - Tests here are about testing ALL data attributes that are avaliable for use. For example, controller test may have a test for attribute `faction` for `IMPERIAL` which fits considering it is testing ONE valid data type. However, repository should test for every possible scenerio, such that it should test for `IMPERIAL` and `REBEL`. We want to ensure the count for each data group is accurate and recorded within our [constants](https://github.com/LlamasOnTheRun/Star-Wars-Rebellion-Component-Info-API/blob/LlamasOnTheRun-patch-1/Component-Info-API/src/main/java/com/starwars/rebellion/ComponentInfoAPI/utils/APIConstants.java) file when performing assertions. However, testing for every scenerio may not be applicable such as testing every card title is present. A good rule of thumb is to create a test for each scenerio if number of scenerios is less than 10.
+
+If you feel a test conflicts with this structure, use your best judgement and we will provide feedback in PR if required.
+
+If your PR is reviewed and accepted, you'll be listed in our [contributors page](https://github.com/LlamasOnTheRun/Star-Wars-Rebellion-Component-Info-API/wiki#contributors)! We really want you to be recognized for your change no matter how big or small. We may ask you to provide an (appropriate) message alongside your recognition to provide some fun.
+
+Note however, you are not obligated to share or publicize your changes to this repo

@@ -17,4 +17,4 @@ If you feel a test conflicts with this structure, use your best judgement and we
 
 If your PR is reviewed and accepted, you'll be listed in our [contributors page](https://github.com/LlamasOnTheRun/Star-Wars-Rebellion-Component-Info-API/wiki#contributors)! We really want you to be recognized for your change no matter how big or small. We may ask you to provide an (appropriate) message alongside your recognition to provide some fun.
 
-Note however, you are not obligated to share or publicize your changes to this repo
+Note however, you are not obligated to share or publicize your changes to this repo. The [MIT Lisence](https://github.com/LlamasOnTheRun/Star-Wars-Rebellion-Component-Info-API/blob/LlamasOnTheRun-patch-1/LICENSE.md) specifies this as we want to ensure developers and fans of the application have the freedom to choose. (But we would love to see your contribution at the end of the day!)

@@ -4,7 +4,6 @@ import com.starwars.rebellion.ComponentInfoAPI.dao.entities.MissionCard;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.MissionSkillType;
 import com.starwars.rebellion.ComponentInfoAPI.dao.request.MissionCardRequest;
-import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeaderData;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -47,7 +46,8 @@ public class MissionCardControllerTest {
     @Test
     void givenANearCompleteRequestFormWithLeaderBonus_thenEquivalentCardShouldBeReturned(){
         MissionCardRequest missionCardRequest = new MissionCardRequest();
-        missionCardRequest.setLeaderBonus(RebelLeaderData.ADMIRAL_ACKBAR);
+        //missionCardRequest.setLeaderBonus(RebelLeaderData.ADMIRAL_ACKBAR);
+        missionCardRequest.getLeaderRequest().setName("Admiral Ackbar");
 
         List<MissionCard> missionCardList = missionCardController.getMissionCards(missionCardRequest);
 

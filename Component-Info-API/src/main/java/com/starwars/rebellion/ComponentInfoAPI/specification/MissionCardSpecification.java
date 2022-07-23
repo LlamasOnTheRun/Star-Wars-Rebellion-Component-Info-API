@@ -37,9 +37,13 @@ public Specification<MissionCard> getMissionCards(MissionCardRequest missionCard
                 Arrays.stream(splitTitle).forEach(word -> predicates.add(criteriaBuilder.like(root.get("cardText").get("title"),
                         "%"+word+"%")));
             }
-
+/*
             if (missionCardRequest.getLeaderBonus() != null){
                 predicates.add(criteriaBuilder.equal(root.get("leaderBonus"), missionCardRequest.getLeaderBonus()));
+            }
+*/
+            if (missionCardRequest.getLeaderRequest() != null){
+                predicates.add(criteriaBuilder.equal(root.get("leaderBonus"), missionCardRequest.getLeaderRequest()));
             }
 
             if(missionCardRequest.getMinSkillNumRequired() != null && missionCardRequest.getMinSkillNumRequired() > 0){

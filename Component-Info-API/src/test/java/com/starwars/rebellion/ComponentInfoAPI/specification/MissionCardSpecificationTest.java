@@ -3,10 +3,9 @@ package com.starwars.rebellion.ComponentInfoAPI.specification;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.MissionCard;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.MissionSkillType;
+import com.starwars.rebellion.ComponentInfoAPI.dao.request.LeaderRequest;
 import com.starwars.rebellion.ComponentInfoAPI.dao.request.MissionCardRequest;
 import com.starwars.rebellion.ComponentInfoAPI.repositories.MissionCardRepository;
-import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.EmpireLeaderData;
-import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeaderData;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -134,7 +133,8 @@ public class MissionCardSpecificationTest{
     @Test
     void givenLeaderBonusIsNull_thenPredicateIsNotAdded(){
         MissionCardRequest missionCardRequest = new MissionCardRequest();
-        missionCardRequest.setLeaderBonus(null);
+        //missionCardRequest.setLeaderBonus(null);
+        missionCardRequest.setLeaderRequest(null);
 
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
@@ -145,11 +145,14 @@ public class MissionCardSpecificationTest{
     @Test
     void givenLeaderBonusIsNotNullAndARebel_thenPredicatesAreAdded(){
         MissionCardRequest missionCardRequest = new MissionCardRequest();
-        missionCardRequest.setFaction(Faction.REBEL);
-        missionCardRequest.setLeaderBonus(RebelLeaderData.ADMIRAL_ACKBAR);
+        //missionCardRequest.setFaction(Faction.REBEL);
+        //missionCardRequest.setLeaderBonus(RebelLeaderData.ADMIRAL_ACKBAR);
+        LeaderRequest lr = new LeaderRequest();
+        lr.setFaction(Faction.REBEL);
+        missionCardRequest.setLeaderRequest(lr);
 
-
-        List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
+        List<MissionCard> missionCardList =
+                missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
 
         assertEquals(1, missionCardList.size());
     }
@@ -157,8 +160,9 @@ public class MissionCardSpecificationTest{
     @Test
     void givenLeaderBonusIsNotNullAndAnImperial_thenPredicatesAreAdded(){
         MissionCardRequest missionCardRequest = new MissionCardRequest();
-        missionCardRequest.setFaction(Faction.IMPERIAL);
-        missionCardRequest.setLeaderBonus(EmpireLeaderData.BOBA_FETT);
+        //missionCardRequest.setFaction(Faction.IMPERIAL);
+        //missionCardRequest.setLeaderBonus(EmpireLeaderData.BOBA_FETT);
+        missionCardRequest.getLeaderRequest().setFaction(Faction.IMPERIAL);
 
 
         List<MissionCard> missionCardList = missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));

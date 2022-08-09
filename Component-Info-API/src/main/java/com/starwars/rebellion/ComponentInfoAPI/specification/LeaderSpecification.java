@@ -3,7 +3,6 @@ package com.starwars.rebellion.ComponentInfoAPI.specification;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.Leader;
 import com.starwars.rebellion.ComponentInfoAPI.dao.request.LeaderRequest;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.criteria.Predicate;
@@ -16,7 +15,7 @@ import java.util.Objects;
 @Slf4j
 public class LeaderSpecification {
 
-    public Specification<Leader> getLeaders(LeaderRequest leaderRequest) {
+    public PathSpecification<Leader> getLeaders(LeaderRequest leaderRequest) {
         return (root, query, criteriaBuilder) -> {
             List<Predicate> predicates = new ArrayList<>();
 

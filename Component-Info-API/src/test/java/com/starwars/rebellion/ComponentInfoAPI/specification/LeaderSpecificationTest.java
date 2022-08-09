@@ -27,7 +27,7 @@ public class LeaderSpecificationTest {
         LeaderRequest leaderRequest = new LeaderRequest();
         leaderRequest.setId(0);
 
-        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest).atRoot());
 
         assertEquals(TOTAL_LEADERS, leaderRequestList.size());
     }
@@ -37,7 +37,7 @@ public class LeaderSpecificationTest {
         LeaderRequest leaderRequest = new LeaderRequest();
         leaderRequest.setId(HAN_SOLO_LEADER_ID);
 
-        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest).atRoot());
 
         assertEquals(1, leaderRequestList.size());
     }
@@ -47,7 +47,7 @@ public class LeaderSpecificationTest {
         LeaderRequest leaderRequest = new LeaderRequest();
         leaderRequest.setId(100);
 
-        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest).atRoot());
 
         assertEquals(0, leaderRequestList.size());
     }
@@ -57,7 +57,7 @@ public class LeaderSpecificationTest {
         LeaderRequest leaderRequest = new LeaderRequest();
         leaderRequest.setId(null);
 
-        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest).atRoot());
 
         assertEquals(TOTAL_LEADERS, leaderRequestList.size());
     }
@@ -67,7 +67,7 @@ public class LeaderSpecificationTest {
         LeaderRequest leaderRequest = new LeaderRequest();
         leaderRequest.setFaction(Faction.IMPERIAL);
 
-        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest).atRoot());
 
         assertEquals(TOTAL_EMPIRE_LEADERS, leaderRequestList.size());
     }
@@ -77,7 +77,7 @@ public class LeaderSpecificationTest {
         LeaderRequest leaderRequest = new LeaderRequest();
         leaderRequest.setFaction(Faction.REBEL);
 
-        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest).atRoot());
 
         assertEquals(TOTAL_REBEL_LEADERS, leaderRequestList.size());
     }
@@ -87,7 +87,7 @@ public class LeaderSpecificationTest {
         LeaderRequest leaderRequest = new LeaderRequest();
         leaderRequest.setFaction(null);
 
-        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest).atRoot());
 
         assertEquals(TOTAL_LEADERS, leaderRequestList.size());
     }
@@ -97,7 +97,7 @@ public class LeaderSpecificationTest {
         LeaderRequest leaderRequest = new LeaderRequest();
         leaderRequest.setName("Mon");
 
-        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest).atRoot());
 
         assertEquals(1, leaderRequestList.size());
         assertEquals("Mon Mothma", leaderRequestList.get(0).getName());
@@ -108,7 +108,7 @@ public class LeaderSpecificationTest {
         LeaderRequest leaderRequest = new LeaderRequest();
         leaderRequest.setName("Mon Mothma");
 
-        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest).atRoot());
 
         assertEquals(1, leaderRequestList.size());
         assertEquals("Mon Mothma", leaderRequestList.get(0).getName());
@@ -119,7 +119,7 @@ public class LeaderSpecificationTest {
         LeaderRequest leaderRequest = new LeaderRequest();
         leaderRequest.setName(null);
 
-        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest).atRoot());
 
         assertEquals(TOTAL_LEADERS, leaderRequestList.size());
     }
@@ -129,7 +129,7 @@ public class LeaderSpecificationTest {
         LeaderRequest leaderRequest = new LeaderRequest();
         leaderRequest.setName("");
 
-        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest).atRoot());
 
         assertEquals(TOTAL_LEADERS, leaderRequestList.size());
     }
@@ -139,7 +139,7 @@ public class LeaderSpecificationTest {
         LeaderRequest leaderRequest = new LeaderRequest();
         leaderRequest.setStartingLeader(true);
 
-        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest).atRoot());
 
         assertEquals(TOTAL_STARTING_LEADERS, leaderRequestList.size());
     }
@@ -149,7 +149,7 @@ public class LeaderSpecificationTest {
         LeaderRequest leaderRequest = new LeaderRequest();
         leaderRequest.setStartingLeader(false);
 
-        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest).atRoot());
 
         assertEquals(TOTAL_NON_STARTING_LEADERS, leaderRequestList.size());
     }
@@ -159,7 +159,7 @@ public class LeaderSpecificationTest {
         LeaderRequest leaderRequest = new LeaderRequest();
         leaderRequest.setStartingLeader(null);
 
-        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+        List<Leader> leaderRequestList = leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest).atRoot());
 
         assertEquals(TOTAL_LEADERS, leaderRequestList.size());
     }

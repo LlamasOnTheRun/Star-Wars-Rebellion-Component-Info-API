@@ -3,8 +3,9 @@ package com.starwars.rebellion.ComponentInfoAPI.controllers;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.MissionCard;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.MissionSkillType;
+import com.starwars.rebellion.ComponentInfoAPI.dao.request.LeaderRequest;
 import com.starwars.rebellion.ComponentInfoAPI.dao.request.MissionCardRequest;
-import com.starwars.rebellion.ComponentInfoAPI.utils.h2.data.leaders.RebelLeaderData;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -47,11 +48,31 @@ public class MissionCardControllerTest {
     @Test
     void givenANearCompleteRequestFormWithLeaderBonus_thenEquivalentCardShouldBeReturned(){
         MissionCardRequest missionCardRequest = new MissionCardRequest();
-        missionCardRequest.setLeaderBonus(RebelLeaderData.ADMIRAL_ACKBAR);
+        missionCardRequest.setLeaderBonusSearch(new LeaderRequest());
+        missionCardRequest.getLeaderBonusSearch().setName("Admiral Ackbar");
 
         List<MissionCard> missionCardList = missionCardController.getMissionCards(missionCardRequest);
 
         assertEquals(77, missionCardList.get(0).getId());
+    }
+
+    @Test
+    void givenBlankLeaderBonusSearch_thenOnlyMissionCardsWithLeadersAreReturned(){
+        MissionCardRequest missionCardRequest = new MissionCardRequest();
+        missionCardRequest.setLeaderBonusSearch(new LeaderRequest());
+
+        List<MissionCard> missionCardList = missionCardController.getMissionCards(missionCardRequest);
+        missionCardList.forEach(missionCard -> Assertions.assertNotNull(missionCard.getLeaderBonus()));
+    }
+
+    @Test
+    void givenNullLeaderBonusSearch_thenAllMissionCardsAreReturned(){
+        MissionCardRequest missionCardRequest = new MissionCardRequest();
+        missionCardRequest.setLeaderBonusSearch(null);
+
+        List<MissionCard> missionCardList = missionCardController.getMissionCards(missionCardRequest);
+
+        assertEquals(TOTAL_UNIQUE_MISSION_CARDS, missionCardList.size());
     }
 
     @Test

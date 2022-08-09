@@ -15,56 +15,51 @@ import java.util.Objects;
 public class MissionCardSpecification {
 
     public Specification<MissionCard> getAllMissionCards() {
-      return(root, query, criteriaBuilder)->{
-          List<Predicate> predicates = new ArrayList<>();
-
-          predicates.add(criteriaBuilder.equal(root.get("isProjectCard"), false));
-
-          return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
-      };
-    }
-
-public Specification<MissionCard> getMissionCards(MissionCardRequest missionCardRequest){
-        return(root, query, criteriaBuilder) -> {
+        return (root, query, criteriaBuilder) -> {
             List<Predicate> predicates = new ArrayList<>();
 
-            if(missionCardRequest.getId() != null && missionCardRequest.getId() > 0){
+            predicates.add(criteriaBuilder.equal(root.get("isProjectCard"), false));
+
+            return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
+        };
+    }
+
+    public PathSpecification<MissionCard> getMissionCards(MissionCardRequest missionCardRequest) {
+        return (root, query, criteriaBuilder) -> {
+            List<Predicate> predicates = new ArrayList<>();
+
+            if (missionCardRequest.getId() != null && missionCardRequest.getId() > 0) {
                 predicates.add(criteriaBuilder.equal(root.get("id"), missionCardRequest.getId()));
             }
 
             if (missionCardRequest.getTitle() != null && !Objects.equals(missionCardRequest.getTitle(), "")) {
                 String[] splitTitle = missionCardRequest.getTitle().split("[\s]+");
                 Arrays.stream(splitTitle).forEach(word -> predicates.add(criteriaBuilder.like(root.get("cardText").get("title"),
-                        "%"+word+"%")));
+                        "%" + word + "%")));
             }
 
-            if (missionCardRequest.getLeaderBonus() != null){
-                predicates.add(criteriaBuilder.equal(root.get("leaderBonus"), missionCardRequest.getLeaderBonus()));
-            }
-
-            if(missionCardRequest.getMinSkillNumRequired() != null && missionCardRequest.getMinSkillNumRequired() > 0){
+            if (missionCardRequest.getMinSkillNumRequired() != null && missionCardRequest.getMinSkillNumRequired() > 0) {
                 predicates.add(criteriaBuilder.equal(root.get("minSkillNumRequired"),
                         missionCardRequest.getMinSkillNumRequired()));
             }
 
-            if(missionCardRequest.getFaction() != null){
+            if (missionCardRequest.getFaction() != null) {
                 predicates.add(criteriaBuilder.equal(root.get("faction"), missionCardRequest.getFaction()));
             }
 
-            if(missionCardRequest.getSkillType() != null){
+            if (missionCardRequest.getSkillType() != null) {
                 predicates.add(criteriaBuilder.equal(root.get("skillType"), missionCardRequest.getSkillType()));
             }
 
             predicates.add(criteriaBuilder.equal(root.get("isProjectCard"), false));
 
-            if(missionCardRequest.getIsStartingCard() != null){
+            if (missionCardRequest.getIsStartingCard() != null) {
                 predicates.add(criteriaBuilder.equal(root.get("isStartingCard"), missionCardRequest.getIsStartingCard()));
             }
 
-            if(missionCardRequest.getTotalInDeck() != null && missionCardRequest.getTotalInDeck() > 0){
+            if (missionCardRequest.getTotalInDeck() != null && missionCardRequest.getTotalInDeck() > 0) {
                 predicates.add(criteriaBuilder.equal(root.get("totalInDeck"), missionCardRequest.getTotalInDeck()));
             }
-
             return criteriaBuilder.and(predicates.toArray(new Predicate[0]));
         };
     }

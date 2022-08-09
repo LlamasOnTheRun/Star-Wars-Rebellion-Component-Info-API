@@ -5,6 +5,7 @@ import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.Faction;
 import com.starwars.rebellion.ComponentInfoAPI.dao.entities.embeddables.MissionSkillType;
 import com.starwars.rebellion.ComponentInfoAPI.dao.request.LeaderRequest;
 import com.starwars.rebellion.ComponentInfoAPI.dao.request.MissionCardRequest;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -53,6 +54,25 @@ public class MissionCardControllerTest {
         List<MissionCard> missionCardList = missionCardController.getMissionCards(missionCardRequest);
 
         assertEquals(77, missionCardList.get(0).getId());
+    }
+
+    @Test
+    void givenBlankLeaderBonusSearch_thenOnlyMissionCardsWithLeadersAreReturned(){
+        MissionCardRequest missionCardRequest = new MissionCardRequest();
+        missionCardRequest.setLeaderBonusSearch(new LeaderRequest());
+
+        List<MissionCard> missionCardList = missionCardController.getMissionCards(missionCardRequest);
+        missionCardList.forEach(missionCard -> Assertions.assertNotNull(missionCard.getLeaderBonus()));
+    }
+
+    @Test
+    void givenNullLeaderBonusSearch_thenAllMissionCardsAreReturned(){
+        MissionCardRequest missionCardRequest = new MissionCardRequest();
+        missionCardRequest.setLeaderBonusSearch(null);
+
+        List<MissionCard> missionCardList = missionCardController.getMissionCards(missionCardRequest);
+
+        assertEquals(TOTAL_UNIQUE_MISSION_CARDS, missionCardList.size());
     }
 
     @Test

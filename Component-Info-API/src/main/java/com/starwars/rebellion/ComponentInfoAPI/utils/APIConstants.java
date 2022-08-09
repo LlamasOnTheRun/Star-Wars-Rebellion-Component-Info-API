@@ -53,8 +53,8 @@ public class APIConstants {
     public static final int TOTAL_UNIQUE_MISSION_CARDS_W_MIN_SKILL_ONE = 21;
     public static final int TOTAL_UNIQUE_MISSION_CARDS_W_MIN_SKILL_TWO = 15;
     public static final int TOTAL_UNIQUE_MISSION_CARDS_W_MIN_SKILL_THREE = 12;
-    public static final int TOTAL_UNIQUE_MISSION_CARDS_W_SKILL_TYPE_LOGISTICS = 8;
-    public static final int TOTAL_UNIQUE_MISSION_CARDS_W_SKILL_TYPE_DIPLOMACY = 13;
+    public static final int TOTAL_UNIQUE_MISSION_CARDS_W_SKILL_TYPE_LOGISTICS = 7;
+    public static final int TOTAL_UNIQUE_MISSION_CARDS_W_SKILL_TYPE_DIPLOMACY = 14;
     public static final int TOTAL_UNIQUE_MISSION_CARDS_W_SKILL_TYPE_SPEC_OPS = 15;
     public static final int TOTAL_UNIQUE_MISSION_CARDS_W_SKILL_TYPE_INTEL = 12;
     public static final int TOTAL_UNIQUE_MISSION_CARDS_W_TOTAL_IN_GAME_ONE = 39;

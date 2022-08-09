@@ -735,7 +735,7 @@ public class EmpireMissionCardData {
         missionCard.setFaction(Faction.IMPERIAL);
         missionCard.setStartingCard(false);
         missionCard.setMinSkillNumRequired(3);
-        missionCard.setSkillType(MissionSkillType.LOGISTICS);
+        missionCard.setSkillType(MissionSkillType.DIPLOMACY);
         missionCard.setTotalInDeck(1);
         missionCard.setLeaderBonus(EmpireLeaderData.EMPEROR_PALPATINE);
         return missionCard;

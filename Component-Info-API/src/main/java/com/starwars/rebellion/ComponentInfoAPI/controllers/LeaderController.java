@@ -28,7 +28,7 @@ public class LeaderController {
     @ResponseBody
     public List<Leader> getLeader(@RequestBody LeaderRequest leaderRequest) {
         log.info("Request Object: {}", leaderRequest.toString());
-        return leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest));
+        return leaderRepository.findAll(leaderSpecification.getLeaders(leaderRequest).atRoot());
     }
 
     @GetMapping(path=ALL_LEADER_ENDPOINT)

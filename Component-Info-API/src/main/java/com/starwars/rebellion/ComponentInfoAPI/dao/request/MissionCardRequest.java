@@ -8,8 +8,7 @@ import lombok.Data;
 public class MissionCardRequest {
     private Integer id;
     private String title;
-   // private Leader leaderBonus; //TODO need to add specification for leaders in MissionSpecification to avoid error popping up given invalid json attribute
-    private LeaderRequest leaderRequest; //TODO need to add specification for leaders in MissionSpecification to avoid error popping up given invalid json attribute
+    private LeaderRequest leaderBonusSearch;
     private MissionSkillType skillType;
     private Integer minSkillNumRequired;
     private Faction faction;

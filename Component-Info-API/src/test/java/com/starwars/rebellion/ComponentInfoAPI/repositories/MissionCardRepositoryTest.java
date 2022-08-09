@@ -28,7 +28,7 @@ class MissionCardRepositoryTest {
 		MissionCardRequest missionCardRequest = new MissionCardRequest();
 
 		assertEquals(TOTAL_UNIQUE_MISSION_CARDS,
-				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest)).size());
+				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest).atRoot()).size());
 	}
 
 	// Gets all cards, including several copies of the same card
@@ -37,7 +37,7 @@ class MissionCardRepositoryTest {
 	void givenAllCardsAvailable_thenRepeatsShouldAlsoReturn(){
 		MissionCardRequest missionCardRequest = new MissionCardRequest();
 		List<MissionCard> missionCardList =
-				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
+				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest).atRoot());
 
 		assertEquals(TOTAL_MISSION_CARDS, missionCardList.stream().mapToInt(MissionCard::getTotalInDeck).sum());
 	}
@@ -52,7 +52,7 @@ class MissionCardRepositoryTest {
 		missionCardRequest.setMinSkillNumRequired(1);
 
 		List<MissionCard> missionCardList =
-				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
+				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest).atRoot());
 
 		assertEquals(TOTAL_UNIQUE_MISSION_CARDS_W_MIN_SKILL_ONE, missionCardList.size());
 	}
@@ -63,7 +63,7 @@ class MissionCardRepositoryTest {
 		missionCardRequest.setMinSkillNumRequired(2);
 
 		List<MissionCard> missionCardList =
-				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
+				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest).atRoot());
 
 		assertEquals(TOTAL_UNIQUE_MISSION_CARDS_W_MIN_SKILL_TWO, missionCardList.size());
 	}
@@ -74,7 +74,7 @@ class MissionCardRepositoryTest {
 		missionCardRequest.setMinSkillNumRequired(3);
 
 		List<MissionCard> missionCardList =
-				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
+				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest).atRoot());
 
 		assertEquals(TOTAL_UNIQUE_MISSION_CARDS_W_MIN_SKILL_THREE, missionCardList.size());
 	}
@@ -89,7 +89,7 @@ class MissionCardRepositoryTest {
 		missionCardRequest.setFaction(Faction.IMPERIAL);
 
 		List<MissionCard> empireMissionCardList =
-				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
+				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest).atRoot());
 
 		assertEquals(TOTAL_UNIQUE_EMPIRE_MISSION_CARDS, empireMissionCardList.size());
 	}
@@ -100,7 +100,7 @@ class MissionCardRepositoryTest {
 		missionCardRequest.setFaction(Faction.IMPERIAL);
 
 		List<MissionCard> empireMissionCardList =
-				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
+				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest).atRoot());
 
 		assertEquals(TOTAL_EMPIRE_MISSION_CARDS,
 				empireMissionCardList.stream().mapToInt(MissionCard::getTotalInDeck).sum());
@@ -112,7 +112,7 @@ class MissionCardRepositoryTest {
 		missionCardRequest.setFaction(Faction.REBEL);
 
 		List<MissionCard> rebelMissionCardList =
-				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
+				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest).atRoot());
 
 		assertEquals(TOTAL_UNIQUE_REBEL_MISSION_CARDS, rebelMissionCardList.size());
 	}
@@ -123,7 +123,7 @@ class MissionCardRepositoryTest {
 		missionCardRequest.setFaction(Faction.REBEL);
 
 		List<MissionCard> rebelMissionCardList =
-				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
+				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest).atRoot());
 
 		assertEquals(TOTAL_REBEL_MISSION_CARDS,
 				rebelMissionCardList.stream().mapToInt(MissionCard::getTotalInDeck).sum());
@@ -139,7 +139,7 @@ class MissionCardRepositoryTest {
 		missionCardRequest.setSkillType(MissionSkillType.LOGISTICS);
 
 		List<MissionCard> missionCardList =
-				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
+				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest).atRoot());
 
 		assertEquals(TOTAL_UNIQUE_MISSION_CARDS_W_SKILL_TYPE_LOGISTICS, missionCardList.size());
 	}
@@ -150,7 +150,7 @@ class MissionCardRepositoryTest {
 		missionCardRequest.setSkillType(MissionSkillType.DIPLOMACY);
 
 		List<MissionCard> missionCardList =
-				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
+				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest).atRoot());
 
 		assertEquals(TOTAL_UNIQUE_MISSION_CARDS_W_SKILL_TYPE_DIPLOMACY, missionCardList.size());
 	}
@@ -161,7 +161,7 @@ class MissionCardRepositoryTest {
 		missionCardRequest.setSkillType(MissionSkillType.SPEC_OPS);
 
 		List<MissionCard> missionCardList =
-				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
+				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest).atRoot());
 
 		assertEquals(TOTAL_UNIQUE_MISSION_CARDS_W_SKILL_TYPE_SPEC_OPS, missionCardList.size());
 	}
@@ -172,7 +172,7 @@ class MissionCardRepositoryTest {
 		missionCardRequest.setSkillType(MissionSkillType.INTEL);
 
 		List<MissionCard> missionCardList =
-				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
+				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest).atRoot());
 
 		assertEquals(TOTAL_UNIQUE_MISSION_CARDS_W_SKILL_TYPE_INTEL, missionCardList.size());
 	}
@@ -187,7 +187,7 @@ class MissionCardRepositoryTest {
 		missionCardRequest.setIsStartingCard(true);
 
 		List<MissionCard> missionCardList =
-				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
+				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest).atRoot());
 
 		assertEquals(TOTAL_STARTING_MISSION_CARDS, missionCardList.size());
 	}
@@ -198,7 +198,7 @@ class MissionCardRepositoryTest {
 		missionCardRequest.setIsStartingCard(false);
 
 		List<MissionCard> missionCardList =
-				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
+				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest).atRoot());
 
 		assertEquals(TOTAL_NON_STARTING_MISSION_CARDS , missionCardList.size());
 	}
@@ -213,7 +213,7 @@ class MissionCardRepositoryTest {
 		missionCardRequest.setTotalInDeck(1);
 
 		List<MissionCard> missionCardList =
-				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
+				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest).atRoot());
 
 		assertEquals(TOTAL_UNIQUE_MISSION_CARDS_W_TOTAL_IN_GAME_ONE, missionCardList.size());
 	}
@@ -224,7 +224,7 @@ class MissionCardRepositoryTest {
 		missionCardRequest.setTotalInDeck(2);
 
 		List<MissionCard> missionCardList =
-				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
+				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest).atRoot());
 
 		assertEquals(TOTAL_UNIQUE_MISSION_CARDS_W_TOTAL_IN_GAME_TWO, missionCardList.size());
 	}
@@ -235,7 +235,7 @@ class MissionCardRepositoryTest {
 		missionCardRequest.setTotalInDeck(3);
 
 		List<MissionCard> missionCardList =
-				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest));
+				missionCardRepository.findAll(missionCardSpecification.getMissionCards(missionCardRequest).atRoot());
 
 		assertEquals(TOTAL_UNIQUE_MISSION_CARDS_W_TOTAL_IN_GAME_THREE, missionCardList.size());
 	}

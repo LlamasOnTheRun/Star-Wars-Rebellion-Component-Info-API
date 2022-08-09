@@ -22,7 +22,7 @@ class LeaderRepositoryTest {
 		leaderRequest.setName("Admiral Ackbar");
 
 		Assertions.assertEquals(2, leaderRepository
-				.findAll(leaderSpecification.getLeaders(leaderRequest)).get(0)
+				.findAll(leaderSpecification.getLeaders(leaderRequest).atRoot()).get(0)
 				.getInActionCards().size());
 	}
 }

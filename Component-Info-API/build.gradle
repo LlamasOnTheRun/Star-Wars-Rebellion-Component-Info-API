@@ -29,7 +29,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.session:spring-session-jdbc'
     implementation 'org.projectlombok:lombok'
-	implementation 'org.apache.commons:commons-text:1.9'
+	implementation 'org.apache.commons:commons-text:1.10.0'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'com.h2database:h2:1.4.200'
 	runtimeOnly 'mysql:mysql-connector-java'
